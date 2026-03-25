@@ -57,6 +57,7 @@ Un mismo método puede tener diferentes comportamientos.
 Actor: Secretaria  
 
 Flujo:
+
 1-Ingresa al sistema  
 2-Selecciona registrar  
 3-Carga datos  
