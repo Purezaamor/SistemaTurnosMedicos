@@ -1,6 +1,6 @@
 # Introducción
 
-## 📌 Paradigma Orientado a Objetos
+## Paradigma Orientado a Objetos
 
 El paradigma orientado a objetos (POO) es un enfoque de programación que organiza el software en objetos que representan entidades del mundo real. Cada objeto contiene atributos y métodos que definen su comportamiento.
 
@@ -8,7 +8,7 @@ Este paradigma permite desarrollar sistemas más organizados, reutilizables y f�
 
 ---
 
-## 📌 Fundamentos de la POO
+## Fundamentos de la POO
 
 ### Encapsulamiento
 Permite proteger los datos de un objeto.
@@ -31,7 +31,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ---
 
-## 📌 Requisitos del sistema
+## Requisitos del sistema
 
 ### Requisitos Funcionales
 
@@ -51,7 +51,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ---
 
-## 📌 Casos de uso
+## Casos de uso
 
 ### Caso 1: Registrar paciente
 Actor: Secretaria  
@@ -110,7 +110,7 @@ Flujo:
 
 ---
 
-## 📌 Diseño de clases
+## Diseño de clases
 
 Clases:
 
