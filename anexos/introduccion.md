@@ -57,11 +57,11 @@ Un mismo método puede tener diferentes comportamientos.
 Actor: Secretaria  
 
 Flujo:
-1. Ingresa al sistema  
-2. Selecciona registrar  
-3. Carga datos  
-4. Confirma  
-5. Sistema guarda  
+1-Ingresa al sistema  
+2-Selecciona registrar  
+3-Carga datos  
+4-Confirma  
+5-Sistema guarda  
 
 Pre: Usuario logueado  
 Post: Paciente registrado  
@@ -79,11 +79,11 @@ Flujo similar al anterior
 Actor: Paciente  
 
 Flujo:
-1. Selecciona turno  
-2. Elige médico  
-3. Elige fecha  
-4. Confirma  
-5. Se registra  
+1-Selecciona turno  
+2-Elige médico  
+3-Elige fecha  
+4-Confirma  
+5-Se registra  
 
 ---
 
@@ -91,10 +91,10 @@ Flujo:
 Actor: Secretaria  
 
 Flujo:
-1. Busca turno  
-2. Cancela  
-3. Confirma  
-4. Sistema elimina  
+1-Busca turno  
+2-Cancela  
+3-Confirma  
+4-Sistema elimina  
 
 ---
 
@@ -102,11 +102,11 @@ Flujo:
 Actor: Médico  
 
 Flujo:
-1. Ingresa  
-2. Ve agenda  
-3. Filtra  
-4. Consulta  
-5. Visualiza  
+1-Ingresa  
+2-Ve agenda  
+3-Filtra  
+4-Consulta  
+5-Visualiza  
 
 ---
 
@@ -115,21 +115,21 @@ Flujo:
 Clases:
 
 Persona  
-- nombre  
-- telefono  
+-Nombre  
+-Telefono  
 
 Paciente  
-- dni  
-- obraSocial  
+-Dni  
+-Obra Social  
 
 Medico  
-- especialidad  
+-Especialidad  
 
 Turno  
-- fecha  
-- hora  
-- estado  
+-Fecha  
+-Hora  
+-Estado  
 
 Relaciones:
-- Paciente → Turno  
-- Médico → Turno  
+-Paciente → Turno 
+-Médico → Turno  
