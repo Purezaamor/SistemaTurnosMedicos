@@ -10,23 +10,23 @@ Este paradigma permite desarrollar sistemas más organizados, reutilizables y f�
 
 ## Fundamentos de la Programacion Orientada a Objetos
 
-### Encapsulamiento
+### -Encapsulamiento
 Permite proteger los datos de un objeto.
 
 Ejemplo: Un paciente solo puede modificar sus datos mediante métodos.
 
-### Abstracción
+### -Abstracción
 Se enfoca en lo importante.
 
 Ejemplo: Un turno solo necesita fecha, hora y médico.
 
-### Herencia
+### -Herencia
 Permite reutilizar código.
 
 Ejemplo:
 Persona → Paciente / Médico
 
-### Polimorfismo
+### -Polimorfismo
 Un mismo método puede tener diferentes comportamientos.
 
 ---
