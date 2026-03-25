@@ -8,7 +8,7 @@ Este paradigma permite desarrollar sistemas m√°s organizados, reutilizables y f√
 
 ---
 
-## Fundamentos de la POO
+## Fundamentos de la Programacion Orientada a Objetos
 
 ### Encapsulamiento
 Permite proteger los datos de un objeto.
