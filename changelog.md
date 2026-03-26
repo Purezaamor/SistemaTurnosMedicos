@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todos los cambios importantes que se realicen en este proyecto quedarán documentados en este archivo.
 
 ---
 
