@@ -111,31 +111,3 @@ Flujo:
 3-Filtra  
 4-Consulta  
 5-Visualiza  
-
----
-
-## Diseño de clases
-
-Clases:
-
-Persona  
--Nombre  
--Telefono  
-
-Paciente  
--Dni  
--Obra Social  
-
-Medico  
--Especialidad  
-
-Turno  
--Fecha  
--Hora  
--Estado  
-
-Relaciones:
-
--Paciente → Turno 
-
--Médico → Turno  
