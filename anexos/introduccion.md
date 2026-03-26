@@ -135,5 +135,7 @@ Turno
 -Estado  
 
 Relaciones:
+
 -Paciente → Turno 
+
 -Médico → Turno  
