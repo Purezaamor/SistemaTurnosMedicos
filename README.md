@@ -42,6 +42,6 @@ Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para l
 -Crear un boceto inicial de clases
 
 ## Diagramas y Diseños
--[Introducción y análisis](./anexos/introduccion.md)
+-[Anexos](./anexos/introduccion.md)
 
 Actualización de prueba para PR
