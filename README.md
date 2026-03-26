@@ -9,7 +9,7 @@ Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para l
 | Nombre completo      | Rol asignado en esta entrega  | Usuario GitHub |
 |----------------------|-------------------------------|----------------|
 | Alejo Guerricabeitia | Analista de Requerimientos    | @Purezaamor    |
-| Nombre 2             | Modelador de Casos de Uso     | @usuario2      |
+| Kevin Ezequiel Sosa  | Modelador de Casos de Uso     | @keviineze     |
 | Alejo Guerricabeitia | Diseñador de Clases Iniciales | @Purezaamor    |
 | Nombre 4             | Documentador y Coordinador    | @usuario4      |
 
