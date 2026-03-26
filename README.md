@@ -1,13 +1,16 @@
-# Sistema de Turnos Médicos
+# Sistema de Turnos Médicos-Diseño Orientado a Objetos
+-  Materia: Diseño Orientado a Objetos
+-  Carrera: Tec. en Programación de Sistemas
+-  Grupo: Grupo N°2
 
-## Información del grupo
+## Introducción
+Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para la gestión de turnos médicos en un consultorio.Se aplican conceptos de programación orientada a objetos y trabajo colaborativo con GitHub.
+
 -Nombre: Alejo Guerricabeitia
 
 -Matrícula: 156954
 
--Carrera: Tecnicatura Universitaria en Programación de Sistemas
-
--Materia: Diseño Orientado a Objetos
+-Usuario de GitHub: Purezaamor
 
 ##
 
@@ -15,9 +18,7 @@
 
 -Matrícula: 
 
--Carrera: Tecnicatura Universitaria en Programación de Sistemas
-
--Materia: Diseño Orientado a Objetos
+-Usuario de GitHub:
 
 ##
 
@@ -25,13 +26,7 @@
 
 -Matrícula: 
 
--Carrera: Tecnicatura Universitaria en Programación de Sistemas
-
--Materia: Diseño Orientado a Objetos
-
-
-## Descripción
-Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para la gestión de turnos médicos en un consultorio.Se aplican conceptos de programación orientada a objetos y trabajo colaborativo con GitHub.
+-Usuario de GitHub:
 
 ## Objetivos 
 
@@ -43,5 +38,3 @@ Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para l
 
 ## Diagramas y Diseños
 -[Anexos](./anexos/introduccion.md)
-
-Actualización de prueba para PR
