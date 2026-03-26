@@ -8,7 +8,7 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 
 ### Added
 - [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
-  PR: #8 - (Analista de Requerimientos)
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8 - (Analista de Requerimientos)
 
 - [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
