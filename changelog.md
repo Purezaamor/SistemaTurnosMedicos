@@ -11,7 +11,7 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
   PR: #8 - (Analista de Requerimientos)
 
 - [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
-  PR: #7 - (Diseñador de Clases)(https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7)
+  PR: (https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7) - (Diseñador de Clases)
 
 - Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
 
