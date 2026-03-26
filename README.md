@@ -6,27 +6,12 @@
 ## Introducción
 Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para la gestión de turnos médicos en un consultorio.Se aplican conceptos de programación orientada a objetos y trabajo colaborativo con GitHub.
 
--Nombre: Alejo Guerricabeitia
-
--Matrícula: 156954
-
--Usuario de GitHub: Purezaamor
-
-##
-
--Nombre: Kevin
-
--Matrícula: 
-
--Usuario de GitHub:
-
-##
-
--Nombre: Maria
-
--Matrícula: 
-
--Usuario de GitHub:
+| Nombre completo      | Rol asignado en esta entrega  | Usuario GitHub |
+|----------------------|-------------------------------|----------------|
+| Alejo Guerricabeitia | Analista de Requerimientos    | @Purezaamor    |
+| Nombre 2             | Modelador de Casos de Uso     | @usuario2      |
+| Alejo Guerricabeitia | Diseñador de Clases Iniciales | @Purezaamor    |
+| Nombre 4             | Documentador y Coordinador    | @usuario4      |
 
 ## Objetivos 
 
