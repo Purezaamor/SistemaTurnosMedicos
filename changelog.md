@@ -6,30 +6,30 @@
 
 -Creación de requisitos funcionales y no funcionales
 
--PR: link-a-tu-pr
+-PR: 
 
--Issue: link-a-tu-issue
+-Issue: 
 
 ### [Modelador de Casos de Uso]
 
 -Definición de casos de uso
 
--PR: link-a-tu-pr
+-PR: 
 
--Issue: link-a-tu-issue
+-Issue: 
 
 ### [Diseñador de Clases]
 
 -Boceto inicial de clases
 
--PR: link-a-tu-pr
+-PR: 
 
--Issue: link-a-tu-issue
+-Issue: 
 
 ### [Documentador]
 
 -Creación README, anexos y estructura
 
--PR: link-a-tu-pr
+-PR:
 
--Issue: link-a-tu-issue
+-Issue: 
