@@ -8,10 +8,10 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 
 ### Added
 - [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
-  PR: #1 - (Analista de Requerimientos)
+  PR: #8 - (Analista de Requerimientos)
 
 - [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
-  PR: #3 - (Diseñador de Clases)
+  PR: #7 - (Diseñador de Clases)
 
 - Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
 
