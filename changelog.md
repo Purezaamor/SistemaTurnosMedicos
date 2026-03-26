@@ -22,6 +22,7 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 
 ### Changed
 - Se actualiza el archivo `introduccion.md` incluyendo la sección de diseño de clases y su explicación.
+- [team/roles] Se registra cambio de rol: el integrante Nicolas Sebastian Saidman (Analista de Requerimiento) causó baja del equipo. El rol de Analista de Requerimiento es asumido por @Purezaamor (Alejo Guerricabeitia).
 
 ---
 
