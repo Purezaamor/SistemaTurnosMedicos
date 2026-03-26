@@ -1,0 +1,30 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "elements": [
+    {
+      "type": "text",
+      "text": "Persona\n- nombre\n- telefono",
+      "x": 100,
+      "y": 100
+    },
+    {
+      "type": "text",
+      "text": "Paciente\n- dni\n- obraSocial",
+      "x": 100,
+      "y": 200
+    },
+    {
+      "type": "text",
+      "text": "Medico\n- especialidad",
+      "x": 300,
+      "y": 200
+    },
+    {
+      "type": "text",
+      "text": "Turno\n- fecha\n- hora\n- estado",
+      "x": 200,
+      "y": 350
+    }
+  ]
+}
