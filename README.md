@@ -9,13 +9,15 @@
 
 -Materia: Diseño Orientado a Objetos
 
--Nombre: Alejo Guerricabeitia
 
--Matrícula: Kevin
+-Nombre: Kevin
+
+-Matrícula: 
 
 -Carrera: Tecnicatura Universitaria en Programación de Sistemas
 
 -Materia: Diseño Orientado a Objetos
+
 
 -Nombre: Maria
 
