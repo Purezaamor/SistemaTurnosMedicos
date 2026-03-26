@@ -9,6 +9,23 @@
 
 -Materia: Diseño Orientado a Objetos
 
+-Nombre: Alejo Guerricabeitia
+
+-Matrícula: Kevin
+
+-Carrera: Tecnicatura Universitaria en Programación de Sistemas
+
+-Materia: Diseño Orientado a Objetos
+
+-Nombre: Maria
+
+-Matrícula: 
+
+-Carrera: Tecnicatura Universitaria en Programación de Sistemas
+
+-Materia: Diseño Orientado a Objetos
+
+
 ## Descripción
 Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para la gestión de turnos médicos en un consultorio.Se aplican conceptos de programación orientada a objetos y trabajo colaborativo con GitHub.
 
