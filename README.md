@@ -9,6 +9,7 @@
 
 -Materia: Diseño Orientado a Objetos
 
+---
 
 -Nombre: Kevin
 
@@ -18,6 +19,7 @@
 
 -Materia: Diseño Orientado a Objetos
 
+---
 
 -Nombre: Maria
 
