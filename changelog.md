@@ -1,34 +1,31 @@
 # Changelog
 
-Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
+All notable changes to this project will be documented in this file.
 
 ---
 
 ## [Unreleased]
 
 ### Added
-- [feature/estructura-base] Estructura inicial del proyecto.  
-  PR: [#1](link) - @usuario1 (Coordinador / DevOps)
+- [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
+  PR: #1 - (Analista de Requerimientos)
 
-- [feature/ia-prompts] Documentación de 5 prompts de IA.  
-  PR: [#4](link) - @usuario4 (Especialista en IA)
+- [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
+  PR: #3 - (Diseñador de Clases)
+
+- Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
+
+- Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
 
 ### Changed
-- [feature/readme-y-mockup] Actualización README.md con mockup.  
-  PR: [#3](link) - @usuario3 (Documentador / Diseñador UX)
-
-- [feature/index-html] Estructura HTML5 básica.  
-  PR: [#2](link) - @usuario2 (Desarrollador Frontend)
-
-### Fixed
-- [feature/fix-rutas] Corrección de rutas en README.md.  
-  PR: [#5](link) - @usuario3 (Documentador / Diseñador UX)
+- Se actualiza el archivo `introduccion.md` incluyendo la sección de diseño de clases y su explicación.
 
 ---
 
-## [Release Actividad Obligatoria N°1] - 2025-08-10
+## [Release Actividad Obligatoria N°1] - 2026-03-25
 
-Aquí se listarán todas las Pull Requests que entraron en esta release.  
-Actualmente están en la sección [Unreleased] porque sólo están en la rama `develop`.
-
+### Added
+- Análisis de requisitos funcionales y no funcionales del sistema.
+- Diseño inicial de clases con atributos, métodos y relaciones.
+- Documentación completa del sistema en formato Markdown.
 
