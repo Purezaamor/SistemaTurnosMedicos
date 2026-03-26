@@ -35,19 +35,19 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### Requisitos Funcionales
 
-- RF1: Registrar pacientes  
-- RF2: Registrar médicos  
-- RF3: Solicitar turnos  
-- RF4: Cancelar turnos  
-- RF5: Visualizar agenda  
+-RF1: Registrar pacientes  
+-RF2: Registrar médicos  
+-RF3: Solicitar turnos  
+-RF4: Cancelar turnos  
+-RF5: Visualizar agenda  
 
 ### Requisitos No Funcionales
 
-- RNF1: Interfaz simple  
-- RNF2: Seguridad de datos  
-- RNF3: Disponibilidad  
-- RNF4: Rapidez del sistema  
-- RNF5: Escalabilidad  
+-RNF1: Interfaz simple  
+-RNF2: Seguridad de datos  
+-RNF3: Disponibilidad  
+-RNF4: Rapidez del sistema  
+-RNF5: Escalabilidad  
 
 ---
 
@@ -80,6 +80,7 @@ Flujo similar al anterior
 Actor: Paciente  
 
 Flujo:
+
 1-Selecciona turno  
 2-Elige médico  
 3-Elige fecha  
@@ -92,6 +93,7 @@ Flujo:
 Actor: Secretaria  
 
 Flujo:
+
 1-Busca turno  
 2-Cancela  
 3-Confirma  
@@ -103,6 +105,7 @@ Flujo:
 Actor: Médico  
 
 Flujo:
+
 1-Ingresa  
 2-Ve agenda  
 3-Filtra  
