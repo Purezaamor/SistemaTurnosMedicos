@@ -13,6 +13,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/ia-prompts] Documentación de 5 prompts de IA.  
   PR: [#4](link) - @usuario4 (Especialista en IA)
 
+- [feature/modelador-casos-uso-update-use-case-1] Definición de los 5 casos de uso del sistema.
+  PR: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/6) - @keviineze (Modelador de Casos de Uso)
+
 ### Changed
 - [feature/readme-y-mockup] Actualización README.md con mockup.  
   PR: [#3](link) - @usuario3 (Documentador / Diseñador UX)
