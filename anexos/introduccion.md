@@ -147,3 +147,9 @@ Un mismo método puede tener diferentes comportamientos.
 
 **▫️Postcondiciones:**
 -   La agenda queda configurada con los nuevos parámetros de disponibilidad.
+-   ---
+## Notebook de análisis
+
+Se utilizó NotebookLM para analizar los requisitos del sistema.
+
+🔗 [Acceder al NotebookLM](https://notebooklm.google.com/notebook/273191bd-0f6f-400f-ba99-9b9bd4cfc947)
