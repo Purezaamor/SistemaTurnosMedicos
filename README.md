@@ -12,7 +12,7 @@ Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para l
 |---------------------------------|----------------|----------------|
 | Alejo Guerricabeitia            | 156954         | @Purezaamor    |
 | Kevin Ezequiel Sosa             | 154080         | @keviineze     |
-| Maria Fernanda Diaz Aristigueta | 157277         | @Purezaamor    |
+| Maria Fernanda Diaz Aristigueta | 157277         | @mafer-d98     |
 
 
 ## Diagramas y Diseños
