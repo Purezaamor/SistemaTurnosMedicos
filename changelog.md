@@ -5,10 +5,11 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 ---
 
 ## [Unreleased]
-
 ### Added
-- [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8 - (Analista de Requerimientos)
+- [feature/analista-requerimientos-correcciones] **Ignacio Nervi** - Se incorporan las correcciones de la Actividad 1: Redacción técnica de 5 RF y 5 RNF tras análisis crítico con NotebookLM.
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/16
+  Issue: https://github.com/Purezaamor/SistemaTurnosMedicos/issues/15
+
 
 - [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
