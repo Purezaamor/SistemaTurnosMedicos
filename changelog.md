@@ -15,6 +15,9 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 
 - Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
 
+- [feature/diseñador-de-clases-iniciales-correccion] @lucastol-dev: Se corrige y reorganiza el diseño de clases iniciales, actualizando `01-boceto-inicial.excalidraw` y agregando `01-boceto-inicial.png`.
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18 - (Diseñador de Clases)
+
 - Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
 
 ### Changed
