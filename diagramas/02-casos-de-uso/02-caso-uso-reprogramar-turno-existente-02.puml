@@ -1,0 +1,20 @@
+@startuml 02-caso-uso-reprogramar-turno-existente-02
+
+left to right direction
+
+actor "Secretaria" as Secretaria
+
+rectangle "Sistema de Turnos Medico" {
+    usecase "Reprogramar Turno\nExistente" as UC1
+    usecase "Buscar Turno" as UC2
+    usecase "Seleccionar Nuevo\nHorario" as UC3
+    usecase "Registrar en Historial" as UC4
+}
+
+Secretaria --> UC1
+
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<extend>>
+
+@enduml
