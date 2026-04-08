@@ -13,12 +13,19 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
 
+- [feature/modelador-casos-uso-update-use-case-1] Definición de los 5 casos de uso del sistema.
+  PR: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/6) - @keviineze (Modelador de Casos de Uso)
+
 - Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
 
 - Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
 
+- [feature/modelador-diag-casos-uso-update-use-case-1] Modelado de Diagramas de Casos de Uso y Documentación de IA, Actividad 2.
+  PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) - @keviineze (Modelador de Diagramas de Casos de Uso).
+
 ### Changed
 - Se actualiza el archivo `introduccion.md` incluyendo la sección de diseño de clases y su explicación.
+- [team/roles] Se registra cambio de rol: el integrante Nicolas Sebastian Saidman (Analista de Requerimiento) causó baja del equipo. El rol de Analista de Requerimiento es asumido por @Purezaamor (Alejo Guerricabeitia).
 
 ---
 
@@ -28,4 +35,3 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - Análisis de requisitos funcionales y no funcionales del sistema.
 - Diseño inicial de clases con atributos, métodos y relaciones.
 - Documentación completa del sistema en formato Markdown.
-
