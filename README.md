@@ -5,13 +5,13 @@
 - **Carrera**: Tec. en Programación de Sistemas
 - **Materia**: Diseño Orientado a Objetos
 - **Profesor**: [Nombre del Profesor]
-- **Grupo**: Grupo N°2
+- **Grupo**: Grupo N°3
 
 ## Integrantes del Equipo
 
 | Nombre Completo       | Matrícula | Usuario GitHub | Rol Asignado en esta Entrega |
 |-----------------------|-----------|----------------|------------------------------|
-| Alejo Guerricabeitia  | [Matrícula] | @Purezaamor    | Analista de Requerimientos   |
+| Ignacio Nervi         | [155475]  | @nachonervi-design| Analista de Requerimientos   |
 | [Nombre 2]            | [Matrícula] | @usuario2      | Modelador de Casos de Uso    |
 | Alejo Guerricabeitia  | [Matrícula] | @Purezaamor    | Diseñador de Clases Iniciales|
 | [Nombre 4]            | [Matrícula] | @usuario4      | Documentador y Coordinador   |
