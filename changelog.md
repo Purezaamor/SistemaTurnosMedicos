@@ -5,20 +5,13 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 ---
 
 ## [Unreleased]
-
 ### Added
-- [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8 - (Analista de Requerimientos)
-
-- [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
-
-- Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
-
-- Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
+- Se agregó `anexos/introduccion.md` con análisis de requisitos y casos de uso.
+- Se agregó el diagrama de clases inicial en `diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw`.
 
 ### Changed
-- Se actualiza el archivo `introduccion.md` incluyendo la sección de diseño de clases y su explicación.
+- Se actualizó `README.md` con descripción del proyecto, objetivos y equipo.
+- Se actualizó `anexos/introduccion.md` con la documentación técnica del requisito.
 
 ---
 
@@ -28,4 +21,17 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - Análisis de requisitos funcionales y no funcionales del sistema.
 - Diseño inicial de clases con atributos, métodos y relaciones.
 - Documentación completa del sistema en formato Markdown.
+
+---
+
+## Revisión del revisor
+
+**Hallazgos**
+- El changelog está bien iniciado, pero mezcla detalles técnicos de branches y PR con el registro de cambios, lo que puede dificultar su mantenimiento.
+- La entrada indica un `.png` de diagrama que no se verifica en el diff actual.
+
+**Sugerencias**
+- Mantener el changelog enfocado en hitos, no en ramas o PRs, salvo que el proyecto adopte un formato formal de releases.
+- Corregir o validar la referencia a recursos gráficos (PNG/EXCALIDRAW) si efectivamente están presentes.
+- Considerar agregar fechas y una breve descripción de la versión en `Unreleased`.
 
