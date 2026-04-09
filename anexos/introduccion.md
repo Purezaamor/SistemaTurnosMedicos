@@ -33,22 +33,20 @@ Un mismo método puede tener diferentes comportamientos.
 
 ## Requisitos del sistema
 
-### Requisitos Funcionales
+*   **RF1 - Ciclo de vida del turno:** El sistema debe permitir el alta, reprogramación y cancelación de turnos vinculados a un profesional y un paciente específico, gestionando los estados: Programado, Presente, Atendido, Cancelado y Ausente [5, 6].
+*   **RF2 - Validación de disponibilidad:** El sistema debe impedir automáticamente la superposición horaria para un mismo profesional, permitiendo únicamente la carga manual de hasta dos (2) sobreturnos autorizados.
+*   **RF3 - Gestión de agenda médica:** El sistema debe permitir configurar bloqueos horarios por compromisos fijos o licencias, y proveer la apertura manual de bloques para horarios de atención variables.
+*   **RF4 - Registro de arribo (Check-in):** El sistema debe capturar la hora real de llegada del paciente para calcular desviaciones respecto al horario planificado y permitir la visualización de la sala de espera en tiempo real.
+*   **RF5 - Auditoría de cambios:** El sistema debe registrar de forma automática e inalterable el historial de cada modificación (usuario, fecha/hora y valor modificado) para garantizar la trazabilidad del proceso [7].
 
-- * **RF1 - Gestión integral de turnos y agenda:** El sistema debe permitir las operaciones de creación, reprogramación y cancelación de turnos vinculados a un profesional específico, proporcionando visualizaciones en intervalos diarios y semanales [6, 7].
-* **RF2 - Prevención de conflictos de programación:** El sistema debe validar la disponibilidad de forma automática para impedir la superposición de dos o más turnos en un mismo bloque horario, siendo esta la funcionalidad crítica primordial [8].
-* **RF3 - Gestión de disponibilidad y bloqueos:** El sistema debe permitir configurar la agenda profesional incluyendo bloqueos por feriados, vacaciones y compromisos fijos (ej. clases académicas de los jueves) [3].
-* **RF4 - Administración de sobreturnos:** El sistema debe permitir la incorporación manual de hasta dos sobreturnos diarios, condicionados exclusivamente a la autorización manual del médico para evitar colapsos en la atención [3].
-* **RF5 - Registro de presencia (Check-in):** El sistema debe permitir registrar el arribo de pacientes, cambiando su estado a "presente" o "en sala de espera" y capturando la hora real de llegada [5, 9].
+### Requisitos No Funcionales (RNF)
+*   **RNF1 - Usabilidad:** La interfaz debe ser intuitiva y permitir a los usuarios operar la agenda diaria en menos de tres interacciones, minimizando la necesidad de capacitación técnica extensa [8, 9].
+*   **RNF2 - Integridad por encapsulamiento:** La lógica de validación de turnos debe residir exclusivamente en la clase `Agenda`, asegurando que sea la única entidad con responsabilidad para manipular la colección de turnos [10, 11].
+*   **RNF3 - Restricción de infraestructura:** El modelo de dominio inicial debe limitar la atención a una única sala física de consulta para simplificar la gestión del MVP [12].
+*   **RNF4 - Escalabilidad:** El diseño arquitectónico debe permitir la futura incorporación de nuevos profesionales y múltiples consultorios sin requerir una reingeniería del núcleo del sistema [8].
+*   **RNF5 - Plazo de entrega (MVP):** Las funcionalidades críticas de gestión y prevención de conflictos deben estar validadas y operativas para principios de julio de 2026 [12].
 
 
-### Requisitos No Funcionales
-
-* **RNF1 - Usabilidad y capacitación:** El sistema debe poseer una interfaz intuitiva que permita a la secretaría operar las funciones básicas tras una capacitación máxima de 2 horas [10, 11].
-* **RNF2 - Escalabilidad del modelo:** La arquitectura debe permitir la futura incorporación de múltiples profesionales y consultorios sin requerir una reestructuración del núcleo del sistema [12, 13].
-* **RNF3 - Plazo de operatividad:** El sistema debe estar desarrollado, validado y funcional para su implementación operativa a principios de julio de 2026 [3].
-* **RNF4 - Restricción de infraestructura:** El modelo de dominio inicial debe considerar la limitación de una única sala física disponible para la atención en esta etapa del MVP [5].
-* **RNF5 - Integridad del dominio:** El sistema debe garantizar que la lógica de validación de disponibilidad resida exclusivamente en el núcleo del modelo (clase Agenda), impidiendo manipulaciones externas de la colección de turnos [14].
 
 
 ---
@@ -166,16 +164,35 @@ Se utilizó NotebookLM para analizar los requisitos del sistema.
 
 ---
 
-## Revisión del revisor
+## Diseño de Clases Iniciales
+
+### Clases Identificadas
+- **Persona**: Clase base con atributos `nombre` y `telefono`.
+- **Paciente**: Hereda de Persona, agrega `dni` y `obraSocial`.
+- **Medico**: Hereda de Persona, agrega `especialidad`.
+- **Turno**: Contiene `fecha`, `hora`, `estado`, y referencias a Paciente y Medico.
+
+### Diagrama de Clases
+![Diagrama de Clases](./../../diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw)
+
+---
+
+## Revisión del revisor - Diseño de Clases
 
 **Hallazgos**
-- La documentación de RF/RNF tiene saltos de línea y puntuación dispersa que generan lectura difícil.
-- El apartado de casos de uso está bien estructurado, pero algunas descripciones pueden simplificarse para mayor claridad.
-- El uso de referencia externa a NotebookLM puede ser útil, pero debería explicarse su rol como evidencia de análisis y no una dependencia.
+- El boceto identifica clases clave (Persona, Paciente, Medico, Turno) y herencia básica, alineado con principios de POO.
+- Faltan relaciones explícitas (flechas de herencia y asociaciones) en el diagrama, lo que dificulta la comprensión visual.
+- No se incluye la clase Agenda mencionada en RNF5, ni métodos para las clases.
+- Atributos son básicos pero suficientes para el MVP; Turno debería tener referencias a Paciente y Medico para integridad.
 
 **Sugerencias**
-- Normalizar la redacción de los requisitos en bullets claros y completos.
-- Añadir una sección de `Alcance del MVP` para delimitar lo que se incluye en esta entrega.
-- Revisar ortografía y formato de títulos (`Programacion` → `Programación`).
+- Actualizar el diagrama para mostrar herencia (Paciente/Medico → Persona) y asociaciones (Turno con Paciente y Medico).
+- Agregar clase Agenda con métodos para validar disponibilidad y gestionar turnos.
+- Incluir métodos esenciales en cada clase (ej. getters/setters, validar en Turno).
+- Considerar agregar clase Sala si se expande más allá del MVP.
+
+**Decisión del revisor humano**
+
+
 
 

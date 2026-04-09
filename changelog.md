@@ -21,6 +21,17 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - Análisis de requisitos funcionales y no funcionales del sistema.
 - Diseño inicial de clases con atributos, métodos y relaciones.
 - Documentación completa del sistema en formato Markdown.
+*   **Analista (Ignacio Nervi):** 
+    *   Finalización de la normalización de 5 RF y 5 RNF. [Issue #15]
+    *   Definición del alcance del MVP en `introduccion.md`. [PR #16]
+    *   Investigación y cuaderno compartido en NotebookLM.
+*   **Modelador:** 
+    *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
+*   **Diseñador:** 
+    *   Creación del diagrama de clases inicial. [Issue #17] [PR #18]
+    *   **Recursos:** [Fuente .excalidraw](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw) y [Exportación .png](diagramas/01-diagrama-clases/01-boceto-inicial.png).
+*   **Coordinador:** 
+    *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #]
 
 ---
 
