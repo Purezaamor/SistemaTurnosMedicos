@@ -8,7 +8,7 @@ Este paradigma permite desarrollar sistemas más organizados, reutilizables y f�
 
 ---
 
-## Fundamentos de la Programacion Orientada a Objetos
+## Fundamentos de la Programación Orientada a Objetos
 
 ### -Encapsulamiento
 Permite proteger los datos de un objeto.
@@ -35,32 +35,29 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### Requisitos Funcionales
 
-RF1 - Gestión integral de turnos y agenda: El sistema debe permitir las operaciones de creación, reprogramación y cancelación de turnos vinculados a un profesional específico
-. Asimismo, debe proporcionar una visualización organizada de la agenda en intervalos diarios y semanales para facilitar la gestión administrativa
-.
-RF2 - Prevención de conflictos de programación: El sistema debe validar la disponibilidad del profesional de manera que se impida automáticamente la superposición de dos o más turnos en un mismo bloque horario
-. Esta restricción es considerada la funcionalidad crítica primordial del modelo
-.
-RF3 - Gestión de disponibilidad y bloqueos horarios: El sistema debe permitir la configuración de la disponibilidad del profesional, incluyendo el bloqueo de horarios por vacaciones, feriados, reuniones o compromisos académicos fijos, como las clases dictadas los jueves por la tarde
-.
-RF4 - Administración de sobreturnos autorizados: El sistema debe permitir la incorporación manual de hasta dos sobreturnos diarios, condicionados exclusivamente a la decisión y autorización del profesional médico
-. El sistema no debe automatizar esta función para evitar el colapso de la atención
-.
-RF5 - Registro de presencia física (Check-in): El sistema debe permitir registrar la llegada de los pacientes al consultorio, cambiando su estado a "presente" o "en sala de espera" y capturando la hora real de arribo
-. Esta entidad debe ser liviana y estar vinculada al turno correspondiente
+- * **RF1 - Gestión integral de turnos y agenda:** El sistema debe permitir las operaciones de creación, reprogramación y cancelación de turnos vinculados a un profesional específico, proporcionando visualizaciones en intervalos diarios y semanales [6, 7].
+* **RF2 - Prevención de conflictos de programación:** El sistema debe validar la disponibilidad de forma automática para impedir la superposición de dos o más turnos en un mismo bloque horario, siendo esta la funcionalidad crítica primordial [8].
+* **RF3 - Gestión de disponibilidad y bloqueos:** El sistema debe permitir configurar la agenda profesional incluyendo bloqueos por feriados, vacaciones y compromisos fijos (ej. clases académicas de los jueves) [3].
+* **RF4 - Administración de sobreturnos:** El sistema debe permitir la incorporación manual de hasta dos sobreturnos diarios, condicionados exclusivamente a la autorización manual del médico para evitar colapsos en la atención [3].
+* **RF5 - Registro de presencia (Check-in):** El sistema debe permitir registrar el arribo de pacientes, cambiando su estado a "presente" o "en sala de espera" y capturando la hora real de llegada [5, 9].
 
 
 ### Requisitos No Funcionales
 
-RNF1 - Usabilidad y simplicidad de interfaz: El sistema debe poseer una interfaz de usuario intuitiva y de baja complejidad técnica, diseñada para que el profesional y la secretaría puedan operarlo sin necesidad de capacitaciones extensas o procesos disruptivos
-.
-RNF2 - Escalabilidad y extensibilidad del modelo: El diseño de la arquitectura y el modelo de dominio deben permitir la futura incorporación de nuevos profesionales y salas de consulta sin requerir una reestructuración del núcleo del sistema
-.
-RNF3 - Plazo de entrega de Producto Mínimo Viable (MVP): El sistema debe estar desarrollado, validado y funcional para su implementación operativa a principios de julio de 2026
-.
-RNF4 - Restricción de infraestructura física: El modelo de dominio debe considerar, en su etapa inicial, la limitación de una única sala física de consulta disponible para la atención, lo cual simplifica la gestión de conflictos de espacio en el MVP
-.
-RNF5 - Integridad y encapsulamiento del dominio: El sistema debe garantizar que la lógica de validación de disponibilidad resida exclusivamente en la clase agenda, impidiendo que otros módulos manipulen directamente la colección de turnos sin pasar por las reglas de negocio establecidas
+* **RNF1 - Usabilidad y capacitación:** El sistema debe poseer una interfaz intuitiva que permita a la secretaría operar las funciones básicas tras una capacitación máxima de 2 horas [10, 11].
+* **RNF2 - Escalabilidad del modelo:** La arquitectura debe permitir la futura incorporación de múltiples profesionales y consultorios sin requerir una reestructuración del núcleo del sistema [12, 13].
+* **RNF3 - Plazo de operatividad:** El sistema debe estar desarrollado, validado y funcional para su implementación operativa a principios de julio de 2026 [3].
+* **RNF4 - Restricción de infraestructura:** El modelo de dominio inicial debe considerar la limitación de una única sala física disponible para la atención en esta etapa del MVP [5].
+* **RNF5 - Integridad del dominio:** El sistema debe garantizar que la lógica de validación de disponibilidad resida exclusivamente en el núcleo del modelo (clase Agenda), impidiendo manipulaciones externas de la colección de turnos [14].
+
+
+---
+
+## Alcance del MVP
+
+Esta entrega inicial se enfoca en resolver la problemática crítica de la **gestión de agenda y prevención de conflictos horarios**. 
+* **Incluido:** Gestión integral de turnos (alta, baja, modificación), validación automática de disponibilidad, registro de check-in de pacientes y administración manual de sobreturnos.
+* **Restricción MVP:** Se operará bajo la limitación de una única sala física de consulta y un único profesional médico para simplificar el modelo de dominio inicial [3, 5].
 
 ---
 
@@ -166,3 +163,19 @@ RNF5 - Integridad y encapsulamiento del dominio: El sistema debe garantizar que 
 Se utilizó NotebookLM para analizar los requisitos del sistema.
 
 🔗 [Acceder al NotebookLM] https://notebooklm.google.com/notebook/58bfbaaf-a9ca-48a9-b641-21619e4ec0d2
+
+---
+
+## Revisión del revisor
+
+**Hallazgos**
+- La documentación de RF/RNF tiene saltos de línea y puntuación dispersa que generan lectura difícil.
+- El apartado de casos de uso está bien estructurado, pero algunas descripciones pueden simplificarse para mayor claridad.
+- El uso de referencia externa a NotebookLM puede ser útil, pero debería explicarse su rol como evidencia de análisis y no una dependencia.
+
+**Sugerencias**
+- Normalizar la redacción de los requisitos en bullets claros y completos.
+- Añadir una sección de `Alcance del MVP` para delimitar lo que se incluye en esta entrega.
+- Revisar ortografía y formato de títulos (`Programacion` → `Programación`).
+
+
