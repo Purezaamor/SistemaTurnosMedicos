@@ -25,6 +25,7 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
     *   Finalización de la normalización de 5 RF y 5 RNF. [Issue #15]
     *   Definición del alcance del MVP en `introduccion.md`. [PR #16]
     *   Investigación y cuaderno compartido en NotebookLM.
+      *   **Colaboración Técnica:** Asistencia al Documentador en la revisión asistida por IA del archivo `README.md`, aplicando pensamiento crítico sobre los hallazgos de Copilot para mejorar la carátula institucional y la descripción del proyecto. [PR #23 del Coordinador]
 *   **Modelador:** 
     *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
 *   **Diseñador:** 
