@@ -1,30 +1,127 @@
 {
   "type": "excalidraw",
   "version": 2,
+  "source": "chatgpt",
   "elements": [
     {
       "type": "text",
-      "text": "Persona\n- nombre\n- telefono",
-      "x": 100,
-      "y": 100
+      "text": "Persona\n-----------------\n- nombre\n- telefono\n- email",
+      "x": 400,
+      "y": 40
     },
     {
       "type": "text",
-      "text": "Paciente\n- dni\n- obraSocial",
-      "x": 100,
-      "y": 200
-    },
-    {
-      "type": "text",
-      "text": "Medico\n- especialidad",
-      "x": 300,
-      "y": 200
-    },
-    {
-      "type": "text",
-      "text": "Turno\n- fecha\n- hora\n- estado",
+      "text": "Paciente : Persona\n-----------------\n- dni\n- obraSocial",
       "x": 200,
+      "y": 150
+    },
+    {
+      "type": "text",
+      "text": "Profesional : Persona\n-----------------\n- especialidad",
+      "x": 600,
+      "y": 150
+    },
+    {
+      "type": "text",
+      "text": "Agenda\n-----------------\n- turnos (privado)\n- disponibilidad\n\n+ crearTurno()\n+ reprogramarTurno()\n+ cancelarTurno()\n+ verificarDisponibilidad()",
+      "x": 600,
+      "y": 300
+    },
+    {
+      "type": "text",
+      "text": "Turno\n-----------------\n- fechaHoraInicio\n- duracionEstimada\n- estado\n\n+ cambiarEstado()",
+      "x": 450,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "TipoConsulta\n-----------------\n- nombre\n- duracionBase",
+      "x": 200,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "RegistroCambioTurno\n-----------------\n- fecha\n- tipoCambio\n- detalle",
+      "x": 800,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "RegistroPresencia\n-----------------\n- horaLlegada",
+      "x": 450,
+      "y": 650
+    },
+
+    {
+      "type": "text",
+      "text": "HERENCIA",
+      "x": 430,
+      "y": 110
+    },
+    {
+      "type": "text",
+      "text": "Paciente → Persona",
+      "x": 200,
+      "y": 120
+    },
+    {
+      "type": "text",
+      "text": "Profesional → Persona",
+      "x": 600,
+      "y": 120
+    },
+
+    {
+      "type": "text",
+      "text": "RELACIONES",
+      "x": 50,
+      "y": 300
+    },
+    {
+      "type": "text",
+      "text": "Profesional (1) ──── (1) Agenda",
+      "x": 50,
       "y": 350
+    },
+    {
+      "type": "text",
+      "text": "Agenda (1) ──── (0..*) Turno",
+      "x": 50,
+      "y": 380
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) Paciente",
+      "x": 50,
+      "y": 410
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) Profesional",
+      "x": 50,
+      "y": 440
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) TipoConsulta",
+      "x": 50,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (0..*) RegistroCambioTurno",
+      "x": 50,
+      "y": 500
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (0..1) RegistroPresencia",
+      "x": 50,
+      "y": 530
     }
-  ]
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
 }
