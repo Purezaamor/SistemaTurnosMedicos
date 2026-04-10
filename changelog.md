@@ -26,6 +26,9 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
     *   Definición del alcance del MVP en `introduccion.md`. [PR #16]
     *   Investigación y cuaderno compartido en NotebookLM.
       *   **Colaboración Técnica:** Asistencia al Documentador en la revisión asistida por IA del archivo `README.md`, aplicando pensamiento crítico sobre los hallazgos de Copilot para mejorar la carátula institucional y la descripción del proyecto. [PR #23 del Coordinador]
+         *   **Asunción de tareas de Diseño de Clases:** 
+        *   Refactorización técnica del archivo `01-boceto-inicial.excalidraw` para dar cumplimiento al requisito RNF2, integrando la clase **Agenda** y los métodos de ciclo de vida del **Turno**. [Issue #17]
+        *   Aplicación de relaciones de herencia entre `Persona`, `Paciente` y `Medico`, y exportación final a formato `01-boceto-inicial.png`. [PR #18]
 *   **Modelador:** 
     *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
 *   **Diseñador:** 
