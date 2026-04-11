@@ -1,7 +1,11 @@
 {
   "type": "excalidraw",
   "version": 2,
+feature/diseñador-de-clases-iniciales-correccion
   "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+=======
+  "source": "chatgpt",
+ release/entrega-final-correcta
   "elements": [
     {
       "id": "rect_paciente",
@@ -34,6 +38,7 @@
     {
       "id": "text_paciente",
       "type": "text",
+feature/diseñador-de-clases-iniciales-correccion
       "x": -227.6548443850157,
       "y": -31.292123522077333,
       "width": 265.7801144795164,
@@ -71,6 +76,11 @@
       "originalText": "Paciente\n-------------------\n- nombre\n- dni\n- fechaNacimiento\n- telefono\n- mail\n\npedirTurno()\ncancelarTurno()\nverHorariosDisponibles()",
       "autoResize": false,
       "lineHeight": 1.2121212121212122
+=======
+      "text": "Persona\n-----------------\n- nombre\n- telefono\n- email",
+      "x": 400,
+      "y": 40
+release/entrega-final-correcta
     },
     {
       "id": "rect_medico",
@@ -103,6 +113,7 @@
     {
       "id": "text_medico",
       "type": "text",
+ feature/diseñador-de-clases-iniciales-correccion
       "x": 182.74518694196433,
       "y": -98.4155209859212,
       "width": 184.423828125,
@@ -144,7 +155,49 @@
       "originalText": "Medico\n-------------------\n- nombre\n- apellido\n- telefono\n- especialidad\n- mail\n- matricula\n\nconsultarAgenda()\ndefinirDisponibilidad()\nautorizarSobreturno()",
       "autoResize": true,
       "lineHeight": 1.1111111111111112
+=======
+      "text": "Paciente : Persona\n-----------------\n- dni\n- obraSocial",
+      "x": 200,
+      "y": 150
     },
+    {
+      "type": "text",
+      "text": "Profesional : Persona\n-----------------\n- especialidad",
+      "x": 600,
+      "y": 150
+    },
+    {
+      "type": "text",
+      "text": "Agenda\n-----------------\n- turnos (privado)\n- disponibilidad\n\n+ crearTurno()\n+ reprogramarTurno()\n+ cancelarTurno()\n+ verificarDisponibilidad()",
+      "x": 600,
+      "y": 300
+    },
+    {
+      "type": "text",
+      "text": "Turno\n-----------------\n- fechaHoraInicio\n- duracionEstimada\n- estado\n\n+ cambiarEstado()",
+      "x": 450,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "TipoConsulta\n-----------------\n- nombre\n- duracionBase",
+      "x": 200,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "RegistroCambioTurno\n-----------------\n- fecha\n- tipoCambio\n- detalle",
+      "x": 800,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "RegistroPresencia\n-----------------\n- horaLlegada",
+      "x": 450,
+      "y": 650
+      release/entrega-final-correcta
+    },
+
     {
       "id": "rect_secretaria",
       "type": "rectangle",
@@ -181,6 +234,7 @@
     {
       "id": "text_secretaria",
       "type": "text",
+ feature/diseñador-de-clases-iniciales-correccion
       "x": 611.438677651542,
       "y": 84.03595334007628,
       "width": 160.33203125,
@@ -423,10 +477,16 @@
       "updated": 1775585201752,
       "link": null,
       "locked": false
+=======
+      "text": "HERENCIA",
+      "x": 430,
+      "y": 110
+ release/entrega-final-correcta
     },
     {
       "id": "text_disponibilidad",
       "type": "text",
+ feature/diseñador-de-clases-iniciales-correccion
       "x": 739.0410831996373,
       "y": 511.37505485897975,
       "width": 145.48828125,
@@ -901,3 +961,70 @@
   },
   "files": {}
 }
+=======
+      "text": "Paciente → Persona",
+      "x": 200,
+      "y": 120
+    },
+    {
+      "type": "text",
+      "text": "Profesional → Persona",
+      "x": 600,
+      "y": 120
+    },
+
+    {
+      "type": "text",
+      "text": "RELACIONES",
+      "x": 50,
+      "y": 300
+    },
+    {
+      "type": "text",
+      "text": "Profesional (1) ──── (1) Agenda",
+      "x": 50,
+      "y": 350
+    },
+    {
+      "type": "text",
+      "text": "Agenda (1) ──── (0..*) Turno",
+      "x": 50,
+      "y": 380
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) Paciente",
+      "x": 50,
+      "y": 410
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) Profesional",
+      "x": 50,
+      "y": 440
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (1) TipoConsulta",
+      "x": 50,
+      "y": 470
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (0..*) RegistroCambioTurno",
+      "x": 50,
+      "y": 500
+    },
+    {
+      "type": "text",
+      "text": "Turno (1) ──── (0..1) RegistroPresencia",
+      "x": 50,
+      "y": 530
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
+ release/entrega-final-correcta
