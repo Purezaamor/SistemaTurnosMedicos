@@ -4,7 +4,7 @@
 - **Universidad**: UCES (Universidad de Ciencias Empresariales y Sociales)
 - **Carrera**: Tec. en Programación de Sistemas
 - **Materia**: Diseño Orientado a Objetos
-- **Profesor**: [Nombre del Profesor]
+- **Profesor**: [Lic. Matias Velasquez]
 - **Grupo**: Grupo N°3
 
 ## Integrantes del Equipo
