@@ -41,10 +41,12 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### Requisitos No Funcionales (RNF)
 *   **RNF1 - Usabilidad:** La interfaz debe ser intuitiva y permitir a los usuarios operar la agenda diaria en menos de tres interacciones, minimizando la necesidad de capacitación técnica extensa [8, 9].
-*   **RNF2 - Integridad por encapsulamiento:** La lógica de validación de turnos debe residir exclusivamente en la clase `Agenda`, asegurando que sea la única entidad con responsabilidad para manipular la colección de turnos [10, 11].
-*   **RNF3 - Restricción de infraestructura:** El modelo de dominio inicial debe limitar la atención a una única sala física de consulta para simplificar la gestión del MVP [12].
-*   **RNF4 - Escalabilidad:** El diseño arquitectónico debe permitir la futura incorporación de nuevos profesionales y múltiples consultorios sin requerir una reingeniería del núcleo del sistema [8].
-*   **RNF5 - Plazo de entrega (MVP):** Las funcionalidades críticas de gestión y prevención de conflictos deben estar validadas y operativas para principios de julio de 2026 [12].
+* **RNF2 - Usabilidad (Accesibilidad para Usuario no Técnico):** El sistema debe poseer una interfaz de usuario intuitiva y de baja carga cognitiva, permitiendo que el Dr. Molina y la secretaria realicen las operaciones de gestión de turnos en menos de tres interacciones. El diseño debe priorizar la claridad visual para eliminar la ambigüedad y el error humano derivado de los registros manuales [1, 2].
+
+*   **RNF3 - Auditabilidad y Trazabilidad (Integridad de la Información):** El sistema debe garantizar la integridad de los datos mediante un historial de cambios inalterable. Cada modificación en el estado o programación de un turno debe registrar de forma automática al usuario responsable y la marca temporal exacta, permitiendo resolver disputas administrativas sobre cambios o cancelaciones no notificadas [3, 4].
+
+*  **RNF4 - Integridad y Seguridad de Datos (Identificación Única):** El sistema debe asegurar la distinción inequívoca de los pacientes mediante un identificador único, evitando la mezcla de información o la asignación errónea de turnos entre pacientes con nombres idénticos (homónimos) [7, 8].
+* **RNF5 - Escalabilidad y Extensibilidad (Crecimiento del Dominio):** La arquitectura del sistema debe estar diseñada para permitir la incorporación futura de nuevos profesionales médicos, especialidades y salas de consulta sin requerir una reingeniería del núcleo de gestión de turnos [3, 9, 10]. El modelo debe ser capaz de soportar el crecimiento previsto del consultorio durante el primer año [11].
 
 
 
@@ -177,21 +179,6 @@ Se utilizó NotebookLM para analizar los requisitos del sistema.
 
 ---
 
-## Revisión del revisor - Diseño de Clases
-
-**Hallazgos**
-- El boceto identifica clases clave (Persona, Paciente, Medico, Turno) y herencia básica, alineado con principios de POO.
-- Faltan relaciones explícitas (flechas de herencia y asociaciones) en el diagrama, lo que dificulta la comprensión visual.
-- No se incluye la clase Agenda mencionada en RNF5, ni métodos para las clases.
-- Atributos son básicos pero suficientes para el MVP; Turno debería tener referencias a Paciente y Medico para integridad.
-
-**Sugerencias**
-- Actualizar el diagrama para mostrar herencia (Paciente/Medico → Persona) y asociaciones (Turno con Paciente y Medico).
-- Agregar clase Agenda con métodos para validar disponibilidad y gestionar turnos.
-- Incluir métodos esenciales en cada clase (ej. getters/setters, validar en Turno).
-- Considerar agregar clase Sala si se expande más allá del MVP.
-
-**Decisión del revisor humano**
 
 
 
