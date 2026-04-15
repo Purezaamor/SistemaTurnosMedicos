@@ -50,6 +50,9 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 *   **Coordinador:** 
     *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #]
 
+### Fixed
+- Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md. 
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30 - (Modelador de Casos de Uso)
 ---
 
 
