@@ -38,8 +38,9 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - Documentación completa del sistema en formato Markdown.
 *   **Analista (Ignacio Nervi):** 
     *   Finalización de la normalización de 5 RF y 5 RNF. [Issue #15]
-    *   Definición del alcance del MVP en `introduccion.md`. [PR #16]
+    *   Definición del alcance del MVP en `introduccion.md`. [PR #28]
     *   Investigación y cuaderno compartido en NotebookLM.
+        Corrección técnica de RNF 2, 3 y 5
       *   **Colaboración Técnica:** Asistencia al Documentador en la revisión asistida por IA del archivo `README.md`, aplicando pensamiento crítico sobre los hallazgos de Copilot para mejorar la carátula institucional y la descripción del proyecto. [PR #23 del Coordinador]
 *   **Modelador:** 
     *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
@@ -51,14 +52,5 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 
 ---
 
-## Revisión del revisor
 
-**Hallazgos**
-- El changelog está bien iniciado, pero mezcla detalles técnicos de branches y PR con el registro de cambios, lo que puede dificultar su mantenimiento.
-- La entrada indica un `.png` de diagrama que no se verifica en el diff actual.
-
-**Sugerencias**
-- Mantener el changelog enfocado en hitos, no en ramas o PRs, salvo que el proyecto adopte un formato formal de releases.
-- Corregir o validar la referencia a recursos gráficos (PNG/EXCALIDRAW) si efectivamente están presentes.
-- Considerar agregar fechas y una breve descripción de la versión en `Unreleased`.
 
