@@ -51,6 +51,7 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
     *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #]
 
 ---
-
+### Fixed
+- Se agregan templates de Pull Request (feature y release) (@Purezaamor)
 
 
