@@ -162,7 +162,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 Se utilizó NotebookLM para analizar los requisitos del sistema.
 
-🔗 [Acceder al NotebookLM] https://notebooklm.google.com/notebook/58bfbaaf-a9ca-48a9-b641-21619e4ec0d2
+🔗 [Acceder al NotebookLM](https://notebooklm.google.com/notebook/58bfbaaf-a9ca-48a9-b641-21619e4ec0d2)
 
 ---
 
