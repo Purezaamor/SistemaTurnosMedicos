@@ -10,24 +10,15 @@ Este paradigma permite desarrollar sistemas más organizados, reutilizables y f�
 
 ## Fundamentos de la Programación Orientada a Objetos
 
-### -Encapsulamiento
-Permite proteger los datos de un objeto.
+*   **Abstracción:** Consiste en identificar los aspectos esenciales de un objeto para el dominio del problema, descartando detalles irrelevantes.
+    *   *Ejemplo:* En lugar de usar datos técnicos sueltos para las horas, modelamos el concepto de **"Intervalo de Tiempo"** o **"Disponibilidad"**, que captura la semántica de los bloques horarios y los solapamientos [10, 11].
+*   **Encapsulamiento:** Es la ocultación de los datos internos de un objeto, exponiendo solo lo necesario a través de métodos públicos.
+    *   *Ejemplo:* La clase **`Agenda`** mantiene su lista de turnos como privada. Ninguna entidad externa puede modificarla directamente; toda acción debe pasar por el método `validarDisponibilidad()` para asegurar que no existan superposiciones [4, 12].
+*   **Herencia:** Permite que una clase derive de otra, heredando sus atributos y métodos.
+    *   *Ejemplo:* Tanto **`Paciente`** como **`Profesional`** pueden heredar de una clase base **`Persona`**, compartiendo atributos comunes como nombre, teléfono y email, pero manteniendo sus comportamientos específicos (como la capacidad del médico de autorizar sobreturnos) [5, 13].
+*   **Polimorfismo:** Es la capacidad de que un mismo método responda de formas distintas según el objeto que lo ejecute.
+    *   *Ejemplo:* El método **`enviarRecordatorio()`** se comporta de forma distinta si el objeto es de tipo **WhatsApp** (mensaje corto) o **Email** (correo formal). Asimismo, el método `getDuracion()` devolverá 15 minutos para un objeto de tipo **ConsultaControl** y 30 minutos para uno de tipo **ConsultaPrimeraVez** [14, 15].
 
-Ejemplo: Un paciente solo puede modificar sus datos mediante métodos.
-
-### -Abstracción
-Se enfoca en lo importante.
-
-Ejemplo: Un turno solo necesita fecha, hora y médico.
-
-### -Herencia
-Permite reutilizar código.
-
-Ejemplo:
-Persona → Paciente / Médico
-
-### -Polimorfismo
-Un mismo método puede tener diferentes comportamientos.
 
 ---
 
