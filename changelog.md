@@ -13,6 +13,16 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 - Se actualizó `README.md` con descripción del proyecto, objetivos y equipo.
 - Se actualizó `anexos/introduccion.md` con la documentación técnica del requisito.
 
+### Fixed
+- Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
+- Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
+- Actualización del body de la PR de release con estructura requerida (@Purezaamor)
+- Cierre de issues pendientes (#12, #15, #17) (@Purezaamor)
+- Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas (@Purezaamor)
+- Corrección del diagrama de clases para ajustarlo al dominio del consultorio (@Purezaamor)
+- Ajuste de relaciones entre clases del modelo de dominio (@Purezaamor)
+- Coordinación y consolidación del changelog final (@Purezaamor)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
