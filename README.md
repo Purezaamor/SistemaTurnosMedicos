@@ -11,10 +11,10 @@
 
 | Nombre Completo       | Matrícula | Usuario GitHub | Rol Asignado en esta Entrega |
 |-----------------------|-----------|----------------|------------------------------|
-| Ignacio Nervi         | [155475]  | @nachonervi-design| Analista de Requerimientos   |
-| [Kevin Ezequiel Sosa] | [154080]  | @keviineze       | Modelador de Casos de Uso    |
-| Alejo Guerricabeitia  | [155475   | @nachonervi-design   | Diseñador de Clases Iniciales|
-| [Ignacio Nervi]       | [156954]  | @Purezaamor      | Documentador y Coordinador   |
+| [Ignacio Nervi]          | [155475]  | @nachonervi-design| Analista de Requerimientos   |
+| [Kevin Ezequiel Sosa]    | [154080]  | @keviineze       | Modelador de Casos de Uso    |
+| [Lucas]                  | [?]  | @lucastol-dev    | Diseñador de Clases Iniciales|
+| [Alejo Guerricabeitia]   | [156954]  | @Purezaamor      | Documentador y Coordinador   |
 
 ## Introducción
 
