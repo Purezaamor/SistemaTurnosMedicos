@@ -46,11 +46,6 @@
 *   **Coordinador:** 
     *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #23]
 
-### Fixed
-- Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md. 
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30 - (Modelador de Casos de Uso)
----
-
 
 release/entrega-final-correcta
 
@@ -59,6 +54,10 @@ release/entrega-final-correcta
 - [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`.
 
 ### Fixed
+- Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md (@keviineze - Modelador de Casos de Uso). 
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30
+- Corregida los nombres de los actores en los Casos de Uso en introduccion.md (@keviineze - Modelador de Casos de Uso)
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/37
 - [fix/workflow-cleanup] Corrección del flujo de trabajo y revert de merges accidentales a master (@Purezaamor).
   PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
 - [fix/templates-init] Incorporación de plantillas obligatorias para Issues y Pull Requests (@Purezaamor).
