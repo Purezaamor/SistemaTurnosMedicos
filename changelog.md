@@ -5,6 +5,7 @@
 ### Changed
 ### Fixed
 
+
 ## [[GRUPO N°3][Actividad Obligatoria N°1] Entrega de la actividad] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/21 - 16/04/2026
 
 ### Added
@@ -16,6 +17,42 @@
   PR: [#18](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18) | Issue: [#9](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/9)
 - [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos.
   PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) | Issue: [#11](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/11)
+=======
+### Fixed
+- Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
+- Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
+- Actualización del body de la PR de release con estructura requerida (@Purezaamor)
+- Cierre de issues pendientes (#12, #15, #17) (@Purezaamor)
+- Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas (@Purezaamor)
+- Corrección del diagrama de clases para ajustarlo al dominio del consultorio (@Purezaamor)
+- Ajuste de relaciones entre clases del modelo de dominio (@Purezaamor)
+- Coordinación y consolidación del changelog final (@Purezaamor)
+
+---
+
+## [Release Actividad Obligatoria N°1] - 2026-03-25
+
+### Added
+* **Analista de Requerimientos (Ignacio Nervi):**
+    * Finalización de la normalización de 5 RF y 5 RNF. [[#15](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/15)]
+    * Definición del alcance del MVP en `introduccion.md`. [[#28](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/28)]
+    * Investigación técnica y creación de cuaderno compartido en **NotebookLM**. [4, 5]
+    * Corrección técnica de los requisitos no funcionales RNF 2, 3 y 5 en `introduccion.md`. [[#28](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/28)]
+*   **Modelador:** 
+    *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
+*   **Diseñador:** 
+    *   Creación del diagrama de clases inicial. [Issue #17] [PR #18]
+    *   **Recursos:** [Fuente .excalidraw](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw) y [Exportación .png](diagramas/01-diagrama-clases/01-boceto-inicial.png).
+*   **Coordinador:** 
+    *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #23]
+
+### Fixed
+- Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md. 
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30 - (Modelador de Casos de Uso)
+---
+
+
+release/entrega-final-correcta
 
 ### Changed
 - [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`.
