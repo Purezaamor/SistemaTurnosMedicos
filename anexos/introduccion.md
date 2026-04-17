@@ -56,7 +56,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 ### 📌 1. Registrar Turno Médico
 
-**▫️Actor(es) involucrado(s):** Secretaria Valeria / Paciente.
+**▫️Actor(es) involucrado(s):** Secretaria / Paciente.
 
 **▫️Descripción breve:** Permite reservar un espacio de atención para un paciente con un profesional específico.
 
@@ -75,7 +75,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 ### 📌 2. Reprogramar Turno Existente
 
-**▫️Actor(es) involucrado(s):** Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Secretaria.
 
 **▫️Descripción breve:** Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o paciente.
 
@@ -94,7 +94,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 ### 📌 3. Cancelar Turno
 
-**▫️Actor(es) involucrado(s):** Paciente / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Paciente / Secretaria.
 
 **▫️Descripción breve:** Anula una reserva de turno liberando el espacio en la agenda médica.
 
@@ -113,7 +113,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 ### 📌 4. Visualizar Agenda Médica (Día/Semana)
 
-**▫️Actor(es) involucrado(s):**  Médico (Dr. Molina) / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):**  Médico / Secretaria.
 
 **▫️Descripción breve:** Permite consultar la distribución de citas y espacios libres en diferentes vistas temporales.
 
@@ -132,7 +132,7 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 ### 📌 5. Administrar Disponibilidad del Profesional
 
-**▫️Actor(es) involucrado(s):** Médico / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Médico / Secretaria.
 
 **▫️Descripción breve:** Define los días y rangos horarios en los que el médico atiende, estableciendo la base para evitar conflictos.
 
