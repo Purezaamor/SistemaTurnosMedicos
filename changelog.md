@@ -53,3 +53,4 @@
 - Corregidos artefactos de merge y limpieza de estructura en changelog.md.
 - Corregido error de renderizado (tag duplicado) en el Diagrama de Clases de introduccion.md. (@keviineze)
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40
+- Corrección de templates de Pull Request según la consigna y adaptación al proyecto (@Purezaamor)
