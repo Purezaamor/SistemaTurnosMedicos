@@ -1,12 +1,8 @@
 # Changelog
 
 ## [Unreleased]
-### Added
-### Changed
-### Fixed
 
-
-## [[GRUPO N°3][Actividad Obligatoria N°1] Entrega de la actividad] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/21 - 16/04/2026
+## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
 - [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP; enlace a NotebookLM.
@@ -17,22 +13,6 @@
   PR: [#18](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18) | Issue: [#9](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/9)
 - [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos.
   PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) | Issue: [#11](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/11)
-=======
-### Fixed
-- Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
-- Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
-- Actualización del body de la PR de release con estructura requerida (@Purezaamor)
-- Cierre de issues pendientes (#12, #15, #17) (@Purezaamor)
-- Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas (@Purezaamor)
-- Corrección del diagrama de clases para ajustarlo al dominio del consultorio (@Purezaamor)
-- Ajuste de relaciones entre clases del modelo de dominio (@Purezaamor)
-- Coordinación y consolidación del changelog final (@Purezaamor)
-
----
-
-## [Release Actividad Obligatoria N°1] - 2026-03-25
-
-### Added
 * **Analista de Requerimientos (Ignacio Nervi):**
     * Finalización de la normalización de 5 RF y 5 RNF. [[#15](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/15)]
     * Definición del alcance del MVP en `introduccion.md`. [[#28](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/28)]
@@ -46,14 +26,19 @@
 *   **Coordinador:** 
     *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #23]
 
-
-release/entrega-final-correcta
-
 ### Changed
 - [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`.
 - [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`.
 
 ### Fixed
+- Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
+- Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
+- Actualización del body de la PR de release con estructura requerida (@Purezaamor)
+- Cierre de issues pendientes (#12, #15, #17) (@Purezaamor)
+- Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas (@Purezaamor)
+- Corrección del diagrama de clases para ajustarlo al dominio del consultorio (@Purezaamor)
+- Ajuste de relaciones entre clases del modelo de dominio (@Purezaamor)
+- Coordinación y consolidación del changelog final (@Purezaamor)
 - Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md (@keviineze - Modelador de Casos de Uso). 
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30
 - Corregida los nombres de los actores en los Casos de Uso en introduccion.md (@keviineze - Modelador de Casos de Uso)
@@ -64,4 +49,5 @@ release/entrega-final-correcta
   PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
 - [fix/changelog-cleanup] Resolución de conflictos de merge y limpieza de metadatos en el historial.
    PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
- * Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
+- Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
+- Corregidos artefactos de merge y limpieza de estructura en changelog.md.
