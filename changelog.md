@@ -49,5 +49,5 @@
   PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
 - [fix/changelog-cleanup] Resolución de conflictos de merge y limpieza de metadatos en el historial.
    PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
- * Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
+- Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
 - Corregidos artefactos de merge y limpieza de estructura en changelog.md.
