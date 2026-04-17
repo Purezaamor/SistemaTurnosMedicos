@@ -166,11 +166,6 @@ Se utilizó NotebookLM para analizar los requisitos del sistema.
 - **Turno**: Contiene `fecha`, `hora`, `estado`, y referencias a Paciente y Medico.
 
 ### Diagrama de Clases
-![Diagrama de Clases] ![Diagrama de Clases](./../../diagramas/01-diagrama-clases/01-boceto-inicial.png)
+![Diagrama de Clases](../diagramas/01-diagrama-clases/01-boceto-inicial.png)
 
 ---
-
-
-
-
-
