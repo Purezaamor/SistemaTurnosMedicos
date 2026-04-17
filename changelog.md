@@ -54,3 +54,5 @@
 - Corregido error de renderizado (tag duplicado) en el Diagrama de Clases de introduccion.md. (@keviineze)
   PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40
 - Corrección de templates de Pull Request según la consigna y adaptación al proyecto (@Purezaamor)
+- Recreado diagrama de clases en formato Excalidraw nativo y exportado PNG (@keviineze).
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41
