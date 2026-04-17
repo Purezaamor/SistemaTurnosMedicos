@@ -1,33 +1,23 @@
 # Changelog
 
-Todos los cambios importantes que se realicen en este proyecto quedarán documentados en este archivo.
-
----
-
 ## [Unreleased]
 ### Added
- feature/diseñador-de-clases-iniciales-correccion
-- [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8 - (Analista de Requerimientos)
-
-- [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
-
-- Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
-
-- [feature/diseñador-de-clases-iniciales-correccion] @lucastol-dev: Se corrige y reorganiza el diseño de clases iniciales, actualizando `01-boceto-inicial.excalidraw` y agregando `01-boceto-inicial.png`.
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18 - (Diseñador de Clases)
-
-- Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
-=======
-- Se agregó `anexos/introduccion.md` con análisis de requisitos y casos de uso.
-- Se agregó el diagrama de clases inicial en `diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw`.
- release/entrega-final-correcta
-
 ### Changed
-- Se actualizó `README.md` con descripción del proyecto, objetivos y equipo.
-- Se actualizó `anexos/introduccion.md` con la documentación técnica del requisito.
+### Fixed
 
+
+## [[GRUPO N°3][Actividad Obligatoria N°1] Entrega de la actividad] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/21 - 16/04/2026
+
+### Added
+- [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP; enlace a NotebookLM.
+  PR: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8) | Issue: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/6)
+- [feature/disenio-clases] Creación del diagrama de clases inicial en Excalidraw y exportación a PNG.
+  PR: [#7](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7) | Issue: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/8)
+- [feature/diseñador-de-clases-iniciales-correccion] Corrección de relaciones y atributos en el boceto de clases (@lucastol-dev).
+  PR: [#18](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18) | Issue: [#9](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/9)
+- [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos.
+  PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) | Issue: [#11](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/11)
+=======
 ### Fixed
 - Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
 - Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
@@ -62,4 +52,17 @@ Todos los cambios importantes que se realicen en este proyecto quedarán documen
 ---
 
 
+release/entrega-final-correcta
 
+### Changed
+- [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`.
+- [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`.
+
+### Fixed
+- [fix/workflow-cleanup] Corrección del flujo de trabajo y revert de merges accidentales a master (@Purezaamor).
+  PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
+- [fix/templates-init] Incorporación de plantillas obligatorias para Issues y Pull Requests (@Purezaamor).
+  PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
+- [fix/changelog-cleanup] Resolución de conflictos de merge y limpieza de metadatos en el historial.
+   PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
+ * Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
