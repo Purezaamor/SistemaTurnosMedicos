@@ -1,47 +1,37 @@
-## Release Final — Sistema de Turnos Médicos
+# 📦 [GRUPO N°2][Actividad Obligatoria N°1] Entrega Final - Release a master
 
 ---
 
-### Integrantes
+## 👥 Integrantes del Grupo
 
-| Nombre | Usuario | Rol |
-|--------|--------|-----|
-| Alejo | @Purezaamor | Coordinador |
-| Ignacio Nervi | @nachonervi-design | Analista |
-| Lucas | @lucastol-dev | Diseñador |
-| Kevin | @keviineze | Modelador |
-
----
-
-### Cambios incluidos
-
-- Análisis de requisitos funcionales y no funcionales
-- Definición de alcance del sistema (MVP)
-- Documentación de casos de uso
-- Diseño del diagrama de clases
-- Organización del repositorio
-- Incorporación de templates de PR
-- Correcciones según devoluciones del revisor
+| Nombre completo | Rol | Usuario |
+|-----------------|-----|--------|
+| Alejo | Coordinador | @Purezaamor |
+| Ignacio Nervi | Analista | @nachonervi-design |
+| Lucas | Diseñador | @lucastol-dev |
+| Kevin | Modelador | @keviineze |
 
 ---
 
-### Checklist
+## 📂 Entregables
 
-- [ ] Requisitos completos
-- [ ] Casos de uso definidos
-- [ ] Diagrama de clases correcto y alineado al dominio
-- [ ] Changelog actualizado
-- [ ] PRs de features integradas correctamente
-
----
-
-### Entrega
-
-- [ ] Subido a Campus
-- [ ] Compartido en Slack
+- Requisitos
+- Casos de uso
+- Diagrama de clases
+- Documentación
+- Changelog
 
 ---
 
-### Notas
+## 📋 Checklist
 
-Se realizaron correcciones sobre el uso de git, estructura de PRs, templates y coherencia del modelo de dominio según observaciones del revisor.
+- [x] Features mergeadas en develop
+- [x] Conflictos resueltos
+- [x] Changelog completo
+- [x] PR correcta hacia master
+
+---
+
+## 📌 Notas
+
+Se corrigió el uso de git y la estructura de PRs según la consigna.
