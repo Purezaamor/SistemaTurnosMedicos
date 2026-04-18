@@ -5,26 +5,18 @@
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
+
 - [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP; enlace a NotebookLM.
   PR: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8) | Issue: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/6)
+
 - [feature/disenio-clases] Creación del diagrama de clases inicial en Excalidraw y exportación a PNG.
   PR: [#7](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7) | Issue: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/8)
+
 - [feature/diseñador-de-clases-iniciales-correccion] Corrección de relaciones y atributos en el boceto de clases (@lucastol-dev).
   PR: [#18](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18) | Issue: [#9](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/9)
+
 - [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos.
   PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) | Issue: [#11](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/11)
-* **Analista de Requerimientos (Ignacio Nervi):**
-    * Finalización de la normalización de 5 RF y 5 RNF. [[#15](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/15)]
-    * Definición del alcance del MVP en `introduccion.md`. [[#28](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/28)]
-    * Investigación técnica y creación de cuaderno compartido en **NotebookLM**. [4, 5]
-    * Corrección técnica de los requisitos no funcionales RNF 2, 3 y 5 en `introduccion.md`. [[#28](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/28)]
-*   **Modelador:** 
-    *   Documentación de 5 casos de uso completos en `introduccion.md`. [Issue #4] [PR #11]
-*   **Diseñador:** 
-    *   Creación del diagrama de clases inicial. [Issue #17] [PR #18]
-    *   **Recursos:** [Fuente .excalidraw](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw) y [Exportación .png](diagramas/01-diagrama-clases/01-boceto-inicial.png).
-*   **Coordinador:** 
-    *   Estructura de repositorio y revisiones con IA. [Issue #12] [PR #23]
 
 ### Changed
 - [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`.
