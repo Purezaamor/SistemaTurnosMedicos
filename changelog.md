@@ -23,28 +23,29 @@
 - [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`.
 
 ### Fixed
-- Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub (@Purezaamor)
-- Incorporación de templates de Pull Request para ramas feature y release (@Purezaamor)
-- Actualización del body de la PR de release con estructura requerida (@Purezaamor)
-- Cierre de issues pendientes (#12, #15, #17) (@Purezaamor)
-- Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas (@Purezaamor)
-- Corrección del diagrama de clases para ajustarlo al dominio del consultorio (@Purezaamor)
-- Ajuste de relaciones entre clases del modelo de dominio (@Purezaamor)
-- Coordinación y consolidación del changelog final (@Purezaamor)
-- Corregida sintaxis de enlace de NotebookLM grupal en introduccion.md (@keviineze - Modelador de Casos de Uso). 
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30
-- Corregida los nombres de los actores en los Casos de Uso en introduccion.md (@keviineze - Modelador de Casos de Uso)
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/37
-- [fix/workflow-cleanup] Corrección del flujo de trabajo y revert de merges accidentales a master (@Purezaamor).
-  PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
-- [fix/templates-init] Incorporación de plantillas obligatorias para Issues y Pull Requests (@Purezaamor).
-  PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
-- [fix/changelog-cleanup] Resolución de conflictos de merge y limpieza de metadatos en el historial.
-   PR: [#35] [https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35]
-- Corrección de la ruta de visualización del diagrama de clases en `introduccion.md`, cambiando el puntero de `.excalidraw` a `.png` para permitir el renderizado en GitHub. [[PR #36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36)]
-- Corregidos artefactos de merge y limpieza de estructura en changelog.md.
-- Corregido error de renderizado (tag duplicado) en el Diagrama de Clases de introduccion.md. (@keviineze)
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40
-- Corrección de templates de Pull Request según la consigna y adaptación al proyecto (@Purezaamor)
-- Recreado diagrama de clases en formato Excalidraw nativo y exportado PNG (@keviineze).
-  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41
+
+- [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/pr-templates] Incorporación de templates de Pull Request para ramas feature y release. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/release-body] Actualización del body de la PR de release con estructura requerida. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/issues-cierre] Cierre de issues pendientes (#12, #15, #17). PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/reviews-ia] Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/diagrama-clases] Corrección del diagrama de clases para ajustarlo al dominio del consultorio. PR: [#41](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41) @keviineze (Modelador)
+
+- [fix/relaciones-clases] Ajuste de relaciones entre clases del modelo de dominio. PR: [#41](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41) @keviineze (Modelador)
+
+- [fix/changelog] Coordinación y consolidación del changelog final. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/notebooklm-link] Corrección de sintaxis del enlace de NotebookLM en introduccion.md. PR: [#30](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30) @keviineze (Modelador)
+
+- [fix/actores-cu] Corrección de nombres de actores en casos de uso en introduccion.md. PR: [#37](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/37) @keviineze (Modelador)
+
+- [fix/diagrama-render] Corrección de la ruta de visualización del diagrama de clases (.excalidraw → .png). PR: [#36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36) @Purezaamor (Coordinador)
+
+- [fix/merge-artifacts] Limpieza de artefactos de merge en changelog.md. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
+
+- [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) @keviineze (Modelador)
