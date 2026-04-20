@@ -1,4 +1,4 @@
-# 📦 [GRUPO N°2][Actividad Obligatoria N°1] Entrega Final - Release a master
+# 📦 [GRUPO N°3][Actividad Obligatoria N°1] Entrega Final - Release a master
 
 ---
 
