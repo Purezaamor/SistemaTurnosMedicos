@@ -4,17 +4,17 @@
 - **Universidad**: UCES (Universidad de Ciencias Empresariales y Sociales)
 - **Carrera**: Tec. en Programación de Sistemas
 - **Materia**: Diseño Orientado a Objetos
-- **Profesor**: [Nombre del Profesor]
+- **Profesor**: [Lic. Matias Velasquez]
 - **Grupo**: Grupo N°3
 
 ## Integrantes del Equipo
 
 | Nombre Completo       | Matrícula | Usuario GitHub | Rol Asignado en esta Entrega |
 |-----------------------|-----------|----------------|------------------------------|
-| Ignacio Nervi         | [155475]  | @nachonervi-design| Analista de Requerimientos   |
-| [Nombre 2]            | [Matrícula] | @usuario2      | Modelador de Casos de Uso    |
-| Alejo Guerricabeitia  | [Matrícula] | @Purezaamor    | Diseñador de Clases Iniciales|
-| [Nombre 4]            | [Matrícula] | @usuario4      | Documentador y Coordinador   |
+| [Ignacio Nervi]          | [155475]  | @nachonervi-design| Analista de Requerimientos   |
+| [Kevin Ezequiel Sosa]    | [154080]  | @keviineze       | Modelador de Casos de Uso    |
+| [Lucas]                  | [?]  | @lucastol-dev    | Diseñador de Clases Iniciales|
+| [Alejo Guerricabeitia]   | [156954]  | @Purezaamor      | Documentador y Coordinador   |
 
 ## Introducción
 
