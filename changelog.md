@@ -49,3 +49,9 @@
 - [fix/merge-artifacts] Limpieza de artefactos de merge en changelog.md. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
 - [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) @keviineze (Modelador)
+
+- [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Corrección del número de grupo en template de release. No siguió el flujo fix/ → PR. No repetir.  
+  Commit: [7e4ac42](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/7e4ac42ca776f1e9a98d7c224b7703fc1cc3bba1) — @nachonervi-design (Analista de Requerimientos)
+
+- [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
+  Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
