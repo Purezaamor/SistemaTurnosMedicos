@@ -10,7 +10,6 @@ Coordinar la integración de entregables, revisar PRs, asegurar cumplimiento de 
 Feature: Modelado de Diagramas de Casos de Uso - Actividad 2
 
 ### Archivos de contexto usados
-### Archivos de contexto usados
 - `anexos/introduccion.md`
 - `diagramas/02-casos-de-uso/`
 - `diagramas/diagramasUML.md`
@@ -73,7 +72,42 @@ Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #XX)
 Request Changes
 
 ## Code Review 3
-[repetir]
+
+### PR revisada
+Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #XX)
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- changelog.md
+- README.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Leé anexos/introduccion.md y revisá esta Pull Request verificando si cumple con los requisitos del rol Especialista en Escenarios de Casos de Uso en la Actividad Obligatoria N°2. Validá estructura de carpetas, archivos individuales, completitud de campos obligatorios, coherencia con el sistema, documentación de IA y actualización del changelog."
+
+### Observaciones detectadas
+- Los escenarios fueron documentados dentro de `introduccion.md` en lugar de la estructura requerida.
+- No existe la carpeta `diagramas/03-escenarios-casos-de-uso/`.
+- No se crearon archivos individuales por escenario.
+- No existe el archivo `diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md`.
+- No existe el archivo `ia/a2/especialista-escenarios.md`.
+- No se actualizó `changelog.md`.
+- Faltan campos obligatorios en cada escenario: ID, área, evento activador, tipo de señal, suposiciones, requerimientos, aspectos sobresalientes, prioridad y riesgo.
+- No se creó una Issue asociada a la PR.
+- La descripción de la PR es incompleta.
+
+### Ajustes solicitados
+- Crear la carpeta `diagramas/03-escenarios-casos-de-uso/`.
+- Separar los escenarios en archivos individuales con naming correcto.
+- Crear el índice `escenarios_de_casos_de_uso.md`.
+- Completar todos los campos obligatorios de cada escenario.
+- Crear `ia/a2/especialista-escenarios.md`.
+- Actualizar `changelog.md`.
+- Crear una Issue asociada y vincularla a la PR.
+- Completar la descripción de la PR detallando el trabajo realizado.
+- Remover los escenarios de `introduccion.md` para evitar duplicación.
+
+### Veredicto
+Request Changes
 
 ## Code Review 4
 [repetir]
