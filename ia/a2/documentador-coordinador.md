@@ -7,7 +7,7 @@ Coordinar la integración de entregables, revisar PRs, asegurar cumplimiento de 
 
 ## Code Review 1
 ### PR revisada
-[link o nombre de la PR]
+Feature: Modelado de Diagramas de Casos de Uso - Actividad 2
 
 ### Archivos de contexto usados
 - anexos/introduccion.md
@@ -18,10 +18,17 @@ Coordinar la integración de entregables, revisar PRs, asegurar cumplimiento de 
 Le pedí a Copilot Agent Mode que lea anexos/introduccion.md y revise la PR verificando cumplimiento de requisitos, estructura de archivos, coherencia funcional y naming.
 
 ### Observaciones detectadas
-- [Completar]
+- Documentación de IA incompleta
+- Falta de actores en UC02
+
 
 ### Ajustes solicitados
-- [Completar]
+- Completar sección de ajustes realizados
+- Corregir actores en UC02
+
+
+### Veredicto
+Request Changes
 
 ---
 
