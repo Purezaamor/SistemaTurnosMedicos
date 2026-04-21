@@ -110,7 +110,24 @@ Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #XX)
 Request Changes
 
 ## Code Review 4
-[repetir]
+
+### PR revisada
+Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
+
+### Prompt utilizado en Copilot Agent Mode
+"Leé anexos/introduccion.md y analizá la Pull Request verificando la coherencia de los diagramas de casos de uso con el sistema de turnos médicos. Validá actores, relaciones <<include>> y <<extend>>, sintaxis PlantUML, consistencia entre diagramas y cumplimiento de los requisitos del rol Modelador de Diagramas de Casos de Uso en la Actividad Obligatoria N°2."
+
+
+### Observaciones detectadas
+- Error de sintaxis UML en Caso 2 (uso de "--" en lugar de "-->")
+- Necesidad de regenerar PNG correspondiente
+
+### Ajustes solicitados
+- Corregir sintaxis en archivo .puml
+- Regenerar imagen .png
+
+### Veredicto
+Request Changes
 
 ---
 
