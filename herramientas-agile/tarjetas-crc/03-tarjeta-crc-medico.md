@@ -1,23 +1,10 @@
-# Tarjeta CRC
-
-## Nombre de la clase
-Medico
-
-## Superclase / Subclase
-Subclase de Persona
-
-## Pensamiento del objeto
-Representa al profesional que atiende a los pacientes.
-
-## Responsabilidades
-- Gestionar agenda
-- Definir disponibilidad
-- Autorizar sobreturnos
-
-## Colaboradores
-- Turno
-- Paciente
-- Agenda
-
-## Propiedades
-- especialidad
+|  |  |  |  |
+|---|---|---|---|
+| **Nombre de la Clase:** | Medico | | |
+| **Superclase:** | Persona | | |
+| **Subclase:** | | | |
+| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
+| Atender pacientes | Paciente | Gestiono mi agenda | especialidad |
+| Definir disponibilidad | Agenda | Organizo mis horarios | |
+| Autorizar sobreturnos | Turno | Puedo aceptar más turnos | |
+| | | | |

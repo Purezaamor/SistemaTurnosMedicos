@@ -1,22 +1,10 @@
-# Tarjeta CRC
-
-## Nombre de la clase
-Agenda
-
-## Superclase / Subclase
-Clase independiente
-
-## Pensamiento del objeto
-Gestiona los turnos y la disponibilidad del médico.
-
-## Responsabilidades
-- Administrar turnos
-- Validar disponibilidad
-- Evitar superposición
-
-## Colaboradores
-- Turno
-- Medico
-
-## Propiedades
-- listaTurnos
+|  |  |  |  |
+|---|---|---|---|
+| **Nombre de la Clase:** | Agenda | | |
+| **Superclase:** | | | |
+| **Subclase:** | | | |
+| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
+| Gestionar turnos | Turno | Controlo la agenda | listaTurnos |
+| Validar disponibilidad | Medico | Evito conflictos | |
+| Mostrar agenda | Paciente | Organizo horarios | |
+| | | | |

@@ -1,23 +1,10 @@
-# Tarjeta CRC
-
-## Nombre de la clase
-Paciente
-
-## Superclase / Subclase
-Subclase de Persona
-
-## Pensamiento del objeto
-Representa al paciente que interactúa con el sistema para gestionar turnos.
-
-## Responsabilidades
-- Solicitar turno
-- Cancelar turno
-- Consultar turnos
-
-## Colaboradores
-- Turno
-- Medico
-
-## Propiedades
-- dni
-- obraSocial
+|  |  |  |  |
+|---|---|---|---|
+| **Nombre de la Clase:** | Paciente | | |
+| **Superclase:** | Persona | | |
+| **Subclase:** | | | |
+| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
+| Solicitar turno | Turno | Quiero reservar un turno | dni |
+| Cancelar turno | Medico | Puedo cancelar mis turnos | obraSocial |
+| Consultar turnos | Agenda | Veo mis turnos | |
+| | | | |
