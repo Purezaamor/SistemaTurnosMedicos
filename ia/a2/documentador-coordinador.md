@@ -35,7 +35,42 @@ Request Changes
 ---
 
 ## Code Review 2
-[repetir]
+
+### PR revisada
+Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #XX)
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw
+- changelog.md
+- README.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Leé anexos/introduccion.md y el diagrama de clases inicial, y revisá esta Pull Request verificando si cumple con los requisitos del rol Diseñador de Tarjetas CRC en la Actividad Obligatoria N°2. Validá estructura de carpetas, archivos individuales, completitud de las tarjetas CRC, coherencia con el dominio del sistema, documentación de IA y actualización del changelog."
+
+### Observaciones detectadas
+- Las tarjetas CRC fueron documentadas dentro de `introduccion.md` en lugar de la estructura requerida.
+- No existe la carpeta `herramientas-agile/tarjetas-crc/`.
+- No se crearon archivos individuales por clase.
+- No existe el archivo `herramientas-agile/herramientas_agile.md`.
+- No existe el archivo `ia/a2/disenador-tarjetas-crc.md`.
+- No se actualizó `changelog.md`.
+- Faltan campos obligatorios en las tarjetas CRC (pensamiento del objeto y superclase/subclase).
+- No se creó una Issue asociada a la PR.
+- La descripción de la PR es incompleta.
+
+### Ajustes solicitados
+- Crear la carpeta `herramientas-agile/tarjetas-crc/`.
+- Separar las tarjetas CRC en archivos individuales con naming correcto.
+- Crear y actualizar `herramientas-agile/herramientas_agile.md`.
+- Completar todos los campos obligatorios de cada tarjeta CRC.
+- Crear `ia/a2/disenador-tarjetas-crc.md` documentando el uso de IA.
+- Actualizar `changelog.md`.
+- Crear una Issue asociada y vincularla a la PR.
+- Completar la descripción de la PR detallando el trabajo realizado.
+
+### Veredicto
+Request Changes
 
 ## Code Review 3
 [repetir]
