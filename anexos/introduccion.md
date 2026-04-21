@@ -8,46 +8,47 @@ Este paradigma permite desarrollar sistemas más organizados, reutilizables y f�
 
 ---
 
-## Fundamentos de la Programacion Orientada a Objetos
+## Fundamentos de la Programación Orientada a Objetos
 
-### -Encapsulamiento
-Permite proteger los datos de un objeto.
+*   **Abstracción:** Consiste en identificar los aspectos esenciales de un objeto para el dominio del problema, descartando detalles irrelevantes.
+    *   *Ejemplo:* En lugar de usar datos técnicos sueltos para las horas, modelamos el concepto de **"Intervalo de Tiempo"** o **"Disponibilidad"**, que captura la semántica de los bloques horarios y los solapamientos [10, 11].
+*   **Encapsulamiento:** Es la ocultación de los datos internos de un objeto, exponiendo solo lo necesario a través de métodos públicos.
+    *   *Ejemplo:* La clase **`Agenda`** mantiene su lista de turnos como privada. Ninguna entidad externa puede modificarla directamente; toda acción debe pasar por el método `validarDisponibilidad()` para asegurar que no existan superposiciones [4, 12].
+*   **Herencia:** Permite que una clase derive de otra, heredando sus atributos y métodos.
+    *   *Ejemplo:* Tanto **`Paciente`** como **`Profesional`** pueden heredar de una clase base **`Persona`**, compartiendo atributos comunes como nombre, teléfono y email, pero manteniendo sus comportamientos específicos (como la capacidad del médico de autorizar sobreturnos) [5, 13].
+*   **Polimorfismo:** Es la capacidad de que un mismo método responda de formas distintas según el objeto que lo ejecute.
+    *   *Ejemplo:* El método **`enviarRecordatorio()`** se comporta de forma distinta si el objeto es de tipo **WhatsApp** (mensaje corto) o **Email** (correo formal). Asimismo, el método `getDuracion()` devolverá 15 minutos para un objeto de tipo **ConsultaControl** y 30 minutos para uno de tipo **ConsultaPrimeraVez** [14, 15].
 
-Ejemplo: Un paciente solo puede modificar sus datos mediante métodos.
-
-### -Abstracción
-Se enfoca en lo importante.
-
-Ejemplo: Un turno solo necesita fecha, hora y médico.
-
-### -Herencia
-Permite reutilizar código.
-
-Ejemplo:
-Persona → Paciente / Médico
-
-### -Polimorfismo
-Un mismo método puede tener diferentes comportamientos.
 
 ---
 
 ## Requisitos del sistema
 
-### Requisitos Funcionales
+*   **RF1 - Ciclo de vida del turno:** El sistema debe permitir el alta, reprogramación y cancelación de turnos vinculados a un profesional y un paciente específico, gestionando los estados: Programado, Presente, Atendido, Cancelado y Ausente [5, 6].
+*   **RF2 - Validación de disponibilidad:** El sistema debe impedir automáticamente la superposición horaria para un mismo profesional, permitiendo únicamente la carga manual de hasta dos (2) sobreturnos autorizados.
+*   **RF3 - Gestión de agenda médica:** El sistema debe permitir configurar bloqueos horarios por compromisos fijos o licencias, y proveer la apertura manual de bloques para horarios de atención variables.
+*   **RF4 - Registro de arribo (Check-in):** El sistema debe capturar la hora real de llegada del paciente para calcular desviaciones respecto al horario planificado y permitir la visualización de la sala de espera en tiempo real.
+*   **RF5 - Auditoría de cambios:** El sistema debe registrar de forma automática e inalterable el historial de cada modificación (usuario, fecha/hora y valor modificado) para garantizar la trazabilidad del proceso [7].
 
--RF1: Registrar pacientes  
--RF2: Registrar médicos  
--RF3: Solicitar turnos  
--RF4: Cancelar turnos  
--RF5: Visualizar agenda  
+### Requisitos No Funcionales (RNF)
+*   **RNF1 - Usabilidad:** La interfaz debe ser intuitiva y permitir a los usuarios operar la agenda diaria en menos de tres interacciones, minimizando la necesidad de capacitación técnica extensa [8, 9].
+* **RNF2 - Usabilidad (Accesibilidad para Usuario no Técnico):** El sistema debe poseer una interfaz de usuario intuitiva y de baja carga cognitiva, permitiendo que el Dr. Molina y la secretaria realicen las operaciones de gestión de turnos en menos de tres interacciones. El diseño debe priorizar la claridad visual para eliminar la ambigüedad y el error humano derivado de los registros manuales [1, 2].
 
-### Requisitos No Funcionales
+*   **RNF3 - Auditabilidad y Trazabilidad (Integridad de la Información):** El sistema debe garantizar la integridad de los datos mediante un historial de cambios inalterable. Cada modificación en el estado o programación de un turno debe registrar de forma automática al usuario responsable y la marca temporal exacta, permitiendo resolver disputas administrativas sobre cambios o cancelaciones no notificadas [3, 4].
 
--RNF1: Interfaz simple  
--RNF2: Seguridad de datos  
--RNF3: Disponibilidad  
--RNF4: Rapidez del sistema  
--RNF5: Escalabilidad  
+*  **RNF4 - Integridad y Seguridad de Datos (Identificación Única):** El sistema debe asegurar la distinción inequívoca de los pacientes mediante un identificador único, evitando la mezcla de información o la asignación errónea de turnos entre pacientes con nombres idénticos (homónimos) [7, 8].
+* **RNF5 - Escalabilidad y Extensibilidad (Crecimiento del Dominio):** La arquitectura del sistema debe estar diseñada para permitir la incorporación futura de nuevos profesionales médicos, especialidades y salas de consulta sin requerir una reingeniería del núcleo de gestión de turnos [3, 9, 10]. El modelo debe ser capaz de soportar el crecimiento previsto del consultorio durante el primer año [11].
+
+
+
+
+---
+
+## Alcance del MVP
+
+Esta entrega inicial se enfoca en resolver la problemática crítica de la **gestión de agenda y prevención de conflictos horarios**. 
+* **Incluido:** Gestión integral de turnos (alta, baja, modificación), validación automática de disponibilidad, registro de check-in de pacientes y administración manual de sobreturnos.
+* **Restricción MVP:** Se operará bajo la limitación de una única sala física de consulta y un único profesional médico para simplificar el modelo de dominio inicial [3, 5].
 
 ---
 
@@ -55,7 +56,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### 📌 1. Registrar Turno Médico
 
-**▫️Actor(es) involucrado(s):** Secretaria Valeria / Paciente.
+**▫️Actor(es) involucrado(s):** Secretaria / Paciente.
 
 **▫️Descripción breve:** Permite reservar un espacio de atención para un paciente con un profesional específico.
 
@@ -74,7 +75,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### 📌 2. Reprogramar Turno Existente
 
-**▫️Actor(es) involucrado(s):** Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Secretaria.
 
 **▫️Descripción breve:** Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o paciente.
 
@@ -93,7 +94,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### 📌 3. Cancelar Turno
 
-**▫️Actor(es) involucrado(s):** Paciente / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Paciente / Secretaria.
 
 **▫️Descripción breve:** Anula una reserva de turno liberando el espacio en la agenda médica.
 
@@ -112,7 +113,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### 📌 4. Visualizar Agenda Médica (Día/Semana)
 
-**▫️Actor(es) involucrado(s):**  Médico (Dr. Molina) / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):**  Médico / Secretaria.
 
 **▫️Descripción breve:** Permite consultar la distribución de citas y espacios libres en diferentes vistas temporales.
 
@@ -131,7 +132,7 @@ Un mismo método puede tener diferentes comportamientos.
 
 ### 📌 5. Administrar Disponibilidad del Profesional
 
-**▫️Actor(es) involucrado(s):** Médico / Secretaria Valeria.
+**▫️Actor(es) involucrado(s):** Médico / Secretaria.
 
 **▫️Descripción breve:** Define los días y rangos horarios en los que el médico atiende, estableciendo la base para evitar conflictos.
 
@@ -152,4 +153,19 @@ Un mismo método puede tener diferentes comportamientos.
 
 Se utilizó NotebookLM para analizar los requisitos del sistema.
 
-🔗 [Acceder al NotebookLM](https://notebooklm.google.com/notebook/273191bd-0f6f-400f-ba99-9b9bd4cfc947)
+🔗 [Acceder al NotebookLM](https://notebooklm.google.com/notebook/58bfbaaf-a9ca-48a9-b641-21619e4ec0d2)
+
+---
+
+## Diseño de Clases Iniciales
+
+### Clases Identificadas
+- **Persona**: Clase base con atributos `nombre` y `telefono`.
+- **Paciente**: Hereda de Persona, agrega `dni` y `obraSocial`.
+- **Medico**: Hereda de Persona, agrega `especialidad`.
+- **Turno**: Contiene `fecha`, `hora`, `estado`, y referencias a Paciente y Medico.
+
+### Diagrama de Clases
+![Diagrama de Clases](../diagramas/01-diagrama-clases/01-boceto-inicial.png)
+
+---
