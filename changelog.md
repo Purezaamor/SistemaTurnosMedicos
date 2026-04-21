@@ -7,7 +7,7 @@
 ### Added
 
 - [feature/modelador-diag-casos-uso] Creación de diagramas de casos de uso en PlantUML (.puml y .png).
-  PR: [#XX] | Issue: [#XX]
+  PR: [#20] | Issue: [#19]
 
 - [feature/diseniador-tarjetas-crc] Creación de tarjetas CRC para las clases del sistema.
   PR: [#XX] | Issue: [#XX]
@@ -16,7 +16,7 @@
   PR: [#XX] | Issue: [#XX]
 
 - [feature/doc-coord-repo] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
-  PR: [#XX] | Issue: [#XX]
+  PR: [#49] | Issue: [#48]
 
 ### Changed
 
