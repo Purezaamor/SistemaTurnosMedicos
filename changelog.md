@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
@@ -55,3 +56,34 @@
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
+=======
+### Added
+- [feature/analista-requerimientos] Se agregan los requisitos funcionales y no funcionales del sistema de turnos médicos en `introduccion.md`.
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8 - (Analista de Requerimientos)
+
+- [feature/disenio-clases] Se agrega el diseño inicial de clases (Persona, Paciente, Medico, Turno).
+  PR: https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7 - (Diseñador de Clases)
+
+- [feature/modelador-casos-uso-update-use-case-1] Definición de los 5 casos de uso del sistema.
+  PR: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/6) - @keviineze (Modelador de Casos de Uso)
+
+- Se incorpora el diagrama de clases en formato `.png` y `.excalidraw` dentro de la carpeta `diagramas/01-diagrama-clases/`.
+
+- Se integra la vista previa del diagrama en `introduccion.md` con enlace al archivo original.
+
+- [feature/modelador-diag-casos-uso-update-use-case-1] Modelado de Diagramas de Casos de Uso y Documentación de IA, Actividad 2.
+  PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) - @keviineze (Modelador de Diagramas de Casos de Uso).
+
+### Changed
+- Se actualiza el archivo `introduccion.md` incluyendo la sección de diseño de clases y su explicación.
+- [team/roles] Se registra cambio de rol: el integrante Nicolas Sebastian Saidman (Analista de Requerimiento) causó baja del equipo. El rol de Analista de Requerimiento es asumido por @Purezaamor (Alejo Guerricabeitia).
+
+---
+
+## [Release Actividad Obligatoria N°1] - 2026-03-25
+
+### Added
+- Análisis de requisitos funcionales y no funcionales del sistema.
+- Diseño inicial de clases con atributos, métodos y relaciones.
+- Documentación completa del sistema en formato Markdown.
+>>>>>>> 84ee070b8820a932b933261bea0060d15b420bc0
