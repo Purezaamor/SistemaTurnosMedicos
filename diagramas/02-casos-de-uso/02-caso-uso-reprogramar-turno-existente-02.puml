@@ -11,7 +11,13 @@ rectangle "Sistema de Turnos Medico" {
     usecase "Registrar en Historial" as UC4
 }
 
-Secretaria --> UC1
+actor "Medico" as Medico
+actor "Paciente" as Paciente
+
+Secretaria -- UC1
+
+UC1 -- Medico
+UC1 -- Paciente
 
 UC1 ..> UC2 : <<include>>
 UC1 ..> UC3 : <<include>>
