@@ -1,25 +1,100 @@
-# Sistema de Turnos Médicos-Diseño Orientado a Objetos
--  Materia: Diseño Orientado a Objetos
--  Carrera: Tec. en Programación de Sistemas
--  Grupo: Grupo N°2
+# Sistema de Turnos Médicos - Diseño Orientado a Objetos
+
+## Datos Institucionales
+- **Universidad**: UCES (Universidad de Ciencias Empresariales y Sociales)
+- **Carrera**: Tec. en Programación de Sistemas
+- **Materia**: Diseño Orientado a Objetos
+- **Profesor**: Lic. Matias Velasquez
+- **Grupo**: Grupo N°3
+
+---
+
+## Integrantes del Equipo
+
+| Nombre Completo       | Matrícula | Usuario GitHub        | Rol Asignado en esta Entrega |
+|-----------------------|-----------|------------------------|------------------------------|
+| Ignacio Nervi          | 155475    | @nachonervi-design     | Documentador y Coordinador   |
+| Kevin Ezequiel Sosa    | 154080    | @keviineze             | Modelador de Casos de Uso    |
+| Alejo Guerricabeltia   | 156954    | @purezaamor          | Diseñador de Tarjetas CRC    |
+| Alejo Guerricabeitia   | 156954    | @Purezaamor            | Especialista en Escenarios   |
+
+---
 
 ## Introducción
-Este proyecto tiene como objetivo diseñar un sistema orientado a objetos para la gestión de turnos médicos en un consultorio.Se aplican conceptos de programación orientada a objetos y trabajo colaborativo con GitHub.
 
-| Nombre completo      | Rol asignado en esta entrega  | Usuario GitHub |
-|----------------------|-------------------------------|----------------|
-| Alejo Guerricabeitia | Analista de Requerimientos    | @Purezaamor    |
-| Nombre 2             | Modelador de Casos de Uso     | @usuario2      |
-| Alejo Guerricabeitia | Diseñador de Clases Iniciales | @Purezaamor    |
-| Nombre 4             | Documentador y Coordinador    | @usuario4      |
+El **Sistema de Gestión de Turnos Médicos** es una aplicación orientada a objetos diseñada para optimizar la administración de citas en un consultorio médico. Este sistema permite a los pacientes solicitar y gestionar sus turnos de manera eficiente, facilita a los profesionales médicos la organización de sus agendas y proporciona herramientas al personal administrativo para coordinar las operaciones diarias.
 
-## Objetivos 
+El desarrollo del proyecto se llevó a cabo en dos etapas:
 
--Identificar requisitos funcionales y no funcionales
+- **Actividad Obligatoria N°1**: Análisis de requerimientos, identificación de actores, definición de casos de uso y diseño inicial de clases.
+- **Actividad Obligatoria N°2**: Refinamiento del diseño mediante modelado orientado a objetos utilizando tarjetas CRC, diagramas de casos de uso en PlantUML y escenarios de casos de uso.
 
--Definir casos de uso
+---
 
--Crear un boceto inicial de clases
+## Objetivos
 
-## Diagramas y Diseños
--[Anexos](./anexos/introduccion.md)
+### Actividad Obligatoria N°1
+- Identificar y documentar los requisitos funcionales y no funcionales.
+- Definir los casos de uso principales.
+- Crear el boceto inicial del diagrama de clases.
+
+### Actividad Obligatoria N°2
+- Refinar el diseño orientado a objetos.
+- Modelar tarjetas CRC para las clases principales.
+- Desarrollar diagramas de casos de uso con PlantUML.
+- Definir escenarios de casos de uso detallados.
+
+---
+
+## Estructura del Proyecto
+
+### 📊 Diagramas
+- Diagrama de clases (Actividad 1)
+- Diagramas de casos de uso (Actividad 2)
+- Escenarios de casos de uso
+
+### 🧩 Herramientas Agile
+- Tarjetas CRC
+
+### 🤖 IA
+- Documentación del uso de Copilot Agent Mode (`ia/a2/`)
+
+---
+
+## Índices de Navegación
+
+- [Anexos](./anexos/anexos.md)
+- [Diagramas UML](./diagramas/diagramasUML.md)
+- [Casos de Uso](./diagramas/02-casos-de-uso/diagramas_de_casos_de_uso.md)
+- [Escenarios](./diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md)
+- [Herramientas Agile](./herramientas-agile/herramientas_agile.md)
+
+---
+
+## Flujo de Trabajo
+
+- `feature/*` → desarrollo individual por rol
+- `fix/*` → correcciones de la Actividad 1
+- `develop` → integración de features
+- `release/actividad-obligatoria-2` → versión final
+- `master` → entrega final aprobada
+
+---
+
+## Uso de Inteligencia Artificial
+
+Cada integrante documenta en la carpeta `ia/a2/`:
+- Prompt utilizado
+- Archivos de contexto referenciados
+- Ajustes realizados al output de la IA
+
+---
+
+## Observaciones Finales
+
+El proyecto se desarrolló utilizando GitHub como herramienta colaborativa, aplicando buenas prácticas como:
+- Uso de ramas
+- Pull Requests
+- Code Reviews
+- Control de versiones
+
