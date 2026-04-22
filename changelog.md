@@ -11,10 +11,10 @@ feature/doc-coord-repo-update-readme-md-a2
   PR: [#20] | Issue: [#19]
 
 - [feature/diseniador-tarjetas-crc] Creación de tarjetas CRC para las clases del sistema.
-  PR: [#XX] | Issue: [#XX]
+  PR: [#51] | Issue: [#53]
 
 - [feature/especialista-escenarios] Definición de escenarios de casos de uso.
-  PR: [#XX] | Issue: [#XX]
+  PR: [#50] | Issue: [#54]
 
 - [feature/doc-coord-repo] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
   PR: [#49] | Issue: [#48]
