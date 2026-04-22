@@ -5,6 +5,10 @@
 feature/doc-coord-repo-update-readme-md-a2
 ## [Actividad Obligatoria N°2]
 
+### Notes
+
+- [contingencia-equipo] Debido a la baja cantidad de integrantes disponibles en el equipo, Alejo Guerricabeitia asumió dos roles en la Actividad Obligatoria N°2: Diseñador de Tarjetas CRC y Especialista en Escenarios.
+
 ### Added
 
 - [feature/modelador-diag-casos-uso] Creación de diagramas de casos de uso en PlantUML (.puml y .png).
@@ -16,12 +20,12 @@ feature/doc-coord-repo-update-readme-md-a2
 - [feature/especialista-escenarios] Definición de escenarios de casos de uso.
   PR: [#50] | Issue: [#54]
 
-- [feature/doc-coord-repo] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
+- [feature/doc-coord-repo-readme-md-a2] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
   PR: [#49] | Issue: [#48]
 
 ### Changed
 
-- [feature/doc-coord-repo] Actualización del README.md integrando Actividad Obligatoria N°2.
+- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] | Issue: [#48]
 
 ### Fixed
 
