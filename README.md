@@ -12,13 +12,14 @@ feature/doc-coord-repo-update-readme-md-a2
 
 ## Integrantes del Equipo
 
-| Nombre Completo       | Matrícula | Usuario GitHub        | Rol Asignado en esta Entrega |
-|-----------------------|-----------|------------------------|------------------------------|
-| Ignacio Nervi          | 155475    | @nachonervi-design     | Documentador y Coordinador   |
-| Kevin Ezequiel Sosa    | 154080    | @keviineze             | Modelador de Casos de Uso    |
-| Alejo Guerricabeltia   | 156954    | @purezaamor          | Diseñador de Tarjetas CRC    |
-| Alejo Guerricabeitia   | 156954    | @Purezaamor            | Especialista en Escenarios   |
+> Nota: Debido a contingencias del equipo, Alejo Guerricabeitia asumió dos roles en la Actividad Obligatoria N°2. Esta situación también se documenta en `changelog.md`.
 
+| Nombre Completo       | Matrícula | Usuario GitHub    | Rol Asignado en esta Entrega |
+|-----------------------|-----------|-------------------|------------------------------|
+| Ignacio Nervi         | 155475    | @nachonervi-design| Documentador y Coordinador   |
+| Kevin Ezequiel Sosa   | 154080    | @keviineze        | Modelador de Casos de Uso    |
+| Alejo Guerricabeitia  | 156954    | @Purezaamor       | Diseñador de Tarjetas CRC    |
+| Alejo Guerricabeitia  | 156954    | @Purezaamor       | Especialista en Escenarios   |
 ---
 
 ## Introducción

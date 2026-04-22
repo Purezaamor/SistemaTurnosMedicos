@@ -7,7 +7,7 @@ Coordinar la integración de entregables, revisar PRs, asegurar cumplimiento de 
 
 ## Code Review 1
 ### PR revisada
-Feature: Modelado de Diagramas de Casos de Uso - Actividad 2
+Feature: Modelado de Diagramas de Casos de Uso - Actividad 2 (PR #20)
 
 ### Archivos de contexto usados
 - `anexos/introduccion.md`
@@ -36,7 +36,7 @@ Request Changes
 ## Code Review 2
 
 ### PR revisada
-Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #XX)
+Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #51)
 
 ### Archivos de contexto usados
 - anexos/introduccion.md
@@ -74,7 +74,7 @@ Request Changes
 ## Code Review 3
 
 ### PR revisada
-Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #XX)
+Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #50)
 
 ### Archivos de contexto usados
 - anexos/introduccion.md
@@ -129,6 +129,30 @@ Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
 ### Veredicto
 Request Changes
 
+## Code Review 5
+
+### PR revisada
+feature/doc-coord-repo-update-readme-md-a2 (rama propia)
+
+### Archivos de contexto usados
+- README.md
+- changelog.md
+- ia/a2/documentador-coordinador.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Revisá la consistencia entre README, changelog y documentador-coordinador.md verificando coherencia, trazabilidad y cumplimiento del rol Documentador y Coordinador en la Actividad 2."
+
+### Observaciones detectadas
+- Se verificó que un integrante asumió dos roles por contingencia del equipo.
+- Se agregó aclaración en README.md y registro en changelog.md para justificar la duplicación de filas en la tabla de integrantes.
+
+### Ajustes realizados
+- Se documentó la contingencia del equipo en README.md.
+- Se agregó registro en changelog.md.
+- Se corrigieron inconsistencias detectadas en la estructura.
+
+### Veredicto
+Ajustado y listo para integración
 ---
 
 ## Tareas de coordinación realizadas
