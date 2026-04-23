@@ -2,7 +2,6 @@
 
 ## [Unreleased]
 
-feature/doc-coord-repo-update-readme-md-a2
 ## [Actividad Obligatoria N°2]
 
 ### Notes
@@ -12,20 +11,20 @@ feature/doc-coord-repo-update-readme-md-a2
 ### Added
 
 - [feature/modelador-diag-casos-uso] Creación de diagramas de casos de uso en PlantUML (.puml y .png).
-  PR: [#20] | Issue: [#19]
+  PR: [#20] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20 | Issue: [#19] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/19
 
 - [feature/diseniador-tarjetas-crc] Creación de tarjetas CRC para las clases del sistema.
-  PR: [#51] | Issue: [#53]
+  PR: [#51] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51 | Issue: [#53] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/54
 
 - [feature/especialista-escenarios] Definición de escenarios de casos de uso.
-  PR: [#50] | Issue: [#54]
+  PR: [#50] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50 | Issue: [#54] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/53
 
 - [feature/doc-coord-repo-readme-md-a2] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
-  PR: [#49] | Issue: [#48]
+  PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
 
 ### Changed
 
-- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] | Issue: [#48]
+- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
 
 - [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
@@ -39,7 +38,7 @@ feature/doc-coord-repo-update-readme-md-a2
   PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 - [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-=======
+
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
@@ -120,7 +119,7 @@ feature/doc-coord-repo-update-readme-md-a2
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
-=======
+
 develop
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  

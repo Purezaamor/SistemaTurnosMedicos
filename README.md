@@ -101,7 +101,7 @@ El proyecto se desarrolló utilizando GitHub como herramienta colaborativa, apli
 - Code Reviews
 - Control de versiones
 
-=======
+
 
 ## Datos Institucionales
 - **Universidad**: UCES (Universidad de Ciencias Empresariales y Sociales)
