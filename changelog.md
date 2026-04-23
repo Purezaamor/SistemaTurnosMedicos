@@ -39,6 +39,18 @@
 - [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 
+## [Release Actividad Obligatoria N°2] - 2026-04-17
+
+### Added
+
+- [feature/modelador-diag-casos-uso-update-use-case-1] Modelado de Diagramas de Casos de Uso y Documentación de IA, junto con las carpetas requeridas, Actividad 2. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) - @keviineze (Modelador de Diagramas de Casos de Uso)
+
+
+### Changed
+
+- [feature/modelador-diag-casos-uso-update-use-case-1] Corrección del Diagrama de Casos de Uso 2 "Reprogramar Turno Existente" y breve agregado de explicacion sobre "Ajustes Realizados" en ia\a2\modelador-diagramas-casos-uso.md 
+
+
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
@@ -117,7 +129,6 @@ feature/doc-coord-repo-update-readme-md-a2
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
 
-develop
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
