@@ -232,6 +232,67 @@ feature/a2-tarjetas-crc
 ### Veredicto
 Approve
 
+## Code Review 8
+
+### PR revisada
+feature/escenarios-cu
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- changelog.md
+- diagramas/
+- ia/a2/
+
+### Prompt utilizado en Copilot Agent Mode
+"Analizá la PR como revisión de seguimiento después de Request Changes previos. Validá si se creó la estructura de escenarios, si existen los archivos individuales, el índice, la documentación de IA y la completitud de los campos obligatorios."
+
+### Observaciones detectadas
+- No existe la carpeta `diagramas/03-escenarios-casos-de-uso/`.
+- No existen archivos individuales de escenarios.
+- No existe `escenarios_de_casos_de_uso.md`.
+- No existe `ia/a2/especialista-escenarios.md`.
+- No se implementaron los campos obligatorios requeridos para cada escenario.
+- El changelog refleja referencias parciales, pero no hay entregable implementado en esta rama.
+
+### Ajustes solicitados
+- Crear la estructura completa de escenarios.
+- Documentar al menos 5 escenarios en archivos individuales.
+- Crear el índice correspondiente.
+- Crear la documentación de IA.
+- Completar todos los campos obligatorios.
+- Verificar coherencia entre changelog y PR.
+
+### Veredicto
+Request Changes
+
+## Code Review 8
+
+### PR revisada
+feature/escenarios-cu (PR #50)
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- diagramas/03-escenarios-casos-de-uso/
+- diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md
+- ia/a2/especialista-escenarios.md
+- changelog.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Analizá la PR como revisión final después de Request Changes previos, validando estructura, completitud y coherencia."
+
+### Observaciones detectadas
+- Se creó la estructura completa de escenarios.
+- Los escenarios se encuentran en archivos individuales.
+- Se incorporó el índice correspondiente.
+- Se documentó el uso de IA.
+- Se completaron los campos obligatorios.
+
+### Ajustes solicitados
+- Ninguno
+
+### Veredicto
+Approve
+
 ---
 
 ## Code Review Final
