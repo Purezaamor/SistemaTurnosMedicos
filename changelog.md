@@ -64,7 +64,7 @@ develop
 
 - [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
-feature/doc-coord-repo-update-readme-md-a2
+
 ### Added
 
 - [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP; enlace a NotebookLM.
@@ -87,7 +87,6 @@ feature/doc-coord-repo-update-readme-md-a2
 
 - [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
-=======
 develop
 - [fix/pr-templates] Incorporación de templates de Pull Request para ramas feature y release. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 

@@ -133,7 +133,7 @@ feature/doc-coord-repo-update-readme-md-a2
 ### Observaciones detectadas
 - Se verificó en `README.md` que el integrante Alejo Guerricabeitia figura en dos filas debido a la asignación de dos roles (Diseñador de Tarjetas CRC y Especialista en Escenarios), lo cual responde a una contingencia del equipo.
 - Se detectaron enlaces en `README.md` hacia archivos aún no integrados en la rama (por ejemplo: `diagramas/diagramasUML.md` y `herramientas-agile/herramientas_agile.md`).
-- Se identificaron placeholders sin resolver en `ia/a2/documentador-coordinador.md` (referencias a PR como `#XX`).
+- Se identificaron placeholders sin resolver en `ia/a2/documentador-coordinador.md`, que luego fueron reemplazados por los números reales de PR.
 
 ### Ajustes realizados
 - Se documentó la contingencia del equipo en `README.md` y `changelog.md`.
@@ -141,7 +141,7 @@ feature/doc-coord-repo-update-readme-md-a2
 - Se reemplazaron los placeholders `#XX` por los números reales de PR.
 
 ### Veredicto
-Approve
+Approve - rama lista para integración
 
 ---
 
