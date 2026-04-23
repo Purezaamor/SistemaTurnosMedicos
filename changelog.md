@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [Release Actividad Obligatoria N°2] - 2026-04-17
+
+### Added
+
+- [feature/modelador-diag-casos-uso-update-use-case-1] Modelado de Diagramas de Casos de Uso y Documentación de IA, junto con las carpetas requeridas, Actividad 2. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) - @keviineze (Modelador de Diagramas de Casos de Uso)
+
+
+### Changed
+
+- [feature/modelador-diag-casos-uso-update-use-case-1] Corrección del Diagrama de Casos de Uso 2 "Reprogramar Turno Existente" y breve agregado de explicacion sobre "Ajustes Realizados" en ia\a2\modelador-diagramas-casos-uso.md 
+
+
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
