@@ -172,6 +172,37 @@ Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
 ### Veredicto
 Approve
 
+## Code Review 7
+
+### PR revisada
+feature/a2-tarjetas-crc
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw
+- herramientas-agile/tarjetas-crc/
+- ia/a2/disenador-tarjetas-crc.md
+- changelog.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Analizá la PR como segunda revisión después de Request Changes previo. Validá estructura de carpetas, completitud de tarjetas CRC, existencia del índice de herramientas ágiles, documentación de IA y coherencia con el dominio del sistema."
+
+### Observaciones detectadas
+- Se creó la carpeta `herramientas-agile/tarjetas-crc/` y las tarjetas fueron separadas en archivos individuales.
+- Las 5 tarjetas CRC incluyen los campos obligatorios.
+- Existe `ia/a2/disenador-tarjetas-crc.md` con prompt, contexto y ajustes.
+- Sigue faltando `herramientas-agile/herramientas_agile.md`.
+- Se recomienda revisar la tarjeta `Turno` para explicitar referencias a paciente y médico.
+- Se recomienda revisar la representación de auditoría/historial en el diseño CRC.
+
+### Ajustes solicitados
+- Crear `herramientas-agile/herramientas_agile.md`.
+- Ajustar la tarjeta `Turno` para explicitar referencias del dominio.
+- Revisar cómo se modela la responsabilidad de auditoría/historial.
+
+### Veredicto
+Request Changes
+
 ---
 
 ## Code Review Final

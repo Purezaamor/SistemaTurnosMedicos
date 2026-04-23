@@ -39,6 +39,9 @@
 - [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 
+  - [fix/review/pr-51] Segunda revisión de PR de tarjetas CRC: se verifican avances en estructura y documentación, pero se mantienen Request Changes por falta de `herramientas_agile.md` y ajustes pendientes de coherencia de dominio.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
