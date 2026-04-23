@@ -1,5 +1,5 @@
 # Sistema de Turnos Médicos - Diseño Orientado a Objetos
-feature/doc-coord-repo-update-readme-md-a2
+
 
 ## Datos Institucionales
 - **Universidad**: UCES (Universidad de Ciencias Empresariales y Sociales)
@@ -66,12 +66,13 @@ El desarrollo del proyecto se llevó a cabo en dos etapas:
 ## Índices de Navegación
 
 - [Anexos](./anexos/anexos.md)
+
+<!--
 - [Diagramas UML](./diagramas/diagramasUML.md)
 - [Casos de Uso](./diagramas/02-casos-de-uso/diagramas_de_casos_de_uso.md)
 - [Escenarios](./diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md)
 - [Herramientas Agile](./herramientas-agile/herramientas_agile.md)
-
----
+-->
 
 ## Flujo de Trabajo
 
