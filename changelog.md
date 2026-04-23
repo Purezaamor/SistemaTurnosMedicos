@@ -2,42 +2,47 @@
 
 ## [Unreleased]
 
+---
+
 ## [Actividad Obligatoria N°2]
+
+### Added
+
+- Incorporación de documentación del rol Documentador y Coordinador en `ia/a2/documentador-coordinador.md`.
+- Inclusión de revisiones técnicas de Pull Requests utilizando IA.
+- Registro de contingencia del equipo (un integrante asume dos roles).
+
+### Changed
+
+#### Reviews
+
+- [review/pr-20] Request Changes en PR de diagramas de casos de uso por validación de sintaxis UML y consistencia de render.
+  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
+  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-51] Request Changes en PR de tarjetas CRC por falta de estructura de carpetas, archivos individuales, índice y documentación de IA.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-51] Segunda revisión de PR de tarjetas CRC: se mantienen Request Changes por falta de `herramientas_agile.md` y ajustes de coherencia de dominio.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-51] Aprobación de PR de tarjetas CRC tras validación de estructura, coherencia de dominio y cobertura de auditoría mediante la incorporación de `HistorialCambios`.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-50] Request Changes en PR de escenarios de casos de uso por ausencia de estructura, archivos individuales, índice y documentación de IA.
+  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-50] Revisión de seguimiento de PR de escenarios de casos de uso: se mantienen Request Changes por falta de implementación completa del entregable.
+  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+- [review/pr-50] Aprobación de PR de escenarios de casos de uso tras validación de estructura, completitud y documentación.
+  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 
 ### Notes
 
 - [contingencia-equipo] Debido a la baja cantidad de integrantes disponibles en el equipo, Alejo Guerricabeitia asumió dos roles en la Actividad Obligatoria N°2: Diseñador de Tarjetas CRC y Especialista en Escenarios.
-
-### Added
-
-- [feature/modelador-diag-casos-uso] Creación de diagramas de casos de uso en PlantUML (.puml y .png).
-  PR: [#20] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20 | Issue: [#19] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/19
-
-- [feature/diseniador-tarjetas-crc] Creación de tarjetas CRC para las clases del sistema.
-  PR: [#51] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51 | Issue: [#53] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/54
-
-- [feature/especialista-escenarios] Definición de escenarios de casos de uso.
-  PR: [#50] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50 | Issue: [#54] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/53
-
-- [feature/doc-coord-repo-readme-md-a2] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
-  PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
-
-### Changed
-
-- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
-
-- [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-### Fixed
-
-- [fix/review-pr-20] Solicitud de corrección en documentación de IA y modelado de actores en UC02.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-- [fix/review/pr-50] Solicitud de cambios en PR de escenarios de casos de uso por falta de estructura requerida, campos obligatorios incompletos, ausencia de documentación de IA.
-  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-  - [fix/review/pr-51] Solicitud de cambios en PR de tarjetas CRC por incumplimiento de estructura requerida, falta de documentación de IA, ausencia de actualización de changelog y descripción de PR incompleta.
-  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-- [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
