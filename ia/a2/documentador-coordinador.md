@@ -1,32 +1,30 @@
-# Documentador y Coordinador de Repositorio - Actividad Obligatoria N°2
+# Documentador y Coordinador - Actividad Obligatoria N°2
 
-## Objetivo del rol
-Coordinar la integración de entregables, revisar PRs, asegurar cumplimiento de estructura, naming, changelog y documentación asociada.
+## Descripción del Rol
+
+El rol de **Documentador y Coordinador** tiene como objetivo garantizar la correcta organización del repositorio, la documentación del trabajo realizado por cada integrante y la trazabilidad de las decisiones mediante el uso de GitHub.
 
 ---
 
 ## Code Review 1
+
 ### PR revisada
-Feature: Modelado de Diagramas de Casos de Uso - Actividad 2 (PR #20)
+Feature: Modelador de Casos de Uso - Actividad 2
 
 ### Archivos de contexto usados
-- `anexos/introduccion.md`
-- `diagramas/02-casos-de-uso/`
-- `diagramas/diagramasUML.md`
-- `changelog.md`
+- anexos/introduccion.md
+- README.md
 
-### Prompt utilizado
-Le pedí a Copilot Agent Mode que lea `anexos/introduccion.md` y revise la PR verificando cumplimiento de los requisitos del rol Modelador de Diagramas de Casos de Uso, validando actores, relaciones, coherencia con el sistema, estructura de archivos, índices, changelog y documentación del uso de IA.
+### Prompt utilizado en Copilot Agent Mode
+"Leé anexos/introduccion.md y revisá la Pull Request verificando si los casos de uso cumplen con los requisitos funcionales definidos en la Actividad 1."
 
 ### Observaciones detectadas
-- Documentación de IA incompleta
-- Falta de actores en UC02
-
+- La documentación del uso de IA no estaba completa (faltaba incluir prompt y contexto).
+- En el caso de uso UC02 no se encontraban correctamente definidos los actores secundarios.
 
 ### Ajustes solicitados
-- Completar sección de ajustes realizados
-- Corregir actores en UC02
-
+- Completar documentación de IA.
+- Corregir la definición de actores en UC02.
 
 ### Veredicto
 Request Changes
@@ -40,36 +38,27 @@ Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #51)
 
 ### Archivos de contexto usados
 - anexos/introduccion.md
-- diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw
 - changelog.md
-- README.md
 
 ### Prompt utilizado en Copilot Agent Mode
-"Leé anexos/introduccion.md y el diagrama de clases inicial, y revisá esta Pull Request verificando si cumple con los requisitos del rol Diseñador de Tarjetas CRC en la Actividad Obligatoria N°2. Validá estructura de carpetas, archivos individuales, completitud de las tarjetas CRC, coherencia con el dominio del sistema, documentación de IA y actualización del changelog."
+"Revisá las tarjetas CRC verificando estructura, responsabilidades, colaboradores y cumplimiento de la consigna."
 
 ### Observaciones detectadas
-- Las tarjetas CRC fueron documentadas dentro de `introduccion.md` en lugar de la estructura requerida.
-- No existe la carpeta `herramientas-agile/tarjetas-crc/`.
-- No se crearon archivos individuales por clase.
-- No existe el archivo `herramientas-agile/herramientas_agile.md`.
-- No existe el archivo `ia/a2/disenador-tarjetas-crc.md`.
-- No se actualizó `changelog.md`.
-- Faltan campos obligatorios en las tarjetas CRC (pensamiento del objeto y superclase/subclase).
-- No se creó una Issue asociada a la PR.
-- La descripción de la PR es incompleta.
+- Las tarjetas CRC estaban embebidas en introduccion.md.
+- No existía la estructura de carpetas requerida.
+- No se documentó el uso de IA.
+- No se actualizó el changelog.
 
 ### Ajustes solicitados
-- Crear la carpeta `herramientas-agile/tarjetas-crc/`.
-- Separar las tarjetas CRC en archivos individuales con naming correcto.
-- Crear y actualizar `herramientas-agile/herramientas_agile.md`.
-- Completar todos los campos obligatorios de cada tarjeta CRC.
-- Crear `ia/a2/disenador-tarjetas-crc.md` documentando el uso de IA.
-- Actualizar `changelog.md`.
-- Crear una Issue asociada y vincularla a la PR.
-- Completar la descripción de la PR detallando el trabajo realizado.
+- Crear carpeta `herramientas-agile/tarjetas-crc/`.
+- Separar tarjetas en archivos individuales.
+- Documentar IA.
+- Actualizar changelog.
 
 ### Veredicto
 Request Changes
+
+---
 
 ## Code Review 3
 
@@ -79,60 +68,59 @@ Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #50)
 ### Archivos de contexto usados
 - anexos/introduccion.md
 - changelog.md
-- README.md
 
 ### Prompt utilizado en Copilot Agent Mode
-"Leé anexos/introduccion.md y revisá esta Pull Request verificando si cumple con los requisitos del rol Especialista en Escenarios de Casos de Uso en la Actividad Obligatoria N°2. Validá estructura de carpetas, archivos individuales, completitud de campos obligatorios, coherencia con el sistema, documentación de IA y actualización del changelog."
+"Validá los escenarios de casos de uso verificando estructura, completitud y coherencia con el sistema."
 
 ### Observaciones detectadas
-- Los escenarios fueron documentados dentro de `introduccion.md` en lugar de la estructura requerida.
-- No existe la carpeta `diagramas/03-escenarios-casos-de-uso/`.
-- No se crearon archivos individuales por escenario.
-- No existe el archivo `diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md`.
-- No existe el archivo `ia/a2/especialista-escenarios.md`.
-- No se actualizó `changelog.md`.
-- Faltan campos obligatorios en cada escenario: ID, área, evento activador, tipo de señal, suposiciones, requerimientos, aspectos sobresalientes, prioridad y riesgo.
-- No se creó una Issue asociada a la PR.
-- La descripción de la PR es incompleta.
+- Los escenarios estaban dentro de introduccion.md.
+- No existían archivos individuales.
+- Faltaban múltiples campos obligatorios.
+- No se documentó el uso de IA.
+- No se actualizó el changelog.
 
 ### Ajustes solicitados
-- Crear la carpeta `diagramas/03-escenarios-casos-de-uso/`.
-- Separar los escenarios en archivos individuales con naming correcto.
-- Crear el índice `escenarios_de_casos_de_uso.md`.
-- Completar todos los campos obligatorios de cada escenario.
-- Crear `ia/a2/especialista-escenarios.md`.
-- Actualizar `changelog.md`.
-- Crear una Issue asociada y vincularla a la PR.
-- Completar la descripción de la PR detallando el trabajo realizado.
-- Remover los escenarios de `introduccion.md` para evitar duplicación.
+- Crear carpeta de escenarios.
+- Separar escenarios en archivos.
+- Completar todos los campos requeridos.
+- Documentar IA.
+- Actualizar changelog.
 
 ### Veredicto
 Request Changes
+
+---
 
 ## Code Review 4
 
 ### PR revisada
-Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
+Feature: Modelador de Diagramas de Casos de Uso - Actividad 2 (PR #20)
+
+### Archivos de contexto usados
+- anexos/introduccion.md
+- diagramas/02-casos-de-uso/
 
 ### Prompt utilizado en Copilot Agent Mode
-"Leé anexos/introduccion.md y analizá la Pull Request verificando la coherencia de los diagramas de casos de uso con el sistema de turnos médicos. Validá actores, relaciones <<include>> y <<extend>>, sintaxis PlantUML, consistencia entre diagramas y cumplimiento de los requisitos del rol Modelador de Diagramas de Casos de Uso en la Actividad Obligatoria N°2."
-
+"Revisá los diagramas de casos de uso validando coherencia, actores y sintaxis UML."
 
 ### Observaciones detectadas
-- Error de sintaxis UML en Caso 2 (uso de "--" en lugar de "-->")
-- Necesidad de regenerar PNG correspondiente
+- En el archivo `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-existente-02.puml` se identificó el uso de asociaciones entre actores y casos de uso que requerían validación de sintaxis UML.
+- Se solicitó verificar que el diagrama renderice correctamente y que la imagen `.png` correspondiente refleje fielmente el contenido del archivo `.puml`.
 
 ### Ajustes solicitados
-- Corregir sintaxis en archivo .puml
-- Regenerar imagen .png
+- Revisar y corregir, si corresponde, las asociaciones entre actores y casos de uso en `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-existente-02.puml`, asegurando el uso consistente de la notación UML (líneas `--` o flechas `-->` según el criterio adoptado en el resto de los diagramas).
+- Regenerar el archivo `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-existente-02.png` a partir del `.puml` actualizado.
+- Verificar que el `.png` coincida exactamente con el contenido del `.puml` (sin diferencias de render ni elementos desactualizados).
 
 ### Veredicto
 Request Changes
 
-## Code Review 5
+---
+
+## Code Review 5 (Auto-review)
 
 ### PR revisada
-feature/doc-coord-repo-update-readme-md-a2 (rama propia)
+feature/doc-coord-repo-update-readme-md-a2
 
 ### Archivos de contexto usados
 - README.md
@@ -140,31 +128,73 @@ feature/doc-coord-repo-update-readme-md-a2 (rama propia)
 - ia/a2/documentador-coordinador.md
 
 ### Prompt utilizado en Copilot Agent Mode
-"Revisá la consistencia entre README, changelog y documentador-coordinador.md verificando coherencia, trazabilidad y cumplimiento del rol Documentador y Coordinador en la Actividad 2."
+"Revisá la coherencia entre README, changelog y documentación del rol Documentador y Coordinador."
 
 ### Observaciones detectadas
-- Se verificó que un integrante asumió dos roles por contingencia del equipo.
-- Se agregó aclaración en README.md y registro en changelog.md para justificar la duplicación de filas en la tabla de integrantes.
+- Se verificó en `README.md` que el integrante Alejo Guerricabeitia figura en dos filas debido a la asignación de dos roles (Diseñador de Tarjetas CRC y Especialista en Escenarios), lo cual responde a una contingencia del equipo.
+- Se detectaron enlaces en `README.md` hacia archivos aún no integrados en la rama (por ejemplo: `diagramas/diagramasUML.md` y `herramientas-agile/herramientas_agile.md`).
+- Se identificaron placeholders sin resolver en `ia/a2/documentador-coordinador.md` (referencias a PR como `#XX`).
 
 ### Ajustes realizados
-- Se documentó la contingencia del equipo en README.md.
-- Se agregó registro en changelog.md.
-- Se corrigieron inconsistencias detectadas en la estructura.
+- Se documentó la contingencia del equipo en `README.md` y `changelog.md`.
+- Se comentaron los enlaces a archivos no existentes para evitar errores de navegación.
+- Se reemplazaron los placeholders `#XX` por los números reales de PR.
 
 ### Veredicto
-Ajustado y listo para integración
+Approve
+
+---
 
 ## Code Review 6
 
 ### PR revisada
 Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
 
+### Archivos de contexto usados
+- diagramas/02-casos-de-uso/
+- changelog.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Revisá la PR después de correcciones verificando si ya está lista para aprobar."
+
 ### Observaciones detectadas
-- No se detectan errores bloqueantes en el modelado ni en la estructura.
-- Los diagramas cumplen con los requisitos del rol.
+- Se verificó la existencia de 5 diagramas de casos de uso en formato `.puml` y sus respectivas imágenes `.png`.
+- Los actores definidos (Paciente, Médico, Secretaría) son consistentes con los casos de uso del sistema.
+- Las relaciones `<<include>>` y `<<extend>>` se aplican correctamente según los flujos principales y alternativos.
+- La sintaxis PlantUML es válida y los diagramas renderizan sin errores.
+- Los archivos se encuentran correctamente ubicados en `diagramas/02-casos-de-uso/` y referenciados en los índices.
+- Existe documentación de IA en `ia/a2/modelador-diagramas-casos-uso.md` con prompt, contexto y ajustes realizados.
+- El `changelog.md` incluye la contribución correspondiente a la PR.
 
 ### Ajustes solicitados
-- Ninguno (solo sugerencia de mejora en formato de vínculo con Issue).
+- Ninguno
+
+### Veredicto
+Approve
+
+---
+
+## Code Review Final
+
+### PR revisada
+feature/doc-coord-repo-update-readme-md-a2
+
+### Archivos de contexto usados
+- README.md
+- changelog.md
+- ia/a2/documentador-coordinador.md
+
+### Prompt utilizado en Copilot Agent Mode
+"Revisá la coherencia general del proyecto desde el rol Documentador y Coordinador."
+
+### Observaciones detectadas
+- Se corrigieron inconsistencias en README.
+- Se documentaron correctamente las revisiones.
+- Se validó coherencia entre changelog y PRs.
+
+### Ajustes realizados
+- Ajustes finales en documentación.
+- Validación de trazabilidad.
 
 ### Veredicto
 Approve
