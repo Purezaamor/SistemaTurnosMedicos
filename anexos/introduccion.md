@@ -290,6 +290,95 @@ Permite definir los horarios disponibles del profesional.
 **Postcondiciones:**  
 - La agenda queda actualizada  
 
+-   ---
+---
+
+# 👤 Rol: Diseñador de Tarjetas CRC
+
+## 🧾 Diseño de Tarjetas CRC
+
+Las tarjetas CRC (Class-Responsibility-Collaborator) permiten definir las responsabilidades de cada clase del sistema y sus interacciones dentro del dominio del consultorio médico.
+
+---
+
+### 🟢 Tarjeta CRC — Persona
+
+**Responsabilidades:**  
+- Mantener información básica (nombre, teléfono, email)  
+
+**Colaboradores:**  
+- Paciente  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Paciente
+
+**Responsabilidades:**  
+- Solicitar turno  
+- Cancelar turno  
+- Consultar turnos  
+
+**Colaboradores:**  
+- Turno  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Medico
+
+**Responsabilidades:**  
+- Gestionar su agenda  
+- Definir disponibilidad  
+- Autorizar sobreturnos  
+
+**Colaboradores:**  
+- Turno  
+- Paciente  
+- Agenda  
+
+---
+
+### 🟢 Tarjeta CRC — Turno
+
+**Responsabilidades:**  
+- Registrar turno  
+- Validar estado del turno  
+- Permitir cancelación y reprogramación  
+- Almacenar fecha, hora y estado  
+
+**Colaboradores:**  
+- Paciente  
+- Medico  
+- Agenda  
+
+---
+
+### 🟢 Tarjeta CRC — Agenda
+
+**Responsabilidades:**  
+- Gestionar lista de turnos  
+- Validar disponibilidad  
+- Evitar superposición de horarios  
+
+**Colaboradores:**  
+- Turno  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Consultorio
+
+**Responsabilidades:**  
+- Gestionar profesionales  
+- Administrar disponibilidad general  
+- Coordinar agenda del sistema  
+
+**Colaboradores:**  
+- Medico  
+- Agenda  
+
+
 ---
 
 ## Notebook de análisis
