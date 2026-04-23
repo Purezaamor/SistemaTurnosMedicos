@@ -24,10 +24,14 @@
 
 ### Changed
 
-- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
+- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] | Issue: [#48]
 
 - [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
+  - [review/pr-51] Aprobación de PR de tarjetas CRC tras validación final de estructura y coherencia de dominio.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+
 ### Fixed
 
 - [fix/review-pr-20] Solicitud de corrección en documentación de IA y modelado de actores en UC02.
@@ -42,6 +46,8 @@
   - [fix/review/pr-51] Segunda revisión de PR de tarjetas CRC: se verifican avances en estructura y documentación, pero se mantienen Request Changes por falta de `herramientas_agile.md` y ajustes pendientes de coherencia de dominio.
   PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 
+- [fix/review/pr-51] Aprobación de PR de tarjetas CRC tras validación de estructura, coherencia de dominio y cobertura de auditoría mediante la incorporación de `HistorialCambios`.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
 ### Added
