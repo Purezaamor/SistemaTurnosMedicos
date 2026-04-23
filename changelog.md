@@ -27,6 +27,8 @@ feature/doc-coord-repo-update-readme-md-a2
 
 - [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] | Issue: [#48]
 
+- [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
+  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 ### Fixed
 
 - [fix/review-pr-20] Solicitud de corrección en documentación de IA y modelado de actores en UC02.

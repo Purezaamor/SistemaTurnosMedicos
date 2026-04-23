@@ -153,6 +153,21 @@ feature/doc-coord-repo-update-readme-md-a2 (rama propia)
 
 ### Veredicto
 Ajustado y listo para integración
+
+## Code Review 6
+
+### PR revisada
+Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
+
+### Observaciones detectadas
+- No se detectan errores bloqueantes en el modelado ni en la estructura.
+- Los diagramas cumplen con los requisitos del rol.
+
+### Ajustes solicitados
+- Ninguno (solo sugerencia de mejora en formato de vínculo con Issue).
+
+### Veredicto
+Approve
 ---
 
 ## Tareas de coordinación realizadas
