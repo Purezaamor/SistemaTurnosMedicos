@@ -43,6 +43,10 @@
 
 - [fix/backport-modelador-a2] Corrección de diagrama cancelar-turno (<<include>>), actualización de índice diagramasUML.md y documentación IA modelador. PR: [#66](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/66) — @keviineze (Modelador de Diagramas de CU)
 
+- [fix/changelog-a1-formato-final] Corrección del formato en la sección de la Actividad Obligatoria N°1: normalización de entradas en `### Changed` y `### Fixed` según Keep a Changelog (PR links, autores y estructura). PR: [#68](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/68) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/correcciones-finales-rc1-rc4] Aplicación de correcciones finales de revisión: normalización de `herramientas_agile.md`, corrección del índice en `tarjetas_crc.md` y mejora de la documentación de IA (CRC y escenarios: prompts, contexto, iteraciones y outputs). PR: [#67](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/67) — @nachonervi-design (Documentador y Coordinador)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
