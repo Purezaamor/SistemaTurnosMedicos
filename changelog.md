@@ -53,8 +53,6 @@
 
 - [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
-- [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
-
 - [fix/pr-templates] Incorporación de templates de Pull Request para ramas feature y release. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
 - [fix/release-body] Actualización del body de la PR de release con estructura requerida. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
