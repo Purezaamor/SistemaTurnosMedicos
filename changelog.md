@@ -1,5 +1,3 @@
-# Changelog
-
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
