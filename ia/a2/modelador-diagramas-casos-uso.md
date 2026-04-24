@@ -5,8 +5,14 @@
 * `anexos/introduccion.md`
 
 ## 2. Prompt utilizado
-> "Leé el archivo introduccion.md y generá el código PlantUML para los casos de uso: 1.Registrar Turno Médico , 2.Reprogramar Turno Existente, 3.Cancelar Turno , 4.Visualizar Agenda Médica (Día/Semana), 5.Administrar Disponibilidad del Profesional). Requisito técnico: Utiliza relaciones de include y extend."
+``` "Leé el archivo introduccion.md y generá el código PlantUML para los casos de uso: 1.Registrar Turno Médico , 2.Reprogramar Turno Existente, 3.Cancelar Turno , 4.Visualizar Agenda Médica (Día/Semana), 5.Administrar Disponibilidad del Profesional). Requisito técnico: Utiliza relaciones de include y extend.```
 
 ## 3. Ajustes realizados
 * La IA no incluyó el 'left to right direction' en todos los diagramas, al igual que el encuadre rectangle, se lo agregué manualmente.
 * Cambié las relaciones entre UC ya que no hizo bien las relaciones la IA en todos los diagramas. La IA inicialmente asignó la ejecución de todos los procesos al "Médico", ignorando el rol administrativo de la **Secretaria**, osea que literalmente tuve que rehacer todos los diagramas que me dio la IA.
+
+### Iteraciones
+- **Pasada 1:** Generación inicial de los 5 casos de uso. Error en relaciones de inclusión.
+- **Pasada 2:** Ajuste manual de la dirección del diagrama (left to right) y corrección de actores secundarios en UC02.
+- **Pasada 3:** Creación de rectangle y movimientos de los actores (Por ejemplo Diagrama 02).
+- **Pasada 4:** Cambio de relaciones `<<extend>>` a `<<include>>` en UC01 y UC03 (Dr. Molina).
