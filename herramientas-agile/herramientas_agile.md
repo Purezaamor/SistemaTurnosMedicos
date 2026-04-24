@@ -27,3 +27,6 @@ En esta actividad se llevó a cabo:
 - Incorporación de una clase de auditoría (**HistorialCambios**) para garantizar la trazabilidad del sistema
 
 Las tarjetas fueron organizadas en archivos individuales dentro de la carpeta `tarjetas-crc/`, siguiendo la estructura solicitada en la consigna.
+
+# Herramientas Agile
+- [Tarjetas CRC](tarjetas-crc/)
