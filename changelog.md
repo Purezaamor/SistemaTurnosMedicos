@@ -38,8 +38,6 @@
   PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
 - [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
   PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-- [fix/correcciones-modelador-diagramas-a2] Corregidas relaciones UML `<<extend>>` a `<<include>>` en procesos obligatorios (Cancelar y Registrar turno), corregida estructura de enlaces en `diagramasUML.md` y mejorado el formato de evidencia de IA con sección de iteraciones y bloques de código.
-  PR: [#62](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/62) - @keviineze (Modelador Diagramas de Casos de Uso).
 
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
