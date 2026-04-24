@@ -25,6 +25,8 @@
 
 - [fix/especialista-escenarios-casos-uso-a2] Corrección de escenarios de casos de uso: normalización de naming de archivos, incorporación de notificación obligatoria en "Cancelar Turno" y actualización del índice con enlaces válidos. PR: [#61](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/61) — @Purezaamor (Especialista en Escenarios)
 
+- [fix/correcciones-modelador-diagramas-a2] Corrección de diagramas de casos de uso: ajuste de sintaxis UML, corrección de relaciones <<include>> y actualización de archivos .png e índice de diagramas. PR: [#62](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/62) — @keviineze (Modelador de Casos de Uso)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
