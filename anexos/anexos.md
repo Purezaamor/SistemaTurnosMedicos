@@ -1,2 +1,0 @@
-# Anexos
-- [Introducción](./introduccion.md)
