@@ -1,55 +1,27 @@
 # Changelog
 
-## [Unreleased]
-
-## [Actividad Obligatoria N°2]
-
-### Notes
-
-- [contingencia-equipo] Debido a la baja cantidad de integrantes disponibles en el equipo, Alejo Guerricabeitia asumió dos roles en la Actividad Obligatoria N°2: Diseñador de Tarjetas CRC y Especialista en Escenarios.
-
-### Added
-
-- [feature/modelador-diag-casos-uso] Creación de diagramas de casos de uso en PlantUML (.puml y .png).
-  PR: [#20] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20 | Issue: [#19] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/19
-
-- [feature/diseniador-tarjetas-crc] Creación de tarjetas CRC para las clases del sistema.
-  PR: [#51] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51 | Issue: [#53] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/54
-
-- [feature/especialista-escenarios] Definición de escenarios de casos de uso.
-  PR: [#50] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50 | Issue: [#54] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/53
-
-- [feature/doc-coord-repo-readme-md-a2] Documentación del uso de IA en ia/a2/ y preparación del flujo de integración.
-  PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
-
-### Changed
-
-- [feature/doc-coord-repo-readme-md-a2] Actualización del README.md integrando Actividad Obligatoria N°2.   PR: [#49] https://github.com/Purezaamor/SistemaTurnosMedicos/pull/49 | Issue: [#48] https://github.com/Purezaamor/SistemaTurnosMedicos/issues/48
-
-- [review/pr-20] Aprobación de PR de diagramas de casos de uso tras validación de estructura, coherencia y documentación.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-### Fixed
-
-- [fix/review-pr-20] Solicitud de corrección en documentación de IA y modelado de actores en UC02.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-- [fix/review/pr-50] Solicitud de cambios en PR de escenarios de casos de uso por falta de estructura requerida, campos obligatorios incompletos, ausencia de documentación de IA.
-  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-  - [fix/review/pr-51] Solicitud de cambios en PR de tarjetas CRC por incumplimiento de estructura requerida, falta de documentación de IA, ausencia de actualización de changelog y descripción de PR incompleta.
-  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-- [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
-  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
-
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
 
-- [feature/modelador-diag-casos-uso-update-use-case-1] Modelado de Diagramas de Casos de Uso y Documentación de IA, junto con las carpetas requeridas, Actividad 2. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) - @keviineze (Modelador de Diagramas de Casos de Uso)
+- [feature/modelador-diag-casos-uso] Modelado de 5 diagramas de casos de uso en PlantUML y exportación a PNG. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) — @keviineze (Modelador de Casos de Uso)
 
+- [feature/a2-tarjetas-crc] Creación de tarjetas CRC en archivos individuales, incluyendo responsabilidades, colaboradores y pensamiento del objeto. PR: [#51](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51) — @Purezaamor (Diseñador de Tarjetas CRC)
+
+- [feature/escenarios-cu] Desarrollo de escenarios de casos de uso en archivos individuales con estructura completa y campos obligatorios. PR: [#50](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50) — @Purezaamor (Especialista en Escenarios)
+
+- [feature/doc-coord-repo-update-readme-md-a2] Actualización de README.md con estructura final del proyecto, índices de navegación y documentación del equipo. PR: [#52](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/52) — @nachonervi-design (Documentador y Coordinador)
 
 ### Changed
 
-- [feature/modelador-diag-casos-uso-update-use-case-1] Corrección del Diagrama de Casos de Uso 2 "Reprogramar Turno Existente" y breve agregado de explicacion sobre "Ajustes Realizados" en ia\a2\modelador-diagramas-casos-uso.md 
+- [feature/modelador-diag-casos-uso] Corrección de sintaxis UML y consistencia de render en diagramas de casos de uso. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) — @keviineze (Modelador de Casos de Uso)
 
+- [feature/a2-tarjetas-crc] Ajuste de tarjetas CRC para reflejar correctamente relaciones del dominio e incorporación de la tarjeta HistorialCambios para auditoría. PR: [#51](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51) — @Purezaamor (Diseñador de Tarjetas CRC)
+
+- [feature/escenarios-cu] Reestructuración completa de escenarios de casos de uso en carpeta dedicada, con archivos individuales e índice central. PR: [#50](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50) — @Purezaamor (Especialista en Escenarios)
+
+
+---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
 
