@@ -25,6 +25,8 @@
 
 - [fix/changelog-readme] Corrección final de `changelog.md` y `README.md` según observaciones de revisión: normalización del formato bajo Keep a Changelog, eliminación de duplicados y activación de enlaces de navegación. PR: [#59](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/59) — @nachonervi-design (Documentador y Coordinador)
 
+- [fix/especialista-escenarios-casos-uso-a2] Corrección de escenarios de casos de uso: normalización de naming de archivos, incorporación de notificación obligatoria en "Cancelar Turno" y actualización del índice con enlaces válidos. PR: [#61](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/61) — @Purezaamor (Especialista en Escenarios)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-25
