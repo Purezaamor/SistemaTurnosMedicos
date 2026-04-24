@@ -1,5 +1,9 @@
 # Tarjetas CRC
 
+Este documento reúne las tarjetas CRC del sistema de turnos médicos, representando las clases principales del dominio, sus responsabilidades y colaboraciones.
+
+## Tarjetas
+
 - [Paciente](01-tarjeta-crc-paciente.md)
 - [Medico](02-tarjeta-crc-medico.md)
 - [Turno](04-tarjeta-crc-turno.md)
