@@ -36,9 +36,6 @@
 
 - [fix/correcciones-modelador-diagramas-a2] Corrección de diagramas de casos de uso: ajuste de sintaxis UML, relaciones <<include>> y actualización de PNG e índice. PR: [#62](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/62) — @keviineze (Modelador de Casos de Uso)
 
-- [fix/diseniador-tarjetas-crc-a2] Corrección de tarjetas CRC: incorporación de Secretaria y LlegadaPaciente, mejora de Turno (tipoConsulta y estados) y ajuste de Agenda e índices. PR: [#60](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/60) — @Purezaamor (Diseñador de Tarjetas CRC)
-
-
 - [fix/diseniador-tarjetas-crc-a2] Corrección de tarjetas CRC: incorporación de clases Secretaria y LlegadaPaciente, ajuste de la tarjeta Turno (tipoConsulta y estados) y mejora de Agenda e índices de herramientas agile. PR: [#60](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/60) — @Purezaamor (Diseñador de Tarjetas CRC)
 
 - [fix/backport-modelador-a2] Corrección de diagrama cancelar-turno (<<include>>), actualización de índice diagramasUML.md y documentación IA modelador. PR: [#66](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/66) — @keviineze (Modelador de Diagramas de CU)
@@ -48,6 +45,8 @@
 - [fix/correcciones-finales-rc1-rc4] Aplicación de correcciones finales de revisión: normalización de `herramientas_agile.md`, corrección del índice en `tarjetas_crc.md` y mejora de la documentación de IA (CRC y escenarios: prompts, contexto, iteraciones y outputs). PR: [#67](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/67) — @nachonervi-design (Documentador y Coordinador)
 
 - [fix/ia-documentador-prompts] Corrección de formato en documentación de IA: se envuelven los prompts en bloques de código triple backtick en `ia/a2/documentador-coordinador.md`. PR: [#71](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/71) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/limpieza-changelog-a2] Corrección de `changelog.md` según observaciones de revisión. PR: [#70](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/70) - @keviineze (Modelador de Diagramas de Casos de Uso).
 
 ---
 
@@ -64,15 +63,6 @@
 
 - [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos. PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) — @Purezaamor (Documentador y Coordinador)
 
-- [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP. PR: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8)
-
-- [feature/disenio-clases] Creación del diagrama de clases inicial. PR: [#7](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/7)
-
-- [feature/diseñador-de-clases-iniciales-correccion] Corrección de relaciones y atributos. PR: [#18](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/18)
-
-- [feature/doc-coord-repo] Creación de estructura del repositorio. PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10)
-
-
 ---
 
 ### Changed
@@ -81,10 +71,6 @@
 - [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`. PR: [#36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36) — @Purezaamor (Documentador y Coordinador)
 
 - [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`. PR: [#37](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/37) — @keviineze (Modelador de Casos de Uso)
-
-- Actualización de README.md con datos del equipo
-- Integración de diagramas en introduccion.md
-
 
 ---
 
@@ -115,9 +101,3 @@
 - [fix/merge-artifacts] Limpieza de artefactos de merge en `changelog.md`. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) — @Purezaamor (Documentador y Coordinador)
 
 - [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
-
-- Corrección del workflow Git
-- Corrección de PR templates
-- Ajustes en diagramas y relaciones
-- Limpieza de merge conflicts
-
