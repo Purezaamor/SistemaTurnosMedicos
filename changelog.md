@@ -44,6 +44,8 @@
 
 - [fix/correcciones-finales-rc1-rc4] Aplicación de correcciones finales de revisión: normalización de `herramientas_agile.md`, corrección del índice en `tarjetas_crc.md` y mejora de la documentación de IA (CRC y escenarios: prompts, contexto, iteraciones y outputs). PR: [#67](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/67) — @nachonervi-design (Documentador y Coordinador)
 
+- [fix/ia-documentador-prompts] Corrección de formato en documentación de IA: se envuelven los prompts en bloques de código triple backtick en `ia/a2/documentador-coordinador.md`. PR: [#71](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/71) — @nachonervi-design (Documentador y Coordinador)
+
 - [fix/limpieza-changelog-a2] Corrección de `changelog.md` según observaciones de revisión. PR: [#70](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/70) - @keviineze (Modelador de Diagramas de Casos de Uso).
 
 ---
