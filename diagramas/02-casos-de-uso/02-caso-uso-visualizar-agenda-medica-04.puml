@@ -1,0 +1,20 @@
+@startuml 02-caso-uso-visualizar-agenda-medica-04
+
+left to right direction
+
+actor "Médico" as Medico
+actor "Secretaria" as Secretaria
+
+rectangle "Sistema de Turnos Medico" {
+    usecase "Visualizar Agenda\nMédica (Día/Semana)" as UC1
+    usecase "Seleccionar\nProfesional" as UC2
+    usecase "Elegir Vista\n(Día/Semana)" as UC3
+}
+
+Medico --> UC1
+Secretaria --> UC1
+
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+
+@enduml
