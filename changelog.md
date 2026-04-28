@@ -50,7 +50,9 @@
 
 - [fix/prompts-ia-y-changelog-final] Corrección final de formato en documentación de IA: prompts envueltos en bloques de código triple backtick en archivos de CRC, escenarios y documentador; ajuste de entradas faltantes e incorrectas en `changelog.md`. PR: [#72](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/72) — @nachonervi-design (Documentador y Coordinador)
 
-- [fix/ia-prompts-final] Corrección de formato en prompts de IA (CRC, escenarios y documentador). PR: [#69](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/69) — @nachonervi-design (Documentador y Coordinador)
+- [fix/correcciones-finales-rc] Aplicación de correcciones finales de revisión (RC): ajustes en herramientas_agile, tarjetas CRC (Turno y herencia), escenarios de casos de uso, enlaces de diagramas UML y documentación de IA. PR: [#69](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/69) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/ia-prompts-final] Corrección de formato en documentación de IA: prompts envueltos en bloques de código triple backtick en CRC, escenarios y documentador. PR: [#72](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/72) — @nachonervi-design (Documentador y Coordinador)
 
 
 ---
