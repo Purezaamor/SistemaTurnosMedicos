@@ -2,12 +2,11 @@
 
 ## Prompt utilizado
 
----
-"Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos
+```text
+Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos
 para identificar las clases principales. Generar tarjetas CRC incluyendo nombre de clase,
-superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades".
-
----
+superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades.
+```
 
 ## Archivos utilizados como contexto
 
