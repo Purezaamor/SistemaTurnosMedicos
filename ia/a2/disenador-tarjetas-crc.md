@@ -1,12 +1,16 @@
 # Uso de IA - Diseñador de Tarjetas CRC
 
 ## Prompt utilizado
-
 ```
 Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos
 para identificar las clases principales. Generar tarjetas CRC incluyendo nombre de clase,
 superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades.
 ```
+---
+"Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos
+para identificar las clases principales. Generar tarjetas CRC incluyendo nombre de clase,
+superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades".
+>>>
 
 ---
 
@@ -55,7 +59,7 @@ Colaboradores:
 
 ## Resultado final
 
-Se generaron 6 tarjetas CRC correspondientes a las clases principales del sistema:
+Se generaron **8 tarjetas CRC** correspondientes a las clases principales del sistema:
 
 - Persona  
 - Paciente  
@@ -63,6 +67,8 @@ Se generaron 6 tarjetas CRC correspondientes a las clases principales del sistem
 - Turno  
 - Agenda  
 - HistorialCambios  
+- Secretaria  
+- LlegadaPaciente  
 
 Las tarjetas fueron organizadas en la carpeta:
 
