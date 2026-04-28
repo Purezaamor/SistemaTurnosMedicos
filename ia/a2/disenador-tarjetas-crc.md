@@ -8,6 +8,8 @@ para identificar las clases principales. Generar tarjetas CRC incluyendo nombre 
 superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades.
 ```
 
+---
+
 ## Archivos utilizados como contexto
 
 - anexos/introduccion.md  

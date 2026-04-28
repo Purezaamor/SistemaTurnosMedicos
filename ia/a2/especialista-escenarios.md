@@ -9,6 +9,8 @@ Generar escenarios de casos de uso completos incluyendo: ID, nombre del caso de 
 postcondiciones, suposiciones, requerimientos, aspectos sobresalientes, prioridad y riesgo.
 ```
 
+---
+
 ## Archivos de contexto utilizados
 
 - anexos/introduccion.md
