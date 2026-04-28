@@ -16,7 +16,10 @@ Feature: Modelador de Casos de Uso - Actividad 2
 - README.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Leé anexos/introduccion.md y revisá la Pull Request verificando si los casos de uso cumplen con los requisitos funcionales definidos en la Actividad 1.
+```
 
 ### Observaciones detectadas
 - La documentación del uso de IA no estaba completa (faltaba incluir prompt y contexto).
@@ -41,7 +44,10 @@ Feature: Diseñador de Tarjetas CRC - Actividad 2 (PR #51)
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Revisá las tarjetas CRC verificando estructura, responsabilidades, colaboradores y cumplimiento de la consigna.
+```
 
 ### Observaciones detectadas
 - Las tarjetas CRC estaban embebidas en introduccion.md.
@@ -70,7 +76,10 @@ Feature: Desarrollador de Escenarios de Casos de Uso - Actividad 2 (PR #50)
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Validá los escenarios de casos de uso verificando estructura, completitud y coherencia con el sistema.
+```
 
 ### Observaciones detectadas
 - Los escenarios estaban dentro de introduccion.md.
@@ -101,7 +110,10 @@ Feature: Modelador de Diagramas de Casos de Uso - Actividad 2 (PR #20)
 - diagramas/02-casos-de-uso/
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Revisá los diagramas de casos de uso validando coherencia, actores y sintaxis UML.
+```
 
 ### Observaciones detectadas
 - En el archivo `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-existente-02.puml` se identificó el uso de asociaciones entre actores y casos de uso que requerían validación de sintaxis UML.
@@ -128,8 +140,10 @@ feature/doc-coord-repo-update-readme-md-a2
 - ia/a2/documentador-coordinador.md
 
 ### Prompt utilizado en Copilot Agent Mode
-Revisá la coherencia entre README, changelog y documentación del rol Documentador y Coordinador.
 
+```text
+Revisá la coherencia entre README, changelog y documentación del rol Documentador y Coordinador.
+```
 
 ### Observaciones detectadas
 - Se verificó en `README.md` que el integrante Alejo Guerricabeitia figura en dos filas debido a la asignación de dos roles (Diseñador de Tarjetas CRC y Especialista en Escenarios), lo cual responde a una contingencia del equipo.
@@ -156,7 +170,10 @@ Feature: Modelador de Diagramas de Casos de Uso - Update Use Case 1 (PR #20)
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Revisá la PR después de correcciones verificando si ya está lista para aprobar.
+```
 
 ### Observaciones detectadas
 - Se verificó la existencia de 5 diagramas de casos de uso en formato `.puml` y sus respectivas imágenes `.png`.
@@ -173,6 +190,8 @@ Revisá la PR después de correcciones verificando si ya está lista para aproba
 ### Veredicto
 Approve
 
+---
+
 ## Code Review 7
 
 ### PR revisada
@@ -186,7 +205,10 @@ feature/a2-tarjetas-crc
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Analizá la PR como segunda revisión después de Request Changes previo. Validá estructura de carpetas, completitud de tarjetas CRC, existencia del índice de herramientas ágiles, documentación de IA y coherencia con el dominio del sistema.
+```
 
 ### Observaciones detectadas
 - Se creó la carpeta `herramientas-agile/tarjetas-crc/` y las tarjetas fueron separadas en archivos individuales.
@@ -204,6 +226,8 @@ Analizá la PR como segunda revisión después de Request Changes previo. Valid�
 ### Veredicto
 Request Changes
 
+---
+
 ## Code Review 8
 
 ### PR revisada
@@ -218,7 +242,10 @@ feature/a2-tarjetas-crc
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Analizá la PR como revisión de seguimiento después de Request Changes previos. Validá si se corrigió la estructura requerida, la coherencia de dominio de la tarjeta Turno, la representación de auditoría/historial y la documentación asociada.
+```
 
 ### Observaciones detectadas
 - Se creó `herramientas-agile/herramientas_agile.md`.
@@ -233,6 +260,8 @@ Analizá la PR como revisión de seguimiento después de Request Changes previos
 ### Veredicto
 Approve
 
+---
+
 ## Code Review 9
 
 ### PR revisada
@@ -245,7 +274,10 @@ feature/escenarios-cu (PR #50)
 - ia/a2/
 
 ### Prompt utilizado en Copilot Agent Mode
+
+```text
 Analizá la PR como revisión de seguimiento después de Request Changes previos. Validá si se creó la estructura de escenarios, si existen los archivos individuales, el índice, la documentación de IA y la completitud de los campos obligatorios.
+```
 
 ### Observaciones detectadas
 - No existe la carpeta `diagramas/03-escenarios-casos-de-uso/`.
@@ -266,6 +298,8 @@ Analizá la PR como revisión de seguimiento después de Request Changes previos
 ### Veredicto
 Request Changes
 
+---
+
 ## Code Review 10
 
 ### PR revisada
@@ -279,7 +313,9 @@ feature/escenarios-cu (PR #50)
 - changelog.md
 
 ### Prompt utilizado en Copilot Agent Mode
+```text
 Analizá la PR como revisión final después de Request Changes previos, validando estructura, completitud y coherencia.
+```
 
 ### Observaciones detectadas
 - Se creó la estructura completa de escenarios.
@@ -307,7 +343,9 @@ feature/doc-coord-repo-update-readme-md-a2
 - ia/a2/documentador-coordinador.md
 
 ### Prompt utilizado en Copilot Agent Mode
+```text
 Revisá la coherencia general del proyecto desde el rol Documentador y Coordinador.
+```
 
 ### Observaciones detectadas
 - Se corrigieron inconsistencias en README.
@@ -320,6 +358,7 @@ Revisá la coherencia general del proyecto desde el rol Documentador y Coordinad
 
 ### Veredicto
 Approve
+
 ---
 
 ## Tareas de coordinación realizadas
