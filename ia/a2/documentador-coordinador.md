@@ -260,9 +260,9 @@ Analizá la PR como revisión de seguimiento después de Request Changes previos
 ### Veredicto
 Approve
 
-## Code Review 9
-
 ---
+
+## Code Review 9
 
 ### PR revisada
 feature/escenarios-cu (PR #50)
@@ -358,6 +358,7 @@ Revisá la coherencia general del proyecto desde el rol Documentador y Coordinad
 
 ### Veredicto
 Approve
+
 ---
 
 ## Tareas de coordinación realizadas
