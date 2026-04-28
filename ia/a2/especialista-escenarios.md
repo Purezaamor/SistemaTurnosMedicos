@@ -2,11 +2,10 @@
 
 ## Prompt utilizado
 
-```text
+```
 Analizar los requisitos del sistema de turnos médicos a partir del archivo anexos/introduccion.md.
 Generar escenarios de casos de uso completos incluyendo: ID, nombre del caso de uso, actor,
-área, evento activador, tipo de señal, flujo principal, flujos alternativos, precondiciones,
-postcondiciones, suposiciones, requerimientos, aspectos sobresalientes, prioridad y riesgo.
+evento activador, flujo principal, flujos alternativos, precondiciones y postcondiciones.
 ```
 
 ---
