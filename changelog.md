@@ -58,6 +58,8 @@
 
 - [fix/correcciones-finales-rc] Aplicación de correcciones finales de revisión (RC): ajustes en herramientas_agile, tarjetas CRC (Turno y herencia), escenarios de casos de uso, enlaces de diagramas UML y documentación de IA. PR: [#69](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/69) — @nachonervi-design (Documentador y Coordinador)
 
+- [fix/registro-correcciones-finales] Registro final de correcciones aplicadas en documentación de IA, enlaces de diagramas UML y escenarios de casos de uso. PR: [#77](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/77) — @nachonervi-design (Documentador y Coordinador)- [fix/registro-correcciones-finales] Registro final de correcciones aplicadas en documentación de IA, enlaces de diagramas UML y escenarios de casos de uso. PR: [#77](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/77) — @nachonervi-design (Documentador y Coordinador)
+
 
 ---
 
