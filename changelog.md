@@ -88,6 +88,15 @@
 ---
 
 ### Fixed
+- Corrección del workflow Git
+- Corrección de PR templates
+- Ajustes en diagramas y relaciones
+- Limpieza de merge conflicts
+- [fix/corrige RC finales (prompts IA + herramientas_agile limpio)] Corrección de prompts IA y limpieza de herramientas_agile.md. PR: [#73](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/73)
+
+- [fix/corrige links de diagramas UML a sub-indices] Corrección de navegación en diagramas UML. PR: [#74](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/74)
+
+- [fix/corrige texto de links en escenarios (formato CU completo)] Corrección del índice de escenarios. PR: [#75](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/75)
 
 - [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) — @Purezaamor (Documentador y Coordinador)
 
