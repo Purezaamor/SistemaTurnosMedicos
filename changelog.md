@@ -30,6 +30,12 @@
 
 ### Fixed
 
+- [fix/ia-y-herramientas-agile] Corrección de formato en prompts de IA (triple backtick) y limpieza del archivo herramientas_agile.md. PR: [#73](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/73) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/diagramas-links-subindices] Corrección de enlaces en diagramas UML: actualización de rutas para apuntar a sub-índices (.md) en lugar de carpetas. PR: [#74](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/74) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/escenarios-links-formato] Corrección de formato en enlaces de escenarios de casos de uso: actualización al formato completo CU-N - Nombre - Escenario. PR: [#75](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/75) — @nachonervi-design (Documentador y Coordinador)
+
 - [fix/changelog-readme] Corrección final de `changelog.md` y `README.md` según observaciones de revisión. PR: [#59](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/59) — @nachonervi-design (Documentador y Coordinador)
 
 - [fix/especialista-escenarios-casos-uso-a2] Corrección de escenarios: naming, flujo de cancelación y actualización del índice. PR: [#61](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/61) — @Purezaamor (Especialista en Escenarios)
@@ -52,7 +58,7 @@
 
 - [fix/correcciones-finales-rc] Aplicación de correcciones finales de revisión (RC): ajustes en herramientas_agile, tarjetas CRC (Turno y herencia), escenarios de casos de uso, enlaces de diagramas UML y documentación de IA. PR: [#69](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/69) — @nachonervi-design (Documentador y Coordinador)
 
-- [fix/ia-prompts-final] Corrección de formato en documentación de IA: prompts envueltos en bloques de código triple backtick en CRC, escenarios y documentador. PR: [#72](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/72) — @nachonervi-design (Documentador y Coordinador)
+- [fix/registro-correcciones-finales] Registro final de correcciones aplicadas en documentación de IA, enlaces de diagramas UML y escenarios de casos de uso. PR: [#77](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/77) — @nachonervi-design (Documentador y Coordinador)- [fix/registro-correcciones-finales] Registro final de correcciones aplicadas en documentación de IA, enlaces de diagramas UML y escenarios de casos de uso. PR: [#77](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/77) — @nachonervi-design (Documentador y Coordinador)
 
 
 ---
