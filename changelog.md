@@ -20,8 +20,6 @@
 
 ### Changed
 
-- [feature/modelador-diag-casos-uso] Corrección de sintaxis UML y consistencia de render en diagramas de casos de uso. PR: [#20](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/20) — @keviineze (Modelador de Casos de Uso)
-
 - [feature/a2-tarjetas-crc] Ajuste de tarjetas CRC para reflejar correctamente relaciones del dominio e incorporación de la tarjeta HistorialCambios para auditoría. PR: [#51](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51) — @Purezaamor (Diseñador de Tarjetas CRC)
 
 - [feature/escenarios-cu] Reestructuración completa de escenarios de casos de uso en carpeta dedicada, con archivos individuales e índice central. PR: [#50](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50) — @Purezaamor (Especialista en Escenarios)
@@ -108,9 +106,7 @@
 
 - [fix/reviews-ia] Mejora en las revisiones con asistencia de IA, agregando observaciones más específicas. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) — @Purezaamor (Documentador y Coordinador)
 
-- [fix/diagrama-clases] Corrección del diagrama de clases para ajustarlo al dominio del consultorio. PR: [#41](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41) — @keviineze (Modelador de Casos de Uso)
-
-- [fix/relaciones-clases] Ajuste de relaciones entre clases del modelo de dominio. PR: [#41](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41) — @keviineze (Modelador de Casos de Uso)
+- [fix/excalidraw-recrear] Recreación del archivo excalidraw y subida correcta de formato en PNG. PR: [#41](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/41) — @keviineze (Modelador de Casos de Uso)
 
 - [fix/changelog] Coordinación y consolidación del changelog final. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) — @Purezaamor (Documentador y Coordinador)
 
