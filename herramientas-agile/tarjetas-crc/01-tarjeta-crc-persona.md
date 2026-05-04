@@ -1,3 +1,4 @@
+
 # Persona
 
 - **Superclase:** —
@@ -12,3 +13,13 @@
   Clase base abstracta; no se instancia directamente
 
 > ⚠️ Corrección de diseño: El boceto define nombre/apellido/telefono/mail por separado en Paciente, Medico y Secretaria. Esto viola el principio DRY. La introducción ya propone Persona como clase base. Se unifica aquí.
+|  |  |  |  |
+|---|---|---|---|
+| **Nombre de la Clase:** | Persona | | |
+| **Superclase:** | | | |
+| **Subclase:** | Paciente, Medico | | |
+| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
+| Mantener datos personales | Paciente | Conozco mi nombre y contacto | nombre |
+| Proveer información básica | Medico | Puedo ser identificado en el sistema | telefono |
+| | | | email |
+| | | | |
