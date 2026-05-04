@@ -68,6 +68,7 @@
 
 - [fix/correcciones finales (UML, CRC, changelog y limpieza)] Resolución de conflictos, limpieza de duplicados, corrección de índices y actualización final del changelog. PR: [#86](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/86)
 
+- [fix/correcciones finales adicionales] Ajustes finales sobre UML, conflictos y consistencia general del repositorio. PR: [#87](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/87)
 
 ---
 
