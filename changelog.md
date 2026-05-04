@@ -1,5 +1,5 @@
-# Changelog
 
+<<<<<<< HEAD
 ## [Unreleased]
 
 ## [Actividad Obligatoria N°2]
@@ -134,3 +134,5 @@ feature/doc-coord-repo-update-readme-md-a2
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
+=======
+
