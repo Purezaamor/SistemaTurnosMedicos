@@ -1,2 +1,2 @@
 # Herramientas Agile
-- [Tarjetas CRC](tarjetas-crc/)git add herramientas-agile/herramientas_agile.md
+- [Tarjetas CRC](tarjetas-crc/tarjetas_crc.md)
