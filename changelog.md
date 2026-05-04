@@ -90,3 +90,13 @@
 - [fix/notebooklm-link] Corrección de sintaxis del enlace de NotebookLM en `introduccion.md`. PR: [#30](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30) — @keviineze (Modelador de Casos de Uso)
 
 - [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
+
+- [fix/herramientas agile formato nueva] Corrección de formato en herramientas agile. PR: [#85](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/85)
+
+- [fix/modelador casos usoA2] Ajustes en tarjetas CRC y documentación. PR: [#84](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/84)
+
+- [fix/changelog final ajustes] Ajustes finales en changelog. PR: [#82](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/82)
+
+- [fix/herramientas agile formato] Corrección previa de herramientas agile. PR: [#76](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/76)
+
+- [feature/escenarios cu] Implementación de escenarios de casos de uso. PR: [#57](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/57)
