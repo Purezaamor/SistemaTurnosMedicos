@@ -148,7 +148,239 @@ Esta entrega inicial se enfoca en resolver la problemática crítica de la **ges
 
 **▫️Postcondiciones:**
 -   La agenda queda configurada con los nuevos parámetros de disponibilidad.
+
+---
+
+# 👤 Rol: Especialista en Escenarios de Casos de Uso
+
+## 🧾 Desarrollo de Escenarios
+
+---
+
+### 🟢 Escenario Detallado — Registrar Turno Médico
+
+**Actor principal:** Secretaria / Paciente  
+
+**Descripción:**  
+Permite registrar un turno médico asegurando la disponibilidad del profesional y evitando superposiciones.
+
+**Precondiciones:**  
+- El paciente y el médico deben estar registrados  
+- El profesional debe tener disponibilidad configurada  
+
+**Flujo principal:**  
+1. El actor selecciona la opción de registrar turno  
+2. El sistema solicita los datos del paciente y del profesional  
+3. El actor selecciona fecha y hora  
+4. El sistema valida disponibilidad  
+5. El sistema registra el turno  
+6. El sistema guarda el cambio en el historial  
+
+**Flujos alternativos:**  
+- 4a. Existe superposición → el sistema rechaza la operación  
+- 3a. No hay disponibilidad → el sistema informa al usuario  
+- 5a. Cancelación del usuario → no se registra el turno  
+
+**Postcondiciones:**  
+- El turno queda registrado correctamente  
+- Se actualiza la agenda del profesional  
+
+---
+
+### 🟢 Escenario Detallado — Reprogramar Turno
+
+**Actor principal:** Secretaria  
+
+**Descripción:**  
+Permite modificar la fecha u horario de un turno existente.
+
+**Precondiciones:**  
+- Debe existir un turno previamente registrado  
+
+**Flujo principal:**  
+1. El actor selecciona un turno existente  
+2. Elige la opción reprogramar  
+3. El sistema muestra disponibilidad  
+4. El actor selecciona nuevo horario  
+5. El sistema valida disponibilidad  
+6. El sistema actualiza el turno  
+7. El sistema registra el cambio  
+
+**Flujos alternativos:**  
+- 5a. Conflicto de horario → el sistema rechaza el cambio  
+- 4a. El actor cancela → no se modifica el turno  
+
+**Postcondiciones:**  
+- El turno queda actualizado  
+- El horario anterior queda disponible  
+
+---
+
+### 🟢 Escenario Detallado — Cancelar Turno
+
+**Actor principal:** Paciente / Secretaria  
+
+**Descripción:**  
+Permite cancelar un turno liberando el espacio en la agenda.
+
+**Precondiciones:**  
+- El turno debe existir  
+- Debe estar en estado activo  
+
+**Flujo principal:**  
+1. El actor selecciona el turno  
+2. El sistema solicita confirmación  
+3. El actor confirma  
+4. El sistema cambia el estado a cancelado  
+5. El sistema libera el horario  
+
+**Flujos alternativos:**  
+- 2a. El actor cancela la acción → no se modifica el turno  
+
+**Postcondiciones:**  
+- El turno queda cancelado  
+- La agenda se actualiza  
+
+---
+
+### 🟢 Escenario Detallado — Visualizar Agenda Médica
+
+**Actor principal:** Médico / Secretaria  
+
+**Descripción:**  
+Permite visualizar la agenda del profesional en formato diario o semanal.
+
+**Precondiciones:**  
+- Debe existir información en la agenda  
+
+**Flujo principal:**  
+1. El actor accede al módulo de agenda  
+2. Selecciona profesional  
+3. Selecciona tipo de vista (día/semana)  
+4. El sistema muestra turnos y bloqueos  
+
+**Flujos alternativos:**  
+- 4a. No hay turnos → se muestra agenda vacía  
+
+**Postcondiciones:**  
+- El actor visualiza correctamente la agenda  
+
+---
+
+### 🟢 Escenario Detallado — Administrar Disponibilidad
+
+**Actor principal:** Médico / Secretaria  
+
+**Descripción:**  
+Permite definir los horarios disponibles del profesional.
+
+**Precondiciones:**  
+- El profesional debe existir  
+
+**Flujo principal:**  
+1. El actor accede a configuración del profesional  
+2. Define horarios de atención  
+3. Define bloqueos o licencias  
+4. El sistema valida conflictos  
+5. El sistema guarda la configuración  
+
+**Flujos alternativos:**  
+- 4a. Conflicto con turnos existentes → el sistema rechaza  
+
+**Postcondiciones:**  
+- La agenda queda actualizada  
+
 -   ---
+---
+
+# 👤 Rol: Diseñador de Tarjetas CRC
+
+## 🧾 Diseño de Tarjetas CRC
+
+Las tarjetas CRC (Class-Responsibility-Collaborator) permiten definir las responsabilidades de cada clase del sistema y sus interacciones dentro del dominio del consultorio médico.
+
+---
+
+### 🟢 Tarjeta CRC — Persona
+
+**Responsabilidades:**  
+- Mantener información básica (nombre, teléfono, email)  
+
+**Colaboradores:**  
+- Paciente  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Paciente
+
+**Responsabilidades:**  
+- Solicitar turno  
+- Cancelar turno  
+- Consultar turnos  
+
+**Colaboradores:**  
+- Turno  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Medico
+
+**Responsabilidades:**  
+- Gestionar su agenda  
+- Definir disponibilidad  
+- Autorizar sobreturnos  
+
+**Colaboradores:**  
+- Turno  
+- Paciente  
+- Agenda  
+
+---
+
+### 🟢 Tarjeta CRC — Turno
+
+**Responsabilidades:**  
+- Registrar turno  
+- Validar estado del turno  
+- Permitir cancelación y reprogramación  
+- Almacenar fecha, hora y estado  
+
+**Colaboradores:**  
+- Paciente  
+- Medico  
+- Agenda  
+
+---
+
+### 🟢 Tarjeta CRC — Agenda
+
+**Responsabilidades:**  
+- Gestionar lista de turnos  
+- Validar disponibilidad  
+- Evitar superposición de horarios  
+
+**Colaboradores:**  
+- Turno  
+- Medico  
+
+---
+
+### 🟢 Tarjeta CRC — Consultorio
+
+**Responsabilidades:**  
+- Gestionar profesionales  
+- Administrar disponibilidad general  
+- Coordinar agenda del sistema  
+
+**Colaboradores:**  
+- Medico  
+- Agenda  
+
+
+---
+
 ## Notebook de análisis
 
 Se utilizó NotebookLM para analizar los requisitos del sistema.
