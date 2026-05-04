@@ -28,6 +28,17 @@
 
 ### Fixed
 
+
+- [fix/review-pr-20] Solicitud de corrección en documentación de IA y modelado de actores en UC02.
+  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+- [fix/review/pr-50] Solicitud de cambios en PR de escenarios de casos de uso por falta de estructura requerida, campos obligatorios incompletos, ausencia de documentación de IA.
+  PR: [#50] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+  - [fix/review/pr-51] Solicitud de cambios en PR de tarjetas CRC por incumplimiento de estructura requerida, falta de documentación de IA, ausencia de actualización de changelog y descripción de PR incompleta.
+  PR: [#51] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+- [review/pr-20] Request Changes en PR de diagramas de casos de uso por error de sintaxis UML en Caso 2.
+  PR: [#20] | Review realizado por @nachonervi-design (Documentador y Coordinador)
+- [fix/correcciones-modelador-diagramas-a2] Corregidas relaciones UML `<<extend>>` a `<<include>>` en procesos obligatorios (Cancelar y Registrar turno), corregida estructura de enlaces en `diagramasUML.md` y mejorado el formato de evidencia de IA con sección de iteraciones y bloques de código.
+  PR: [#62](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/62) - @keviineze (Modelador Diagramas de Casos de Uso).
 - [fix/ia-y-herramientas-agile] Corrección de formato en prompts de IA (triple backtick) y limpieza del archivo herramientas_agile.md. PR: [#73](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/73) — @nachonervi-design (Documentador y Coordinador)
 
 - [fix/diagramas-links-subindices] Corrección de enlaces en diagramas UML: actualización de rutas para apuntar a sub-índices (.md) en lugar de carpetas. PR: [#74](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/74) — @nachonervi-design (Documentador y Coordinador)
