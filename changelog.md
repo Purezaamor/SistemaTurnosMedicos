@@ -1,12 +1,29 @@
 
-<<<<<<< HEAD
+
+
 ## [Unreleased]
+
+---
+
+## [Release Primer Parcial] - 2026-05-04
+
+### Added
+
+- [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
+=======
+## [Unreleased]
+
 
 ## [Actividad Obligatoria N°2]
 
 ### Notes
 
+
+
+## [Release Actividad Obligatoria N°2] - 2026-04-17
+
 - [contingencia-equipo] Debido a la baja cantidad de integrantes disponibles en el equipo, Alejo Guerricabeitia asumió dos roles en la Actividad Obligatoria N°2: Diseñador de Tarjetas CRC y Especialista en Escenarios.
+
 
 ### Added
 
@@ -78,7 +95,14 @@
 - [fix/workflow-git] Corrección del flujo de trabajo utilizando git en lugar del editor web de GitHub. PR: [#35](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/35) @Purezaamor (Coordinador)
 
 
-### Added
+feature/disenador-dip-analisis-dependencias
+
+- [fix/changelog-duplicados] Eliminación de líneas duplicadas en `changelog.md` para mantener consistencia y cumplimiento de formato en la entrega final de la Actividad Obligatoria N°2. PR: [#78](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/78) — @nachonervi-design (Documentador y Coordinador)
+
+
+- [fix/changelog-duplicados] Eliminación de líneas duplicadas en `changelog.md` para mantener consistencia y cumplimiento de formato en la entrega final de la Actividad Obligatoria N°2. PR: [#78](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/78) — @nachonervi-design (Documentador y Coordinador)
+
+
 
 - [feature/analista-requerimientos] Normalización de 5 RF y 5 RNF; definición de alcance MVP; enlace a NotebookLM.
   PR: [#8](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/8) | Issue: [#6](https://github.com/Purezaamor/SistemaTurnosMedicos/issues/6)
@@ -134,5 +158,12 @@ feature/doc-coord-repo-update-readme-md-a2
 
 - [excepción retroactiva — commit directo sobre release/entrega-final-correcta] Revisión del template de PR para entrega final. No siguió el flujo fix/ → PR. No repetir.  
   Commit: [98b5859](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/98b58590dbcce30e71e0a2d53bee66ff694d16a9) — @nachonervi-design (Analista de Requerimientos)
-=======
+
+
+feature/disenador-dip-analisis-dependencias
+
+- [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
+
+- [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
+
 
