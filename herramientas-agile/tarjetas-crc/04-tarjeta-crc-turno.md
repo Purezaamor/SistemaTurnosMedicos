@@ -4,9 +4,12 @@
 | **Superclase:** | | | |
 | **Subclase:** | | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Registrar turno | Paciente, Agenda | Represento una reserva en el sistema | fecha, hora |
-| Gestionar estado del turno | Medico | Tengo un estado asociado al ciclo de vida (Programado, Confirmado, Atendido, Cancelado, Reprogramado, NoAsistió) | estado |
-| Permitir cancelación | Agenda | Puedo ser modificado o cancelado | |
+<<<<<<< HEAD
+| Registrar turno | Secretaria, Agenda | Represento una reserva en el sistema | fecha |
+| Cambiar estado del turno (creado, confirmado, atendido, cancelado, ausente) | Medico | Tengo un ciclo de vida asociado | estado |
+| Permitir cancelación | Secretaria | Puedo ser cancelado o modificado | |
 | Asociar paciente y médico | Paciente, Medico | Sé a qué paciente y médico pertenezco | paciente, medico |
-| Validar disponibilidad | Agenda | Verifico que no haya superposición | fecha, hora |
-| Mantener tipo de consulta | Agenda | Diferencio entre control y primera vez | tipoConsulta |
+| Validar disponibilidad | Agenda | Verifico que no haya superposición | hora |
+| Gestionar tipo de consulta | Secretaria | Distingo duración según tipo | tipoConsulta |
+| | | | estados: creado, confirmado, atendido, cancelado, ausente |
+=======
