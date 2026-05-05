@@ -1,10 +1,10 @@
 # Changelog
 
-## [Release Primer Parcial] - 2026-04-25
+## [Release Primer Parcial] - 2026-05-04
 
 ### Added
 
-- [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR:
+- [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
 
 
 
