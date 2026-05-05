@@ -2,7 +2,10 @@
 
 ## Prompt utilizado
 
-"Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos para identificar las clases principales. Generar tarjetas CRC incluyendo nombre de clase, superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades."
+---
+"Analizar el archivo anexos/introduccion.md y el diagrama de clases del sistema de turnos médicos
+para identificar las clases principales. Generar tarjetas CRC incluyendo nombre de clase,
+superclase, subclase, responsabilidades, colaboradores, pensamiento del objeto y propiedades".
 
 ---
 
@@ -13,22 +16,45 @@
 
 ---
 
+## Output generado por la IA (fragmento)
+
+Clase: Turno  
+Responsabilidades:
+- Registrar turno
+- Cambiar estado
+- Permitir cancelación  
+
+Colaboradores:
+- Paciente  
+- Medico  
+- Agenda  
+
+---
+
 ## Ajustes realizados al resultado de la IA
 
-- Se corrigieron nombres de clases para alinearlos al dominio del sistema de turnos médicos
-- Se ajustaron responsabilidades para evitar duplicación de funciones entre clases
+- Se corrigieron nombres de clases para alinearlos al dominio del sistema
+- Se ajustaron responsabilidades para evitar duplicación entre clases
 - Se mejoraron los colaboradores para reflejar correctamente la interacción entre objetos
-- Se simplificaron los pensamientos del objeto para que sean más claros y representativos
-- Se validaron las propiedades según los requisitos funcionales del sistema
-- Se incorporó una nueva clase **HistorialCambios** para representar la auditoría y trazabilidad del sistema
-- Se revisó la clase **Turno** para explicitar la relación con **Paciente** y **Medico**
-- Se descartaron elementos que no correspondían al modelo (clases irrelevantes o redundantes)
+- Se simplificaron los pensamientos del objeto para mayor claridad
+- Se validaron las propiedades según los requisitos funcionales
+- Se incorporó la clase **HistorialCambios** para representar la auditoría del sistema
+- Se ajustó la clase **Turno** para explicitar su relación con **Paciente** y **Medico**
+
+---
+
+## Iteraciones realizadas
+
+- Iteración 1: Generación inicial de tarjetas CRC con inconsistencias en responsabilidades y colaboradores.
+- Iteración 2: Ajuste de responsabilidades y mejora de relaciones entre clases.
+- Iteración 3: Incorporación de la clase HistorialCambios para cubrir auditoría.
+- Iteración 4: Refinamiento final para cumplir con la consigna y estructura requerida.
 
 ---
 
 ## Resultado final
 
-Como resultado del proceso se generaron un total de **6 tarjetas CRC** correspondientes a las clases principales del sistema:
+Se generaron **8 tarjetas CRC** correspondientes a las clases principales del sistema:
 
 - Persona  
 - Paciente  
@@ -36,10 +62,8 @@ Como resultado del proceso se generaron un total de **6 tarjetas CRC** correspon
 - Turno  
 - Agenda  
 - HistorialCambios  
-
-Inicialmente se identificaron 5 clases clave, pero durante la revisión del diseño se incorporó la clase **HistorialCambios** con el objetivo de cubrir los requerimientos de auditoría del sistema.
-
-Las tarjetas incluyen responsabilidades, colaboradores, pensamiento del objeto y propiedades, permitiendo validar la correcta asignación de responsabilidades dentro del modelo orientado a objetos.
+- Secretaria  
+- LlegadaPaciente  
 
 Las tarjetas fueron organizadas en la carpeta:
 
