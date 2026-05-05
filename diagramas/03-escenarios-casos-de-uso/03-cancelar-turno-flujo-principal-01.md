@@ -16,8 +16,9 @@
 | 3. Se confirma acción | Usuario |
 | 4. Sistema cambia estado | Base de datos |
 | 5. Se libera horario | Agenda |
-| 6. El sistema notifica al paciente la cancelación |
-
+<<<<<<< HEAD
+| 6. El sistema notifica al paciente la cancelación | Canal de notificación (WhatsApp / mail) |
+=======
 | **Condiciones, suposiciones y preguntas** | |
 |---|---|
 | **Precondiciones:** | Turno existente |

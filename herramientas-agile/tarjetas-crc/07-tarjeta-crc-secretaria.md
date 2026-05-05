@@ -1,10 +1,11 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Secretaria | | |
-| **Superclase:** | Persona | | |
+| **Superclase:** | Usuario | | |
 | **Subclase:** | | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Solicitar alta/reprogramacion/cancelacion de turnos | ServicioGestionTurnos | Opero el sistema administrativo sin contener la logica de negocio | nombre |
-| Registrar llegada de paciente | ServicioGestionTurnos | Registro el check-in del paciente | rol |
-| Gestionar disponibilidad del profesional | ServicioDisponibilidad | Coordino configuraciones de agenda | |
-| Identificar usuario responsable de acciones | HistorialCambios | Cada operacion queda asociada a mi identidad | |
+| Registrar turnos | Turno | Organizo la asignación de turnos | idSecretaria |
+| Cancelar turnos | Turno | Puedo liberar turnos ya asignados | nombre |
+| Reprogramar turnos | Turno | Modifico la agenda existente | rol |
+| Registrar llegada de paciente | LlegadaPaciente | Sé cuándo el paciente llega | |
+| Gestionar agenda médica | Agenda | Mantengo la organización del médico | |

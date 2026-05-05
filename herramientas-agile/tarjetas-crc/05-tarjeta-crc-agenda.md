@@ -9,3 +9,4 @@
 | Gestionar sobreturnos autorizados | AutorizadorSobreturno | Permito excepciones con autorizacion formal | |
 | Asociar agenda a un medico | Medico | Pertenezco a un profesional | medico |
 | Mantener estructura de horarios | Disponibilidad | Organizo los bloques de horarios disponibles | |
+
