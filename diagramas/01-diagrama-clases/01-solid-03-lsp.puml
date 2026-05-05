@@ -1,0 +1,35 @@
+@startuml
+title Gestión de Usuarios - Aplicación de LSP
+
+skinparam classAttributeIconSize 0
+
+class Persona {
+  -nombre : String
+  -dni : String
+  +identificarse()
+}
+
+class Paciente {
+  +solicitarTurno()
+}
+
+class Medico {
+  +atenderTurno()
+}
+
+class Secretaria {
+  +registrarTurno()
+  +cancelarTurno()
+}
+
+class Turno
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Persona <|-- Secretaria
+
+Paciente --> Turno
+Medico --> Turno
+Secretaria --> Turno
+
+@enduml
