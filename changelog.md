@@ -67,6 +67,19 @@
 
 - [fix/changelog-duplicados] Eliminación de líneas duplicadas en `changelog.md` para mantener consistencia y cumplimiento de formato en la entrega final de la Actividad Obligatoria N°2. PR: [#78](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/78) — @nachonervi-design (Documentador y Coordinador)
 
+- [fix/herramientas agile formato nueva] Corrección de formato en herramientas agile. PR: [#85](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/85)
+
+- [fix/modelador casos usoA2] Ajustes en tarjetas CRC y documentación. PR: [#84](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/84)
+
+- [fix/changelog final ajustes] Ajustes finales en changelog. PR: [#82](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/82)
+
+- [fix/herramientas agile formato] Corrección previa de herramientas agile. PR: [#76](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/76)
+
+- [feature/escenarios cu] Implementación de escenarios de casos de uso. PR: [#57](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/57)
+
+- [fix/correcciones finales (UML, CRC, changelog y limpieza)] Resolución de conflictos, limpieza de duplicados, corrección de índices y actualización final del changelog. PR: [#86](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/86)
+
+- [fix/correcciones finales adicionales] Ajustes finales sobre UML, conflictos y consistencia general del repositorio. PR: [#87](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/87)
 
 - [fix/changelog-duplicados] Eliminación de líneas duplicadas en `changelog.md` para mantener consistencia y cumplimiento de formato en la entrega final de la Actividad Obligatoria N°2. PR: [#78](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/78) — @nachonervi-design (Documentador y Coordinador)
 
@@ -116,8 +129,12 @@
 
 - [fix/notebooklm-link] Corrección de sintaxis del enlace de NotebookLM en `introduccion.md`. PR: [#30](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/30) — @keviineze (Modelador de Casos de Uso)
 
+<<<<<<< HEAD
 
 - [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
 
 - [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
 
+=======
+- [fix/diagrama-tag] Corrección de error de renderizado (tag duplicado) en el diagrama de clases. PR: [#40](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/40) — @keviineze (Modelador de Casos de Uso)
+>>>>>>> a34eeee3dca92f59128f255811ab4e69203e0ae1
