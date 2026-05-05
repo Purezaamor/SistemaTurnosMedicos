@@ -69,33 +69,8 @@ Para eliminar el acoplamiento a clases concretas y cumplir con el Principio de I
 - **INotificador**  
   Interfaz para el mecanismo de notificación. Así se desacopla el proceso de notificación de la tecnología específica (correo, SMS, WhatsApp).
 
-### Ejemplo de definición de interfaces (en pseudocódigo/Java):
+### Ejemplo de definición de interfaces:
 
-```java
-public interface ITurno {
-    Paciente getPaciente();
-    Especialista getEspecialista();
-    void cancelar();
-}
-
-public interface IEspecialista {
-    String getNombre();
-    List<ITurno> getTurnosAsignados();
-}
-
-public interface IPaciente {
-    String getDNI();
-    void recibirNotificacion(String mensaje);
-}
-
-public interface IAgenda {
-    void agendarTurno(ITurno turno);
-    void cancelarTurno(ITurno turno);
-}
-
-public interface INotificador {
-    void notificar(String mensaje, IPaciente paciente);
-}
 
 ## 6. Diseño de inyección de dependencias
 
@@ -105,47 +80,21 @@ La inyección de dependencias consiste en ofrecer a cada clase las instancias de
 
 Antes (acoplamiento fuerte):
 
-Java
-class Agenda {
-    private NotificadorEmail notificador = new NotificadorEmail();
-    // ...
-}
+
 
 Después (usando inyección de dependencias con interfaces):
 
-Java
-class Agenda {
-    private INotificador notificador;
 
-    // Constructor
-    public Agenda(INotificador notificador) {
-        this.notificador = notificador;
-    }
-
-    // Ahora se puede usar cualquier implementacion de INotificador sin modificar la clase Agenda
-}
 
 Del mismo modo, podemos aplicar el patrón al resto de clases:
 
-Java
-class ControladorTurnos {
-    private IEspecialista especialista;
-    private IPaciente paciente;
-    private ITurno turno;
-    private IAgenda agenda;
-
-    public ControladorTurnos(IEspecialista especialista, IPaciente paciente, ITurno turno, IAgenda agenda) {
-        this.especialista = especialista;
-        this.paciente = paciente;
-        this.turno = turno;
-        this.agenda = agenda;
-    }
-    
-    // Métodos usan las abstracciones en vez de clases concretas
-}
 
 ## 7. Diagrama de Clases con DIP aplicado
 
 A continuación se compara el diseño original (dependencias hacia clases concretas) con el diseño mejorado según el Principio de Inversión de Dependencias (DIP).
 
-![Diagrama DIP](C:\Users\ferre\Downloads\diagramas01-diagrama-clases01-solid-05-dip.png.png)
+![Diagrama DIP](../../diagramas/01-diagrama-clases/01-solid-05-dip.png)
+
+Ver archivos fuente:
+- [Diagrama .puml](../../diagramas/01-diagrama-clases/01-solid-05-dip.puml)
+- [Imagen .png](../../diagramas/01-diagrama-clases/01-solid-05-dip.png)
