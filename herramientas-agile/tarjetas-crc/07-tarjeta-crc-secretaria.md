@@ -1,6 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Secretaria | | |
+<<<<<<< HEAD
 | **Superclase:** | Persona | | |
 | **Subclase:** | | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
@@ -9,3 +10,4 @@
 | Reprogramar turnos | Turno | Modifico la agenda existente | rol |
 | Registrar llegada de paciente | LlegadaPaciente | Sé cuándo el paciente llega | |
 | Gestionar agenda médica | Agenda | Mantengo la organización del médico | |
+=======
