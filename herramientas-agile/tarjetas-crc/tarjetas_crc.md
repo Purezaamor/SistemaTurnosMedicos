@@ -7,3 +7,4 @@
 - [HistorialCambios](06-tarjeta-crc-historial.md)
 - [Secretaria](07-tarjeta-crc-secretaria.md)
 - [LlegadaPaciente](08-tarjeta-crc-llegada-paciente.md)
+- [Abstracciones e Inyección de Dependencias](09-abstracciones-inyeccion-dependencias.md)

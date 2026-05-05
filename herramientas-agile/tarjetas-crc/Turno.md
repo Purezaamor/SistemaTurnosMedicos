@@ -3,13 +3,17 @@
 - **Superclase:** —
 - **Subclases:** (potencial futuro: ConsultaControl, ConsultaPrimeraVez)
 - **Pensamiento del objeto:**  
-  "Soy una cita médica concreta. Conozco mi fecha, mi hora programada, a qué paciente y médico involucro, qué tipo de consulta represento y cuál es mi estado actual. Si soy un sobreturno, lo sé. Cuando el paciente llega, registro su hora real de arribo. Puedo transicionar de estado, pero no decido si el horario está disponible: eso lo sabe la Agenda."
+  "Soy una cita medica concreta. Conozco mi fecha, hora programada, paciente, medico, tipo de consulta y estado actual. Si soy sobreturno, lo conozco. Cuando el paciente llega, registro su hora real. Puedo cambiar mi estado, pero no defino disponibilidad horaria: eso pertenece a Agenda y a las politicas de disponibilidad."
 - **Responsabilidades:**  
-  — Conocer fecha, hora, estado (Programado/Presente/Atendido/Cancelado/Ausente), tipoConsulta, esSobreturno, horaLlegada  
-  — Transicionar su propio estado (cambiarEstado())  
-  — Registrar el check-in del paciente (registrarLlegada(horaReal))  
-  — Notificar a HistorialCambio ante cada cambio de estado
-- **Colaboraciones:**  
-  Paciente, Medico, Agenda, HistorialCambio
+  - Conocer fecha, hora, estado (Programado/Presente/Atendido/Cancelado/Ausente), tipoConsulta, esSobreturno, horaLlegada  
+  - Transicionar su propio estado (cambiarEstado())  
+  - Registrar el check-in del paciente (registrarLlegada(horaReal))
+- **Colaboraciones de dominio:**  
+  Paciente, Medico, Agenda
+- **Abstracciones para inversion de dependencias:**  
+  - RegistroAuditoria: recibe eventos de cambios del turno.  
+  - RelojSistema: provee marca temporal para cambios y check-in.
+- **Inyeccion de dependencias (capa aplicacion):**  
+  - ServicioGestionTurnos inyecta RepositorioTurnos, RegistroAuditoria y RelojSistema para operar sobre Turno.
 - **Propiedad:**  
   Creado y gestionado por Agenda

@@ -4,8 +4,8 @@
 | **Superclase:** | | | |
 | **Subclase:** | | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Organizar turnos del profesional | Secretaria, Turno | Mantengo la agenda del médico | listaTurnos |
-| Validar disponibilidad | Turno | Evito superposición de horarios | |
-| Gestionar sobreturnos | Medico | Permito excepciones con autorización | |
-| Asociar agenda a un médico | Medico | Pertenezco a un profesional | medico |
-| Mantener estructura de horarios | Secretaria | Organizo los horarios disponibles | |
+| Organizar turnos del profesional | Turno | Mantengo la agenda del medico | listaTurnos |
+| Validar disponibilidad | PoliticaDisponibilidad | Evito superposicion de horarios | |
+| Gestionar sobreturnos autorizados | AutorizadorSobreturno | Permito excepciones con autorizacion formal | |
+| Asociar agenda a un medico | Medico | Pertenezco a un profesional | medico |
+| Mantener estructura de horarios | Disponibilidad | Organizo los bloques de horarios disponibles | |
