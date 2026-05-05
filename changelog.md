@@ -1,8 +1,18 @@
 # Changelog
 
-## [Unreleased]
+## [Release Primer Parcial] - 2026-05-04
 
----
+### Added
+
+- [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
+
+- [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
+
+### Fixed
+
+- [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: [#0143278](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/0143278) — @Purezaamor (Especialista en Principios de Extensión)
+
+- 
 
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
@@ -13,8 +23,6 @@
 - [feature/a2-tarjetas-crc] Creación de tarjetas CRC en archivos individuales, incluyendo responsabilidades, colaboradores y pensamiento del objeto. PR: [#51](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/51) — @Purezaamor (Diseñador de Tarjetas CRC)
 
 - [feature/doc-coord-repo-update-readme-md-a2] Actualización de README.md con estructura final del proyecto, índices de navegación y documentación del equipo. PR: [#52](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/52) — @nachonervi-design (Documentador y Coordinador)
-
-- [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
 
 ### Changed
 
