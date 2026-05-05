@@ -6,7 +6,7 @@
 
 - [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
 
-- [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: #91 — @Purezaamor (Alejo Guerricabeitia)
+- [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión- OCP + LSP)
 
 ---
 
