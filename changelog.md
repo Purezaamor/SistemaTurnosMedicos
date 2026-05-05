@@ -12,7 +12,7 @@
 
 ### Fixed
 
-
+- [fix/ordenar-changelog-y-readme] Se realiza el arreglo del Changelog.md ya que hubo un error en sobreescritura y lo traje de vuelta, tambien se actualizó el README.md como indica la consigna del Primer Parcial. PR: [#97](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/97) - @keviineze (Especialista en Segregación de Interfaces).
 
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
