@@ -1,0 +1,71 @@
+@startuml 01-solid-04-isp
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor #2681d4
+    BorderColor #1a1a1a
+}
+
+interface ICancelable {
+    + cancelar(): void
+}
+
+interface IReprogramable {
+    + reprogramar(nuevaFecha: DateTime): void
+}
+
+interface IVerificadorLlegada {
+    + confirmarCheckIn(): void
+}
+
+interface INotificable {
+    + enviarNotificacion(mensaje: String): void
+}
+
+interface IOperadorTurnos {
+    + agregarTurno(turno: Turno): void
+    + eliminarTurno(id: int): void
+}
+
+interface IValidadorDisponibilidad {
+    + validarDisponibilidad(fecha: DateTime, medicoId: int): boolean
+    + verificarConflicto(horario: String): boolean
+}
+
+
+class Turno {
+    - id: int
+    - fecha: DateTime
+    - estado: String
+}
+note right of Turno: Implementa solo interfaces \nde ciclo de vida del turno.
+
+class Agenda {
+    - listaTurnos: List
+}
+note right of Agenda: Separa gestión operativa \nde lógica de validación.
+
+class Secretaria {
+    - nombre: String
+}
+
+
+Turno ..|> ICancelable
+Turno ..|> IReprogramable
+Turno ..|> IVerificadorLlegada
+
+Agenda ..|> IOperadorTurnos
+Agenda ..|> IValidadorDisponibilidad
+
+Secretaria ..|> IOperadorTurnos
+Secretaria ..|> INotificable
+
+legend bottom
+  <b>ISP (Interface Segregation Principle):</b>
+  Las clases no son obligadas a depender de métodos que no utilizan.
+  * Turno no sabe de notificaciones.
+  * Agenda no sabe de reprogramaciones individuales.
+  * Secretaria solo usa interfaces operativas y de comunicación.
+endlegend
+
+@enduml
