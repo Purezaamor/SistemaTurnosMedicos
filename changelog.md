@@ -10,7 +10,9 @@
 ### Added
 
 - [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
-=======
+
+- [feature/doc-coord-repo-update-readme-md2] Documentación de Code Reviews del rol Documentador y Coordinador, incluyendo análisis de ramas (DIP, OCP/LSP, ISP), observaciones, ajustes solicitados y veredictos. PR: [#105](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/105) — @nachonervi-design (Documentador y Coordinador)
+
 ## [Unreleased]
 
 
