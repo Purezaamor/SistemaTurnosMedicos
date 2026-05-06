@@ -1,0 +1,10 @@
+@startuml
+class Turno
+class Agenda
+class ValidadorTurno
+class HistorialCambios
+
+Turno --> ValidadorTurno
+Turno --> HistorialCambios
+Agenda --> Turno
+@enduml

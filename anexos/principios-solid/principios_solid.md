@@ -6,4 +6,4 @@ Los Principios SOLID son un conjunto de buenas prácticas dentro del Diseño Ori
 - [Abierto/Cerrado (OCP)](/anexos/principios-solid/02-ocp.md)
 - [Sustitucion de Liskov (LSP)](/anexos/principios-solid/03-lsp.md)
 - [Segregación de Interfaces (ISP)](/anexos/principios-solid/04-isp.md)
-- [Inversion de Dependencias](/anexos/principios-solid/05-dip.md)
+- [Inversión de Dependencias (DIP)](/anexos/principios-solid/05-dip.md)
