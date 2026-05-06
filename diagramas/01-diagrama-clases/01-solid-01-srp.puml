@@ -1,10 +1,30 @@
 @startuml
-class Turno
-class Agenda
-class ValidadorTurno
-class HistorialCambios
+class GestorTurnos {
+  +crearTurno()
+  +validarHorario()
+  +calcularDuracion()
+  +notificar()
+  +guardar()
+}
 
-Turno --> ValidadorTurno
-Turno --> HistorialCambios
-Agenda --> Turno
+class ValidadorHorario {
+  +validar()
+}
+
+class CalculadorDuracion {
+  +calcular()
+}
+
+class NotificadorTurno {
+  +notificar()
+}
+
+class RepositorioTurno {
+  +guardar()
+}
+
+GestorTurnos --> ValidadorHorario
+GestorTurnos --> CalculadorDuracion
+GestorTurnos --> NotificadorTurno
+GestorTurnos --> RepositorioTurno
 @enduml
