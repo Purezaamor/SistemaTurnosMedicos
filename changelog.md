@@ -6,6 +6,13 @@
 
 - [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
 
+- [feature/doc-coord-repo-update-readme-md2] Documentación de Code Reviews del rol Documentador y Coordinador, incluyendo análisis de ramas (DIP, OCP/LSP, ISP), observaciones, ajustes solicitados y veredictos. PR: [#105](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/105) — @nachonervi-design (Documentador y Coordinador)
+
+- [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador)
+
+## [Unreleased]
+
+
 - [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
 
 ### Fixed
