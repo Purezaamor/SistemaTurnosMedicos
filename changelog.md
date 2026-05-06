@@ -8,17 +8,12 @@
 
 - [feature/doc-coord-repo-update-readme-md2] Documentación de Code Reviews del rol Documentador y Coordinador, incluyendo análisis de ramas (DIP, OCP/LSP, ISP), observaciones, ajustes solicitados y veredictos. PR: [#105](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/105) — @nachonervi-design (Documentador y Coordinador)
 
-- [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador)
-
-### Fixed
-- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador)
-
-## [Unreleased]
-
+- [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador).
 
 - [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
 
 ### Fixed
+- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador).
 
 - [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: [#0143278](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/0143278) — @Purezaamor (Especialista en Principios de Extensión)
 
@@ -33,6 +28,16 @@
   - Documentador+SRP (RC1, RC10, RC12, RC13, RC14, RC15, RC18, RC19)
   - RCN1, RCN2, RCN5 (correcciones adicionales)
   PR: [#112](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/112) — @Purezaamor
+=======
+- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. — @nachonervi-design (Documentador y Coordinador).
+
+- [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
+    - OCP+LSP (RC2, RC3, RC4, RC5, RC9, RC16, RC17): formato, imágenes, índice DIP, changelog
+    - DIP (RC7, RC8): eliminado pseudocódigo, agregado PNG, creada documentación IA
+    - ISP (RC6): agregada justificación técnica en 04-isp.md
+    - Documentador+SRP (RC1, RC10, RC12, RC13, RC14, RC15, RC18, RC19): creado SRP, eliminados archivos, corregidos formatos, limpieza README
+    - Conflictos generales resueltos en changelog.md, diagramasUML.md y 06-tarjeta-crc-historial.md.
+        - PR: [#101](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/101) — @Purezaamor (Especialista en Principios de Extensión).
 
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
