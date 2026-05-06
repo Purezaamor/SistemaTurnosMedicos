@@ -10,6 +10,9 @@
 
 - [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador)
 
+### Fixed
+- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador)
+
 ## [Unreleased]
 
 
