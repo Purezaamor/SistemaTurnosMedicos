@@ -26,6 +26,8 @@
 
 - [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador)
 
+- [fix/changelog-update] Registro en `changelog.md` de la corrección de enlaces rotos y mejoras de navegación realizadas en `README.md`. PR: [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109) — @nachonervi-design (Documentador y Coordinador)
+
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
