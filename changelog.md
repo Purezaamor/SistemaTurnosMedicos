@@ -10,8 +10,6 @@
 
 - [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador)
 
-### Fixed
-- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador)
 
 ## [Unreleased]
 
@@ -23,7 +21,11 @@
 - [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: [#0143278](https://github.com/Purezaamor/SistemaTurnosMedicos/commit/0143278) — @Purezaamor (Especialista en Principios de Extensión)
 
 - [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) - @keviineze (Especialista en Segregación de Interfaces).
-- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/readme-links] Corrección de enlaces rotos y mejora de navegación en `README.md` para mantener consistencia con la estructura del proyecto y los índices del parcial. PR: [#108](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/108) — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador)
+
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
