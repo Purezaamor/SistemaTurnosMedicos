@@ -148,4 +148,4 @@ class ControladorTurnos {
 
 A continuación se compara el diseño original (dependencias hacia clases concretas) con el diseño mejorado según el Principio de Inversión de Dependencias (DIP).
 
-![Diagrama DIP](C:\Users\ferre\Downloads\diagramas01-diagrama-clases01-solid-05-dip.png.png)
+![Diagrama UML - DIP](../../diagramas/01-diagrama-clases/01-solid-05-dip.png)

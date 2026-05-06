@@ -50,4 +50,4 @@ Esta separación permite que cada clase cambie por una sola razón, facilitando 
 
 El siguiente diagrama muestra la separación de responsabilidades aplicada según el principio SRP.
 
-![Diagrama SRP](../../diagramas/01-diagrama-clases/01-solid-01-srp.png)
+![Diagrama UML - SRP](../../diagramas/01-diagrama-clases/01-solid-01-srp.png)
