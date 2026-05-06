@@ -79,8 +79,6 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 
 ### Diagramas
 - [Índice de Diagramas UML](./diagramas/diagramasUML.md)
-- [Diagramas de Casos de Uso](./diagramas/02-casos-de-uso/diagramas_de_casos_de_uso.md)
-- [Escenarios de Casos de Uso](./diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md)
 
 ### Herramientas Agile
 - [Herramientas Agile](./herramientas-agile/herramientas_agile.md)
