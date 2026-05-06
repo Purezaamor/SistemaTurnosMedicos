@@ -1,18 +1,33 @@
-Prompt utilizado con Copilot Agent:
-Leer anexos/introduccion.md,
-diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw y
-las tarjetas CRC de herramientas-agile/tarjetas-crc/ como contexto. Identificar dependencias hacía clases concretas en el diseño actual
-y proponga abstracciones (interfaces o clases abstractas) para invertirlas,
-indicando dónde aplicar inyección de dependencias. Revisá críticamente el
-resultado: descartá abstracciones que no correspondan al dominio, ajustá
-nombres y verificá coherencia con el sistema de turnos médicos.
+# Especialista en Inversión de Dependencias (DIP)
 
-Archivos referenciados:
-- anexos/introduccion.md
-- diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw
-- herramientas-agile/tarjetas-crc/
+## Prompt utilizado con Copilot Agent
 
-Ajustes realizados:
-- Renombré ciertas interfaces para mayor coherencia con el dominio médico.
-- Reemplacé la dependencia concreta por una interfaz en el módulo de asignación de turnos.
-- Agregué una clase abstracta para manejo de notificaciones.
+```
+Leer anexos/introduccion.md, diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw y las tarjetas CRC para identificar dependencias hacia clases concretas y proponer abstracciones.
+```
+
+## Archivos de contexto referenciados
+
+- `anexos/introduccion.md`
+- `diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw`
+- `herramientas-agile/tarjetas-crc/` (todas las tarjetas CRC)
+
+## Output obtenido
+
+Copilot identificó las siguientes dependencias problemáticas:
+- `ControladorTurnos` depende directamente de `Turno` y `Agenda` (clases concretas)
+- `Notificador` depende de `CorreoService` concreto
+- `Agenda` depende de `Turno` concreto
+
+Propuso las siguientes abstracciones:
+- `ITurno`
+- `IAgenda`
+- `INotificador`
+- `IRepositorioTurnos`
+
+## Ajustes realizados
+
+- Se descartó la abstracción `IEspecialista` porque no aportaba valor al dominio
+- Se renombró `INotificadorService` a `INotificador` por simplicidad
+- Se ajustó el diagrama UML para reflejar las dependencias invertidas correctamente
+- Se eliminó pseudocódigo Java que Copilot sugirió (no solicitado en la consigna)

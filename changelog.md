@@ -19,6 +19,16 @@
 
 - [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) - @keviineze (Especialista en Segregación de Interfaces).
 
+- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. — @nachonervi-design (Documentador y Coordinador)
+
+- [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
+  - OCP+LSP (RC2, RC3, RC4, RC5, RC9, RC16, RC17)
+  - DIP (RC7, RC8)
+  - ISP (RC6)
+  - Documentador+SRP (RC1, RC10, RC12, RC13, RC14, RC15, RC18, RC19)
+  - RCN1, RCN2, RCN5 (correcciones adicionales)
+  PR: [#112](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/112) — @Purezaamor
+=======
 - [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. — @nachonervi-design (Documentador y Coordinador).
 
 - [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
