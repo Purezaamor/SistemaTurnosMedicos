@@ -24,9 +24,11 @@
 
 - [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: #91 — @Purezaamor (Especialista en Principios de Extensión).
 
-- [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) — @keviineze. Relacionado a [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109)
+- [feature/disenador-dip-analisis-dependencias] Aplicación del principio DIP: análisis de dependencias, abstracciones, inversión de dependencias, diagrama UML y documentación IA. PR: [#96](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/96) — @keviineze (Especialista en DIP).
 
-- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. PR: [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109) — @nachonervi-design (Documentador y Coordinador)
+- [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) — @keviineze. Relacionado a [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109).
+
+- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. PR: [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109) — @nachonervi-design (Documentador y Coordinador).
 
 - [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
   - OCP+LSP (RC2, RC3, RC4, RC5, RC9, RC16, RC17)
