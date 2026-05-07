@@ -1,0 +1,30 @@
+@startuml
+class GestorTurnos {
+  +crearTurno()
+  +validarHorario()
+  +calcularDuracion()
+  +notificar()
+  +guardar()
+}
+
+class ValidadorHorario {
+  +validar()
+}
+
+class CalculadorDuracion {
+  +calcular()
+}
+
+class NotificadorTurno {
+  +notificar()
+}
+
+class RepositorioTurno {
+  +guardar()
+}
+
+GestorTurnos --> ValidadorHorario
+GestorTurnos --> CalculadorDuracion
+GestorTurnos --> NotificadorTurno
+GestorTurnos --> RepositorioTurno
+@enduml
