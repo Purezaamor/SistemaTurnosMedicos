@@ -10,6 +10,8 @@
 
 - [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
 
+- [feature/disenador-dip-analisis-dependencias] Aplicación del principio DIP: análisis de dependencias, abstracciones, inversión de dependencias, diagrama UML y documentación IA. PR: [#96](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/96) — @keviineze (Especialista en DIP)
+
 - [feature/doc-coord-repo-update-readme-md2] Documentación de Code Reviews del rol Documentador y Coordinador, incluyendo análisis de ramas (DIP, OCP/LSP, ISP), observaciones, ajustes solicitados y veredictos. PR: [#105](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/105) — @nachonervi-design (Documentador y Coordinador)
 
 - [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador).
@@ -20,11 +22,11 @@
 
 - [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador).
 
-- [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
+- [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: #91 — @Purezaamor (Especialista en Principios de Extensión).
 
-- [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) - @keviineze (Especialista en Segregación de Interfaces).
+- [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) — @keviineze. Relacionado a [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109)
 
-- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. — @nachonervi-design (Documentador y Coordinador)
+- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. PR: [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109) — @nachonervi-design (Documentador y Coordinador)
 
 - [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
   - OCP+LSP (RC2, RC3, RC4, RC5, RC9, RC16, RC17)
