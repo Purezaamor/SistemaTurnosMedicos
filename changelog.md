@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [Release Actividad Obligatoria N°3] - 2026-05-07
+
+### Added
+
+- [feature/esp-actividades-1-2-diagramas] Diagramas de actividades para casos de uso 1 y 2: Registrar Turno Médico y Reprogramar Turno Existente. Incluye archivos .puml, .png, índice en diagramas/04-diagramas-actividades/ y documentación IA en ia/a3/esp-actividades-1-2.md. Issues: #116, #117. PR: [#???] — @Purezaamor
+
 ---
 
 ## [Release Primer Parcial] - 2026-05-04
