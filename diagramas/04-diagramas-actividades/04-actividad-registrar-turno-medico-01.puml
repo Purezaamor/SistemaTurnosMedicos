@@ -1,0 +1,33 @@
+@startuml
+|Paciente|
+start
+:Solicita turno médico;
+
+|Secretaria|
+:Recibe solicitud;
+:Verifica disponibilidad en el sistema;
+
+|Sistema|
+if (¿Hay turno disponible?) then (sí)
+  |Secretaria|
+  :Registra el turno;
+  |Sistema|
+  :Asigna médico y horario;
+  |Paciente|
+  :Recibe confirmación del turno;
+  stop
+else (no)
+  |Secretaria|
+  :Ofrece fechas alternativas;
+  :Espera confirmación del paciente;
+  if (¿Acepta nueva fecha?) then (sí)
+    |Sistema|
+    :Registra nuevo turno;
+    |Paciente|
+    :Recibe confirmación;
+    stop
+  else (no)
+    stop
+  endif
+endif
+@enduml
