@@ -1,0 +1,60 @@
+@startuml
+title Gestión de Turnos - Aplicación de OCP
+
+skinparam classAttributeIconSize 0
+
+abstract class Turno {
+  -fecha : Date
+  -hora : Time
+  -estado : EstadoTurno
+  -paciente : Paciente
+  -medico : Medico
+  +confirmar()
+  +cancelar()
+  +calcularDuracion()
+}
+
+class TurnoPresencial {
+  +calcularDuracion()
+}
+
+class TurnoVirtual {
+  -linkAcceso : String
+  +calcularDuracion()
+}
+
+class TurnoDomicilio {
+  -direccion : String
+  +calcularDuracion()
+}
+
+class Paciente {
+  -nombre
+}
+
+class Medico {
+  -especialidad
+}
+
+class Agenda {
+  +validarDisponibilidad()
+}
+
+enum EstadoTurno {
+  CREADO
+  CONFIRMADO
+  CANCELADO
+  ATENDIDO
+  AUSENTE
+}
+
+Turno <|-- TurnoPresencial
+Turno <|-- TurnoVirtual
+Turno <|-- TurnoDomicilio
+
+Turno --> Paciente
+Turno --> Medico
+Turno --> Agenda
+Turno --> EstadoTurno
+
+@enduml

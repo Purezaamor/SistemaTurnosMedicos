@@ -4,6 +4,40 @@
 
 ---
 
+## [Release Primer Parcial] - 2026-05-04
+
+### Added
+
+- [feature/esp-isp-add-anexo-isp] Análisis de Principio ISP y diseño de diagrama UML para Segregación de Interfaces. PR: [#92](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/92) - @keviineze (Especialista en Segregación de Interfaces).
+
+- [feature/disenador-dip-analisis-dependencias] Aplicación del principio DIP: análisis de dependencias, abstracciones, inversión de dependencias, diagrama UML y documentación IA. PR: [#96](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/96) — @keviineze (Especialista en DIP)
+
+- [feature/doc-coord-repo-update-readme-md2] Documentación de Code Reviews del rol Documentador y Coordinador, incluyendo análisis de ramas (DIP, OCP/LSP, ISP), observaciones, ajustes solicitados y veredictos. PR: [#105](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/105) — @nachonervi-design (Documentador y Coordinador)
+
+- [feature/esp-srp-add-anexo-srp] Aplicación del principio SRP en el sistema de turnos médicos, incluyendo análisis de responsabilidades, propuesta de refactorización, diagrama UML y documentación de IA. PR: [#106](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/106) — @nachonervi-design (Documentador y Coordinador).
+
+- [feature/esp-extension-ocp-lsp] Aplicación de principios OCP y LSP en el sistema de turnos médicos. PR: [#91](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/91) — @Purezaamor (Especialista en Principios de Extensión)
+
+### Fixed
+
+- [fix/srp-correcciones-documentacion] Mejora y completitud de la documentación SRP, incorporando ejemplos del sistema, análisis de responsabilidades y propuesta de refactorización. PR: [#107](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/107) — @nachonervi-design (Documentador y Coordinador).
+
+- [fix/esp-ocp-lsp-correcciones-finales] Corrección de RC del especialista en OCP+LSP: formato, imágenes, (DIP) en índice, limpieza de changelog. PR: #91 — @Purezaamor (Especialista en Principios de Extensión).
+
+- [feature/disenador-dip-analisis-dependencias] Aplicación del principio DIP: análisis de dependencias, abstracciones, inversión de dependencias, diagrama UML y documentación IA. PR: [#96](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/96) — @keviineze (Especialista en DIP).
+
+- [fix/correcciones-isp-y-docum] Correccion de 04-isp.md, changelog.md y Readme.md (RC6, RC16, RC18, RC19) indicados por el profesor. PR: [#102](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/102) — @keviineze. Relacionado a [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109).
+
+- [fix/readme-links] Corrección de enlace roto en README.md, actualización de la navegación de IA y mejora del flujo de trabajo Git. PR: [#109](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/109) — @nachonervi-design (Documentador y Coordinador).
+
+- [fix/todos-los-roles-correcciones] Corrección de TODOS los RC pendientes del recuperatorio:
+  - OCP+LSP (RC2, RC3, RC4, RC5, RC9, RC16, RC17)
+  - DIP (RC7, RC8)
+  - ISP (RC6)
+  - Documentador+SRP (RC1, RC10, RC12, RC13, RC14, RC15, RC18, RC19)
+  - RCN1, RCN2, RCN5 (correcciones adicionales)
+  PR: [#112](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/112) — @Purezaamor
+
 ## [Release Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
@@ -14,13 +48,9 @@
 
 - [feature/doc-coord-repo-update-readme-md-a2] Actualización de README.md con estructura final del proyecto, índices de navegación y documentación del equipo. PR: [#52](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/52) — @nachonervi-design (Documentador y Coordinador)
 
----
-
 ### Changed
 
 - [feature/escenarios-cu] Reestructuración completa de escenarios de casos de uso en carpeta dedicada, con archivos individuales e índice central. PR: [#50](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/50) — @Purezaamor (Especialista en Escenarios)
-
----
 
 ### Fixed
 
@@ -84,15 +114,11 @@
 
 - [feature/doc-coord-repo] Creación de estructura de carpetas, README institucional y anexos. PR: [#10](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/10) — @Purezaamor (Documentador y Coordinador)
 
----
-
 ### Changed
 
 - [feature/doc-coord-repo] Actualización de la carátula con datos completos de los integrantes en `README.md`. PR: [#36](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/36) — @Purezaamor (Documentador y Coordinador)
 
 - [feature/modelador-casos-uso] Integración de la vista previa de diagramas en `introduccion.md`. PR: [#37](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/37) — @keviineze (Modelador de Casos de Uso)
-
----
 
 ### Fixed
 
