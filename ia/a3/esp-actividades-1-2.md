@@ -1,7 +1,6 @@
 # Especialista en Diagramas de Actividades - Casos de Uso 1 y 2
 
 ## Prompt utilizado con Copilot (Caso de Uso 1: Registrar Turno Médico)
-
 Diseñar un diagrama de actividades en PlantUML para el caso de uso "Registrar Turno Médico" del Sistema de Turnos Médicos.
 
 Contexto:
@@ -19,7 +18,6 @@ Requisitos:
 - Incluir inicio, fin, decisiones (if/else) y caminos alternativos
 
 - Representar el flujo normal (turno disponible) y alternativo (sin disponibilidad)
-
 
 ## Output obtenido (Caso de Uso 1)
 
@@ -60,7 +58,7 @@ else (no)
 endif
 @enduml
 
-## Ajustes realizados (Caso de Uso 1)
+# Ajustes realizados (Caso de Uso 1)
 
 - Verifiqué que las actividades sean claras y descriptivas
 
@@ -71,10 +69,9 @@ endif
 - Completé el flujo alternativo para cuando no hay disponibilidad (ofrecer fechas alternativas)
 
 - Me aseguré de que el diagrama tenga exactamente 10 actividades principales
-
-## Prompt utilizado con Copilot (Caso de Uso 2: Reprogramar Turno Existente)
-
 Diseñar un diagrama de actividades en PlantUML para el caso de uso "Reprogramar Turno Existente" del Sistema de Turnos Médicos.
+
+# Prompt utilizado con Copilot (Caso de Uso 2: Reprogramar Turno Existente)
 
 Contexto:
 - Archivo de caso de uso: diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-existente-02.puml
@@ -86,7 +83,8 @@ Requisitos:
 - Incluir inicio, fin, decisiones (if/else) y caminos alternativos
 - Representar el flujo normal (reprogramación exitosa) y alternativo (sin disponibilidad)
 
-## Output obtenido (Caso de Uso 2)
+# Output obtenido (Caso de Uso 2)
+
 Copilot generó el siguiente diagrama base:
 
 @startuml
@@ -129,7 +127,7 @@ else (no)
 endif
 @enduml
 
-## Ajustes realizados (Caso de Uso 2)
+# Ajustes realizados (Caso de Uso 2)
 
 - Verifiqué que todas las actividades tengan nombres claros
 
@@ -141,7 +139,7 @@ endif
 
 - Verifiqué que los mensajes sean consistentes con las tarjetas CRC
 
-## Archivos de contexto referenciados
+# Archivos de contexto referenciados
 
 - diagramas/02-casos-de-uso/02-caso-uso-registrar-turno-medico-01.puml
 
@@ -153,7 +151,7 @@ endif
 
 - herramientas-agile/tarjetas-crc/ (consultado para verificar responsabilidades de Paciente, Secretaria y Sistema)
 
-## Iteraciones
+# Iteraciones
 
 - Primer intento: Copilot generó diagramas con menos de 10 actividades. Se completaron manualmente.
 
