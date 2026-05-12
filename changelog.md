@@ -8,6 +8,8 @@
 
 - [feature/esp-actividades-1-2-add-diagrama-actividad-1] Incorporación de diagramas de actividades para los casos de uso 1 y 2, incluyendo archivos `.puml`, índice de diagramas y documentación IA asociada. PR: [#118](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/118) — @Purezaamor (Especialista en Diagramas de Actividades - Casos de Uso 1 y 2).
 
+- [feature/doc-coord-update-readme-a3] Actualización de documentación, navegación e integración de componentes de la Actividad Obligatoria N°3. PR: [#120](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/120) — @nachonervi-design (Documentador y Coordinador)
+
 ### Fixed
 
 ---
