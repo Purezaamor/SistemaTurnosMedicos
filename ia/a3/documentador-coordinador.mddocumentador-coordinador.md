@@ -219,3 +219,69 @@ Respondé en este formato:
 
 #### Veredicto
 **Request Changes**
+
+
+# Code Review 4
+
+## PR revisada
+`feature/esp-actividades-1-2-add-diagrama-actividad-1`
+
+---
+
+## Motivo de la segunda revisión
+
+Se realizó una nueva revisión técnica luego de que el autor aplicara las correcciones solicitadas en la revisión anterior:
+- incorporación de archivos `.png`,
+- corrección de referencias en `changelog.md`,
+- y actualización de documentación IA.
+
+---
+
+## Prompt utilizado
+
+```text
+Actuá como revisor técnico de la materia Diseño Orientado a Objetos.
+
+Revisá nuevamente la PR `feature/esp-actividades-1-2-add-diagrama-actividad-1` luego de las correcciones realizadas.
+
+Validá:
+- existencia de archivos `.puml` y `.png`,
+- swimlanes,
+- actividades mínimas,
+- bifurcaciones,
+- índice actualizado,
+- documentación IA,
+- uso de triple backticks,
+- y registro correcto en changelog.md.
+
+Respondé:
+- Qué cumple
+- Qué falta o está mal
+- Ajustes solicitados
+- Veredicto final
+
+# Observaciones detectadas
+
+## Qué cumple
+
+- Existen diagramas de actividades para los casos de uso 1 y 2.
+- Cada diagrama posee archivos `.puml` y `.png`.
+- Ambos diagramas cumplen con el mínimo de actividades requerido.
+- Los diagramas utilizan correctamente al menos 3 swimlanes.
+- Incluyen decisiones, bifurcaciones y caminos alternativos.
+- El índice `diagramas_de_actividades.md` se encuentra actualizado.
+- Los enlaces del índice apuntan a archivos `.puml`.
+- La documentación IA incluye contexto, outputs, ajustes e iteraciones.
+- `changelog.md` registra correctamente la PR #118.
+
+## Qué falta o está mal
+
+- El prompt documentado en `ia/a3/esp-actividades-1-2.md` no está encerrado dentro de un bloque de código utilizando triple backticks.
+
+## Ajustes solicitados
+
+- Encerrar el prompt utilizado dentro de un bloque de código Markdown utilizando triple backticks para mantener consistencia con el formato solicitado por la actividad.
+
+## Veredicto publicado
+
+Request Changes
