@@ -1,0 +1,40 @@
+@startuml
+|Paciente|
+start
+:Solicitar cancelacion de turno;
+:Proveer datos del turno (fecha/hora);
+|Secretaria|
+:Recibir solicitud y verificar datos;
+:Buscar turno en el sistema;
+if (Turno existe?) then (si)
+  :Mostrar turno encontrado;
+  :Solicitar confirmacion de cancelacion al paciente;
+else (no)
+  :Informar que el turno no existe;
+  stop
+endif
+|Sistema|
+:Validar si el turno es cancelable;
+if (Turno cancelable?) then (si)
+  :Marcar turno como cancelado;
+  :Liberar horario en la agenda;
+  :Actualizar estado en la base de datos;
+else (no)
+  :Notificar imposibilidad de cancelar;
+  stop
+endif
+|Secretaria|
+:Confirmar la cancelacion con el paciente;
+|Sistema|
+:Generar notificacion de cancelacion;
+if (Notificacion enviada correctamente?) then (si)
+  :Enviar aviso por WhatsApp o mail;
+  :Registrar el evento de notificacion;
+else (no)
+  :Programar reintento de envio;
+  :Registrar fallo de notificacion;
+endif
+|Paciente|
+:Recibir confirmacion de cancelacion;
+stop
+@enduml
