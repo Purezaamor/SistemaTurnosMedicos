@@ -91,10 +91,11 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 - [IA - Documentador y Coordinador A2](./ia/a2/documentador-coordinador.md)
 - [IA - Documentador y Coordinador Primer Parcial](./ia/primer-parcial/documentador-coordinador.md)
 - [IA - SRP](./ia/primer-parcial/especialista-srp.md)
-- [IA - OCP](./ia/a2/primer-parcial/especialista-ocp.md)
-- [IA - LSP](./ia/a2/primer-parcial/especialista-lsp.md)
+- [IA - OCP](./ia/primer-parcial/especialista-ocp.md)
+- [IA - LSP](./ia/primer-parcial/especialista-lsp.md)
 - [IA - ISP](./ia/primer-parcial/especialista-isp.md)
-- [IA - DIP](./ia/a2/primer-parcial/especialista-dip.md)
+- [IA - DIP](./ia/primer-parcial/especialista-dip.md)
+- [IA - Documentador y Coordinador A3](./ia/a3/documentador-coordinador.md)
 
 ---
 
@@ -117,6 +118,16 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 - `master`: rama final de entrega aprobada, sólo recibe merges desde `release/primer-parcial`.
 
 El trabajo se realiza mediante Pull Requests con revisión entre pares y control de versiones en GitHub, manteniendo el histórico en `changelog.md`.
+
+---
+
+## Diagramas de Actividades
+
+- [Diagrama de actividad - Registrar Turno Médico](./diagramas/04-diagramas-actividades/04-actividad-registrar-turno-medico-01.puml)
+- [Diagrama de actividad - Reprogramar Turno Existente](./diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-existente-02.puml)
+- [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.puml)
+- [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.puml)
+- [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.puml)
 
 ---
 
