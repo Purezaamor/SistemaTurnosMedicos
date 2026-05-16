@@ -1,0 +1,45 @@
+@startuml 05-secuencia-consultar-agenda-medica-flujo-principal-05
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Secuencia: Consultar Agenda Médica (Flujo Principal)
+
+actor Secretaria
+participant SistemaAgendamiento
+participant Agenda
+participant Turno
+participant Disponibilidad
+actor Medico
+
+autonumber
+
+Secretaria -> SistemaAgendamiento: Solicita visualizar agenda
+SistemaAgendamiento -> Medico: Identifica médico\n(por preferencia o búsqueda)
+Medico --> SistemaAgendamiento: Identidad confirmada
+SistemaAgendamiento -> Agenda: Obtiene agenda del médico
+Agenda -> Turno: Recupera turnos confirmados
+Turno --> Agenda: Retorna lista de turnos
+Agenda -> Disponibilidad: Obtiene slots disponibles
+Disponibilidad --> Agenda: Retorna disponibilidad
+Agenda --> SistemaAgendamiento: Agenda completa
+SistemaAgendamiento -> Secretaria: Muestra agenda del médico
+
+note right of Secretaria
+    Visualiza:
+    - Turnos confirmados
+    - Horarios disponibles
+    - Información del paciente
+end note
+
+alt Médico desea consultar su propia agenda
+    Medico -> SistemaAgendamiento: Solicita visualizar agenda
+    SistemaAgendamiento -> Agenda: Obtiene agenda personal
+    Agenda --> SistemaAgendamiento: Agenda personal
+    SistemaAgendamiento -> Medico: Muestra agenda personal
+    
+    note right of Medico
+        Acceso para revisión personal
+        y planificación
+    end note
+end
+
+@enduml

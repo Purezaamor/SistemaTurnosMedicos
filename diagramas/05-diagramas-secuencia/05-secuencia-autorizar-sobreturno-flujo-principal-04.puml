@@ -1,0 +1,47 @@
+@startuml 05-secuencia-autorizar-sobreturno-flujo-principal-04
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Secuencia: Autorizar Sobreturno (Flujo Principal)
+
+actor Paciente
+participant Secretaria
+participant SistemaAgendamiento
+participant Turno
+participant Agenda
+participant Autorizacion
+participant Medico
+
+autonumber
+
+Paciente -> Secretaria: Solicita turno\n(agenda completa)
+Secretaria -> SistemaAgendamiento: Inicia agendamiento
+SistemaAgendamiento -> Disponibilidad: Consulta disponibilidad
+Disponibilidad --> SistemaAgendamiento: No hay disponibilidad
+SistemaAgendamiento -> Secretaria: Informa agenda completa
+Secretaria -> Paciente: Oferta de sobreturno
+Paciente -> Secretaria: Acepta sobreturno
+Secretaria -> SistemaAgendamiento: Solicita sobreturno
+SistemaAgendamiento -> Autorizacion: Inicia proceso de autorización
+Autorizacion -> Medico: Solicita autorización de sobreturno
+Medico -> Autorizacion: Autoriza sobreturno
+Autorizacion --> SistemaAgendamiento: Sobreturno autorizado
+SistemaAgendamiento -> Turno: Crea turno como SOBRETURNO
+Turno -> Agenda: Registra sobreturno en agenda
+Agenda --> Turno: Confirmación
+Turno --> SistemaAgendamiento: Turno creado
+SistemaAgendamiento -> Secretaria: Sobreturno confirmado
+Secretaria -> Paciente: Confirma asignación de sobreturno
+Secretaria -> Medico: Notifica sobreturno asignado
+
+note right of Turno
+    Estado: SOBRETURNO
+    Requiere autorización médica
+    Registrado especialmente
+end note
+
+note right of Autorizacion
+    Control de calidad y
+    gestión de sobrecarga
+end note
+
+@enduml

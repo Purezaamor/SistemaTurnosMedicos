@@ -1,0 +1,45 @@
+@startuml 05-secuencia-agendar-turno-flujo-principal-01
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Secuencia: Agendar Turno (Flujo Principal)
+
+actor Paciente
+participant Secretaria
+participant SistemaAgendamiento
+participant Turno
+participant Agenda
+participant Disponibilidad
+actor Medico
+
+autonumber
+
+Paciente -> Secretaria: Solicita agendar turno
+Secretaria -> SistemaAgendamiento: Inicia proceso de agendamiento
+SistemaAgendamiento -> Disponibilidad: Consulta disponibilidad\npara la especialidad solicitada
+Disponibilidad --> SistemaAgendamiento: Retorna slots disponibles
+SistemaAgendamiento -> Secretaria: Muestra opciones disponibles
+Secretaria -> Paciente: Presenta opciones de fecha/hora
+Paciente -> Secretaria: Selecciona fecha y hora
+Secretaria -> SistemaAgendamiento: Confirma selección
+SistemaAgendamiento -> Turno: Crea nuevo turno
+Turno -> Agenda: Registra turno en agenda
+Agenda -> Disponibilidad: Actualiza disponibilidad\n(marca slot como ocupado)
+Disponibilidad --> Agenda: Confirmación
+Agenda --> Turno: Confirmación
+Turno --> SistemaAgendamiento: Turno creado exitosamente
+SistemaAgendamiento -> Secretaria: Confirma agendamiento
+Secretaria -> Paciente: Entrega confirmación de turno
+Secretaria -> Medico: Notifica nuevo turno en agenda
+
+note right of Turno
+    Estado: CONFIRMADO
+    Datos: Paciente, Médico,
+    Fecha, Hora, Especialidad
+end note
+
+note right of Agenda
+    La agenda se actualiza
+    en tiempo real
+end note
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml 05-secuencia-cancelar-turno-flujo-principal-03
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Secuencia: Cancelar Turno (Flujo Principal)
+
+actor Paciente
+participant Secretaria
+participant SistemaAgendamiento
+participant Turno
+participant Agenda
+participant Disponibilidad
+participant Historial
+actor Medico
+
+autonumber
+
+Paciente -> Secretaria: Solicita cancelar turno
+Secretaria -> SistemaAgendamiento: Inicia proceso de cancelación
+SistemaAgendamiento -> Agenda: Busca turno a cancelar
+Agenda -> Turno: Recupera datos del turno
+Turno --> Agenda: Retorna turno
+Agenda --> SistemaAgendamiento: Turno encontrado
+SistemaAgendamiento -> Secretaria: Solicita confirmación
+Secretaria -> Paciente: Confirma cancelación
+Paciente -> Secretaria: Confirma
+Secretaria -> SistemaAgendamiento: Procede con cancelación
+SistemaAgendamiento -> Turno: Cambia estado a CANCELADO
+Turno -> Historial: Registra cancelación
+Historial --> Turno: Confirmación
+Turno -> Agenda: Elimina turno de agenda
+Agenda -> Disponibilidad: Libera slot ocupado
+Disponibilidad --> Agenda: Confirmación
+Agenda --> Turno: Confirmación
+Turno --> SistemaAgendamiento: Cancelación completada
+SistemaAgendamiento -> Secretaria: Cancelación exitosa
+Secretaria -> Paciente: Confirma cancelación
+Secretaria -> Medico: Notifica cancelación de turno
+
+note right of Turno
+    Estado: CANCELADO
+    Motivo: Cancelado por paciente
+    Fecha liberada
+end note
+
+note right of Historial
+    Se registra para auditoría
+    y análisis de cancelaciones
+end note
+
+@enduml

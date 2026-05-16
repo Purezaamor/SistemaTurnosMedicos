@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- [feature/esp-secuencia-add-diagrama-secuencia-1] Estructura inicial de Diagramas de Secuencia para Sistema de Turnos Médicos. Incluye carpeta `diagramas/05-diagramas-secuencia/` con cinco diagramas PlantUML (.puml) para casos de uso principales: Agendar Turno, Reprogramar Turno, Cancelar Turno, Autorizar Sobreturno y Consultar Agenda Médica. Documentación en `diagramas_de_secuencias.md` e índice de especificaciones en `ia/a3/esp-secuencia.md`. — @Purezaamor (Especialista en Diagramas de Secuencia)
+
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 
 ### Added

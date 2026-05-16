@@ -1,0 +1,47 @@
+@startuml 05-secuencia-reprogramar-turno-flujo-principal-02
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Secuencia: Reprogramar Turno (Flujo Principal)
+
+actor Paciente
+participant Secretaria
+participant SistemaAgendamiento
+participant Turno
+participant Agenda
+participant Disponibilidad
+actor Medico
+
+autonumber
+
+Paciente -> Secretaria: Solicita reprogramar turno existente
+Secretaria -> SistemaAgendamiento: Inicia búsqueda de turno
+SistemaAgendamiento -> Agenda: Busca turno a reprogramar
+Agenda -> Turno: Recupera datos del turno
+Turno --> Agenda: Retorna turno actual
+Agenda --> SistemaAgendamiento: Turno encontrado
+SistemaAgendamiento -> Disponibilidad: Consulta disponibilidad\npara nueva fecha
+Disponibilidad --> SistemaAgendamiento: Retorna slots disponibles
+SistemaAgendamiento -> Secretaria: Muestra opciones disponibles
+Secretaria -> Paciente: Presenta nuevas opciones
+Paciente -> Secretaria: Selecciona nueva fecha/hora
+Secretaria -> SistemaAgendamiento: Confirma nueva fecha
+SistemaAgendamiento -> Turno: Actualiza datos del turno
+Turno -> Agenda: Actualiza turno en agenda\n(elimina slot anterior)
+Agenda -> Disponibilidad: Libera slot anterior
+Disponibilidad -> Disponibilidad: Actualiza disponibilidad
+Disponibilidad --> Agenda: Confirmación
+Agenda -> Disponibilidad: Ocupa nuevo slot
+Disponibilidad --> Agenda: Confirmación
+Agenda --> Turno: Confirmación
+Turno --> SistemaAgendamiento: Turno actualizado
+SistemaAgendamiento -> Secretaria: Reprogramación exitosa
+Secretaria -> Paciente: Confirma nueva fecha
+Secretaria -> Medico: Notifica cambio de turno
+
+note right of Turno
+    Estado: REPROGRAMADO
+    Fecha anterior liberada
+    Nueva fecha confirmada
+end note
+
+@enduml
