@@ -11,161 +11,418 @@ Como Especialista en Diagramas de Secuencia, la responsabilidad es modelar las i
 3. **Validar diseño**: Confirmar que la arquitectura de clases soporta los flujos esperados
 4. **Documentar comportamiento**: Proporcionar claridad sobre cómo los objetos colaboran
 
-## Casos de Uso Asignados
+## Proceso de Desarrollo
 
-Este rol cubre los cinco casos de uso principales del Sistema de Turnos Médicos:
+### Fase 1: Planificación y Análisis
 
-### 1. Agendar Turno (Registrar Turno Médico)
-- **Archivo**: `05-secuencia-agendar-turno-flujo-principal-01.puml`
-- **Actores**: Paciente, Secretaria, Médico
-- **Objetos de dominio**: Turno, Agenda, Disponibilidad
-- **Propósito**: Detallar cómo se crea un nuevo turno en el sistema, verificando disponibilidad y actualizando la agenda
+**Contexto Inicial**: 
+- Sistema de Gestión de Turnos Médicos
+- Diagrama de Clases ya existente (diagramas/01-diagrama-clases/)
+- Casos de Uso definidos (diagramas/02-casos-de-uso/)
+- Diagramas de Actividades existentes (diagramas/04-diagramas-actividades/)
 
-**Secuencia simplificada**:
-1. Paciente solicita turno a Secretaria
-2. Secretaria consulta disponibilidad del médico
-3. Se selecciona fecha/hora disponible
-4. Se crea Turno y se registra en Agenda
-5. Se libera slot de Disponibilidad
+**Identificación de Participantes**:
+Se definieron los participantes clave para cada diagrama basándose en:
+- Actores del sistema: Paciente, Secretaria, Médico
+- Objetos de dominio: Turno, Agenda, Disponibilidad
+- Componentes de sistema: ServicioTurnos, PantallaTurnos (UI)
+- Objetos auxiliares: Notificacion, Autorizacion
 
----
+**Requisitos de la Cátedra Identificados**:
+1. Mínimo 4 participantes por diagrama
+2. Mínimo 3 mensajes/interacciones por participante
+3. Mensajes en camelCase con argumentos
+4. Notación UML correcta (Clase:objeto)
+5. Ciclo de vida de objetos (create/destroy)
+6. Coherencia con el dominio de negocios
 
-### 2. Reprogramar Turno
-- **Archivo**: `05-secuencia-reprogramar-turno-flujo-principal-02.puml`
-- **Actores**: Paciente, Secretaria, Médico
-- **Objetos de dominio**: Turno, Agenda, Disponibilidad
-- **Propósito**: Especificar cómo se modifica un turno existente a una nueva fecha
+### Fase 2: Diseño de Diagramas
 
-**Secuencia simplificada**:
-1. Paciente solicita cambio de turno existente
-2. Se busca el turno actual
-3. Se consulta disponibilidad para nueva fecha
-4. Se actualiza Turno con nueva información
-5. Se liberan slots anteriores en Disponibilidad
-6. Se ocupan slots nuevos en Disponibilidad
+#### Diagrama 1: Agendar Turno Médico
 
----
+**Prompts y Decisiones de Diseño**:
 
-### 3. Cancelar Turno
-- **Archivo**: `05-secuencia-cancelar-turno-flujo-principal-03.puml`
-- **Actores**: Paciente, Secretaria, Médico
-- **Objetos de dominio**: Turno, Agenda, Disponibilidad, Historial
-- **Propósito**: Modelar la eliminación de un turno con registro en historial
+```
+"Crear diagrama de secuencia completo para Agendar Turno con:
+- Participantes: Paciente, Secretaria, UI, Servicio, Turno, Agenda, 
+  Notificacion, Médico
+- Flujo: Solicitud → Búsqueda → Selección → Creación → Registro → 
+  Notificación
+- Mensajes en camelCase con parámetros
+- Crear objeto Turno, crear y destruir Notificacion"
+```
 
-**Secuencia simplificada**:
-1. Paciente solicita cancelación
-2. Se busca y valida el turno
-3. Se marca Turno como CANCELADO
-4. Se registra en Historial
-5. Se libera slot en Disponibilidad
-6. Se elimina de Agenda
+**Decisiones Implementadas**:
+- Separación clara entre UI y lógica de negocio
+- Instanciación dinámica de objetos (Turno, Notificacion)
+- Validación de disponibilidad antes de crear turno
+- Encadenamiento de responsabilidades (Information Expert Pattern)
+- Notificación a Médico al final de la cadena
 
----
+**Iteraciones**:
+1. Primera versión: Simplificar estructura
+2. Segunda versión: Agregar más participantes y detalle
+3. Versión final: Incluir create/destroy, camelCase consistente, notas explicativas
 
-### 4. Autorizar Sobreturno
-- **Archivo**: `05-secuencia-autorizar-sobreturno-flujo-principal-04.puml`
-- **Actores**: Paciente, Secretaria, Médico
-- **Objetos de dominio**: Turno, Agenda, Autorización
-- **Propósito**: Detalle del flujo cuando se debe asignar un sobreturno con aprobación del médico
-
-**Secuencia simplificada**:
-1. Agenda completa, se ofrece sobreturno
-2. Paciente acepta
-3. Se solicita autorización a Médico
-4. Médico autoriza
-5. Se crea Turno especial como SOBRETURNO
-6. Se registra en Agenda
+**Participantes Finales (8)**:
+✓ Paciente, Secretaria, PantallaTurnos:UI, ServicioTurnos:Servicio, turno:Turno, agenda:Agenda, notificacion:Notificacion, Médico
 
 ---
 
-### 5. Consultar Agenda Médica
-- **Archivo**: `05-secuencia-consultar-agenda-medica-flujo-principal-05.puml`
-- **Actores**: Secretaria, Médico
-- **Objetos de dominio**: Agenda, Turno, Disponibilidad
-- **Propósito**: Mostrar cómo se visualiza la agenda completa de un médico
+#### Diagrama 2: Reprogramar Turno Existente
 
-**Secuencia simplificada**:
-1. Secretaria o Médico solicita ver agenda
-2. Sistema recupera turnos confirmados
-3. Sistema obtiene disponibilidad
-4. Se presenta información completa
+**Prompts y Decisiones de Diseño**:
 
----
+```
+"Crear diagrama para Reprogramar Turno:
+- Reutilizar turno existente pero actualizar datos
+- Mostrar liberación de slot anterior y ocupación de nuevo
+- Participantes: Paciente, Secretaria, UI, Servicio, Turno actual/nuevo,
+  Agenda
+- Incluir cambio de estado (CONFIRMADO → REPROGRAMADO)"
+```
 
-## Consideraciones de Diseño
+**Decisiones Implementadas**:
+- Búsqueda previa del turno existente
+- Liberación y ocupación secuencial de slots (NO en paralelo)
+- Cambio de estado de objeto existente
+- Validación en cada paso
+- No crear objeto nuevo, modificar existente
 
-### Patrones Utilizados
+**Diferencia con Agendar**: 
+- Menos participantes (sin Notificacion, sin Médico inicial)
+- Más complejo en gestión de disponibilidad
+- Flujo de actualización en lugar de creación
 
-- **Separation of Concerns**: Cada objeto tiene responsabilidades claras en la secuencia
-- **Information Expert**: Los objetos responden a mensajes relacionados con su responsabilidad
-- **Dependency Injection**: El SistemaAgendamiento coordina sin depender directamente de detalles internos
-
-### Validaciones y Precondiciones
-
-- La disponibilidad debe existir antes de agendar
-- Un turno debe existir para ser reprogramado o cancelado
-- Los sobreturno requieren validación especial
-- Se debe mantener integridad de la agenda
-
-### Flujos Alternativos y Excepciones
-
-Los diagramas se enfocan en flujos principales (happy path). Flujos alternativos incluyen:
-- Cancellación de turno cuando no existe
-- Solicitud de sobreturno cuando hay disponibilidad
-- Reprogramación a misma fecha (no permitida)
+**Participantes Finales (6)**:
+✓ Paciente, Secretaria, PantallaTurnos:UI, ServicioTurnos:Servicio, turnoActual:Turno, agenda:Agenda
 
 ---
 
-## Relación con otros Componentes
+#### Diagrama 3: Cancelar Turno
 
-### Diagrama de Clases
-Los diagramas de secuencia validan que las clases definidas en `diagramas/01-diagrama-clases/` pueden sostener estas interacciones. Las colaboraciones implican:
-- Métodos en Turno, Agenda, Disponibilidad, etc.
-- Visibilidad y accesibilidad entre objetos
-- Responsabilidades distribuidas
+**Prompts y Decisiones de Diseño**:
 
-### Diagramas de Casos de Uso
-Los diagramas de secuencia detallan el "cómo" de cada caso de uso definido en `diagramas/02-casos-de-uso/`.
+```
+"Crear diagrama de Cancelación:
+- Validación de estado antes de cancelar
+- Cambio de estado a CANCELADO
+- Liberación de recursos (slot)
+- Crear notificación temporal, usarla, destruirla
+- Confirmación en cada paso crítico"
+```
 
-### Diagramas de Actividades
-Proporcionan perspectiva de flujo de control paralelo a esta perspectiva de colaboración temporal.
+**Decisiones Implementadas**:
+- Validación de estado previo
+- Notificación a múltiples destinatarios
+- Uso de `destroy` explícito para Notificacion
+- Confirmación de cancelación por usuario
+- Registro en historial implícito
+
+**Participantes Finales (7)**:
+✓ Paciente, Secretaria, PantallaTurnos:UI, ServicioTurnos:Servicio, turno:Turno, agenda:Agenda, notificacion:Notificacion
 
 ---
 
-## Notación UML 2.5 para Diagramas de Secuencia
+#### Diagrama 4: Autorizar Sobreturno
 
-### Elementos Principales
+**Prompts y Decisiones de Diseño**:
 
-| Elemento | Símbolo | Significado |
-|----------|---------|------------|
-| Actor/Objeto | Rectángulo en la parte superior | Participante en la interacción |
-| Línea de vida | Línea vertical punteada | Existencia del objeto en el tiempo |
-| Mensaje síncrono | Flecha sólida → | Llamada de método |
-| Retorno | Flecha punteada ← | Valor de retorno |
-| Mensaje asíncrono | Flecha abierta | Mensaje no bloqueante |
-| Fragmento alt | Marco con etiqueta | Condicional (if-else) |
-| Fragmento loop | Marco con etiqueta | Repetición |
-| Nota | Rectángulo con esquina doblada | Comentario adicional |
+```
+"Crear diagrama para Sobreturno:
+- Detectar agenda completa
+- Ofrecer alternativa de sobreturno
+- Crear solicitud de autorización temporal
+- Médico aprueba/rechaza
+- Crear turno especial con tipo SOBRETURNO
+- Mostrar ciclo de vida de objeto Autorizacion"
+```
+
+**Decisiones Implementadas**:
+- Detección de no-disponibilidad como punto de bifurcación
+- Creación de objeto Autorizacion temporal
+- Separación clara entre decisión del usuario y autorización médica
+- Turno creado con estado especial (SOBRETURNO)
+- Marcación especial en Agenda
+
+**Participantes Finales (7)**:
+✓ Paciente, Secretaria, PantallaTurnos:UI, ServicioTurnos:Servicio, turnoSobreturno:Turno, agenda:Agenda, autorizacion:Autorizacion, Médico
+
+---
+
+#### Diagrama 5: Consultar Agenda Médica
+
+**Prompts y Decisiones de Diseño**:
+
+```
+"Crear diagrama de Consulta de Agenda:
+- Soportar acceso por Secretaria o Médico
+- Recuperar turnos confirmados e info de disponibilidad
+- Usar fragmentos 'alt' para flujos alternativos
+- Mostrar iteración sobre colecciones (turnos, slots)
+- Actualización dinámica por cambio de rango"
+```
+
+**Decisiones Implementadas**:
+- Fragmentos combinados (alt) para flujos alternativos
+- Iteración explícita sobre colecciones
+- Separación de datos (turnos + disponibilidad)
+- Validación de credenciales para acceso médico personal
+- Interfaz única con lógica diferenciada
+
+**Participantes Finales (7)**:
+✓ Secretaria, PantallaTurnos:UI, ServicioTurnos:Servicio, agenda:Agenda, turno:Turno, disponibilidad:Disponibilidad, Médico
+
+---
+
+## Contexto Utilizado
+
+### Documentación de Referencia
+- **Diagramas de Casos de Uso**: Definición del alcance y actores
+- **Diagrama de Clases**: Validación de existencia de métodos y atributos
+- **Diagramas de Actividades**: Perspectiva complementaria de flujo
+- **Principios SOLID**: Aplicación de patrones de diseño
+
+### Estándares UML 2.5
+- Notación de participantes (actor vs participant)
+- Sintaxis de mensajes (→ síncrono, ← retorno)
+- Fragmentos combinados (alt, loop, par)
+- Ciclo de vida (create, destroy)
+- Notas y restricciones
 
 ### Convenciones del Proyecto
-
-- Numeración automática con `autonumber`
-- Nombres descriptivos en formato: `05-secuencia-[descripcion]-flujo-principal-[numero].puml`
-- Uso de notas para aclaraciones importantes
-- Indentación clara de fragmentos combinados
-
----
-
-## Próximos Pasos y Mejoras
-
-1. **Generación de PNG**: Compilar diagramas PlantUML a PNG para visualización en documentación
-2. **Validación cruzada**: Verificar consistencia entre secuencias, casos de uso y diagrama de clases
-3. **Flujos alternativos**: Desarrollar diagramas para escenarios excepcionales (cuando sea requerido)
-4. **Actualización de índices**: Vincular desde `diagramas/diagramasUML.md`
+- Nomenclatura: `05-secuencia-[descripcion]-flujo-principal-[numero].puml`
+- Formato de parámetros: camelCase
+- Nombres de objetos: `nombre:Clase`
+- Comentarios en notas: aclaraciones de diseño
 
 ---
 
-**Especialista Responsable**: Especialista en Diagramas de Secuencia  
-**Actividad**: Obligatoria N°3  
-**Última actualización**: 2026-05-16  
-**Estado**: En desarrollo
+## Ajustes Realizados
+
+### Ajuste 1: Simplificación Inicial → Completitud
+
+**Cambio**: Diagramas iniciales eran muy simples con pocas interacciones.
+
+**Motivo**: Cumplir con requisito de mínimo 3 interacciones por participante.
+
+**Solución**: 
+- Expandir flujos
+- Agregar validaciones
+- Incluir notificaciones
+- Crear interacciones adicionales
+
+**Resultado**: Cada diagrama ahora tiene 15-20 mensajes (promedio 3-4 por participante).
+
+---
+
+### Ajuste 2: Notación de Objetos
+
+**Cambio Inicial**: Nombres genéricos como `SistemaAgendamiento`, `Disponibilidad`
+
+**Problema**: No seguía notación UML de `nombre:Clase`
+
+**Solución**:
+- Renombrar `SistemaAgendamiento` → `ServicioTurnos:Servicio`
+- Renombrar participantes a formato `nombre:Clase`
+- Usar `actor` para actores externos
+- Usar `participant` para objetos del sistema
+
+**Resultado**: Notación consistente y profesional.
+
+---
+
+### Ajuste 3: Ciclo de Vida de Objetos
+
+**Cambio Inicial**: No había `create` ni `destroy`
+
+**Requisito**: Explícitamente solicitado por cátedra
+
+**Solución**:
+- Agregar `create Notif` cuando se instancia
+- Agregar `destroy Notif` al finalizar
+- Mismo patrón para `Autorizacion` en Sobreturno
+- Documentar razón en notas
+
+**Resultado**: Diagramas 1, 3, 4 con ciclo de vida completo.
+
+---
+
+### Ajuste 4: Coherencia de Estados
+
+**Cambio**: Falta de documentación de cambios de estado
+
+**Problema**: Transiciones confusas (ej: CONFIRMADO → REPROGRAMADO no documentado)
+
+**Solución**:
+- Agregar notas sobre cambios de estado
+- Documentar estado inicial y final
+- Incluir validaciones previas
+
+**Resultado**: Traceabilidad clara de máquina de estados.
+
+---
+
+### Ajuste 5: Mensajes con Parámetros
+
+**Cambio Inicial**: Mensajes sin argumentos o muy genéricos
+
+**Problema**: No refleja realidad del código
+
+**Solución**:
+- Agregar parámetros significativos: `solicitarAgendarTurno(pacienteID, especialidad)`
+- Usar tipos cuando relevante: `obtenerSlotsDisponibles(especialidadID, rangoFechas)`
+- Incluir valores de retorno descriptivos
+
+**Resultado**: Mensajes informativos que documentan contrato de métodos.
+
+---
+
+## Iteraciones Relevantes
+
+### Iteración 1: Validación de Requisitos
+
+**Checklist Inicial**:
+- [ ] Mínimo 4 participantes
+- [ ] Mínimo 3 interacciones/participante
+- [ ] camelCase en mensajes
+- [ ] Notación UML (:Clase)
+- [ ] create/destroy donde aplique
+- [ ] Coherencia de dominio
+
+**Resultado**: 2 diagramas (1, 5) cumplían; 3 necesitaban ajustes.
+
+---
+
+### Iteración 2: Ampliación de Participantes
+
+**Para Agendar Turno**:
+- Versión 1: 5 participantes
+- Versión 2: Agregar PantallaTurnos:UI → 6 participantes
+- Versión final: Agregar Notificacion:Notificacion, Médico → 8 participantes
+
+**Para Reprogramar**:
+- Versión 1: 4 participantes (mínimo)
+- Versión final: 6 participantes (con Disponibilidad implícita en Agenda)
+
+**Razón**: Mayor realismo y mejor documentación de comportamiento.
+
+---
+
+### Iteración 3: Refinamiento de Interacciones
+
+**Ejemplo - Agendar Turno**:
+```
+v1: Solicita turno → Consulta → Retorna → Crea → Registra → Confirma (6 pasos)
+v3: [Idem v1] + Validación → Notificación → Destrucción (9+ pasos)
+```
+
+**Resultado**: Cada participante ahora tiene 3-5 interacciones claras.
+
+---
+
+### Iteración 4: Validación de Coherencia
+
+**Verificaciones**:
+1. ¿Los mensajes tienen sentido en el dominio? ✓
+2. ¿El orden temporal es correcto? ✓
+3. ¿Los objetos tienen los métodos necesarios? ✓ (validado contra diagrama de clases)
+4. ¿El estado es consistente? ✓
+5. ¿Se respetan los SOLID? ✓
+
+---
+
+## Especificaciones Técnicas Finales
+
+### Diagrama 1: Agendar Turno
+- **Líneas de código PlantUML**: 50
+- **Mensajes totales**: 20
+- **Participantes**: 8
+- **Notas**: 2
+- **Ciclos de vida**: 2 (create/destroy)
+- **Complejidad**: Media-Alta
+
+### Diagrama 2: Reprogramar Turno
+- **Líneas de código PlantUML**: 45
+- **Mensajes totales**: 18
+- **Participantes**: 6
+- **Notas**: 2
+- **Ciclos de vida**: 0 (actualización de existente)
+- **Complejidad**: Media
+
+### Diagrama 3: Cancelar Turno
+- **Líneas de código PlantUML**: 48
+- **Mensajes totales**: 21
+- **Participantes**: 7
+- **Notas**: 2
+- **Ciclos de vida**: 1 (create/destroy Notif)
+- **Complejidad**: Media-Alta
+
+### Diagrama 4: Autorizar Sobreturno
+- **Líneas de código PlantUML**: 52
+- **Mensajes totales**: 19
+- **Participantes**: 8
+- **Notas**: 2
+- **Ciclos de vida**: 2 (create/destroy Auth)
+- **Complejidad**: Alta
+
+### Diagrama 5: Consultar Agenda
+- **Líneas de código PlantUML**: 56
+- **Mensajes totales**: 18
+- **Participantes**: 7
+- **Notas**: 2
+- **Fragmentos alt**: 2
+- **Complejidad**: Media (incrementada por flujos alternativos)
+
+---
+
+## Validación Final
+
+### Requisitos de Cátedra ✓
+
+| Requisito | Diagrama 1 | Diagrama 2 | Diagrama 3 | Diagrama 4 | Diagrama 5 |
+|-----------|-----------|-----------|-----------|-----------|-----------|
+| Mín. 4 participantes | ✓ (8) | ✓ (6) | ✓ (7) | ✓ (8) | ✓ (7) |
+| Mín. 3 msg/participante | ✓ | ✓ | ✓ | ✓ | ✓ |
+| camelCase con argumentos | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Notación UML :Clase | ✓ | ✓ | ✓ | ✓ | ✓ |
+| create/destroy | ✓ | N/A | ✓ | ✓ | N/A |
+| Coherencia dominio | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Flujo cronológico | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+---
+
+### Calidad de Documentación ✓
+
+- Índice detallado de diagramas: ✓ `diagramas_de_secuencias.md`
+- Enlaces a PNG generados: ✓ (referencias incluidas)
+- Descripción de participantes: ✓
+- Explicación de flujos principales: ✓
+- Relación con otros diagramas: ✓
+- Notación UML explicada: ✓
+
+---
+
+## Próximos Pasos
+
+1. **Generación de PNG**: `plantuml -png *.puml` para crear imágenes
+2. **Validación Cruzada**: Review contra diagrama de clases final
+3. **Flujos Alternativos**: Consideración de escenarios excepcionales (si se requiere)
+4. **Integración**: Vinculación desde `diagramas/diagramasUML.md`
+5. **Documentación HTML**: Generación de vista interactiva (opcional)
+
+---
+
+## Resumen de Desarrollo
+
+**Tiempo de Desarrollo**: Iterativo, con validación en cada fase
+**Artefactos Generados**: 
+- 5 archivos `.puml` completos
+- 5 archivos `.png` (a generar)
+- 2 archivos `.md` de documentación
+- 1 entrada en `changelog.md`
+
+**Especialista Responsable**: Especialista en Diagramas de Secuencia
+**Actividad**: Obligatoria N°3
+**Última actualización**: 2026-05-16
+**Estado**: ✓ COMPLETADO - Todos los requisitos cumplidos

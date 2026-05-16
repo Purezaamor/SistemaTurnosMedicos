@@ -1,47 +1,58 @@
 @startuml 05-secuencia-reprogramar-turno-flujo-principal-02
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-
-title Diagrama de Secuencia: Reprogramar Turno (Flujo Principal)
+title Diagrama de Secuencia: Reprogramar Turno Existente (Flujo Principal)
 
 actor Paciente
-participant Secretaria
-participant SistemaAgendamiento
-participant Turno
-participant Agenda
-participant Disponibilidad
-actor Medico
+actor Secretaria
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "turnoActual:Turno" as TurnoAct
+participant "turnoNuevo:Turno" as TurnoNuev
+participant "agenda:Agenda" as Agenda
 
 autonumber
 
-Paciente -> Secretaria: Solicita reprogramar turno existente
-Secretaria -> SistemaAgendamiento: Inicia búsqueda de turno
-SistemaAgendamiento -> Agenda: Busca turno a reprogramar
-Agenda -> Turno: Recupera datos del turno
-Turno --> Agenda: Retorna turno actual
-Agenda --> SistemaAgendamiento: Turno encontrado
-SistemaAgendamiento -> Disponibilidad: Consulta disponibilidad\npara nueva fecha
-Disponibilidad --> SistemaAgendamiento: Retorna slots disponibles
-SistemaAgendamiento -> Secretaria: Muestra opciones disponibles
-Secretaria -> Paciente: Presenta nuevas opciones
-Paciente -> Secretaria: Selecciona nueva fecha/hora
-Secretaria -> SistemaAgendamiento: Confirma nueva fecha
-SistemaAgendamiento -> Turno: Actualiza datos del turno
-Turno -> Agenda: Actualiza turno en agenda\n(elimina slot anterior)
-Agenda -> Disponibilidad: Libera slot anterior
-Disponibilidad -> Disponibilidad: Actualiza disponibilidad
-Disponibilidad --> Agenda: Confirmación
-Agenda -> Disponibilidad: Ocupa nuevo slot
-Disponibilidad --> Agenda: Confirmación
-Agenda --> Turno: Confirmación
-Turno --> SistemaAgendamiento: Turno actualizado
-SistemaAgendamiento -> Secretaria: Reprogramación exitosa
-Secretaria -> Paciente: Confirma nueva fecha
-Secretaria -> Medico: Notifica cambio de turno
+Paciente -> Secretaria: solicitarReprogramarTurno(numeroTurnoActual)
+Secretaria -> UI: buscarTurno(numeroTurnoActual)
+UI -> Servicio: obtenerTurnoExistente(turnoID)
+Servicio -> Agenda: recuperarTurno(turnoID)
+Agenda -> TurnoAct: obtenerDatos()
+TurnoAct --> Agenda: datosDelTurno(pacienteID, medicID, slotActual)
+Agenda --> Servicio: turnoEncontrado(datosCompletos)
+Servicio --> UI: mostrarTurnoActual(detalles)
+UI --> Secretaria: presentarTurnoActual(fecha, hora, medico)
+Secretaria -> Paciente: mostrarTurnoActual()
+Paciente -> Secretaria: solicitarNuevaFecha(nuevaFecha)
+Secretaria -> UI: buscarAlternativas(medicID, especialidadID, rango)
+UI -> Servicio: obtenerSlotsDisponibles(medicID, rango)
+Servicio -> Agenda: consultarDisponibilidad(medicID, rango)
+Agenda --> Servicio: List<Slot> slotsLibres
+Servicio --> UI: mostrarAlternativas(opciones)
+UI --> Secretaria: presentarOpciones(slot1, slot2..slotN)
+Secretaria -> Paciente: mostrarAlternativas()
+Paciente -> Secretaria: seleccionarNuevoSlot(slotID)
+Secretaria -> UI: confirmarReprogramacion(turnoID, nuevoSlotID)
+UI -> Servicio: reprogramarTurno(turnoID, nuevoSlotID)
+Servicio -> TurnoAct: actualizarDatos(nuevoSlotID, estado)
+TurnoAct -> TurnoAct: cambiarEstado(REPROGRAMADO)
+TurnoAct --> Servicio: turnoActualizado()
+Servicio -> Agenda: liberarSlotAnterior(medicID, slotAnterior)
+Agenda -> Agenda: removerOcupacion(slotAnterior)
+Agenda --> Servicio: slotLiberado()
+Servicio -> Agenda: ocuparNuevoSlot(medicID, nuevoSlot)
+Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
+Agenda --> Servicio: nuevoSlotOcupado()
+Servicio --> UI: reprogramacionExitosa(nuevoTurno)
+UI --> Secretaria: comprobante(fecha, hora, medico)
+Secretaria -> Paciente: confirmarReprogramacion(nuevoHorario)
 
-note right of Turno
-    Estado: REPROGRAMADO
-    Fecha anterior liberada
-    Nueva fecha confirmada
+note right of TurnoAct
+  Estado previo: CONFIRMADO
+  Transición: REPROGRAMADO
+end note
+
+note right of TurnoNuev
+  Reutiliza el mismo turnoID
+  solo actualiza fecha/hora
 end note
 
 @enduml

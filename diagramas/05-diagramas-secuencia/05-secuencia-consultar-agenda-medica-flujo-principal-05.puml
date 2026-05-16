@@ -1,45 +1,71 @@
 @startuml 05-secuencia-consultar-agenda-medica-flujo-principal-05
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-
 title Diagrama de Secuencia: Consultar Agenda Médica (Flujo Principal)
 
 actor Secretaria
-participant SistemaAgendamiento
-participant Agenda
-participant Turno
-participant Disponibilidad
-actor Medico
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "agenda:Agenda" as Agenda
+participant "turno:Turno" as Turno
+participant "disponibilidad:Disponibilidad" as Disp
+actor Médico
 
 autonumber
 
-Secretaria -> SistemaAgendamiento: Solicita visualizar agenda
-SistemaAgendamiento -> Medico: Identifica médico\n(por preferencia o búsqueda)
-Medico --> SistemaAgendamiento: Identidad confirmada
-SistemaAgendamiento -> Agenda: Obtiene agenda del médico
-Agenda -> Turno: Recupera turnos confirmados
-Turno --> Agenda: Retorna lista de turnos
-Agenda -> Disponibilidad: Obtiene slots disponibles
-Disponibilidad --> Agenda: Retorna disponibilidad
-Agenda --> SistemaAgendamiento: Agenda completa
-SistemaAgendamiento -> Secretaria: Muestra agenda del médico
-
+Secretaria -> UI: seleccionarMedico(medicID)
+UI -> Servicio: obtenerAgendaMedico(medicID)
+Servicio -> Agenda: recuperarAgenda(medicID)
+Agenda -> Agenda: cargarTurnosConfirmados(medicID)
+note right of Agenda
+  Filtro: estado = CONFIRMADO
+  o SOBRETURNO
+end note
+Agenda -> Turno: iterarTurnos()
+Turno --> Agenda: List<Turno> turnosAgenda
+Agenda -> Disp: obtenerDisponibilidad(medicID)
+Disp -> Disp: consultarSlotsDisponibles(medicID)
+Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
+Agenda --> Servicio: agendaCompleta(turnos, disponibilidad)
+Servicio -> Servicio: formatearDatos(agendaCompleta)
+Servicio --> UI: mostrarAgenda(datos)
+UI --> Secretaria: presentarAgenda(turnos, slots)
 note right of Secretaria
-    Visualiza:
-    - Turnos confirmados
-    - Horarios disponibles
-    - Información del paciente
+  Visualiza:
+  - Turnos confirmados
+  - Horarios disponibles
+  - Info del paciente
 end note
 
-alt Médico desea consultar su propia agenda
-    Medico -> SistemaAgendamiento: Solicita visualizar agenda
-    SistemaAgendamiento -> Agenda: Obtiene agenda personal
-    Agenda --> SistemaAgendamiento: Agenda personal
-    SistemaAgendamiento -> Medico: Muestra agenda personal
-    
-    note right of Medico
-        Acceso para revisión personal
-        y planificación
-    end note
+alt Médico consulta su propia agenda
+  Médico -> UI: solicitarMiAgenda()
+  UI -> Servicio: obtenerAgendaMedicoPrueba(tokenMedico)
+  Servicio -> Servicio: validarCredenciales(tokenMedico)
+  Servicio -> Agenda: recuperarAgenda(medicID)
+  Agenda -> Turno: iterarTurnosPropios()
+  Turno --> Agenda: List<Turno> turnosMedico
+  Agenda --> Servicio: agendaMedicoPrueba(turnos)
+  Servicio --> UI: mostrarMiAgenda(datos)
+  UI --> Médico: presentarMiAgenda(turnos, horarios)
+  
+  note right of Médico
+    Acceso personal a agenda
+    para revisión y planificación
+  end note
+else Secretaria cambia a otra fecha
+  Secretaria -> UI: cambiarRango(nuevaFecha)
+  UI -> Servicio: obtenerAgendaMedicoEnRango(medicID, rango)
+  Servicio -> Agenda: recuperarAgenda(medicID, rangoFechas)
+  Agenda -> Turno: iterarTurnosPorRango()
+  Turno --> Agenda: List<Turno> turnosEnRango
+  Agenda --> Servicio: agendaEnRango(turnos)
+  Servicio --> UI: mostrarAgenda(nuevosdatos)
+  UI --> Secretaria: actualizarVista(turnos)
 end
+
+note right of UI
+  Interfaz interactiva:
+  - Seleccionar médico
+  - Cambiar rango de fechas
+  - Filtrar por especialidad
+end note
 
 @enduml
