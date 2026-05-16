@@ -1,0 +1,55 @@
+@startuml 05-secuencia-cancelar-turno-flujo-principal-03
+title Diagrama de Secuencia: Cancelar Turno (Flujo Principal)
+
+actor Paciente
+actor Secretaria
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "turno:Turno" as Turno
+participant "agenda:Agenda" as Agenda
+participant "notificacion:Notificacion" as Notif
+
+autonumber
+
+Paciente -> Secretaria: solicitarCancelarTurno(numeroTurno)
+Secretaria -> UI: buscarTurno(numeroTurno)
+UI -> Servicio: obtenerTurnoExistente(turnoID)
+Servicio -> Agenda: recuperarTurno(turnoID)
+Agenda -> Turno: obtenerDatos()
+Turno --> Agenda: datosDelTurno(medicID, slotActual, estado)
+Agenda --> Servicio: turnoEncontrado(detalles)
+Servicio --> UI: validarEstadoParaCancelar(turnoID)
+UI --> Secretaria: confirmarCancelacion(detalles)
+Secretaria -> Paciente: solicitarConfirmacion()
+Paciente -> Secretaria: confirmarCancelacion()
+Secretaria -> UI: procesarCancelacion(turnoID)
+UI -> Servicio: cancelarTurno(turnoID, motivoCancelacion)
+Servicio -> Turno: cambiarEstado(CANCELADO)
+Turno -> Turno: actualizarDatos(estado, timestamp, motivo)
+Turno --> Servicio: turnoActualizado()
+Servicio -> Agenda: removerTurnoDeAgenda(medicID, turnoID)
+Agenda -> Agenda: liberarSlot(medicID, slotAnterior)
+Agenda --> Servicio: slotLiberado()
+create Notif
+Servicio -> Notif: new Notif(turnoID, "cancelacion")
+Notif -> Notif: enviarNotificacionPaciente(pacienteEmail, motivo)
+Notif -> Notif: enviarNotificacionMedico(medicoEmail, turnoDetalles)
+Notif --> Servicio: notificacionesEnviadas()
+Servicio --> UI: cancelacionExitosa(confirmacion)
+UI --> Secretaria: comprobanteCancelacion(numeroTurno, fecha)
+Secretaria -> Paciente: entregarComprobanteCancelacion()
+
+note right of Turno
+  Estado: CANCELADO
+  Slot liberado
+  Timestamp de cancelación registrado
+end note
+
+note right of Notif
+  Notifica al paciente y médico
+  Se destruye después de enviar
+end note
+
+destroy Notif
+
+@enduml

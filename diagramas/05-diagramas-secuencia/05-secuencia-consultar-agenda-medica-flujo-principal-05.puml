@@ -1,0 +1,75 @@
+@startuml 05-secuencia-consultar-agenda-medica-flujo-principal-05
+title Diagrama de Secuencia: Consultar Agenda Médica (Flujo Principal)
+
+actor Secretaria
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "agenda:Agenda" as Agenda
+participant "turno:Turno" as Turno
+participant "disponibilidad:Disponibilidad" as Disp
+actor Médico
+
+autonumber
+
+Secretaria -> UI: seleccionarMedico(medicID)
+UI -> Servicio: obtenerAgendaMedico(medicID)
+Servicio -> Agenda: recuperarAgenda(medicID)
+Agenda -> Agenda: cargarTurnosConfirmados(medicID)
+note right of Agenda
+  Filtro: estado = CONFIRMADO
+  o SOBRETURNO
+end note
+Agenda -> Turno: iterarTurnos()
+Turno --> Agenda: List<Turno> turnosAgenda
+Agenda -> Disp: obtenerDisponibilidad(medicID)
+Disp -> Disp: consultarSlotsDisponibles(medicID)
+Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
+Agenda --> Servicio: agendaCompleta(turnos, disponibilidad)
+Servicio -> Servicio: formatearDatos(agendaCompleta)
+Servicio --> UI: mostrarAgenda(datos)
+UI --> Secretaria: presentarAgenda(turnos, slots)
+note right of Secretaria
+  Visualiza:
+  - Turnos confirmados
+  - Horarios disponibles
+  - Info del paciente
+end note
+
+alt Médico consulta su propia agenda
+  Médico -> UI: solicitarMiAgenda()
+  UI -> Servicio: obtenerAgendaMedico(tokenMedico)
+  Servicio -> Servicio: validarCredenciales(tokenMedico)
+  Servicio -> Agenda: recuperarAgenda(medicID)
+  Agenda -> Turno: iterarTurnosPropios()
+  Turno --> Agenda: List<Turno> turnosMedico
+  Agenda --> Servicio: agendaMedicoPersonal(turnos)
+  Servicio -> Servicio: aplicarFiltrosMedico(turnos)
+  Servicio --> UI: mostrarMiAgenda(datos)
+  UI --> Médico: presentarMiAgenda(turnos, horarios)
+  Médico -> Médico: revisarDisponibilidad()
+  Médico -> Médico: registrarAnotaciones(observaciones)
+  
+  note right of Médico
+    Acceso personal a agenda
+    para revisión, planificación
+    y anotaciones
+  end note
+else Secretaria cambia a otra fecha
+  Secretaria -> UI: cambiarRango(nuevaFecha)
+  UI -> Servicio: obtenerAgendaMedicoEnRango(medicID, rango)
+  Servicio -> Agenda: recuperarAgenda(medicID, rangoFechas)
+  Agenda -> Turno: iterarTurnosPorRango()
+  Turno --> Agenda: List<Turno> turnosEnRango
+  Agenda --> Servicio: agendaEnRango(turnos)
+  Servicio --> UI: mostrarAgenda(nuevosdatos)
+  UI --> Secretaria: actualizarVista(turnos)
+end
+
+note right of UI
+  Interfaz interactiva:
+  - Seleccionar médico
+  - Cambiar rango de fechas
+  - Filtrar por especialidad
+end note
+
+@enduml

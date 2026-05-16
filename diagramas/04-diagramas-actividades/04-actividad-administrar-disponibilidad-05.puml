@@ -1,0 +1,47 @@
+@startuml
+|Medico / Secretaria|
+start
+:Acceder a la configuracion de disponibilidad;
+:Seleccionar profesional;
+
+|Modulo Agenda (Interfaz)|
+:Mostrar opciones de configuracion;
+if (¿Configurar Horario Regular o Bloqueo/Licencia?) then (Horario Regular)
+    |Medico / Secretaria|
+    :Seleccionar dias de atención;
+    :Ingresar rangos horarios;
+else (Bloqueo/Licencia)
+    |Medico / Secretaria|
+    :Seleccionar fechas de licencia o bloqueo;
+    :Indicar motivo y alcance;
+endif
+
+|Modulo Agenda (Interfaz)|
+:Enviar datos para validacion;
+
+|Sistema (Base de Datos)|
+:Recibir datos de disponibilidad;
+:Validar conflictos con turnos otorgados;
+
+|Modulo Agenda (Interfaz)|
+if (¿Existen conflictos detectados?) then (si)
+    :Mostrar advertencia de solapamiento;
+    |Medico / Secretaria|
+    :Realizar ajuste manual de horario;
+    |Modulo Agenda (Interfaz)|
+    :Reenviar datos corregidos;
+else (no)
+    :Confirmar disponibilidad valida;
+endif
+
+|Sistema (Base de Datos)|
+:Guardar configuracion definitiva;
+:Actualizar oferta de turnos;
+
+|Modulo Agenda (Interfaz)|
+:Notificar exito de la operacion;
+
+|Medico / Secretaria|
+:Verificar actualizacion en la agenda;
+stop
+@enduml

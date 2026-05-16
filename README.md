@@ -128,7 +128,8 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 - [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.puml)
 - [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.puml)
 - [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.puml)
-```markdown id="f9k2lm"
+
+---
 
 ## Diagramas de Secuencia
 
@@ -137,7 +138,6 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 - [Diagrama de Secuencia - Cancelar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.puml)
 - [Diagrama de Secuencia - Autorizar Sobreturno](./diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.puml)
 - [Diagrama de Secuencia - Consultar Agenda Médica](./diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.puml)
-```
 
 ---
 
