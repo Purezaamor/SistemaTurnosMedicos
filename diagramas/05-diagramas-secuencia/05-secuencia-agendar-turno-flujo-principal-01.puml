@@ -43,6 +43,8 @@ Servicio --> UI: resultadoAgendamiento(exito, numeroTurno)
 UI --> Secretaria: comprobanteTurno(numeroTurno, detalles)
 Secretaria -> Paciente: entregarComprobante(numeroTurno, fecha, hora)
 Secretaria -> Médico: notificarNuevoTurno(numeroTurno, pacienteNombre)
+Médico -> Médico: actualizarAgendaPersonal(numeroTurno)
+Médico --> Secretaria: confirmacionRecibida()
 destroy Notif
 Notif --> Secretaria: notificacionEnviada
 

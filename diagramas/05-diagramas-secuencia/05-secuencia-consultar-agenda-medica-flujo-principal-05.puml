@@ -37,18 +37,22 @@ end note
 
 alt Médico consulta su propia agenda
   Médico -> UI: solicitarMiAgenda()
-  UI -> Servicio: obtenerAgendaMedicoPrueba(tokenMedico)
+  UI -> Servicio: obtenerAgendaMedico(tokenMedico)
   Servicio -> Servicio: validarCredenciales(tokenMedico)
   Servicio -> Agenda: recuperarAgenda(medicID)
   Agenda -> Turno: iterarTurnosPropios()
   Turno --> Agenda: List<Turno> turnosMedico
-  Agenda --> Servicio: agendaMedicoPrueba(turnos)
+  Agenda --> Servicio: agendaMedicoPersonal(turnos)
+  Servicio -> Servicio: aplicarFiltrosMedico(turnos)
   Servicio --> UI: mostrarMiAgenda(datos)
   UI --> Médico: presentarMiAgenda(turnos, horarios)
+  Médico -> Médico: revisarDisponibilidad()
+  Médico -> Médico: registrarAnotaciones(observaciones)
   
   note right of Médico
     Acceso personal a agenda
-    para revisión y planificación
+    para revisión, planificación
+    y anotaciones
   end note
 else Secretaria cambia a otra fecha
   Secretaria -> UI: cambiarRango(nuevaFecha)
