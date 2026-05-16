@@ -228,13 +228,6 @@ Responde en este formato:
 
 `feature/esp-actividades-1-2-add-diagrama-actividad-1`
 
-### Motivo de la segunda revisión
-
-Se realizó una nueva revisión técnica después de que el autor aplicara las correcciones solicitadas en la revisión anterior:
-- Incorporación de archivos `.png`
-- Corrección de referencias en `changelog.md`
-- Actualización de documentación IA
-
 ### Prompt utilizado
 
 ```text
@@ -288,14 +281,6 @@ Responde:
 ### PR revisada
 
 `feature/esp-actividades-1-2-add-diagrama-actividad-1`
-
-### Motivo de la tercera revisión
-
-Se realizó una revisión final después de que el autor corrigiera todas las observaciones detectadas en revisiones anteriores:
-- Incorporación de archivos `.png`
-- Corrección de prompts utilizando triple backticks
-- Actualización del changelog
-- Validación final de diagramas e índice de actividades
 
 ### Prompt utilizado
 
@@ -354,14 +339,6 @@ Responde:
 
 `feature/esp-actividades-3-4-5-add-diagrama-actividad3`
 
-### Motivo de la revisión final
-
-Se realizó una validación final luego de que el autor corrigiera las observaciones detectadas en revisiones anteriores:
-- Corrección de enlaces en `diagramas_de_actividades.md`
-- Validación de archivos `.puml` y `.png`
-- Revisión de documentación IA
-- Verificación de consistencia general de los diagramas
-
 ### Prompt utilizado
 
 ```text
@@ -415,22 +392,6 @@ Responde:
 ### PR revisada
 
 `feature/esp-secuencia-add-diagrama-secuencia-1`
-
-### Motivo de la revisión final
-
-Se realizó una validación completa de los diagramas de secuencia y de toda la documentación asociada correspondiente al rol Especialista en Diagramas de Secuencia.
-
-La revisión incluyó:
-
-* Validación de los 5 diagramas de secuencia.
-* Verificación de archivos `.puml` y `.png`.
-* Revisión de participantes e interacciones UML.
-* Validación de mensajes en `camelCase`.
-* Verificación de operaciones `create` y `destroy`.
-* Revisión de documentación IA.
-* Validación de índice de diagramas.
-* Verificación de `changelog.md`.
-* Revisión de estructura general y naming conventions.
 
 ### Prompt utilizado
 
