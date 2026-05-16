@@ -128,6 +128,16 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 - [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.puml)
 - [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.puml)
 - [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.puml)
+```markdown id="f9k2lm"
+
+## Diagramas de Secuencia
+
+- [Diagrama de Secuencia - Agendar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-agendar-turno-flujo-principal-01.puml)
+- [Diagrama de Secuencia - Reprogramar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-flujo-principal-02.puml)
+- [Diagrama de Secuencia - Cancelar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.puml)
+- [Diagrama de Secuencia - Autorizar Sobreturno](./diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.puml)
+- [Diagrama de Secuencia - Consultar Agenda Médica](./diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.puml)
+```
 
 ---
 
@@ -139,6 +149,20 @@ Cada integrante documenta el uso de Copilot Agent Mode en `ia/primer-parcial/` y
 - Archivos de contexto referenciados.
 - Output obtenido.
 - Ajustes realizados manualmente.
+
+---
+
+## Participación Adicional
+
+Debido a la falta de integrantes en el equipo, el integrante **Ignacio Nervi (@nachonervi-design)** también asumió tareas correspondientes al rol de Especialista en Diagramas de Secuencia para la Actividad Obligatoria N°3.
+
+Se realizó:
+- modelado completo de diagramas de secuencia UML,
+- generación de archivos `.puml` y `.png`,
+- documentación del proceso utilizando IA,
+- validación de participantes, mensajes y operaciones UML,
+- actualización de índices y navegación,
+- y revisión técnica final de consistencia y cumplimiento de requisitos.
 
 ---
 

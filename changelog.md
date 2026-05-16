@@ -10,6 +10,10 @@
 
 - [feature/doc-coord-update-readme-a3] Actualización de documentación, navegación e integración de componentes de la Actividad Obligatoria N°3. PR: [#120](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/120) — @nachonervi-design (Documentador y Coordinador)
 
+```markdown id="aqk8l4"
+- [feature/esp-secuencia-add-diagrama-secuencia-1] Revisión técnica y validación funcional de diagramas de secuencia de la Actividad Obligatoria N°3, incluyendo validación de archivos `.puml`, `.png`, documentación IA, mensajes UML, operaciones `create/destroy` e índice de diagramas. PR: [#130](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/130) — @nachonervi-design (Reviewer Técnico / QA de Diagramas de Secuencia)
+
+
 ### Fixed
 
 ---
