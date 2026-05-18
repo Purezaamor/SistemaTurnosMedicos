@@ -114,8 +114,9 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 - `feature/*`: desarrollo de tareas específicas por integrante o por requisito.
 - `fix/*`: correcciones rápidas y ajustes sobre ramas de entrega.
 - `develop`: integración de funcionalidades aprobadas antes de preparar la entrega.
-- `release/primer-parcial`: rama de entrega del Primer Parcial donde se consolidan los cambios finales.
-- `master`: rama final de entrega aprobada, sólo recibe merges desde `release/primer-parcial`.
+- `release/actividad-obligatoria-1`: rama de entrega de la Actividad Obligatoria N°1 donde se consolidan los cambios finales.
+- `release/actividad-obligatoria-2`: rama de entrega de la Actividad Obligatoria N°2 donde se consolidan los cambios finales.
+- `release/actividad-obligatoria-3`: rama de entrega de la Actividad Obligatoria N°3 donde se consolidan los cambios finales.
 
 El trabajo se realiza mediante Pull Requests con revisión entre pares y control de versiones en GitHub, manteniendo el histórico en `changelog.md`.
 
@@ -143,7 +144,7 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 
 ## Uso de Inteligencia Artificial
 
-Cada integrante documenta el uso de Copilot Agent Mode en `ia/primer-parcial/` y `ia/a2/primer-parcial/`, indicando:
+Cada integrante documenta el uso de Copilot Agent Mode en `ia/primer-parcial/` y `ia/a3/`, indicando:
 
 - Prompt utilizado.
 - Archivos de contexto referenciados.
