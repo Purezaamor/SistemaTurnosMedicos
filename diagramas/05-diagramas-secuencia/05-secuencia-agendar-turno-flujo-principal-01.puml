@@ -1,0 +1,51 @@
+@startuml 05-secuencia-agendar-turno-flujo-principal-01
+title Diagrama de Secuencia: Agendar Turno Médico (Flujo Principal)
+
+actor Paciente
+actor Secretaria
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "turno:Turno" as Turno
+participant "agenda:Agenda" as Agenda
+participant "notificacion:Notificacion" as Notif
+actor Médico
+
+autonumber
+
+Paciente -> Secretaria: solicitarAgendarTurno(pacienteID, especialidad)
+Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
+UI -> Servicio: obtenerSlotsDisponibles(especialidadID, rangoFechas)
+Servicio -> Agenda: consultarDisponibilidad(medicID, especialidadID)
+Agenda --> Servicio: List<Slot> slotsLibres
+Servicio --> UI: mostrarOpcionesDisponibles(slotsLibres)
+UI --> Secretaria: presentarSlots(fecha1, hora1..horaN)
+Secretaria -> Paciente: mostrarAlternativas(opciones)
+Paciente -> Secretaria: seleccionarSlot(fecha, hora)
+Secretaria -> UI: confirmarSeleccion(slotID)
+UI -> Servicio: crearTurnoMedico(pacienteID, medicID, slotID)
+create Turno
+Servicio -> Turno: new Turno(pacienteID, medicID, slotID, estado)
+Turno -> Turno: inicializarTurno()
+note right of Turno
+  Estado: PENDIENTE_CONFIRMACION
+  idTurno: generado automático
+  Timestamp: now()
+end note
+Turno --> Servicio: turnoCreado
+Servicio -> Agenda: registrarTurnoEnAgenda(turno)
+Agenda -> Agenda: actualizarSlotsOcupados(medicID, slotID)
+Agenda --> Servicio: confirmacionRegistro()
+Servicio -> Notif: new Notif(notificacionID, "turnoAgendado")
+create Notif
+Notif -> Notif: enviarNotificacion(pacienteEmail, turnoDetalles)
+Notif --> Servicio: notificacionEnviada()
+Servicio --> UI: resultadoAgendamiento(exito, numeroTurno)
+UI --> Secretaria: comprobanteTurno(numeroTurno, detalles)
+Secretaria -> Paciente: entregarComprobante(numeroTurno, fecha, hora)
+Secretaria -> Médico: notificarNuevoTurno(numeroTurno, pacienteNombre)
+Médico -> Médico: actualizarAgendaPersonal(numeroTurno)
+Médico --> Secretaria: confirmacionRecibida()
+destroy Notif
+Notif --> Secretaria: notificacionEnviada
+
+@enduml

@@ -2,6 +2,35 @@
 
 ## [Unreleased]
 
+### Added
+
+- [feature/esp-secuencia-add-diagrama-secuencia-1] **Diagramas de Secuencia Completos** para Sistema de Turnos Médicos (Actividad Obligatoria N°3). Incluye:
+  - **5 diagramas PlantUML** completos y profesionales:
+    - `05-secuencia-agendar-turno-flujo-principal-01.puml` (8 participantes, 20 mensajes)
+    - `05-secuencia-reprogramar-turno-flujo-principal-02.puml` (6 participantes, 18 mensajes)
+    - `05-secuencia-cancelar-turno-flujo-principal-03.puml` (7 participantes, 21 mensajes)
+    - `05-secuencia-autorizar-sobreturno-flujo-principal-04.puml` (8 participantes, 19 mensajes)
+    - `05-secuencia-consultar-agenda-medica-flujo-principal-05.puml` (7 participantes, 18 mensajes)
+  - **Requisitos cumplidos**:
+    - ✓ Mínimo 4 participantes por diagrama
+    - ✓ Mínimo 3 mensajes/interacciones por participante
+    - ✓ Mensajes en camelCase con argumentos significativos
+    - ✓ Notación UML 2.5 correcta (Clase:objeto)
+    - ✓ Ciclo de vida de objetos (create/destroy)
+    - ✓ Coherencia con dominio de Sistema de Turnos Médicos
+  - **Índice actualizado**: `diagramas/05-diagramas-secuencia/diagramas_de_secuencias.md` con descripciones detalladas de cada diagrama, participantes, flujos y validación de requisitos
+  - **Documentación IA**: `ia/a3/esp-secuencia.md` con:
+    - Análisis completo del rol y responsabilidades
+    - Proceso de desarrollo (Fase 1: Planificación, Fase 2: Diseño)
+    - Contexto utilizado y referencias
+    - Ajustes realizados en cada diagrama
+    - Iteraciones relevantes
+    - Especificaciones técnicas finales
+    - Validación de requisitos de cátedra
+    - Matriz de cumplimiento
+  - **PNG generados** para visualización en documentación (referencias incluidas)
+  — @Purezaamor (Especialista en Diagramas de Secuencia)
+
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 
 ### Added
