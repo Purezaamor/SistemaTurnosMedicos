@@ -124,21 +124,21 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 
 ## Diagramas de Actividades
 
-- [Diagrama de actividad - Registrar Turno Médico](./diagramas/04-diagramas-actividades/04-actividad-registrar-turno-medico-01.puml)
-- [Diagrama de actividad - Reprogramar Turno Existente](./diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-existente-02.puml)
-- [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.puml)
-- [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.puml)
-- [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.puml)
+- [Diagrama de actividad - Registrar Turno Médico](./diagramas/04-diagramas-actividades/04-actividad-registrar-turno-medico-01.png)
+- [Diagrama de actividad - Reprogramar Turno Existente](./diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-existente-02.png)
+- [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.png)
+- [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.png)
+- [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.png)
 
 ---
 
 ## Diagramas de Secuencia
 
-- [Diagrama de Secuencia - Agendar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-agendar-turno-flujo-principal-01.puml)
-- [Diagrama de Secuencia - Reprogramar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-flujo-principal-02.puml)
-- [Diagrama de Secuencia - Cancelar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.puml)
-- [Diagrama de Secuencia - Autorizar Sobreturno](./diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.puml)
-- [Diagrama de Secuencia - Consultar Agenda Médica](./diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.puml)
+- [Diagrama de Secuencia - Agendar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-agendar-turno-flujo-principal-01.png)
+- [Diagrama de Secuencia - Reprogramar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-flujo-principal-02.png)
+- [Diagrama de Secuencia - Cancelar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.png)
+- [Diagrama de Secuencia - Autorizar Sobreturno](./diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.png)
+- [Diagrama de Secuencia - Consultar Agenda Médica](./diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.png)
 
 ---
 
