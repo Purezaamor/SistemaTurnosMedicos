@@ -14,7 +14,6 @@
 
 
 ### Fixed
-=======
 - [feature/esp-secuencia-add-diagrama-secuencia-1] **Diagramas de Secuencia Completos** para Sistema de Turnos Médicos (Actividad Obligatoria N°3). Incluye:
   - **5 diagramas PlantUML** completos y profesionales:
     - `05-secuencia-agendar-turno-flujo-principal-01.puml` (8 participantes, 20 mensajes)
