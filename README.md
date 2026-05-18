@@ -91,10 +91,11 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 - [IA - Documentador y Coordinador A2](./ia/a2/documentador-coordinador.md)
 - [IA - Documentador y Coordinador Primer Parcial](./ia/primer-parcial/documentador-coordinador.md)
 - [IA - SRP](./ia/primer-parcial/especialista-srp.md)
-- [IA - OCP](./ia/a2/primer-parcial/especialista-ocp.md)
-- [IA - LSP](./ia/a2/primer-parcial/especialista-lsp.md)
+- [IA - OCP](./ia/primer-parcial/especialista-ocp.md)
+- [IA - LSP](./ia/primer-parcial/especialista-lsp.md)
 - [IA - ISP](./ia/primer-parcial/especialista-isp.md)
-- [IA - DIP](./ia/a2/primer-parcial/especialista-dip.md)
+- [IA - DIP](./ia/primer-parcial/especialista-dip.md)
+- [IA - Documentador y Coordinador A3](./ia/a3/documentador-coordinador.md)
 
 ---
 
@@ -120,6 +121,26 @@ El trabajo se realiza mediante Pull Requests con revisión entre pares y control
 
 ---
 
+## Diagramas de Actividades
+
+- [Diagrama de actividad - Registrar Turno Médico](./diagramas/04-diagramas-actividades/04-actividad-registrar-turno-medico-01.puml)
+- [Diagrama de actividad - Reprogramar Turno Existente](./diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-existente-02.puml)
+- [Diagrama de Actividad - Cancelar Turno](./diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-03.puml)
+- [Diagrama de Actividad - Visualizar Agenda Médica](./diagramas/04-diagramas-actividades/04-actividad-visualizar-agenda-medica-04.puml)
+- [Diagrama de Actividad - Administrar Disponibilidad del Profesional](./diagramas/04-diagramas-actividades/04-actividad-administrar-disponibilidad-05.puml)
+
+---
+
+## Diagramas de Secuencia
+
+- [Diagrama de Secuencia - Agendar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-agendar-turno-flujo-principal-01.puml)
+- [Diagrama de Secuencia - Reprogramar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-flujo-principal-02.puml)
+- [Diagrama de Secuencia - Cancelar Turno](./diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.puml)
+- [Diagrama de Secuencia - Autorizar Sobreturno](./diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.puml)
+- [Diagrama de Secuencia - Consultar Agenda Médica](./diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.puml)
+
+---
+
 ## Uso de Inteligencia Artificial
 
 Cada integrante documenta el uso de Copilot Agent Mode en `ia/primer-parcial/` y `ia/a2/primer-parcial/`, indicando:
@@ -128,6 +149,20 @@ Cada integrante documenta el uso de Copilot Agent Mode en `ia/primer-parcial/` y
 - Archivos de contexto referenciados.
 - Output obtenido.
 - Ajustes realizados manualmente.
+
+---
+
+## Participación Adicional
+
+Debido a la falta de integrantes en el equipo, el integrante **Ignacio Nervi (@nachonervi-design)** también asumió tareas correspondientes al rol de Especialista en Diagramas de Secuencia para la Actividad Obligatoria N°3.
+
+Se realizó:
+- modelado completo de diagramas de secuencia UML,
+- generación de archivos `.puml` y `.png`,
+- documentación del proceso utilizando IA,
+- validación de participantes, mensajes y operaciones UML,
+- actualización de índices y navegación,
+- y revisión técnica final de consistencia y cumplimiento de requisitos.
 
 ---
 
