@@ -5,10 +5,6 @@
 ### Added
 
 
-- [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Modelado de 3 Diagramas de Actividades en PlantUML y exportacion a PNG con documentacion de la IA. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5.).
-
-- [feature/esp-actividades-1-2-diagramas] Diagramas de actividades para casos de uso 1 y 2: Registrar Turno Médico y Reprogramar Turno Existente. Incluye archivos .puml, .png, índice en diagramas/04-diagramas-actividades/ y documentación IA en ia/a3/esp-actividades-1-2.md. Issues: #116, #117. PR: [#118] — @Purezaamor
-
 - [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Incorporación de diagramas de actividades para los casos de uso 3, 4 y 5, incluyendo archivos `.puml`, `.png` y documentación IA asociada. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) — @keviineze (Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5).
 
 - [feature/esp-actividades-1-2-add-diagrama-actividad-1] Incorporación de diagramas de actividades para los casos de uso 1 y 2, incluyendo archivos `.puml`, índice de diagramas y documentación IA asociada. PR: [#118](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/118) — @Purezaamor (Especialista en Diagramas de Actividades - Casos de Uso 1 y 2).
