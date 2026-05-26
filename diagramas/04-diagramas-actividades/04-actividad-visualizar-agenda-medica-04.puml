@@ -1,4 +1,5 @@
 @startuml
+title Visualizar Agenda Médica
 |Medico / Secretaria|
 start
 :Acceder al modulo de agenda;
@@ -14,7 +15,7 @@ endif
 :Enviar peticion de agenda al sistema;
 :Mostrar estado de carga en pantalla;
 
-|Sistema (Base de Datos)|
+|Sistema|
 :Recibir solicitud de agenda;
 :Buscar turnos en el periodo seleccionado;
 fork
@@ -25,7 +26,7 @@ end fork
 
 |Modulo Agenda (Interfaz)|
 if (¿Existen turnos cargados?) then (si)
-    |Sistema (Base de Datos)|
+    |Sistema|
     :Recuperar lista de turnos;
     :Enviar datos a la interfaz;
     |Modulo Agenda (Interfaz)|
