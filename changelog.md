@@ -47,6 +47,8 @@
   — @Purezaamor (Especialista en Diagramas de Secuencia)
 
 - [fix/reordenar-archivos-diagramas] Correcciones de archivos `diagramas_de_actividades.md` y `README.md`, para que apunten a los archivos .png y no a los .puml. PR: [#137](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/137) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5)
+- [fix/correcciones-diagramas-a3] Correcciones de RC5 a RC10 en los archivos `.puml` de los casos de uso 3, 4 y 5 sugueridos por el profesor.
+PR : [#139](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/139) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5).
 
 ---
 
