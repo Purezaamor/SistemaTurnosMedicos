@@ -7,7 +7,7 @@ participant "ServicioTurnos:Servicio" as Servicio
 participant "agenda:Agenda" as Agenda
 participant "turno:Turno" as Turno
 participant "disponibilidad:Disponibilidad" as Disp
-actor Médico
+actor Medico
 
 autonumber
 
@@ -35,8 +35,8 @@ note right of Secretaria
   - Info del paciente
 end note
 
-alt Médico consulta su propia agenda
-  Médico -> UI: solicitarMiAgenda()
+alt Medico consulta su propia agenda
+  Medico -> UI: solicitarMiAgenda()
   UI -> Servicio: obtenerAgendaMedico(tokenMedico)
   Servicio -> Servicio: validarCredenciales(tokenMedico)
   Servicio -> Agenda: recuperarAgenda(medicID)
@@ -45,13 +45,13 @@ alt Médico consulta su propia agenda
   Agenda --> Servicio: agendaMedicoPersonal(turnos)
   Servicio -> Servicio: aplicarFiltrosMedico(turnos)
   Servicio --> UI: mostrarMiAgenda(datos)
-  UI --> Médico: presentarMiAgenda(turnos, horarios)
-  Médico -> Médico: revisarDisponibilidad()
-  Médico -> Médico: registrarAnotaciones(observaciones)
+  UI --> Medico: presentarMiAgenda(turnos, horarios)
+  Medico -> Medico: revisarDisponibilidad()
+  Medico -> Medico: registrarAnotaciones(observaciones)
   
-  note right of Médico
+  note right of Medico
     Acceso personal a agenda
-    para revisión, planificación
+    para revision, planificacion
     y anotaciones
   end note
 else Secretaria cambia a otra fecha
@@ -67,7 +67,7 @@ end
 
 note right of UI
   Interfaz interactiva:
-  - Seleccionar médico
+  - Seleccionar medico
   - Cambiar rango de fechas
   - Filtrar por especialidad
 end note

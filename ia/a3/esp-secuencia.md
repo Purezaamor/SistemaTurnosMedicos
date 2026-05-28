@@ -15,11 +15,22 @@ Como Especialista en Diagramas de Secuencia, la responsabilidad es modelar las i
 
 ### Fase 1: Planificación y Análisis
 
-**Contexto Inicial**: 
-- Sistema de Gestión de Turnos Médicos
-- Diagrama de Clases ya existente (diagramas/01-diagrama-clases/)
-- Casos de Uso definidos (diagramas/02-casos-de-uso/)
-- Diagramas de Actividades existentes (diagramas/04-diagramas-actividades/)
+## Archivos de contexto
+
+- diagramas/03-escenarios-casos-de-uso/03-cancelar-turno-flujo-principal-01.md
+- diagramas/03-escenarios-casos-de-uso/03-disponibilidad-flujo-principal-01.md
+- diagramas/03-escenarios-casos-de-uso/03-registrar-turno-flujo-principal-01.md
+- diagramas/03-escenarios-casos-de-uso/03-reprogramar-turno-flujo-principal-01.md
+- diagramas/03-escenarios-casos-de-uso/03-ver-agenda-flujo-principal-01.md
+- herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md
+- herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md
+- herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md
+- herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md
+- herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md
+- herramientas-agile/tarjetas-crc/06-tarjeta-crc-historial.md
+- herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md
+- herramientas-agile/tarjetas-crc/08-tarjeta-crc-llegada-paciente.md
+
 
 **Identificación de Participantes**:
 Se definieron los participantes clave para cada diagrama basándose en:

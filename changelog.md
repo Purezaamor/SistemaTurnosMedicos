@@ -1,12 +1,13 @@
 # Changelog
 
-## [Unreleased]
+## [Release Actividad Obligatoria N°3] - 2026-05-07
 
 ### Added
 
-- [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Incorporación de diagramas de actividades para los casos de uso 3, 4 y 5, incluyendo archivos `.puml`, `.png` y documentación IA asociada. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) — @keviineze (Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5).
 
-- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Incorporación de diagramas de actividades para los casos de uso 1 y 2, incluyendo archivos `.puml`, índice de diagramas y documentación IA asociada. PR: [#118](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/118) — @Purezaamor (Especialista en Diagramas de Actividades - Casos de Uso 1 y 2).
+- [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Modelado de 3 Diagramas de Actividades en PlantUML y exportacion a PNG con documentacion de la IA. Incorporación de diagramas de actividades para los casos de uso 3, 4 y 5, incluyendo archivos `.puml`, `.png` y documentación IA asociada. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5.).
+
+- [feature/esp-actividades-1-2-diagramas] Diagramas de actividades para casos de uso 1 y 2: Registrar Turno Médico y Reprogramar Turno Existente. Incluye archivos .puml, .png, índice en diagramas/04-diagramas-actividades/ y documentación IA en ia/a3/esp-actividades-1-2.md. Issues: #116, #117. PR: [#118] — @Purezaamor
 
 - [feature/doc-coord-update-readme-a3] Actualización de documentación, navegación e integración de componentes de la Actividad Obligatoria N°3. PR: [#120](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/120) — @nachonervi-design (Documentador y Coordinador)
 
@@ -14,43 +15,13 @@
 
 
 ### Fixed
-- [feature/esp-secuencia-add-diagrama-secuencia-1] **Diagramas de Secuencia Completos** para Sistema de Turnos Médicos (Actividad Obligatoria N°3). Incluye:
-  - **5 diagramas PlantUML** completos y profesionales:
-    - `05-secuencia-agendar-turno-flujo-principal-01.puml` (8 participantes, 20 mensajes)
-    - `05-secuencia-reprogramar-turno-flujo-principal-02.puml` (6 participantes, 18 mensajes)
-    - `05-secuencia-cancelar-turno-flujo-principal-03.puml` (7 participantes, 21 mensajes)
-    - `05-secuencia-autorizar-sobreturno-flujo-principal-04.puml` (8 participantes, 19 mensajes)
-    - `05-secuencia-consultar-agenda-medica-flujo-principal-05.puml` (7 participantes, 18 mensajes)
-  - **Requisitos cumplidos**:
-    - ✓ Mínimo 4 participantes por diagrama
-    - ✓ Mínimo 3 mensajes/interacciones por participante
-    - ✓ Mensajes en camelCase con argumentos significativos
-    - ✓ Notación UML 2.5 correcta (Clase:objeto)
-    - ✓ Ciclo de vida de objetos (create/destroy)
-    - ✓ Coherencia con dominio de Sistema de Turnos Médicos
-  - **Índice actualizado**: `diagramas/05-diagramas-secuencia/diagramas_de_secuencias.md` con descripciones detalladas de cada diagrama, participantes, flujos y validación de requisitos
-  - **Documentación IA**: `ia/a3/esp-secuencia.md` con:
-    - Análisis completo del rol y responsabilidades
-    - Proceso de desarrollo (Fase 1: Planificación, Fase 2: Diseño)
-    - Contexto utilizado y referencias
-    - Ajustes realizados en cada diagrama
-    - Iteraciones relevantes
-    - Especificaciones técnicas finales
-    - Validación de requisitos de cátedra
-    - Matriz de cumplimiento
-  - **PNG generados** para visualización en documentación (referencias incluidas)
-  — @Purezaamor (Especialista en Diagramas de Secuencia)
+- [feature/esp-secuencia-add-diagrama-secuencia-1] Incorporación de 5 diagramas de secuencia PlantUML completos para el Sistema de Turnos Médicos, con PNG generados, documentación técnica del proceso, validación de requisitos UML e índice actualizado de diagramas. PR: [#130](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/130) - @nachonervi-design (Especialista en Diagramas de Secuencia)
 
-## [Release Actividad Obligatoria N°3] - 2026-05-07
+- [fix/reordenar-archivos-diagramas] Correcciones de archivos `diagramas_de_actividades.md` y `README.md`, para que apunten a los archivos .png y no a los .puml. PR: [#137](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/137) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5)
+- [fix/correcciones-diagramas-a3] Correcciones de RC5 a RC10 en los archivos `.puml` de los casos de uso 3, 4 y 5 sugueridos por el profesor.
+PR : [#139](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/139) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5).
 
-### Added
-
-- [feature/esp-actividades-1-2-diagramas] Diagramas de actividades para casos de uso 1 y 2: Registrar Turno Médico y Reprogramar Turno Existente. Incluye archivos .puml, .png, índice en diagramas/04-diagramas-actividades/ y documentación IA en ia/a3/esp-actividades-1-2.md. Issues: #116, #117. PR: [#???] — @Purezaamor
-
-- [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Modelado de 3 Diagramas de Actividades en PlantUML y exportacion a PNG con documentacion de la IA. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5.).
-
-- [feature/esp-actividades-1-2-diagramas] Diagramas de actividades para casos de uso 1 y 2: Registrar Turno Médico y Reprogramar Turno Existente. Incluye archivos .puml, .png, índice en diagramas/04-diagramas-actividades/ y documentación IA en ia/a3/esp-actividades-1-2.md. Issues: #116, #117. PR: [#118] — @Purezaamor
-
+- [fix/especialista-de-secuencias-fix] Se realizan correcciones en los formatos de PUML y creacion de sus respectivos png, se modifican archivos diagramas_de_secuencias.md y esp-secuencia.md. Por ultimo se modifican entradas al changelog. PR: [#140](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/140) - @sofinestt (Especialista en Diagramas de Secuencia)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04

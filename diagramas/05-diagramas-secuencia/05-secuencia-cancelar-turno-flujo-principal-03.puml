@@ -42,12 +42,12 @@ Secretaria -> Paciente: entregarComprobanteCancelacion()
 note right of Turno
   Estado: CANCELADO
   Slot liberado
-  Timestamp de cancelación registrado
+  Timestamp de cancelacion registrado
 end note
 
 note right of Notif
-  Notifica al paciente y médico
-  Se destruye después de enviar
+  Notifica al paciente y medico
+  Se destruye despues de enviar
 end note
 
 destroy Notif
