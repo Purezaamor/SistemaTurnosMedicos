@@ -28,6 +28,9 @@ PR: [#141](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/141) - @ANeic
 
 - [fix/doc-coord] Se revisa y registra nuevamente las PR #120, #130 y #137 .
 PR [#142](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/142) - @ANeicuan (Documentador y Coordinador)
+
+- [fix/changelog] Se añaden entradas faltantes a changelog.md
+PR [#143](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/143) - @ANeicuan (Documentador y Coordinador)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04
