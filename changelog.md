@@ -22,6 +22,12 @@
 PR : [#139](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/139) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5).
 
 - [fix/especialista-de-secuencias-fix] Se realizan correcciones en los formatos de PUML y creacion de sus respectivos png, se modifican archivos diagramas_de_secuencias.md y esp-secuencia.md. Por ultimo se modifican entradas al changelog. PR: [#140](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/140) - @sofinestt (Especialista en Diagramas de Secuencia)
+
+- [fix/readme] Se eliminan contenidos innecesarios sobre el archivo README.md. 
+PR: [#141](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/141) - @ANeicuan (Documentador y Coordinador)
+
+- [fix/doc-coord] Se revisa y registra nuevamente las PR #120, #130 y #137 .
+PR [#142](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/142) - @ANeicuan (Documentador y Coordinador)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04
