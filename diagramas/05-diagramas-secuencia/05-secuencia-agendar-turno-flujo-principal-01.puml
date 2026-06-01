@@ -12,19 +12,19 @@ actor Médico
 
 autonumber
 
-Paciente -> Secretaria: solicitarAgendarTurno(pacienteID, especialidad)
+Paciente -> Secretaria: solicitarAgendarTurno(paciente, especialidad)
 Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
-UI -> Servicio: obtenerSlotsDisponibles(especialidadID, rangoFechas)
-Servicio -> Agenda: consultarDisponibilidad(medicID, especialidadID)
+UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
+Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
 Agenda --> Servicio: List<Slot> slotsLibres
 Servicio --> UI: mostrarOpcionesDisponibles(slotsLibres)
 UI --> Secretaria: presentarSlots(fecha1, hora1..horaN)
 Secretaria -> Paciente: mostrarAlternativas(opciones)
 Paciente -> Secretaria: seleccionarSlot(fecha, hora)
-Secretaria -> UI: confirmarSeleccion(slotID)
-UI -> Servicio: crearTurnoMedico(pacienteID, medicID, slotID)
+Secretaria -> UI: confirmarSeleccion(slot)
+UI -> Servicio: crearTurnoMedico(paciente, medico, slot)
 create Turno
-Servicio -> Turno: new Turno(pacienteID, medicID, slotID, estado)
+Servicio -> Turno: new Turno(paciente, medico, slot, estado)
 Turno -> Turno: inicializarTurno()
 note right of Turno
   Estado: PENDIENTE_CONFIRMACION
@@ -33,11 +33,11 @@ note right of Turno
 end note
 Turno --> Servicio: turnoCreado
 Servicio -> Agenda: registrarTurnoEnAgenda(turno)
-Agenda -> Agenda: actualizarSlotsOcupados(medicID, slotID)
+Agenda -> Agenda: actualizarSlotsOcupados(medico, slot)
 Agenda --> Servicio: confirmacionRegistro()
-Servicio -> Notif: new Notif(notificacionID, "turnoAgendado")
+Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 create Notif
-Servicio -> Notif: new Notif(notificacionID, "turnoAgendado")
+Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 Notif -> Notif: enviarNotificacion(pacienteEmail, turnoDetalles)
 Notif --> Servicio: notificacionEnviada()
 Servicio --> UI: resultadoAgendamiento(exito, numeroTurno)

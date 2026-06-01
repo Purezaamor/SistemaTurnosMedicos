@@ -1,9 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 
 ### Added
-
 
 - [feature/esp-actividades-3-4-5-add-diagrama-actividad3] Modelado de 3 Diagramas de Actividades en PlantUML y exportacion a PNG con documentacion de la IA. Incorporación de diagramas de actividades para los casos de uso 3, 4 y 5, incluyendo archivos `.puml`, `.png` y documentación IA asociada. PR: [#124](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/124) - @keviineze (Especialista en Diagramas de Actividades - Caso de Uso 3, 4 y 5.).
 
@@ -31,6 +32,8 @@ PR [#142](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/142) - @ANeicu
 
 - [fix/changelog] Se añaden entradas faltantes a changelog.md
 PR [#143](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/143) - @ANeicuan (Documentador y Coordinador)
+
+-[fix/esp-diag-secuencia-fix] Se carga entrada Unreleased en el changelog, se corrigen ID por objetos reales en archivos puml, se crean nuevos archivos .png. PR:[#144](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/144) - @sofinestt (Especialista en Diagramas de Secuencias)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04

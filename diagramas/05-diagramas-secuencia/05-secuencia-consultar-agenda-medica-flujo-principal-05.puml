@@ -11,18 +11,18 @@ actor Medico
 
 autonumber
 
-Secretaria -> UI: seleccionarMedico(medicID)
-UI -> Servicio: obtenerAgendaMedico(medicID)
-Servicio -> Agenda: recuperarAgenda(medicID)
-Agenda -> Agenda: cargarTurnosConfirmados(medicID)
+Secretaria -> UI: seleccionarMedico(medico)
+UI -> Servicio: obtenerAgendaMedico(medico)
+Servicio -> Agenda: recuperarAgenda(medico)
+Agenda -> Agenda: cargarTurnosConfirmados(medico)
 note right of Agenda
   Filtro: estado = CONFIRMADO
   o SOBRETURNO
 end note
 Agenda -> Turno: iterarTurnos()
 Turno --> Agenda: List<Turno> turnosAgenda
-Agenda -> Disp: obtenerDisponibilidad(medicID)
-Disp -> Disp: consultarSlotsDisponibles(medicID)
+Agenda -> Disp: obtenerDisponibilidad(medico)
+Disp -> Disp: consultarSlotsDisponibles(medico)
 Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
 Agenda --> Servicio: agendaCompleta(turnos, disponibilidad)
 Servicio -> Servicio: formatearDatos(agendaCompleta)
@@ -39,7 +39,7 @@ alt Medico consulta su propia agenda
   Medico -> UI: solicitarMiAgenda()
   UI -> Servicio: obtenerAgendaMedico(tokenMedico)
   Servicio -> Servicio: validarCredenciales(tokenMedico)
-  Servicio -> Agenda: recuperarAgenda(medicID)
+  Servicio -> Agenda: recuperarAgenda(medico)
   Agenda -> Turno: iterarTurnosPropios()
   Turno --> Agenda: List<Turno> turnosMedico
   Agenda --> Servicio: agendaMedicoPersonal(turnos)
@@ -56,8 +56,8 @@ alt Medico consulta su propia agenda
   end note
 else Secretaria cambia a otra fecha
   Secretaria -> UI: cambiarRango(nuevaFecha)
-  UI -> Servicio: obtenerAgendaMedicoEnRango(medicID, rango)
-  Servicio -> Agenda: recuperarAgenda(medicID, rangoFechas)
+  UI -> Servicio: obtenerAgendaMedicoEnRango(medico, rango)
+  Servicio -> Agenda: recuperarAgenda(medico, rangoFechas)
   Agenda -> Turno: iterarTurnosPorRango()
   Turno --> Agenda: List<Turno> turnosEnRango
   Agenda --> Servicio: agendaEnRango(turnos)
