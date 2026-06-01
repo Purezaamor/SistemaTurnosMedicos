@@ -13,32 +13,32 @@ autonumber
 
 Paciente -> Secretaria: solicitarReprogramarTurno(numeroTurnoActual)
 Secretaria -> UI: buscarTurno(numeroTurnoActual)
-UI -> Servicio: obtenerTurnoExistente(turnoID)
-Servicio -> Agenda: recuperarTurno(turnoID)
+UI -> Servicio: obtenerTurnoExistente(turno)
+Servicio -> Agenda: recuperarTurno(turno)
 Agenda -> TurnoAct: obtenerDatos()
-TurnoAct --> Agenda: datosDelTurno(pacienteID, medicID, slotActual)
+TurnoAct --> Agenda: datosDelTurno(paciente, medico, slotActual)
 Agenda --> Servicio: turnoEncontrado(datosCompletos)
 Servicio --> UI: mostrarTurnoActual(detalles)
 UI --> Secretaria: presentarTurnoActual(fecha, hora, medico)
 Secretaria -> Paciente: mostrarTurnoActual()
 Paciente -> Secretaria: solicitarNuevaFecha(nuevaFecha)
-Secretaria -> UI: buscarAlternativas(medicID, especialidadID, rango)
-UI -> Servicio: obtenerSlotsDisponibles(medicID, rango)
-Servicio -> Agenda: consultarDisponibilidad(medicID, rango)
+Secretaria -> UI: buscarAlternativas(medico, especialidad, rango)
+UI -> Servicio: obtenerSlotsDisponibles(medico, rango)
+Servicio -> Agenda: consultarDisponibilidad(medico, rango)
 Agenda --> Servicio: List<Slot> slotsLibres
 Servicio --> UI: mostrarAlternativas(opciones)
 UI --> Secretaria: presentarOpciones(slot1, slot2-slotN)
 Secretaria -> Paciente: mostrarAlternativas()
-Paciente -> Secretaria: seleccionarNuevoSlot(slotID)
-Secretaria -> UI: confirmarReprogramacion(turnoID, nuevoSlotID)
-UI -> Servicio: reprogramarTurno(turnoID, nuevoSlotID)
-Servicio -> TurnoAct: actualizarDatos(nuevoSlotID, estado)
+Paciente -> Secretaria: seleccionarNuevoSlot(slot)
+Secretaria -> UI: confirmarReprogramacion(turno, nuevoSlot)
+UI -> Servicio: reprogramarTurno(turno, nuevoSlot)
+Servicio -> TurnoAct: actualizarDatos(nuevoSlot, estado)
 TurnoAct -> TurnoAct: cambiarEstado(REPROGRAMADO)
 TurnoAct --> Servicio: turnoActualizado()
-Servicio -> Agenda: liberarSlotAnterior(medicID, slotAnterior)
+Servicio -> Agenda: liberarSlotAnterior(medico, slotAnterior)
 Agenda -> Agenda: removerOcupacion(slotAnterior)
 Agenda --> Servicio: slotLiberado()
-Servicio -> Agenda: ocuparNuevoSlot(medicID, nuevoSlot)
+Servicio -> Agenda: ocuparNuevoSlot(medico, nuevoSlot)
 Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
 Agenda --> Servicio: nuevoSlotOcupado()
 Servicio --> UI: reprogramacionExitosa(nuevoTurno)
@@ -51,7 +51,7 @@ note right of TurnoAct
 end note
 
 note right of TurnoAct
-  Reutiliza el mismo turnoID
+  Reutiliza el mismo turno
   solo actualiza fecha/hora
 end note
 
