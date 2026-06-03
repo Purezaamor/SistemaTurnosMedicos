@@ -34,13 +34,13 @@ Secretaria -> UI: confirmarReprogramacion(turno, nuevoSlot)
 UI -> Servicio: reprogramarTurno(turno, nuevoSlot)
 Servicio -> TurnoAct: actualizarDatos(nuevoSlot, estado)
 TurnoAct -> TurnoAct: cambiarEstado(REPROGRAMADO)
-TurnoAct --> Servicio: turnoActualizado()
+TurnoAct --> Servicio: turnoActualizado
 Servicio -> Agenda: liberarSlotAnterior(medico, slotAnterior)
 Agenda -> Agenda: removerOcupacion(slotAnterior)
-Agenda --> Servicio: slotLiberado()
+Agenda --> Servicio: slotLiberado
 Servicio -> Agenda: ocuparNuevoSlot(medico, nuevoSlot)
 Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
-Agenda --> Servicio: nuevoSlotOcupado()
+Agenda --> Servicio: nuevoSlotOcupado
 Servicio --> UI: reprogramacionExitosa(nuevoTurno)
 UI --> Secretaria: comprobante(fecha, hora, medico)
 Secretaria -> Paciente: confirmarReprogramacion(nuevoHorario)

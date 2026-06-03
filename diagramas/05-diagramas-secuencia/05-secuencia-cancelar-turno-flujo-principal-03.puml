@@ -26,15 +26,15 @@ Secretaria -> UI: procesarCancelacion(turno)
 UI -> Servicio: cancelarTurno(turno, motivoCancelacion)
 Servicio -> Turno: cambiarEstado(CANCELADO)
 Turno -> Turno: actualizarDatos(estado, timestamp, motivo)
-Turno --> Servicio: turnoActualizado()
+Turno --> Servicio: turnoActualizado
 Servicio -> Agenda: removerTurnoDeAgenda(medico, turno)
 Agenda -> Agenda: liberarSlot(medico, slotAnterior)
-Agenda --> Servicio: slotLiberado()
+Agenda --> Servicio: slotLiberado
 create Notif
 Servicio -> Notif: new Notif(turno, "cancelacion")
 Notif -> Notif: enviarNotificacionPaciente(pacienteEmail, motivo)
 Notif -> Notif: enviarNotificacionMedico(medicoEmail, turnoDetalles)
-Notif --> Servicio: notificacionesEnviadas()
+Notif --> Servicio: notificacionesEnviadas
 Servicio --> UI: cancelacionExitosa(confirmacion)
 UI --> Secretaria: comprobanteCancelacion(numeroTurno, fecha)
 Secretaria -> Paciente: entregarComprobanteCancelacion()
