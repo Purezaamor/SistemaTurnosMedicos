@@ -34,18 +34,18 @@ end note
 Turno --> Servicio: turnoCreado
 Servicio -> Agenda: registrarTurnoEnAgenda(turno)
 Agenda -> Agenda: actualizarSlotsOcupados(medico, slot)
-Agenda --> Servicio: confirmacionRegistro()
+Agenda --> Servicio: confirmacionRegistro
 Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 create Notif
 Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 Notif -> Notif: enviarNotificacion(pacienteEmail, turnoDetalles)
-Notif --> Servicio: notificacionEnviada()
+Notif --> Servicio: notificacionEnviada
 Servicio --> UI: resultadoAgendamiento(exito, numeroTurno)
 UI --> Secretaria: comprobanteTurno(numeroTurno, detalles)
 Secretaria -> Paciente: entregarComprobante(numeroTurno, fecha, hora)
 Secretaria -> Médico: notificarNuevoTurno(numeroTurno, pacienteNombre)
 Médico -> Médico: actualizarAgendaPersonal(numeroTurno)
-Médico --> Secretaria: confirmacionRecibida()
+Médico --> Secretaria: confirmacionRecibida
 Notif --> Secretaria: notificacionEnviada
 destroy Notif
 
