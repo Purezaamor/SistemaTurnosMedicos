@@ -33,7 +33,9 @@ PR [#142](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/142) - @ANeicu
 - [fix/changelog] Se añaden entradas faltantes a changelog.md
 PR [#143](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/143) - @ANeicuan (Documentador y Coordinador)
 
--[fix/esp-diag-secuencia-fix] Se carga entrada Unreleased en el changelog, se corrigen ID por objetos reales en archivos puml, se crean nuevos archivos .png. PR:[#144](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/144) - @sofinestt (Especialista en Diagramas de Secuencias)
+- [fix/esp-diag-secuencia-fix] Se carga entrada Unreleased en el changelog, se corrigen ID por objetos reales en archivos puml, se crean nuevos archivos .png. PR:[#144](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/144) - @sofinestt (Especialista en Diagramas de Secuencias)
+
+- [fix/secuencia-diag-fix] Se corrigen mensajes de retorno en archivos .puml y se crean sus nuevos archivos .png correspondientes. PR: [#145](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/145) - @sofinestt (Especialista en Diagramas de Secuencias)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04
