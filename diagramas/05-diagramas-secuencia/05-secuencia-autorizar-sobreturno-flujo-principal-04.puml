@@ -17,8 +17,8 @@ Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
 UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
 Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
 Agenda --> Servicio: noHaySlotsDisponibles
-Servicio --> UI: mostrarMensajeAgendaCompleta()
-UI --> Secretaria: agendaCompleta(opciones)
+Servicio --> UI: mostrarMensajeAgendaCompleta
+UI --> Secretaria: agendaCompleta
 Secretaria -> Paciente: ofrecerSobreturno()
 Paciente -> Secretaria: aceptarSobreturno()
 Secretaria -> UI: procesarSobreturno(paciente, medico)
@@ -39,8 +39,8 @@ Turno --> Servicio: turnoSobreturnoCreado
 Servicio -> Agenda: registrarTurnoEnAgenda(turno, SOBRETURNO)
 Agenda -> Agenda: marcarComoSobreturno(medico, turno)
 Agenda --> Servicio: sobreturnoRegistrado
-Servicio --> UI: resultadoSobreturno(exito, numeroTurno)
-UI --> Secretaria: comprobanteSobreturno(numeroTurno, detalles)
+Servicio --> UI: resultadoSobreturno
+UI --> Secretaria: comprobanteSobreturno
 Secretaria -> Paciente: entregarComprobanteSobreturno(numeroTurno, fecha)
 Secretaria -> Medico: notificarSobreturnoProcesado(numeroTurno)
 
