@@ -16,10 +16,10 @@ Secretaria -> UI: buscarTurno(numeroTurno)
 UI -> Servicio: obtenerTurnoExistente(turno)
 Servicio -> Agenda: recuperarTurno(turno)
 Agenda -> Turno: obtenerDatos()
-Turno --> Agenda: datosDelTurno(medico, slotActual, estado)
-Agenda --> Servicio: turnoEncontrado(detalles)
-Servicio --> UI: validarEstadoParaCancelar(turno)
-UI --> Secretaria: confirmarCancelacion(detalles)
+Turno --> Agenda: datosDelTurno
+Agenda --> Servicio: turnoEncontrado
+Servicio --> UI: validarEstadoParaCancelar
+UI --> Secretaria: confirmarCancelacion
 Secretaria -> Paciente: solicitarConfirmacion()
 Paciente -> Secretaria: confirmarCancelacion()
 Secretaria -> UI: procesarCancelacion(turno)
@@ -35,8 +35,8 @@ Servicio -> Notif: new Notif(turno, "cancelacion")
 Notif -> Notif: enviarNotificacionPaciente(pacienteEmail, motivo)
 Notif -> Notif: enviarNotificacionMedico(medicoEmail, turnoDetalles)
 Notif --> Servicio: notificacionesEnviadas
-Servicio --> UI: cancelacionExitosa(confirmacion)
-UI --> Secretaria: comprobanteCancelacion(numeroTurno, fecha)
+Servicio --> UI: cancelacionExitosa
+UI --> Secretaria: comprobanteCancelacion
 Secretaria -> Paciente: entregarComprobanteCancelacion()
 
 note right of Turno
