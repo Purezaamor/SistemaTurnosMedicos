@@ -26,8 +26,8 @@ Disp -> Disp: consultarSlotsDisponibles(medico)
 Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
 Agenda --> Servicio: agendaCompleta
 Servicio -> Servicio: formatearDatos(agendaCompleta)
-Servicio --> UI: mostrarAgenda
-UI --> Secretaria: presentarAgenda
+Servicio --> UI: agendaFormateada
+UI -> Secretaria: presentarAgenda
 note right of Secretaria
   Visualiza:
   - Turnos confirmados
@@ -44,8 +44,8 @@ alt Medico consulta su propia agenda
   Turno --> Agenda: List<Turno> turnosMedico
   Agenda --> Servicio: agendaMedicoPersonal
   Servicio -> Servicio: aplicarFiltrosMedico(turnos)
-  Servicio --> UI: mostrarMiAgenda
-  UI --> Medico: presentarMiAgenda
+  Servicio --> UI: miAgenda
+  UI -> Medico: presentarMiAgenda
   Medico -> Medico: revisarDisponibilidad()
   Medico -> Medico: registrarAnotaciones(observaciones)
   
@@ -61,8 +61,8 @@ else Secretaria cambia a otra fecha
   Agenda -> Turno: iterarTurnosPorRango()
   Turno --> Agenda: List<Turno> turnosEnRango
   Agenda --> Servicio: agendaEnRango
-  Servicio --> UI: mostrarAgenda
-  UI --> Secretaria: actualizarVista
+  Servicio --> UI: agendaFormateada
+  UI -> Secretaria: actualizarVista
 end
 
 note right of UI
