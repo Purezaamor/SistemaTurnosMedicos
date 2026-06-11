@@ -38,6 +38,10 @@ PR [#143](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/143) - @ANeicu
 - [fix/secuencia-diag-fix] Se corrigen mensajes de retorno en archivos .puml y se crean sus nuevos archivos .png correspondientes. PR: [#145](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/145) - @sofinestt (Especialista en Diagramas de Secuencias)
 
 - [fix/diag-secuencia-fix] Se corrigen mensajes de retorno en archivos .puml faltantes y se crean sus nuevos archivos .png correspondientes. PR: [#146](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/146) - @sofinestt (Especialista en Diagramas de Secuencias)
+
+- [fix/secuencia-fix] Se corrigen mensajes de retorno en archivos .puml faltantes y se crean sus nuevos archivos .png correspondientes. PR: [#147](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/147) - @sofinestt (Especialista en Diagramas de Secuencias)
+
+
 ---
 
 ## [Release Primer Parcial] - 2026-05-04

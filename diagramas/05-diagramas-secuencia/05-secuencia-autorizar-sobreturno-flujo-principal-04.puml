@@ -17,7 +17,7 @@ Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
 UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
 Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
 Agenda --> Servicio: noHaySlotsDisponibles
-Servicio --> UI: mostrarMensajeAgendaCompleta
+Servicio --> UI: mensajeAgendaCompleta
 UI --> Secretaria: agendaCompleta
 Secretaria -> Paciente: ofrecerSobreturno()
 Paciente -> Secretaria: aceptarSobreturno()

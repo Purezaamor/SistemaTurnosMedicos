@@ -18,16 +18,16 @@ Servicio -> Agenda: recuperarTurno(turno)
 Agenda -> TurnoAct: obtenerDatos()
 TurnoAct --> Agenda: datosDelTurno
 Agenda --> Servicio: turnoEncontrado
-Servicio --> UI: mostrarTurnoActual
-UI --> Secretaria: presentarTurnoActual
+Servicio --> UI: datosTurnoActual
+UI -> Secretaria: presentarTurnoActual
 Secretaria -> Paciente: mostrarTurnoActual()
 Paciente -> Secretaria: solicitarNuevaFecha(nuevaFecha)
 Secretaria -> UI: buscarAlternativas(medico, especialidad, rango)
 UI -> Servicio: obtenerSlotsDisponibles(medico, rango)
 Servicio -> Agenda: consultarDisponibilidad(medico, rango)
 Agenda --> Servicio: List<Slot> slotsLibres
-Servicio --> UI: mostrarAlternativas
-UI --> Secretaria: presentarOpciones
+Servicio --> UI: opcionesAlternativas
+UI -> Secretaria: presentarOpciones
 Secretaria -> Paciente: mostrarAlternativas()
 Paciente -> Secretaria: seleccionarNuevoSlot(slot)
 Secretaria -> UI: confirmarReprogramacion(turno, nuevoSlot)
@@ -41,7 +41,7 @@ Agenda --> Servicio: slotLiberado
 Servicio -> Agenda: ocuparNuevoSlot(medico, nuevoSlot)
 Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
 Agenda --> Servicio: nuevoSlotOcupado
-Servicio --> UI: reprogramacionExitosa
+Servicio --> UI: resultadoReprogramacion
 UI --> Secretaria: comprobante
 Secretaria -> Paciente: confirmarReprogramacion(nuevoHorario)
 

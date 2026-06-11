@@ -17,8 +17,8 @@ Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
 UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
 Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
 Agenda --> Servicio: List<Slot> slotsLibres
-Servicio --> UI: mostrarOpcionesDisponibles
-UI --> Secretaria: presentarSlots
+Servicio --> UI: opcionesDisponibles
+UI --> Secretaria: opcionesDisponibles
 Secretaria -> Paciente: mostrarAlternativas(opciones)
 Paciente -> Secretaria: seleccionarSlot(fecha, hora)
 Secretaria -> UI: confirmarSeleccion(slot)
@@ -34,12 +34,12 @@ end note
 Turno --> Servicio: turnoCreado
 Servicio -> Agenda: registrarTurnoEnAgenda(turno)
 Agenda -> Agenda: actualizarSlotsOcupados(medico, slot)
-Agenda --> Servicio: confirmacionRegistro
+Agenda --> Servicio: registroConfirmado
 Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 create Notif
 Servicio -> Notif: new Notif(notificacion, "turnoAgendado")
 Notif -> Notif: enviarNotificacion(pacienteEmail, turnoDetalles)
-Notif --> Servicio: notificacionEnviada
+Notif --> Servicio: envioNotificacionExitoso
 Servicio --> UI: resultadoAgendamiento
 UI --> Secretaria: comprobanteTurno
 Secretaria -> Paciente: entregarComprobante(numeroTurno, fecha, hora)
