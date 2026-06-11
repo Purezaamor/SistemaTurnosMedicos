@@ -1,4 +1,5 @@
 @startuml
+title "Registrar Turno Médico"
 |Paciente|
 start
 :Solicita turno médico;
@@ -27,7 +28,7 @@ else (no)
     :Recibe confirmación;
     stop
   else (no)
-    stop
+    end
   endif
 endif
 @enduml
