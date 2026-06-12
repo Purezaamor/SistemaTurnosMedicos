@@ -1,4 +1,5 @@
 @startuml
+title "Reprogramar Turno Existente"
 |Paciente|
 start
 :Solicita reprogramación de turno;
@@ -33,7 +34,7 @@ else (no)
     :Recibe notificación de cancelación;
     stop
   else (no)
-    stop
+    end
   endif
 endif
 @enduml
