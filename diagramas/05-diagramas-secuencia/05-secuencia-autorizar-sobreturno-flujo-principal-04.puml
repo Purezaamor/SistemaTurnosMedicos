@@ -13,21 +13,23 @@ actor Medico
 autonumber
 
 Paciente -> Secretaria: solicitarAgendarTurno(paciente, especialidad)
-Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
+Secretaria --> Paciente: solicitudRecibida
+Secretaria ->> UI: buscarDisponibilidad(especialidad, fecha)
 UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
 Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
 Agenda --> Servicio: noHaySlotsDisponibles
 Servicio --> UI: mensajeAgendaCompleta
 UI --> Secretaria: agendaCompleta
-Secretaria -> Paciente: ofrecerSobreturno()
+Secretaria ->> Paciente: ofrecerSobreturno()
 Paciente -> Secretaria: aceptarSobreturno()
-Secretaria -> UI: procesarSobreturno(paciente, medico)
-UI -> Servicio: solicitarAutorizacionSobreturno(medico)
+Secretaria --> Paciente: aceptacionRecibida
+Secretaria ->> UI: procesarSobreturno(paciente, medico)
+UI ->> Servicio: solicitarAutorizacionSobreturno(medico)
 create Auth
 Servicio -> Auth: new Autorizacion(turno, medico, estado)
 Auth -> Auth: crearSolicitudAutorizacion(detalles)
 Auth --> Servicio: solicitudCreada
-Servicio -> Medico: notificacionSolicitudAutorizacion(paciente, fecha)
+Servicio ->> Medico: notificacionSolicitudAutorizacion(paciente, fecha)
 Médico -> Auth: autorizarSobreturno(turno)
 Auth -> Auth: cambiarEstado(AUTORIZADO)
 Auth --> Medico: confirmacionAutorizacion
@@ -40,9 +42,9 @@ Servicio -> Agenda: registrarTurnoEnAgenda(turno, SOBRETURNO)
 Agenda -> Agenda: marcarComoSobreturno(medico, turno)
 Agenda --> Servicio: sobreturnoRegistrado
 Servicio --> UI: resultadoSobreturno
-UI --> Secretaria: comprobanteSobreturno
-Secretaria -> Paciente: entregarComprobanteSobreturno(numeroTurno, fecha)
-Secretaria -> Medico: notificarSobreturnoProcesado(numeroTurno)
+UI ->> Secretaria: comprobanteSobreturno
+Secretaria ->> Paciente: entregarComprobanteSobreturno(numeroTurno, fecha)
+Secretaria ->> Medico: notificarSobreturnoProcesado(numeroTurno)
 
 note right of Turno
   Estado: SOBRETURNO

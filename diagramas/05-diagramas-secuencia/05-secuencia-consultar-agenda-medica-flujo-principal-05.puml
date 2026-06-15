@@ -11,7 +11,7 @@ actor Medico
 
 autonumber
 
-Secretaria -> UI: seleccionarMedico(medico)
+Secretaria ->> UI: seleccionarMedico(medico)
 UI -> Servicio: obtenerAgendaMedico(medico)
 Servicio -> Agenda: recuperarAgenda(medico)
 Agenda -> Agenda: cargarTurnosConfirmados(medico)
@@ -20,14 +20,14 @@ note right of Agenda
   o SOBRETURNO
 end note
 Agenda -> Turno: iterarTurnos()
-Turno --> Agenda: List<Turno> turnosAgenda
+Turno --> Agenda: turnosAgenda
 Agenda -> Disp: obtenerDisponibilidad(medico)
 Disp -> Disp: consultarSlotsDisponibles(medico)
-Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
+Disp --> Agenda: disponibilidadCompleta
 Agenda --> Servicio: agendaCompleta
 Servicio -> Servicio: formatearDatos(agendaCompleta)
 Servicio --> UI: agendaFormateada
-UI -> Secretaria: presentarAgenda
+UI ->> Secretaria: presentarAgenda()
 note right of Secretaria
   Visualiza:
   - Turnos confirmados
@@ -36,12 +36,12 @@ note right of Secretaria
 end note
 
 alt Medico consulta su propia agenda
-  Medico -> UI: solicitarMiAgenda()
+  Medico ->> UI: solicitarMiAgenda()
   UI -> Servicio: obtenerAgendaMedico(tokenMedico)
   Servicio -> Servicio: validarCredenciales(tokenMedico)
   Servicio -> Agenda: recuperarAgenda(medico)
   Agenda -> Turno: iterarTurnosPropios()
-  Turno --> Agenda: List<Turno> turnosMedico
+  Turno --> Agenda: turnosMedico
   Agenda --> Servicio: agendaMedicoPersonal
   Servicio -> Servicio: aplicarFiltrosMedico(turnos)
   Servicio --> UI: miAgenda
@@ -55,15 +55,14 @@ alt Medico consulta su propia agenda
     y anotaciones
   end note
 else Secretaria cambia a otra fecha
-  Secretaria -> UI: cambiarRango(nuevaFecha)
+  Secretaria ->> UI: cambiarRango(nuevaFecha)
   UI -> Servicio: obtenerAgendaMedicoEnRango(medico, rango)
   Servicio -> Agenda: recuperarAgenda(medico, rangoFechas)
   Agenda -> Turno: iterarTurnosPorRango()
-  Turno --> Agenda: List<Turno> turnosEnRango
+  Turno --> Agenda: turnosEnRango
   Agenda --> Servicio: agendaEnRango
   Servicio --> UI: agendaFormateada
-  UI -> Secretaria: actualizarVista
-end
+UI ->> Secretaria: actualizarVista()
 
 note right of UI
   Interfaz interactiva:
@@ -71,5 +70,5 @@ note right of UI
   - Cambiar rango de fechas
   - Filtrar por especialidad
 end note
-
+end
 @enduml
