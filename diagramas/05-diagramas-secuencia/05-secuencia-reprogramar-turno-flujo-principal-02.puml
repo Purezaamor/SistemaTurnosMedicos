@@ -6,31 +6,31 @@ actor Secretaria
 participant "PantallaTurnos:UI" as UI
 participant "ServicioTurnos:Servicio" as Servicio
 participant "turnoActual:Turno" as TurnoAct
-participant "turnoNuevo:Turno" as TurnoNuev
 participant "agenda:Agenda" as Agenda
 
 autonumber
 
 Paciente -> Secretaria: solicitarReprogramarTurno(numeroTurnoActual)
-Secretaria -> UI: buscarTurno(numeroTurnoActual)
+Secretaria --> Paciente: solicitudRecibida
+Secretaria ->> UI: buscarTurno(numeroTurnoActual)
 UI -> Servicio: obtenerTurnoExistente(turno)
 Servicio -> Agenda: recuperarTurno(turno)
 Agenda -> TurnoAct: obtenerDatos()
 TurnoAct --> Agenda: datosDelTurno
 Agenda --> Servicio: turnoEncontrado
 Servicio --> UI: datosTurnoActual
-UI -> Secretaria: presentarTurnoActual
-Secretaria -> Paciente: mostrarTurnoActual()
-Paciente -> Secretaria: solicitarNuevaFecha(nuevaFecha)
-Secretaria -> UI: buscarAlternativas(medico, especialidad, rango)
+UI ->> Secretaria: presentarTurnoActual()
+Secretaria ->> Paciente: mostrarTurnoActual()
+Paciente ->> Secretaria: solicitarNuevaFecha(nuevaFecha)
+Secretaria ->> UI: buscarAlternativas(medico, especialidad, rango)
 UI -> Servicio: obtenerSlotsDisponibles(medico, rango)
 Servicio -> Agenda: consultarDisponibilidad(medico, rango)
-Agenda --> Servicio: List<Slot> slotsLibres
+Agenda --> Servicio: slotsLibres
 Servicio --> UI: opcionesAlternativas
-UI -> Secretaria: presentarOpciones
-Secretaria -> Paciente: mostrarAlternativas()
-Paciente -> Secretaria: seleccionarNuevoSlot(slot)
-Secretaria -> UI: confirmarReprogramacion(turno, nuevoSlot)
+UI ->> Secretaria: presentarOpciones()
+Secretaria ->> Paciente: mostrarAlternativas()
+Paciente ->> Secretaria: seleccionarNuevoSlot(slot)
+Secretaria ->> UI: confirmarReprogramacion(turno, nuevoSlot)
 UI -> Servicio: reprogramarTurno(turno, nuevoSlot)
 Servicio -> TurnoAct: actualizarDatos(nuevoSlot, estado)
 TurnoAct -> TurnoAct: cambiarEstado(REPROGRAMADO)
@@ -42,8 +42,8 @@ Servicio -> Agenda: ocuparNuevoSlot(medico, nuevoSlot)
 Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
 Agenda --> Servicio: nuevoSlotOcupado
 Servicio --> UI: resultadoReprogramacion
-UI --> Secretaria: comprobante
-Secretaria -> Paciente: confirmarReprogramacion(nuevoHorario)
+UI ->> Secretaria:  mostrarComprobante()
+Secretaria ->> Paciente: confirmarReprogramacion(nuevoHorario)
 
 note right of TurnoAct
   Estado previo: CONFIRMADO

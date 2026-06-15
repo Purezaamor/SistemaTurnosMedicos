@@ -12,32 +12,40 @@ participant "notificacion:Notificacion" as Notif
 autonumber
 
 Paciente -> Secretaria: solicitarCancelarTurno(numeroTurno)
-Secretaria -> UI: buscarTurno(numeroTurno)
+Secretaria --> Paciente: solicitudRecibida
+Secretaria ->> UI: buscarTurno(numeroTurno)
 UI -> Servicio: obtenerTurnoExistente(turno)
 Servicio -> Agenda: recuperarTurno(turno)
 Agenda -> Turno: obtenerDatos()
 Turno --> Agenda: datosDelTurno
 Agenda --> Servicio: turnoEncontrado
 Servicio --> UI: estadoTurnoParaCancelar
-UI -> Secretaria: confirmarCancelacion
+UI ->> Secretaria: solicitarConfirmacionCancelacion()
 Secretaria -> Paciente: solicitarConfirmacion()
+Paciente --> Secretaria: confirmacion
 Paciente -> Secretaria: confirmarCancelacion()
-Secretaria -> UI: procesarCancelacion(turno)
+Secretaria --> Paciente: confirmacionAceptada
+Secretaria ->> UI: procesarCancelacion(turno)
 UI -> Servicio: cancelarTurno(turno, motivoCancelacion)
 Servicio -> Turno: cambiarEstado(CANCELADO)
 Turno -> Turno: actualizarDatos(estado, timestamp, motivo)
+Turno --> Turno: datosActualizados
 Turno --> Servicio: turnoActualizado
 Servicio -> Agenda: removerTurnoDeAgenda(medico, turno)
 Agenda -> Agenda: liberarSlot(medico, slotAnterior)
+Agenda --> Agenda: slotLiberado
 Agenda --> Servicio: slotLiberado
 create Notif
 Servicio -> Notif: new Notif(turno, "cancelacion")
 Notif -> Notif: enviarNotificacionPaciente(pacienteEmail, motivo)
+Notif --> Notif: pacienteNotificado
 Notif -> Notif: enviarNotificacionMedico(medicoEmail, turnoDetalles)
+Notif --> Notif: medicoNotificado
 Notif --> Servicio: notificacionesEnviadas
 Servicio --> UI: resultadoCancelacion
-UI --> Secretaria: comprobanteCancelacion
+UI ->> Secretaria: comprobanteCancelacion
 Secretaria -> Paciente: entregarComprobanteCancelacion()
+Paciente --> Secretaria: comprobanteRecibido
 
 note right of Turno
   Estado: CANCELADO
