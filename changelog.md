@@ -41,7 +41,7 @@ PR [#143](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/143) - @ANeicu
 
 - [fix/secuencia-fix] Se corrigen mensajes de retorno en archivos .puml faltantes y se crean sus nuevos archivos .png correspondientes. PR: [#147](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/147) - @sofinestt (Especialista en Diagramas de Secuencias)
 
-
+- [fix/diagramas-secuencia-fix-2] Aplicadas correcciones de consistencia UML en diagramas de secuencia (invocaciones, retornos y sincronía de mensajes). PR: [#149](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/149) - @sofinestt (Especialista en Diagramas de Secuencias)
 ---
 
 ## [Release Primer Parcial] - 2026-05-04
