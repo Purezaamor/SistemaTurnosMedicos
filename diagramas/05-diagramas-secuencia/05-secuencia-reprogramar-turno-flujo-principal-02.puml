@@ -1,0 +1,58 @@
+@startuml 05-secuencia-reprogramar-turno-flujo-principal-02
+title Diagrama de Secuencia: Reprogramar Turno Existente (Flujo Principal)
+
+actor Paciente
+actor Secretaria
+participant "PantallaTurnos:UI" as UI
+participant "ServicioTurnos:Servicio" as Servicio
+participant "turnoActual:Turno" as TurnoAct
+participant "agenda:Agenda" as Agenda
+
+autonumber
+
+Paciente -> Secretaria: solicitarReprogramarTurno(numeroTurnoActual)
+Secretaria --> Paciente: solicitudRecibida
+Secretaria ->> UI: buscarTurno(numeroTurnoActual)
+UI -> Servicio: obtenerTurnoExistente(turno)
+Servicio -> Agenda: recuperarTurno(turno)
+Agenda -> TurnoAct: obtenerDatos()
+TurnoAct --> Agenda: datosDelTurno
+Agenda --> Servicio: turnoEncontrado
+Servicio --> UI: datosTurnoActual
+UI ->> Secretaria: presentarTurnoActual()
+Secretaria ->> Paciente: mostrarTurnoActual()
+Paciente ->> Secretaria: solicitarNuevaFecha(nuevaFecha)
+Secretaria ->> UI: buscarAlternativas(medico, especialidad, rango)
+UI -> Servicio: obtenerSlotsDisponibles(medico, rango)
+Servicio -> Agenda: consultarDisponibilidad(medico, rango)
+Agenda --> Servicio: slotsLibres
+Servicio --> UI: opcionesAlternativas
+UI ->> Secretaria: presentarOpciones()
+Secretaria ->> Paciente: mostrarAlternativas()
+Paciente ->> Secretaria: seleccionarNuevoSlot(slot)
+Secretaria ->> UI: confirmarReprogramacion(turno, nuevoSlot)
+UI -> Servicio: reprogramarTurno(turno, nuevoSlot)
+Servicio -> TurnoAct: actualizarDatos(nuevoSlot, estado)
+TurnoAct -> TurnoAct: cambiarEstado(REPROGRAMADO)
+TurnoAct --> Servicio: turnoActualizado
+Servicio -> Agenda: liberarSlotAnterior(medico, slotAnterior)
+Agenda -> Agenda: removerOcupacion(slotAnterior)
+Agenda --> Servicio: slotLiberado
+Servicio -> Agenda: ocuparNuevoSlot(medico, nuevoSlot)
+Agenda -> Agenda: marcarComoOcupado(nuevoSlot)
+Agenda --> Servicio: nuevoSlotOcupado
+Servicio --> UI: resultadoReprogramacion
+UI ->> Secretaria:  mostrarComprobante()
+Secretaria ->> Paciente: confirmarReprogramacion(nuevoHorario)
+
+note right of TurnoAct
+  Estado previo: CONFIRMADO
+  Transición: REPROGRAMADO
+end note
+
+note right of TurnoAct
+  Reutiliza el mismo turno
+  solo actualiza fecha/hora
+end note
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+title Visualizar Agenda Médica
+|Medico / Secretaria|
+start
+:Acceder al modulo de agenda;
+:Seleccionar profesional;
+:Solicitar opciones de vista (Dia/Semana);
+if (Vista Diaria o Semanal?) then (Diaria)
+    :Seleccionar vista diaria;
+else (Semanal)
+    :Seleccionar vista semanal;
+endif
+
+|Modulo Agenda (Interfaz)|
+:Enviar peticion de agenda al sistema;
+:Mostrar estado de carga en pantalla;
+
+|Sistema|
+:Recibir solicitud de agenda;
+:Buscar turnos en el periodo seleccionado;
+fork
+    :Validar si existen turnos cargados;
+fork again
+    :Validar parametros de búsqueda;
+end fork
+
+|Modulo Agenda (Interfaz)|
+if (¿Existen turnos cargados?) then (si)
+    |Sistema|
+    :Recuperar lista de turnos;
+    :Enviar datos a la interfaz;
+    |Modulo Agenda (Interfaz)|
+    :Renderizar turnos en vista seleccionada;
+    :Mostrar turnos programados;
+else (no)
+    |Modulo Agenda (Interfaz)|
+    :Mostrar mensaje "Agenda vacía";
+    :Sugerir cambiar periodo o profesional;
+endif
+
+|Medico / Secretaria|
+:Revisar la agenda mostrada;
+stop
+@enduml

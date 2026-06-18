@@ -1,0 +1,34 @@
+@startuml
+title "Registrar Turno Medico"
+
+|Paciente|
+start
+:Solicita turno medico;
+
+|Secretaria|
+:Recibe solicitud;
+:Verifica disponibilidad;
+
+|Sistema|
+if (Disponible?) then (Si)
+  :Registra turno;
+  :Asigna medico;
+  :Envia confirmacion;
+
+else (No)
+  :Ofrece alternativas;
+  :Espera confirmacion;
+
+  if (Acepta alternativa?) then (Si)
+    :Registra nuevo turno;
+    :Envia confirmacion;
+
+  else (No)
+    :Informa que no hay disponibilidad;
+  endif
+
+endif
+
+stop
+
+@enduml

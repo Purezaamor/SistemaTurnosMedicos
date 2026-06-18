@@ -1,0 +1,57 @@
+@startuml
+title "Reprogramar Turno Existente"
+
+|Paciente|
+start
+:Solicita reprogramación de turno;
+
+|Secretaria|
+:Recibe solicitud;
+:Busca turno existente en el sistema;
+
+|Sistema|
+:Muestra el turno actual;
+
+|Secretaria|
+:Consulta nueva fecha/hora;
+
+|Sistema|
+:Verifica disponibilidad;
+
+if (¿Hay disponibilidad?) then (sí)
+
+  |Secretaria|
+  :Registra nueva fecha;
+
+  |Sistema|
+  :Actualiza turno;
+
+  |Paciente|
+  :Recibe confirmación de reprogramación;
+
+else (no)
+
+  |Secretaria|
+  :Informa que no hay disponibilidad;
+  :Ofrece cancelar o mantener turno;
+
+  if (¿El paciente cancela?) then (sí)
+
+    |Sistema|
+    :Cancela turno;
+
+    |Paciente|
+    :Recibe notificación de cancelación;
+
+  else (no)
+
+    |Paciente|
+    :Mantiene turno actual;
+
+  endif
+
+endif
+
+stop
+
+@enduml
