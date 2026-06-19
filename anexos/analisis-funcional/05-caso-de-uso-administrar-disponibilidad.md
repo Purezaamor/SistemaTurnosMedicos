@@ -11,12 +11,16 @@
 4. El sistema actualiza la agenda del médico.
 
 **Flujos alternativos:**
+<<<<<<< HEAD
 - Si el médico ya tiene turnos asignados:
   1. El sistema muestra un mensaje indicando que existen turnos asignados en esa franja horaria.
   2. El sistema lista los turnos afectados (paciente, fecha, hora).
   3. El sistema ofrece dos opciones: "Cancelar turnos y eliminar disponibilidad" o "Mantener turnos y no eliminar disponibilidad".
   4. Si el usuario confirma la cancelación, se cancelan los turnos afectados y se elimina la disponibilidad.
   5. Si el usuario no confirma, se cancela la operación y se mantiene la disponibilidad.
+=======
+- Si el médico ya tiene turnos asignados, no se puede eliminar esa disponibilidad.
+>>>>>>> develop
 
 **Trazabilidad con RFs (A1):**
 - **RF5 (Administrar disponibilidad):** La secretaria puede configurar los horarios de atención de los médicos.

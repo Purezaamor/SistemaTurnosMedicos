@@ -1,0 +1,96 @@
+@startuml 03-clases-cancelar-turno-03
+title Diagrama de Clases: Cancelar Turno
+
+class Persona {
+  - nombre: String
+  - telefono: String
+  + obtenerIdentificacion(): String
+}
+
+class Usuario {
+  - id: String
+  - rol: String
+  + obtenerRol(): String
+}
+
+class Paciente {
+  - dni: String
+  - obraSocial: String
+  + solicitarCancelacion(): void
+  + confirmarCancelacion(): void
+}
+
+class Secretaria {
+  + buscarTurno(turnoID: String): Turno
+  + confirmarCancelacion(turnoID: String): void
+  + procesarCancelacion(turnoID: String): void
+}
+
+class Medico {
+  - especialidad: String
+  + consultarAgenda(): Agenda
+  + definirDisponibilidad(): void
+  + autorizarSobreturno(): Boolean
+}
+
+class Agenda {
+  - fechaActual: Date
+  - vistaActual: String
+  - listaTurnos: List<Turno>
+  + recuperarTurno(turnoID: String): Turno
+  + removerTurnoDeAgenda(medicID: String, turnoID: String): Boolean
+  + liberarSlot(medicID: String, slotAnterior: String): Boolean
+}
+
+class Turno {
+  - turnoID: String
+  - fecha: Date
+  - hora: String
+  - estado: String
+  - tipoConsulta: String
+  - esSobreturno: Boolean
+  - horaLlegada: String
+  - motivoCancelacion: String
+  + actualizarDatos(estado: String, timestamp: Date, motivo: String): void
+  + cambiarEstado(estado: String): void
+  + cancelar(motivo: String): void
+}
+
+class Notificacion {
+  - destinatarioEmail: String
+  - mensaje: String
+  - tipo: String
+  + enviarNotificacionPaciente(email: String, motivo: String): Boolean
+  + enviarNotificacionMedico(email: String, detalles: String): Boolean
+}
+
+class ServicioTurnos {
+  + obtenerTurnoExistente(turnoID: String): Turno
+  + validarEstadoParaCancelar(turnoID: String): Boolean
+  + cancelarTurno(turnoID: String, motivoCancelacion: String): Turno
+  + crearNotificacion(turno: Turno, tipo: String): Notificacion
+}
+
+class PantallaTurnos {
+  + buscarTurno(numeroTurno: String): void
+  + procesarCancelacion(turnoID: String): void
+  + cancelacionExitosa(confirmacion: String): void
+}
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Persona <|-- Secretaria
+
+Agenda "1" o-- "*" Turno
+Agenda "1" -- "1" Medico
+Turno "1" --> "1" Paciente
+Turno "1" --> "1" Medico
+ServicioTurnos ..> Agenda
+ServicioTurnos ..> Turno
+ServicioTurnos ..> Notificacion
+PantallaTurnos ..> ServicioTurnos
+Secretaria ..> PantallaTurnos
+Notificacion --> Paciente
+Notificacion --> Medico
+
+@enduml
