@@ -22,7 +22,7 @@ class Paciente {
 
 class Secretaria {
     + buscarTurno(turnoID: String): Turno
-    + confirmarReprogramacion(turnoID: String, nuevoSlotID: String): void
+    + confirmarReprogramacion(turno: String, nuevoSlot: String): void
     + procesarReprogramacion(): void
 }
 
@@ -38,15 +38,15 @@ class Agenda {
     - vistaActual: String
     - listaTurnos: List<Turno>
     - medico: Medico
-    + recuperarTurno(turnoID: String): Turno
-    + consultarDisponibilidad(medicID: String, rango: String): List<Slot>
-    + liberarSlotAnterior(medicID: String, slotAnterior: String): Boolean
-    + ocuparNuevoSlot(medicID: String, nuevoSlot: Slot): Boolean
+    + recuperarTurno(turno: String): Turno
+    + consultarDisponibilidad(medico: String, rango: String): List<Slot>
+    + liberarSlotAnterior(medico: String, slotAnterior: String): Boolean
+    + ocuparNuevoSlot(medico: String, nuevoSlot: Slot): Boolean
     + validarDisponibilidad(turno: Turno): Boolean
 }
 
 class Turno {
-    - turnoID: String
+    - turno: String
     - fecha: Date
     - hora: String
     - estado: String
@@ -60,7 +60,7 @@ class Turno {
 }
 
 class Slot {
-    - slotID: String
+    - slot: String
     - fecha: Date
     - hora: String
     - disponible: Boolean
@@ -68,10 +68,10 @@ class Slot {
 }
 
 class ServicioTurnos {
-    + obtenerTurnoExistente(turnoID: String): Turno
-    + obtenerSlotsDisponibles(medicID: String, rango: String): List<Slot>
-    + reprogramarTurno(turnoID: String, nuevoSlotID: String): Turno
-    + validarEstadoParaReprogramar(turnoID: String): Boolean
+    + obtenerTurnoExistente(turno: String): Turno
+    + obtenerSlotsDisponibles(medico: String, rango: String): List<Slot>
+    + reprogramarTurno(turno: String, nuevoSlot: String): Turno
+    + validarEstadoParaReprogramar(turno: String): Boolean
 }
 
 class PantallaTurnos {
@@ -79,7 +79,7 @@ class PantallaTurnos {
     + mostrarTurnoActual(detalles: String): void
     + solicitarAlternativas(): void
     + mostrarAlternativas(slots: List<Slot>): void
-    + confirmarReprogramacion(turnoID: String, nuevoSlotID: String): void
+    + confirmarReprogramacion(turno: String, nuevoSlot: String): void
     + reprogramacionExitosa(nuevoTurno: Turno): void
 }
 
