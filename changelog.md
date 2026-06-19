@@ -6,7 +6,7 @@
 
 ### Added
 
-- [feature/analista-cu-2-3-add-anexo-cu2-cu3] Desarrollo y documentación de los CU 2 y 3: corrección de diagramas de actividades, generación de diagramas de clases UML, elaboración de anexos de análisis funcional y actualización de índices y documentación de soporte. PR:[#159](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/159) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+- [feature/analista-cu-2-3-add-anexo-cu2-cu3] Desarrollo y documentación de los CU 2 y 3: corrección de diagramas de actividades, generación de diagramas de clases UML, elaboración de anexos de análisis funcional y actualización de índices y documentación de soporte. PR:[#158](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/158) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
 
 
 
