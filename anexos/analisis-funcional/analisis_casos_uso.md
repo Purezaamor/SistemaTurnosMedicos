@@ -1,3 +1,5 @@
+- [Los Cuatro Pilares del Paradigma Orientado a Objetos](pilares-poo.md)
+- [Pseudocódigo - Happy Path Global del Sistema](happy-path-global.md)
 # Análisis Funcional por Caso de Uso
 
 - [Análisis Funcional - Visualizar Agenda Médica (CU4)](04-caso-de-uso-visualizar-agenda-medica.md)
