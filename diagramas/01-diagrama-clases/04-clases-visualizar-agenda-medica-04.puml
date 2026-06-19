@@ -1,0 +1,50 @@
+@startuml
+class Persona {
+  - nombre: String
+  - dni: String
+  - telefono: String
+}
+
+class Medico {
+  - especialidad: String
+  - matricula: String
+  + getAgenda(fecha: Date): List<Turno>
+  + verDisponibilidad(): void
+}
+
+class Paciente {
+  - obraSocial: String
+  + getHistorial(): void
+}
+
+class PantallaAgenda {
+  + mostrarAgenda(turnos: List<Turno>): void
+  + seleccionarFecha(fecha: Date): void
+}
+
+class ControladorAgenda {
+  + obtenerTurnos(fecha: Date): List<Turno>
+  + filtrarPorEspecialidad(especialidad: String): List<Turno>
+}
+
+class Agenda {
+  - turnos: List<Turno>
+  + consultarTurnos(fecha: Date): List<Turno>
+  + verificarDisponibilidad(fecha: Date, hora: Time): Boolean
+}
+
+class Turno {
+  - fecha: Date
+  - hora: Time
+  - estado: String
+  + getDetalle(): String
+  + cancelar(): void
+}
+
+Medico --|> Persona
+Paciente --|> Persona
+Medico "1" --> "1" Agenda
+Agenda "1" *-- "0..*" Turno
+PantallaAgenda --> ControladorAgenda
+ControladorAgenda --> Agenda
+@enduml
