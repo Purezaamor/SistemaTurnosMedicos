@@ -1,0 +1,106 @@
+@startuml 02-clases-reprogramar-turno-02
+title Diagrama de Clases: Reprogramar Turno Existente
+
+class Persona {
+    - nombre: String
+    - telefono: String
+    + obtenerIdentificacion(): String
+}
+
+class Usuario {
+    - id: String
+    - rol: String
+    + obtenerRol(): String
+}
+
+class Paciente {
+    - dni: String
+    - obraSocial: String
+    + solicitarNuevaFecha(): Date
+    + confirmarCambio(): void
+}
+
+class Secretaria {
+    + buscarTurno(turnoID: String): Turno
+    + confirmarReprogramacion(turnoID: String, nuevoSlotID: String): void
+    + procesarReprogramacion(): void
+}
+
+class Medico {
+    - especialidad: String
+    + consultarAgenda(): Agenda
+    + definirDisponibilidad(): void
+    + autorizarSobreturno(): Boolean
+}
+
+class Agenda {
+    - fechaActual: Date
+    - vistaActual: String
+    - listaTurnos: List<Turno>
+    - medico: Medico
+    + recuperarTurno(turnoID: String): Turno
+    + consultarDisponibilidad(medicID: String, rango: String): List<Slot>
+    + liberarSlotAnterior(medicID: String, slotAnterior: String): Boolean
+    + ocuparNuevoSlot(medicID: String, nuevoSlot: Slot): Boolean
+    + validarDisponibilidad(turno: Turno): Boolean
+}
+
+class Turno {
+    - turnoID: String
+    - fecha: Date
+    - hora: String
+    - estado: String
+    - tipoConsulta: String
+    - esSobreturno: Boolean
+    - horaLlegada: String
+    + actualizarDatos(nuevoSlot: Slot): void
+    + cambiarEstado(estado: String): void
+    + cancelar(motivo: String): void
+    + reprogramar(nuevoSlot: Slot): void
+}
+
+class Slot {
+    - slotID: String
+    - fecha: Date
+    - hora: String
+    - disponible: Boolean
+    + asignar(): void
+}
+
+class ServicioTurnos {
+    + obtenerTurnoExistente(turnoID: String): Turno
+    + obtenerSlotsDisponibles(medicID: String, rango: String): List<Slot>
+    + reprogramarTurno(turnoID: String, nuevoSlotID: String): Turno
+    + validarEstadoParaReprogramar(turnoID: String): Boolean
+}
+
+class PantallaTurnos {
+    + buscarTurno(numeroTurno: String): void
+    + mostrarTurnoActual(detalles: String): void
+    + solicitarAlternativas(): void
+    + mostrarAlternativas(slots: List<Slot>): void
+    + confirmarReprogramacion(turnoID: String, nuevoSlotID: String): void
+    + reprogramacionExitosa(nuevoTurno: Turno): void
+}
+
+class Notificacion {
+    + enviarReprogramacion(turno: Turno): void
+}
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Persona <|-- Secretaria
+
+Agenda "1" o-- "*" Turno
+Agenda "1" -- "1" Medico
+Turno "1" --> "1" Paciente
+Turno "1" --> "1" Medico
+Turno "1" --> "1" Slot
+Agenda "1" ..> "*" Slot
+ServicioTurnos ..> Agenda
+ServicioTurnos ..> Turno
+PantallaTurnos ..> ServicioTurnos
+Secretaria ..> PantallaTurnos
+ServicioTurnos ..> Notificacion
+
+@enduml
