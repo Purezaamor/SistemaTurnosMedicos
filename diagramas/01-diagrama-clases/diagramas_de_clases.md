@@ -1,3 +1,4 @@
+- [Diagrama de Clases - Final Unificado](06-clases-diagrama-final.puml)
 # Diagramas de Clases
 
 - [Diagrama de Clases - Boceto Inicial](01-boceto-inicial.excalidraw)
