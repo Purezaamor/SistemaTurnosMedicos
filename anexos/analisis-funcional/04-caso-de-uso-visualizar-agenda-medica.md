@@ -33,6 +33,18 @@
 
 ## Pseudocódigo del caso de uso
 
+<<<<<<< HEAD
+ControladorAgenda controlador = new ControladorAgenda()
+Date fecha = new Date("2026-06-15")
+List<Turno> listaTurnos = controlador.obtenerTurnos(fecha)
+if (listaTurnos.size() > 0) {
+PantallaAgenda.mostrarAgenda(listaTurnos)
+} else {
+mostrar("No hay turnos para la fecha seleccionada")
+}
+
+text
+=======
 Medico medico = new Medico("Dr. Pérez", "Cardiología", "12345")
 Fecha fecha = new Fecha("2026-06-15")
 listaTurnos = medico.getAgenda(fecha)
@@ -41,3 +53,4 @@ PantallaAgenda.mostrarAgenda(listaTurnos)
 } else {
 mostrar("No hay turnos para la fecha seleccionada")
 }
+>>>>>>> develop
