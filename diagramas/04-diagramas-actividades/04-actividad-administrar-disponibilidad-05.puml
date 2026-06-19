@@ -1,4 +1,5 @@
 @startuml
+title Administrar Disponibilidad
 |Medico / Secretaria|
 start
 :Acceder a la configuracion de disponibilidad;
@@ -8,7 +9,7 @@ start
 :Mostrar opciones de configuracion;
 if (¿Configurar Horario Regular o Bloqueo/Licencia?) then (Horario Regular)
     |Medico / Secretaria|
-    :Seleccionar dias de atención;
+    :Seleccionar dias de atencion;
     :Ingresar rangos horarios;
 else (Bloqueo/Licencia)
     |Medico / Secretaria|
@@ -19,7 +20,7 @@ endif
 |Modulo Agenda (Interfaz)|
 :Enviar datos para validacion;
 
-|Sistema (Base de Datos)|
+|Sistema|
 :Recibir datos de disponibilidad;
 :Validar conflictos con turnos otorgados;
 
@@ -34,7 +35,7 @@ else (no)
     :Confirmar disponibilidad valida;
 endif
 
-|Sistema (Base de Datos)|
+|Sistema|
 :Guardar configuracion definitiva;
 :Actualizar oferta de turnos;
 

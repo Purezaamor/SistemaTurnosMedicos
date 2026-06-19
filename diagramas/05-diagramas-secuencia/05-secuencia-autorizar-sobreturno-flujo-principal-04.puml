@@ -8,50 +8,52 @@ participant "ServicioTurnos:Servicio" as Servicio
 participant "turnoSobreturno:Turno" as Turno
 participant "agenda:Agenda" as Agenda
 participant "autorizacion:Autorizacion" as Auth
-actor Médico
+actor Medico
 
 autonumber
 
-Paciente -> Secretaria: solicitarAgendarTurno(pacienteID, especialidad)
-Secretaria -> UI: buscarDisponibilidad(especialidad, fecha)
-UI -> Servicio: obtenerSlotsDisponibles(especialidadID, rangoFechas)
-Servicio -> Agenda: consultarDisponibilidad(medicID, especialidadID)
-Agenda --> Servicio: noHaySlotsDisponibles()
-Servicio --> UI: mostrarMensajeAgendaCompleta()
-UI --> Secretaria: agendaCompleta(opciones)
-Secretaria -> Paciente: ofrecerSobreturno()
+Paciente -> Secretaria: solicitarAgendarTurno(paciente, especialidad)
+Secretaria --> Paciente: solicitudRecibida
+Secretaria ->> UI: buscarDisponibilidad(especialidad, fecha)
+UI -> Servicio: obtenerSlotsDisponibles(especialidad, rangoFechas)
+Servicio -> Agenda: consultarDisponibilidad(medico, especialidad)
+Agenda --> Servicio: noHaySlotsDisponibles
+Servicio --> UI: mensajeAgendaCompleta
+UI --> Secretaria: agendaCompleta
+Secretaria ->> Paciente: ofrecerSobreturno()
 Paciente -> Secretaria: aceptarSobreturno()
-Secretaria -> UI: procesarSobreturno(pacienteID, medicID)
-UI -> Servicio: solicitarAutorizacionSobreturno(medicID)
+Secretaria --> Paciente: aceptacionRecibida
+Secretaria ->> UI: procesarSobreturno(paciente, medico)
+UI ->> Servicio: solicitarAutorizacionSobreturno(medico)
 create Auth
-Servicio -> Auth: new Autorizacion(turnoID, medicID, estado)
+Servicio -> Auth: new Autorizacion(turno, medico, estado)
 Auth -> Auth: crearSolicitudAutorizacion(detalles)
-Auth --> Servicio: solicitudCreada()
-Servicio -> Médico: notificacionSolicitudAutorizacion(paciente, fecha)
-Médico -> Auth: autorizarSobreturno(turnoID)
+Auth --> Servicio: solicitudCreada
+Servicio ->> Medico: notificacionSolicitudAutorizacion(paciente, fecha)
+Médico -> Auth: autorizarSobreturno(turno)
 Auth -> Auth: cambiarEstado(AUTORIZADO)
-Auth --> Médico: confirmacionAutorizacion()
-Auth --> Servicio: autorizacionAprobada()
+Auth --> Medico: confirmacionAutorizacion
+Auth --> Servicio: autorizacionAprobada
 create Turno
-Servicio -> Turno: new Turno(pacienteID, medicID, slotID, SOBRETURNO)
+Servicio -> Turno: new Turno(paciente, medico, slot, SOBRETURNO)
 Turno -> Turno: inicializarTurno()
-Turno --> Servicio: turnoSobreturnoCreado()
+Turno --> Servicio: turnoSobreturnoCreado
 Servicio -> Agenda: registrarTurnoEnAgenda(turno, SOBRETURNO)
-Agenda -> Agenda: marcarComoSobreturno(medicID, turnoID)
-Agenda --> Servicio: sobreturnoRegistrado()
-Servicio --> UI: resultadoSobreturno(exito, numeroTurno)
-UI --> Secretaria: comprobanteSobreturno(numeroTurno, detalles)
-Secretaria -> Paciente: entregarComprobanteSobreturno(numeroTurno, fecha)
-Secretaria -> Médico: notificarSobreturnoProcesado(numeroTurno)
+Agenda -> Agenda: marcarComoSobreturno(medico, turno)
+Agenda --> Servicio: sobreturnoRegistrado
+Servicio --> UI: resultadoSobreturno
+UI ->> Secretaria: comprobanteSobreturno
+Secretaria ->> Paciente: entregarComprobanteSobreturno(numeroTurno, fecha)
+Secretaria ->> Medico: notificarSobreturnoProcesado(numeroTurno)
 
 note right of Turno
   Estado: SOBRETURNO
   Requiere control especial
-  Autorizado por médico
+  Autorizado por medico
 end note
 
 note right of Auth
-  Flujo de autorización
+  Flujo de autorizacion
   Se destruye tras procesar
 end note
 

@@ -7,27 +7,27 @@ participant "ServicioTurnos:Servicio" as Servicio
 participant "agenda:Agenda" as Agenda
 participant "turno:Turno" as Turno
 participant "disponibilidad:Disponibilidad" as Disp
-actor Médico
+actor Medico
 
 autonumber
 
-Secretaria -> UI: seleccionarMedico(medicID)
-UI -> Servicio: obtenerAgendaMedico(medicID)
-Servicio -> Agenda: recuperarAgenda(medicID)
-Agenda -> Agenda: cargarTurnosConfirmados(medicID)
+Secretaria ->> UI: seleccionarMedico(medico)
+UI -> Servicio: obtenerAgendaMedico(medico)
+Servicio -> Agenda: recuperarAgenda(medico)
+Agenda -> Agenda: cargarTurnosConfirmados(medico)
 note right of Agenda
   Filtro: estado = CONFIRMADO
   o SOBRETURNO
 end note
 Agenda -> Turno: iterarTurnos()
-Turno --> Agenda: List<Turno> turnosAgenda
-Agenda -> Disp: obtenerDisponibilidad(medicID)
-Disp -> Disp: consultarSlotsDisponibles(medicID)
-Disp --> Agenda: Map<Slot, Boolean> disponibilidadCompleta
-Agenda --> Servicio: agendaCompleta(turnos, disponibilidad)
+Turno --> Agenda: turnosAgenda
+Agenda -> Disp: obtenerDisponibilidad(medico)
+Disp -> Disp: consultarSlotsDisponibles(medico)
+Disp --> Agenda: disponibilidadCompleta
+Agenda --> Servicio: agendaCompleta
 Servicio -> Servicio: formatearDatos(agendaCompleta)
-Servicio --> UI: mostrarAgenda(datos)
-UI --> Secretaria: presentarAgenda(turnos, slots)
+Servicio --> UI: agendaFormateada
+UI ->> Secretaria: presentarAgenda()
 note right of Secretaria
   Visualiza:
   - Turnos confirmados
@@ -35,41 +35,40 @@ note right of Secretaria
   - Info del paciente
 end note
 
-alt Médico consulta su propia agenda
-  Médico -> UI: solicitarMiAgenda()
+alt Medico consulta su propia agenda
+  Medico ->> UI: solicitarMiAgenda()
   UI -> Servicio: obtenerAgendaMedico(tokenMedico)
   Servicio -> Servicio: validarCredenciales(tokenMedico)
-  Servicio -> Agenda: recuperarAgenda(medicID)
+  Servicio -> Agenda: recuperarAgenda(medico)
   Agenda -> Turno: iterarTurnosPropios()
-  Turno --> Agenda: List<Turno> turnosMedico
-  Agenda --> Servicio: agendaMedicoPersonal(turnos)
+  Turno --> Agenda: turnosMedico
+  Agenda --> Servicio: agendaMedicoPersonal
   Servicio -> Servicio: aplicarFiltrosMedico(turnos)
-  Servicio --> UI: mostrarMiAgenda(datos)
-  UI --> Médico: presentarMiAgenda(turnos, horarios)
-  Médico -> Médico: revisarDisponibilidad()
-  Médico -> Médico: registrarAnotaciones(observaciones)
+  Servicio --> UI: miAgenda
+  UI -> Medico: presentarMiAgenda
+  Medico -> Medico: revisarDisponibilidad()
+  Medico -> Medico: registrarAnotaciones(observaciones)
   
-  note right of Médico
+  note right of Medico
     Acceso personal a agenda
-    para revisión, planificación
+    para revision, planificacion
     y anotaciones
   end note
 else Secretaria cambia a otra fecha
-  Secretaria -> UI: cambiarRango(nuevaFecha)
-  UI -> Servicio: obtenerAgendaMedicoEnRango(medicID, rango)
-  Servicio -> Agenda: recuperarAgenda(medicID, rangoFechas)
+  Secretaria ->> UI: cambiarRango(nuevaFecha)
+  UI -> Servicio: obtenerAgendaMedicoEnRango(medico, rango)
+  Servicio -> Agenda: recuperarAgenda(medico, rangoFechas)
   Agenda -> Turno: iterarTurnosPorRango()
-  Turno --> Agenda: List<Turno> turnosEnRango
-  Agenda --> Servicio: agendaEnRango(turnos)
-  Servicio --> UI: mostrarAgenda(nuevosdatos)
-  UI --> Secretaria: actualizarVista(turnos)
-end
+  Turno --> Agenda: turnosEnRango
+  Agenda --> Servicio: agendaEnRango
+  Servicio --> UI: agendaFormateada
+UI ->> Secretaria: actualizarVista()
 
 note right of UI
   Interfaz interactiva:
-  - Seleccionar médico
+  - Seleccionar medico
   - Cambiar rango de fechas
   - Filtrar por especialidad
 end note
-
+end
 @enduml
