@@ -1,0 +1,114 @@
+@startuml 01-clases-registrar-turno-medico-01
+title Diagrama de Clases: Registrar Turno Médico
+
+class Persona {
+  - nombre: String
+  - telefono: String
+  + obtenerIdentificacion(): String
+}
+
+class Usuario {
+  - id: String
+  - rol: String
+  + obtenerRol(): String
+}
+
+class Paciente {
+  - dni: String
+  - obraSocial: String
+  + solicitarTurno(): void
+  + confirmarReserva(): void
+}
+
+class Secretaria {
+  - turnoAsignado: String
+  + registrarTurno(pacienteID: String, medicoID: String, slotID: String): Turno
+  + verificarDisponibilidad(medicoID: String, fecha: Date, hora: String): Boolean
+  + confirmarReserva(turnoID: String): void
+}
+
+class Medico {
+  - especialidad: String
+  + consultarAgenda(): Agenda
+  + definirDisponibilidad(): void
+  + autorizarSobreturno(): Boolean
+}
+
+class Agenda {
+  - fechaActual: Date
+  - vistaActual: String
+  - listaTurnos: List<Turno>
+  - medico: Medico
+  + recuperarTurno(turnoID: String): Turno
+  + consultarDisponibilidad(medicoID: String, rango: String): List<Slot>
+  + validarDisponibilidad(turno: Turno): Boolean
+  + agregarTurno(turno: Turno): Boolean
+  + liberarSlot(medicoID: String, slotID: String): Boolean
+}
+
+class Turno {
+  - turnoID: String
+  - fecha: Date
+  - hora: String
+  - estado: String
+  - tipoConsulta: String
+  - esSobreturno: Boolean
+  - horaLlegada: String
+  + reservar(): void
+  + cambiarEstado(estado: String): void
+  + actualizarDatos(turno: Turno): void
+}
+
+class Slot {
+  - slotID: String
+  - fecha: Date
+  - hora: String
+  - disponible: Boolean
+  + asignar(): void
+  + estaDisponible(): Boolean
+}
+
+class HistorialCambio {
+  - registroID: String
+  - fechaHora: Date
+  - usuario: String
+  - accion: String
+  - detalles: String
+  + registrarCambio(): void
+}
+
+class ServicioTurnos {
+  + obtenerTurnoExistente(turnoID: String): Turno
+  + obtenerSlotsDisponibles(medicoID: String, rango: String): List<Slot>
+  + registrarTurno(pacienteID: String, medicoID: String, slotID: String): Turno
+  + validarEstadoParaRegistrar(turnoID: String): Boolean
+  + guardarCambios(turno: Turno): void
+}
+
+class PantallaTurnos {
+  + ingresarDatosPaciente(): void
+  + seleccionarProfesional(): void
+  + seleccionarFechaHora(): void
+  + mostrarDisponibilidad(slots: List<Slot>): void
+  + confirmarRegistro(): void
+  + mostrarConfirmacion(turno: Turno): void
+}
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Usuario <|-- Secretaria
+
+Agenda "1" o-- "*" Turno
+Agenda "1" -- "1" Medico
+Turno "1" --> "1" Paciente
+Turno "1" --> "1" Medico
+Turno "1" --> "1" Slot
+Agenda "1" ..> "*" Slot
+ServicioTurnos ..> Agenda
+ServicioTurnos ..> Turno
+ServicioTurnos ..> HistorialCambio
+PantallaTurnos ..> ServicioTurnos
+Secretaria ..> PantallaTurnos
+Turno ..> HistorialCambio
+
+@enduml
