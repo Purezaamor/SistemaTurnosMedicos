@@ -21,9 +21,12 @@ class Paciente {
 }
 
 class Secretaria {
-  + buscarTurno(turnoID: String): Turno
-  + confirmarCancelacion(turnoID: String): void
-  + procesarCancelacion(turnoID: String): void
+  - turnoAsignado: Turno
+  - nombre: String
+  - rol: String
+  + buscarTurno(turno: String): Turno
+  + confirmarCancelacion(turno: String): void
+  + procesarCancelacion(turno: String): void
 }
 
 class Medico {
@@ -37,9 +40,9 @@ class Agenda {
   - fechaActual: Date
   - vistaActual: String
   - listaTurnos: List<Turno>
-  + recuperarTurno(turnoID: String): Turno
-  + removerTurnoDeAgenda(medicID: String, turnoID: String): Boolean
-  + liberarSlot(medicID: String, slotAnterior: String): Boolean
+  + recuperarTurno(turno: String): Turno
+  + removerTurnoDeAgenda(medico: String, turno: String): Boolean
+  + liberarSlot(medico: String, slotAnterior: String): Boolean
 }
 
 class Turno {
@@ -65,15 +68,15 @@ class Notificacion {
 }
 
 class ServicioTurnos {
-  + obtenerTurnoExistente(turnoID: String): Turno
-  + validarEstadoParaCancelar(turnoID: String): Boolean
-  + cancelarTurno(turnoID: String, motivoCancelacion: String): Turno
+  + obtenerTurnoExistente(turno: String): Turno
+  + validarEstadoParaCancelar(turno: String): Boolean
+  + cancelarTurno(turno: String, motivoCancelacion: String): Turno
   + crearNotificacion(turno: Turno, tipo: String): Notificacion
 }
 
 class PantallaTurnos {
   + buscarTurno(numeroTurno: String): void
-  + procesarCancelacion(turnoID: String): void
+  + procesarCancelacion(turno: String): void
   + cancelacionExitosa(confirmacion: String): void
 }
 
