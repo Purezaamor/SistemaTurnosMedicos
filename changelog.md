@@ -7,6 +7,7 @@
 ### Added
 
 - [feature/analista-cu-2-3-add-anexo-cu2-cu3] Desarrollo y documentación de los CU 2 y 3: corrección de diagramas de actividades, generación de diagramas de clases UML, elaboración de anexos de análisis funcional y actualización de índices y documentación de soporte. PR:[#159](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/159) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+- [feature/arquitecto-dominio-add-diagrama-final-2] Generación de Diagrama Final con sus archivos puml y png. Creación de la carpeta `capturas-pilares` con sus png, etc. PR: [#174](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/174) - @keviineze (Arquitecto de Dominio).
 
 ## Fixed
 - [fix/analista-fun-casos-2-3] Incorporación de nuevas tarjetas CRC, actualización de casos de uso y diagrama de clases, y corrección de referencias entre artefactos. PR:[#172](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/172)(Analista Funcional de Casos de Uso 2 y 3)
