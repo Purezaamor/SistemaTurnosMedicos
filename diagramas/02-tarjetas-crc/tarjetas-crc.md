@@ -192,8 +192,6 @@
 | **Colaboraciones** | `ServicioTurnos`, `Turno`, `Paciente`, `Medico`, sistema de mensajería / mailer |
 | **Propiedad** | Servicio de infraestructura para la capa de aplicación; debe ser idempotente y registrar intentos de reenvío en caso de fallo |
 
-> Fuente: definición en [anexos/analisis-funcional/03-caso-de-uso-cancelar-turno.md](anexos/analisis-funcional/03-caso-de-uso-cancelar-turno.md#L108-L108)
-
 
 ## Resumen de correcciones de diseño
 

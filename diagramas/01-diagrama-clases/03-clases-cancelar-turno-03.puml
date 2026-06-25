@@ -8,7 +8,7 @@ class Persona {
 }
 
 class Usuario {
-  - id: String
+  - nombre: String
   - rol: String
   + obtenerRol(): String
 }
@@ -46,7 +46,7 @@ class Agenda {
 }
 
 class Turno {
-  - turnoID: String
+  - turno: String
   - fecha: Date
   - hora: String
   - estado: String
