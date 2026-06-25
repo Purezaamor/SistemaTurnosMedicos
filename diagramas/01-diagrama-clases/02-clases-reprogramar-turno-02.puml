@@ -8,7 +8,7 @@ class Persona {
 }
 
 class Usuario {
-    - nombre: String
+    - email: String
     - rol: String
     + obtenerRol(): String
 }
@@ -21,6 +21,9 @@ class Paciente {
 }
 
 class Secretaria {
+    - turnoAsignado: Turno, 
+    - nombre: String, 
+    - rol: String
     + buscarTurno(turno: String): Turno
     + confirmarReprogramacion(turno: String, nuevoSlot: String): void
     + procesarReprogramacion(): void

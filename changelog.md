@@ -11,6 +11,8 @@
 ### Fixed 
 - [fix/analista-funcional-caso-1] Se corrigen las entradas de IDs. PR: [#177](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/177) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
 
+- [fix/analista-fun-casos-2-3] Incorporación de nuevas tarjetas CRC, actualización de casos de uso y diagrama de clases, y corrección de referencias entre artefactos. PR:[#172](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/172)(Analista Funcional de Casos de Uso 2 y 3)
+- [fix/arquitecto-dominio-correcciones-a4] Correcciones de RC32 a RC35 modificando los archivos `analisis_casos_uso.md`, `happy-path-global.md` y `anexos.md`. PR:[#173](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/173) - @keviineze (Arquitecto de Dominio).
 
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 

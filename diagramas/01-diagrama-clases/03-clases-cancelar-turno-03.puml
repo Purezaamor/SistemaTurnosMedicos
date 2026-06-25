@@ -21,6 +21,9 @@ class Paciente {
 }
 
 class Secretaria {
+  - turnoAsignado: Turno
+  - nombre: String
+  - rol: String
   + buscarTurno(turno: String): Turno
   + confirmarCancelacion(turno: String): void
   + procesarCancelacion(turno: String): void
