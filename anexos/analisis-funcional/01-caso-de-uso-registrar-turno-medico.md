@@ -90,8 +90,8 @@ Registra un turno médico entre un paciente y un profesional, asegurando que no 
 | Turno | Mantener datos de la reserva y transicionar su estado | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Gestionar disponibilidad y agregar el turno al calendario del médico | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
 | HistorialCambio | Registrar de forma inalterable el alta del turno para auditoría | [herramientas-agile/tarjetas-crc/06-tarjeta-crc-historial.md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-historial.md) |
-| ServicioTurnos | Orquestar la validación de disponibilidad y el registro del turno | Sin tarjeta CRC — clase de controlador derivada del diagrama de secuencia |
-| PantallaTurnos | Capturar datos de usuario y mostrar la confirmación del registro | Sin tarjeta CRC — clase de interfaz derivada del diagrama de secuencia |
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md)
+| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
 
 **Relaciones UML:**
 - Herencia: `Persona` ← `Paciente`, `Medico`

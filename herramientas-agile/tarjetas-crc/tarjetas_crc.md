@@ -8,3 +8,6 @@
 - [HistorialCambios](06-tarjeta-crc-historial.md)
 - [Secretaria](07-tarjeta-crc-secretaria.md)
 - [LlegadaPaciente](08-tarjeta-crc-llegada-paciente.md)
+ - [ServicioTurnos](09-tarjeta-crc-servicio-turnos.md)
+ - [PantallaTurnos](10-tarjeta-crc-pantalla-turnos.md)
+ - [Notificacion](11-tarjeta-crc-notificacion.md)

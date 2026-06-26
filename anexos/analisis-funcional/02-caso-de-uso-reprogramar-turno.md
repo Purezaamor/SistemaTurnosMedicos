@@ -104,9 +104,8 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 | Medico | Autorizar sobreturnos y proporcionar disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Turno | Cambiar estado del turno y permitir reprogramación | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Validar disponibilidad y gestionar sobreturnos autorizados | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | Sin tarjeta CRC — Clase de control derivada del diagrama de secuencia |
-| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) | Sin tarjeta CRC — Clase de interfaz derivada del diagrama de secuencia |
-
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md)
+| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
 **Relaciones UML:**
 
 | Relación | Clases | Justificación |
@@ -126,66 +125,86 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 ## 6. Pseudocódigo
 
 ```text
-INICIO Reprogramar Turno Existente
+INICIO: Reprogramar Turno Existente
 
-// Contexto: La Secretaria recibe una solicitud del Paciente para cambiar la fecha/hora de un turno.
-// Se valida disponibilidad y se libera el horario anterior, ocupando el nuevo.
+# Contexto de dominio: la `Secretaria` gestiona, vía `PantallaTurnos`, la solicitud de cambio de fecha/hora
+# Objetivo: presentar alternativas válidas y, si se confirma, actualizar el `Turno` y la `Agenda` de forma consistente.
 
-LEER numeroTurno desde UI
-LEER nuevoSlotID desde UI
+# --- Flujo principal (visión de alto nivel; los nombres de métodos reflejan el diagrama de clases) ---
+PantallaTurnos: solicitarIdentificadores()              # pide `turnoID` y `rangoDeseado` al usuario
 
-// Paso 1: Búsqueda y recuperación del turno existente
-turnoActual ← ServicioTurnos.obtenerTurnoExistente(numeroTurno)
+# 1) Recuperar el turno y sus datos de dominio
+turnoActual ← ServicioTurnos.obtenerTurnoExistente(turnoID)
 SI turnoActual es NULO
-    MOSTRAR "Turno no encontrado"
-    RETORNAR FALSO
+    PantallaTurnos.mostrarError("Turno no encontrado")    # dominio: no existe la cita solicitada
+    FIN
 FIN SI
 
-// Paso 2: Obtener datos del turno actual para validación
-medicID ← turnoActual.medico.id
-slotActualID ← turnoActual.horaID
-estado ← turnoActual.estado
+medico ← turnoActual.medico
+slotActual ← turnoActual.slot
 
-// Paso 3: Consultar disponibilidad de nuevos horarios para el médico
-slotsDisponibles ← ServicioTurnos.obtenerSlotsDisponibles(medicID, rango="semana")
+# 2) Consultar alternativas válidas según reglas de `Agenda` (no se inventan reglas aquí: la `Agenda` decide)
+slotsDisponibles ← ServicioTurnos.obtenerSlotsDisponibles(medico.id, rangoDeseado)
 SI slotsDisponibles está VACÍO
-    MOSTRAR "No hay disponibilidad en el rango solicitado"
-    RETORNAR FALSO
+    PantallaTurnos.mostrarInfo("No hay horarios disponibles en el rango solicitado")
+    FIN
 FIN SI
 
-// Paso 4: Validar que el nuevo slot sea válido
+# 3) Presentar alternativas al usuario y capturar su selección
+PantallaTurnos.mostrarOpcionesDisponibles(slotsDisponibles)
+nuevoSlotID ← PantallaTurnos.capturarSeleccionUsuario()
 SI nuevoSlotID NO está EN slotsDisponibles
-    MOSTRAR "Slot no disponible o conflicto de agenda"
-    RETORNAR FALSO
+    PantallaTurnos.mostrarError("Selección inválida: slot no disponible")
+    FIN
 FIN SI
 
-// Paso 5: Ejecutar la reprogramación
-INTENTAR
-    // Cambiar estado del turno a REPROGRAMADO
-    turnoActual.cambiarEstado("REPROGRAMADO")
-    turnoActual.actualizarDatos(nuevoSlotID, HORA_ACTUAL, "Reprogramado por Secretaria")
-    
-    // Liberar el slot anterior en la agenda del médico
-    Agenda.liberarSlotAnterior(medicID, slotActualID)
-    
-    // Ocupar el nuevo slot en la agenda del médico
-    Agenda.ocuparNuevoSlot(medicID, nuevoSlotID)
-    
-    // Guardar cambios en la base de datos
-    ServicioTurnos.guardarCambios(turnoActual)
-    
-    MOSTRAR "Turno reprogramado exitosamente"
-    MOSTRAR CONFIRMACION con nueva fecha, hora, médico
-    
-    RETORNAR VERDADERO
-    
-EXCEPTO EN CASO DE ERROR
-    MOSTRAR "Error en la reprogramación. Intente nuevamente"
-    DESHACER cambios de estado
-    RETORNAR FALSO
-FIN INTENTAR
+# 4) Solicitar la reprogramación al servicio de dominio (operación atómica desde el punto de vista del caso de uso)
+respuesta ← ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID)
+SI respuesta.indicaError
+    PantallaTurnos.mostrarError("No se pudo reprogramar el turno: " + respuesta.mensaje)
+    FIN
+FIN SI
+
+# 5) Confirmación y efectos visibles al actor
+PantallaTurnos.mostrarConfirmacion("Turno reprogramado", datos=turnoActual.resumen())
+PantallaTurnos.notificarPacienteYMedico(turnoActual)
 
 FIN
+
+
+# --- Implementación de dominio (qué hace `ServicioTurnos.reprogramarTurno`) ---
+ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID):
+    # Recuperar turno y validar que su estado permita reprogramación
+    turno ← ServicioTurnos.obtenerTurnoExistente(turnoID)
+    SI turno es NULO
+        return ERROR("Turno inexistente")
+    FIN SI
+
+    SI turno.estado NO está EN ["Programado"]
+        return ERROR("Estado del turno no permite reprogramación")    # dominio: sólo se reprograman turnos programados
+    FIN SI
+
+    # Intentar ocupar el nuevo slot en la `Agenda` del médico (la `Agenda` aplica las reglas de disponibilidad y sobreturnos)
+    éxitoOcupar ← Agenda.ocuparNuevoSlot(turno.medico.id, nuevoSlotID)
+    SI NO éxitoOcupar
+        return ERROR("Conflicto de agenda: slot ya reservado o regla de sobreturno violada")
+    FIN SI
+
+    # Liberar el slot anterior para dejarlo disponible
+    Agenda.liberarSlotAnterior(turno.medico.id, turno.slot)
+
+    # Actualizar el `Turno` en memoria con el nuevo slot y marcarlo como REPROGRAMADO
+    turno.actualizarSlot(nuevoSlotID)            # dominio: el `Turno` conoce su slot y datos temporales
+    turno.cambiarEstado("REPROGRAMADO")
+
+    # Registrar la reprogramación en el historial inmutable del dominio
+    ServicioTurnos.registrarHistorialCambio(turno, evento="Reprogramación", realizadoPor="Secretaria")
+
+    # Persistir los cambios y emitir notificaciones de dominio
+    ServicioTurnos.persistir(turno)
+    ServicioTurnos.emitirEventoReprogramacion(turno)
+
+    return OK
 ```
 
 **Trazabilidad del pseudocódigo:**
