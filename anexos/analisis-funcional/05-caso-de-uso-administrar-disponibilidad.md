@@ -59,7 +59,7 @@
 
 ## Diagrama de secuencia (A3)
 
-![Diagrama de secuencia - Administrar Disponibilidad](../../diagramas/05-diagramas-secuencia/05-secuencia-administrar-disponibilidad-flujo-principal-04.png)
+![Diagrama de secuencia - Administrar Disponibilidad](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.png)
 
 ### Participantes y mensajes clave
 
