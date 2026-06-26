@@ -1,11 +1,31 @@
 # Pseudocódigo - Happy Path Global del Sistema
 
-## 1. Descripción del escenario
+## 1. Escenario Elegido
 
-El siguiente pseudocódigo muestra el flujo completo del sistema desde que un paciente llega al consultorio hasta que se registra un turno, se reprograma (si es necesario) y se notifica el resultado. Involucra a todos los actores y clases principales del sistema.
+**Escenario:** El escenario describe el ciclo de vida operativo e institucional completo dentro de la clínica. Comienza con el registro de un nuevo paciente en el sistema y la configuración de la agenda del profesional. Luego, se simula la solicitud de un turno, su posterior reprogramación y cancelación. Finalmente, el médico visualiza su agenda diaria y registra formalmente la atención médica del paciente con su respectivo diagnóstico. Se eligió como happy path global porque recorre de punta a punta todas las funciones e involucra a todos los actores sobre las mismas entidades del dominio.
+
+**Casos de uso involucrados:** CU01: Registrar Paciente, CU02: Registrar Agenda Médica, CU03: Solicitar Turno Médico, CU04: Cancelar Turno Médico, CU05: Registrar Atención Médica.
+
+**Clases participantes:**
+
+- Paciente
+- Medico
+- Agenda
+- Turno
+- EstadoTurno (Enum)
+- Secretaria
+- ControladorTurnos
+- RepositorioTurnos
+- Notificador
+- PantallaTurnos
+- PantallaAgenda
+- HistorialClinico (o DetalleAtencion)
+
+---
 
 ## 2. Pseudocódigo
 
+```text
 // ============================================
 // 1. INSTANCIAR OBJETOS PRINCIPALES
 // ============================================
@@ -38,6 +58,9 @@ RepositorioTurnos repo = new RepositorioTurnos()
 // ============================================
 // 2. REGISTRAR TURNO
 // ============================================
+
+// [CU01] El sistema registra formalmente al paciente primero
+controladorTurnos.registrarPaciente(paciente1)
 
 // Secretaria inicia el proceso
 Secretaria secretaria = new Secretaria("Ana García", "S-001")
@@ -105,19 +128,31 @@ List<Turno> turnosMedico = medico1.getAgenda().consultarTurnos("2026-06-20")
 PantallaAgenda.mostrarAgenda(turnosMedico)
 
 // ============================================
+// 6.5 REGISTRAR ATENCIÓN MÉDICA [CU05]
+// ============================================
+
+// El médico recibe al paciente en el consultorio y registra la consulta
+HistorialClinico registroAtencion = medico1.registrarAtencion(turnoExistente, "Paciente presenta mejoría clínica. Se receta descanso por 48hs.")
+repo.guardarHistorial(registroAtencion)
+
+// Cambiar el estado del turno a FINALIZADO
+turnoExistente.setEstado(EstadoTurno.FINALIZADO)
+
+// ============================================
 // 7. FIN DEL FLUJO
 // ============================================
 
 mostrar("Proceso completado con éxito")
+```
 
-## 3. Tabla de trazabilidad (OBLIGATORIA)
+---
 
-| Paso | Artefacto de origen |
-|------|---------------------|
-| Registrar turno | CU1 - Diagrama de secuencia y actividades |
-| Reprogramar turno | CU2 - Diagrama de secuencia y actividades |
-| Cancelar turno | CU3 - Diagrama de secuencia y actividades |
-| Administrar disponibilidad | CU5 - Diagrama de secuencia y actividades |
-| Visualizar agenda | CU4 - Diagrama de secuencia y actividades |
-| Clases principales | Diagrama de clases final unificado |
-| Colaboraciones | Tarjetas CRC de A2 |
+## 3. Trazabilidad del Pseudocódigo
+
+| Bloque | Caso de uso | Clases involucradas | Diagrama de secuencia de referencia |
+|--------|-------------|---------------------|-------------------------------------|
+| Agendar turno | CU1 | SistemaTurnos, Paciente | [05-secuencia-agendar-turno-flujo-principal-01.png](../../diagramas/05-diagramas-secuencia/05-secuencia-agendar-turno-flujo-principal-01.png) |
+| Reprogramar turno | CU2 | SistemaTurnos, Médico, Agenda | [05-secuencia-reprogramar-turno-flujo-principal-02.png](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-flujo-principal-02.png) |
+| Cancelar turno | CU3 | SistemaTurnos, Paciente, Médico, Agenda, Turno, EstadoTurno | [05-secuencia-cancelar-turno-flujo-principal-03.png](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-flujo-principal-03.png) |
+| Autorizar Sobreturno | CU4 | SistemaTurnos, Turno, EstadoTurno, Notificacion (o ServicioNotificaciones), Paciente, Médico | [05-secuencia-autorizar-sobreturno-flujo-principal-04.png](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-flujo-principal-04.png) |
+| Consultar Agenda Medica | CU5 | SistemaTurnos, Médico, Turno, EstadoTurno, HistorialClinico (o DetalleAtencion) | [05-secuencia-consultar-agenda-medica-flujo-principal-05.png](../../diagramas/05-diagramas-secuencia/05-secuencia-consultar-agenda-medica-flujo-principal-05.png) |
