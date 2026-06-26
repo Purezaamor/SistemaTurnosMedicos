@@ -140,22 +140,22 @@ INICIO Cancelar Turno
 PantallaTurnos.buscarTurno(numeroTurno)
 
 // Se recupera el turno solicitado
-turno ← ServicioTurnos.obtenerTurnoExistente(turnoID)
+turno ← ServicioTurnos.obtenerTurnoExistente(turno)
 
 SI turno es NULO
     FIN
 FIN SI
 
 // Se verifica que el turno pueda cancelarse según las reglas del sistema
-SI NO ServicioTurnos.validarEstadoParaCancelar(turnoID)
+SI NO ServicioTurnos.validarEstadoParaCancelar(turno)
     FIN
 FIN SI
 
 // Se solicita la cancelación del turno seleccionado
-PantallaTurnos.procesarCancelacion(turnoID)
+PantallaTurnos.procesarCancelacion(turno)
 
 // El servicio registra la cancelación del turno
-turnoCancelado ← ServicioTurnos.cancelarTurno(turnoID, motivoCancelacion)
+turnoCancelado ← ServicioTurnos.cancelarTurno(turno, motivoCancelacion)
 
 // Se crea la notificación correspondiente a la cancelación
 notificacion ← ServicioTurnos.crearNotificacion(turnoCancelado, "CANCELACION")

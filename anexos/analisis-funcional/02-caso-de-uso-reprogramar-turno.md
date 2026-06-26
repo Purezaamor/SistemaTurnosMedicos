@@ -130,79 +130,77 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 ```text
 INICIO Reprogramar Turno Existente
 
+// Se crean o recuperan los objetos que participan en el caso de uso
+pantalla ← PantallaTurnos
+servicio ← ServicioTurnos
+
 // La secretaria busca el turno que desea reprogramar desde la pantalla
-PantallaTurnos.buscarTurno(numeroTurno)
+pantalla.buscarTurno(numeroTurno)
 
 // Se recupera el turno solicitado
-turno ← ServicioTurnos.obtenerTurnoExistente(turnoID)
+turno ← servicio.obtenerTurnoExistente(turno)
 
-SI turno es NULO
+SI turno ES NULO
+    pantalla.mostrarError("Turno no encontrado")
     FIN
 FIN SI
 
-// Se muestran los datos del turno actual para que puedan ser verificados
-PantallaTurnos.mostrarTurnoActual(detalles)
+// Se muestran los datos del turno actual para verificarlos
+pantalla.mostrarTurnoActual(detalles)
 
 // La secretaria solicita consultar horarios alternativos
-PantallaTurnos.solicitarAlternativas()
+pantalla.solicitarAlternativas()
 
 // Se obtienen los horarios disponibles para el profesional
-slots ← ServicioTurnos.obtenerSlotsDisponibles(medicoID, rango)
+slots ← servicio.obtenerSlotsDisponibles(medico, rango)
 
-SI slots está vacío
+SI slots ESTÁ VACÍO
+    pantalla.mostrarError("No hay horarios disponibles")
     FIN
 FIN SI
 
-// Se muestran las alternativas disponibles para seleccionar un nuevo horario
-PantallaTurnos.mostrarAlternativas(slots)
+// La pantalla muestra las alternativas disponibles para seleccionar un nuevo horario
+pantalla.mostrarAlternativas(slots)
 
 // Se confirma la reprogramación utilizando el horario seleccionado
-PantallaTurnos.confirmarReprogramacion(turnoID, nuevoSlotID)
+pantalla.confirmarReprogramacion(turno, nuevoSlot)
 
 // El servicio actualiza el turno con el nuevo horario
-nuevoTurno ← ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID)
+turnoReprogramado ← servicio.reprogramarTurno(turno, nuevoSlot)
 
 // Se informa que la reprogramación fue realizada correctamente
-PantallaTurnos.reprogramacionExitosa(nuevoTurno)
+pantalla.reprogramacionExitosa(turnoReprogramado)
 
 FIN
 ```
 
+```text
+IMPLEMENTACIÓN DE DOMINIO: ServicioTurnos.reprogramarTurno(turno, nuevoSlot)
 
+turno ← servicio.obtenerTurnoExistente(turno)
 
-# --- Implementación de dominio (qué hace `ServicioTurnos.reprogramarTurno`) ---
-ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID):
-    # Recuperar turno y validar que su estado permita reprogramación
-    turno ← ServicioTurnos.obtenerTurnoExistente(turnoID)
-    SI turno es NULO
-        return ERROR("Turno inexistente")
-    FIN SI
+SI turno ES NULO
+    RETORNAR ERROR("Turno inexistente")
+FIN SI
 
-    SI turno.estado NO está EN ["Programado"]
-        return ERROR("Estado del turno no permite reprogramación")    # dominio: sólo se reprograman turnos programados
-    FIN SI
+SI turno.estado NO ESTÁ EN ["Programado"]
+    RETORNAR ERROR("Estado del turno no permite reprogramación")
+FIN SI
 
-    # Intentar ocupar el nuevo slot en la `Agenda` del médico (la `Agenda` aplica las reglas de disponibilidad y sobreturnos)
-    éxitoOcupar ← Agenda.ocuparNuevoSlot(turno.medico.id, nuevoSlotID)
-    SI NO éxitoOcupar
-        return ERROR("Conflicto de agenda: slot ya reservado o regla de sobreturno violada")
-    FIN SI
+éxitoOcupar ← Agenda.ocuparNuevoSlot(turno.medico, nuevoSlot)
 
-    # Liberar el slot anterior para dejarlo disponible
-    Agenda.liberarSlotAnterior(turno.medico.id, turno.slot)
+SI NO éxitoOcupar
+    RETORNAR ERROR("Conflicto de agenda: slot ya reservado o regla de sobreturno violada")
+FIN SI
 
-    # Actualizar el `Turno` en memoria con el nuevo slot y marcarlo como REPROGRAMADO
-    turno.actualizarSlot(nuevoSlotID)            # dominio: el `Turno` conoce su slot y datos temporales
-    turno.cambiarEstado("REPROGRAMADO")
+Agenda.liberarSlotAnterior(turno.medico, turno.slot)
+turno.actualizarSlot(nuevoSlot)
+turno.cambiarEstado("REPROGRAMADO")
+servicio.registrarHistorialCambio(turno, evento="Reprogramación", realizadoPor="Secretaria")
+servicio.persistir(turno)
+servicio.emitirEventoReprogramacion(turno)
 
-    # Registrar la reprogramación en el historial inmutable del dominio
-    ServicioTurnos.registrarHistorialCambio(turno, evento="Reprogramación", realizadoPor="Secretaria")
-
-    # Persistir los cambios y emitir notificaciones de dominio
-    ServicioTurnos.persistir(turno)
-    ServicioTurnos.emitirEventoReprogramacion(turno)
-
-    return OK
+RETORNAR OK
 ```
 
 **Trazabilidad del pseudocódigo:**
