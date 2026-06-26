@@ -94,6 +94,7 @@
 
 ## Pseudocódigo del caso de uso
 
+```
 // Visualizar Agenda Médica - Flujo principal
 
 // 1. El médico solicita ver su agenda para una fecha
@@ -105,7 +106,8 @@ List<Turno> listaTurnos = controlador.obtenerTurnos(fecha)
 
 // 3. El sistema muestra la agenda al médico
 if (listaTurnos.size() > 0) {
-PantallaAgenda.mostrarAgenda(listaTurnos)
+    PantallaAgenda.mostrarAgenda(listaTurnos)
 } else {
-mostrar("No hay turnos para la fecha seleccionada")
+    mostrar("No hay turnos para la fecha seleccionada")
 }
+```

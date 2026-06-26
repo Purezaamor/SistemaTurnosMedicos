@@ -100,6 +100,7 @@
 
 ## Pseudocódigo del caso de uso
 
+```
 // Administrar Disponibilidad - Flujo principal
 
 // 1. La secretaria selecciona un médico y una fecha
@@ -115,3 +116,4 @@ secretaria.registrarDisponibilidad(medico, fecha, "14:00")
 
 // 4. El sistema actualiza la agenda
 mostrar("Disponibilidad actualizada correctamente")
+```
