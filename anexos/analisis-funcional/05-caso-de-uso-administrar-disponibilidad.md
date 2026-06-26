@@ -21,8 +21,6 @@
 **Trazabilidad con RFs (A1):**
 - **RF5 (Administrar disponibilidad):** La secretaria puede configurar los horarios de atención de los médicos.
 
----
-
 ## Diagrama de casos de uso (A2)
 
 ![Diagrama de casos de uso - Administrar Disponibilidad](../../diagramas/02-casos-de-uso/02-caso-uso-administrar-disponibilidad-05.png)
@@ -31,14 +29,12 @@
 
 | Actor | Rol en el caso de uso |
 |-------|----------------------|
-| **Secretaria** | Actor principal. Inicia el caso de uso para administrar la disponibilidad de los médicos. |
+| **Secretaria** | Actor principal. Inicia el caso de uso para administrar la disponibilidad. |
 | **Sistema** | Actor secundario que procesa la consulta y actualiza la disponibilidad. |
 
 **Relaciones:**
-- La Secretaria está **asociada** directamente al caso de uso "Administrar Disponibilidad".
-- No se utilizan relaciones `include` ni `extend` porque el flujo es directo y no depende de otros casos de uso.
-
----
+- La Secretaria está **asociada** directamente al caso de uso.
+- No se utilizan relaciones `include` ni `extend`.
 
 ## Diagrama de actividades (A3)
 
@@ -46,16 +42,14 @@
 
 ### Swimlanes y decisiones clave
 
-**Swimlanes (carriles):**
+**Swimlanes:**
 | Carril | Actor/Componente | Responsabilidad |
 |--------|------------------|-----------------|
 | Secretaria | Secretaria | Selecciona médico y fecha, administra disponibilidad |
 | Sistema | Sistema | Procesa la consulta y actualiza la disponibilidad |
 
-**Decisiones clave del flujo:**
+**Decisiones clave:**
 - **¿Hay turnos asignados?** → Si hay turnos, se debe confirmar la eliminación. Si no, se elimina directamente.
-
----
 
 ## Diagrama de secuencia (A3)
 
@@ -75,14 +69,10 @@
 **Mensajes clave:**
 | Mensaje | Origen → Destino | Efecto |
 |---------|------------------|--------|
-| `administrarDisponibilidad(medico, fecha)` | Secretaria → PantallaAgenda | Inicia la administración de disponibilidad |
+| `administrarDisponibilidad(medico, fecha)` | Secretaria → PantallaAgenda | Inicia la administración |
 | `solicitarAgenda(fecha)` | PantallaAgenda → ControladorAgenda | Solicita la agenda actual |
-| `agregarDisponibilidad(medico, fecha, hora)` | ControladorAgenda → Agenda | Agrega un nuevo horario disponible |
-| `eliminarDisponibilidad(medico, fecha, hora)` | ControladorAgenda → Agenda | Elimina un horario disponible |
-
-**Objetos temporales destruidos:** No hay objetos temporales en este caso de uso.
-
----
+| `agregarDisponibilidad(medico, fecha, hora)` | ControladorAgenda → Agenda | Agrega un nuevo horario |
+| `eliminarDisponibilidad(medico, fecha, hora)` | ControladorAgenda → Agenda | Elimina un horario |
 
 ## Diagrama de clases (CU5)
 
@@ -92,23 +82,21 @@
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|--------------------------------------|-------------|
-| Secretaria | Registrar, modificar y eliminar disponibilidad de médicos | [herramientas-agile/tarjetas-crc/02-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-secretaria.md) |
+| Secretaria | Registrar, modificar y eliminar disponibilidad | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md) |
 | Medico | Proporcionar su disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Agenda | Gestionar disponibilidad y turnos | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| Disponibilidad | Representar un horario disponible | [herramientas-agile/tarjetas-crc/07-tarjeta-crc-disponibilidad.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-disponibilidad.md) |
+| Disponibilidad | Representar un horario disponible | [herramientas-agile/tarjetas-crc/06-tarjeta-crc-disponibilidad.md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-disponibilidad.md) |
 | Turno | Contener datos de la reserva | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 
 ### Relaciones UML
 
 | Relación | Clases | Justificación |
 |----------|--------|---------------|
-| Asociación | Secretaria → Medico | La secretaria administra la disponibilidad de los médicos |
+| Asociación | Secretaria → Medico | La secretaria administra la disponibilidad |
 | Asociación | Secretaria → Agenda | La secretaria modifica la agenda |
-| Agregación | Agenda → Disponibilidad | La agenda contiene disponibilidad (puede existir sin agenda) |
-| Composición | Agenda → Turno | La agenda compone turnos (si se elimina la agenda, se eliminan los turnos) |
+| Agregación | Agenda → Disponibilidad | La agenda contiene disponibilidad |
+| Composición | Agenda → Turno | La agenda compone turnos |
 | Asociación | Medico → Agenda | El médico tiene una agenda asociada |
-
----
 
 ## Pseudocódigo del caso de uso
 
