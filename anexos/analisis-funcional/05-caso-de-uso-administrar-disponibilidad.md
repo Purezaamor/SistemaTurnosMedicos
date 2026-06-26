@@ -85,7 +85,7 @@
 | Secretaria | Registrar, modificar y eliminar disponibilidad | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md) |
 | Medico | Proporcionar su disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Agenda | Gestionar disponibilidad y turnos | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| Disponibilidad | Representar un horario disponible | [herramientas-agile/tarjetas-crc/06-tarjeta-crc-disponibilidad.md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-disponibilidad.md) |
+| Disponibilidad | Representar un horario disponible | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-disponibilidad.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-disponibilidad.md) |
 | Turno | Contener datos de la reserva | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 
 ### Relaciones UML
