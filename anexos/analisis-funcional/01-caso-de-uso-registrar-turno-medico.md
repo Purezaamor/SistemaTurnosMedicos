@@ -84,21 +84,26 @@ Registra un turno médico entre un paciente y un profesional, asegurando que no 
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
+| Usuario | Representar a un usuario del sistema con permisos para gestionar turnos | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md) |
+| Persona | Compartir datos personales comunes entre paciente, médico y secretaria | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md) |
+| Slot | Representar el horario disponible reservado por un turno | [herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md](../../herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md) |
 | Secretaria | Registrar un turno en la agenda del médico y verificar disponibilidad | [herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md) |
 | Paciente | Solicitar y confirmar la reserva del turno | [herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md) |
 | Medico | Definir disponibilidad y autorizar sobreturnos | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Turno | Mantener datos de la reserva y transicionar su estado | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Gestionar disponibilidad y agregar el turno al calendario del médico | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
 | HistorialCambio | Registrar de forma inalterable el alta del turno para auditoría | [herramientas-agile/tarjetas-crc/06-tarjeta-crc-historial.md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-historial.md) |
-| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md)
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md) |
 | PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
 
 **Relaciones UML:**
-- Herencia: `Persona` ← `Paciente`, `Medico`
 - Herencia: `Usuario` ← `Secretaria`
+- Herencia: `Persona` ← `Paciente`, `Persona` ← `Medico`, `Persona` ← `Secretaria`
 - Composición: `Agenda` o-- `Turno`
+- Asociación: `Agenda` o-- `Slot`
+- Asociación: `Turno` → `Slot`
 - Asociación: `Turno` → `Paciente`, `Turno` → `Medico`
-- Dependencia: `ServicioTurnos` ..> `Agenda`, `Turno`, `HistorialCambio`
+- Dependencia: `ServicioTurnos` ..> `Agenda`, `Turno`, `HistorialCambio`, `Slot`
 - Dependencia: `PantallaTurnos` ..> `ServicioTurnos`
 
 ---
@@ -108,41 +113,34 @@ Registra un turno médico entre un paciente y un profesional, asegurando que no 
 ```text
 INICIO Registrar Turno Médico
 
-LEER pacienteID desde UI
-LEER medicoID desde UI
-LEER fecha, hora desde UI
+// Se crean o recuperan los objetos que participan en el caso de uso
+pantalla ← PantallaTurnos
+servicio ← ServicioTurnos
 
-// Paso 1: Verificar registro de paciente y médico
-SI pacienteID NO está registrado EN EL SISTEMA
-    MOSTRAR "Paciente no registrado"
-    RETORNAR FALSO
+// La secretaria utiliza la pantalla para ingresar los datos del turno
+pantalla.ingresarDatosPaciente()
+pantalla.seleccionarProfesional()
+pantalla.seleccionarFechaHora()
+
+// El servicio obtiene los horarios disponibles del profesional
+slots ← servicio.obtenerSlotsDisponibles(medico, rango)
+
+SI slots está vacío
+    pantalla.mostrarError("Horario no disponible")
+    FIN
 FIN SI
 
-SI medicoID NO está registrado EN EL SISTEMA
-    MOSTRAR "Médico no registrado"
-    RETORNAR FALSO
-FIN SI
+// La pantalla muestra los horarios disponibles
+pantalla.mostrarDisponibilidad(slots)
 
-// Paso 2: Verificar disponibilidad en la agenda del médico
-slotsDisponibles ← ServicioTurnos.obtenerSlotsDisponibles(medicoID, fecha)
-SI slotsDisponibles está VACÍO o hora NO está disponible
-    MOSTRAR "Horario no disponible"
-    RETORNAR FALSO
-FIN SI
+// El servicio registra el nuevo turno
+turno ← servicio.registrarTurno(pacienteID, medicoID, slotID)
 
-// Paso 3: Registrar el turno
-turno ← ServicioTurnos.registrarTurno(pacienteID, medicoID, slotID)
-SI turno es NULO
-    MOSTRAR "Error al registrar el turno"
-    RETORNAR FALSO
-FIN SI
+// El servicio registra el cambio realizado
+servicio.guardarCambios(turno)
 
-// Paso 4: Confirmar la reserva
-ServicioTurnos.guardarCambios(turno)
-PantallaTurnos.mostrarConfirmacion(turno)
-
-MOSTRAR "Turno registrado exitosamente"
-RETORNAR VERDADERO
+// La pantalla informa que el turno fue registrado correctamente
+pantalla.mostrarConfirmacion(turno)
 
 FIN
 ```
@@ -150,5 +148,5 @@ FIN
 **Trazabilidad del pseudocódigo:**
 - Flujo principal (§1): sigue los pasos 1-7 detallados.
 - Diagrama de actividades (§3): respeta las decisiones de verificación de registro y disponibilidad.
-- Diagrama de secuencia (§4): cada mensaje corresponde a las interacciones definidas.
-- Tarjetas CRC (§5): los métodos invocados coinciden con las responsabilidades de cada clase.
+- Diagrama de secuencia (§4): usa los mensajes `ingresarDatosPaciente()`, `consultarDisponibilidad(...)`, `registrarTurno(...)` y `mostrarConfirmacion(turno)`.
+- Tarjetas CRC (§5): aplica los roles de `Secretaria`, `PantallaTurnos`, `ServicioTurnos`, `Agenda`, `Turno` y `HistorialCambio`.

@@ -17,6 +17,8 @@
 | 6 | `Agenda` | Diagrama + RF2, RF3 |
 | 7 | `Disponibilidad` | Diagrama + RF3 |
 | 8 | `HistorialCambio` | Implícita — requerida por RF5 / RNF3 (ausente en el boceto) |
+| 9 | `Usuario` | Diseño del rol de acceso; base para Secretaria |
+| 10 | `Slot` | Bloque horario reservable en la agenda |
 
 ---
 
@@ -192,6 +194,33 @@
 | **Colaboraciones** | `ServicioTurnos`, `Turno`, `Paciente`, `Medico`, sistema de mensajería / mailer |
 | **Propiedad** | Servicio de infraestructura para la capa de aplicación; debe ser idempotente y registrar intentos de reenvío en caso de fallo |
 
+---
+
+### 12. `Usuario`
+
+| Campo | Contenido |
+|-------|-----------|
+| **Nombre** | `Usuario` |
+| **Superclase** | — |
+| **Subclases** | `Secretaria` |
+| **Pensamiento del objeto** | *"Soy la representación de un usuario autenticado del sistema. Conozco mi identidad de acceso y mi rol, y permito que la secretaria opere en la gestión de turnos."* |
+| **Responsabilidades** | — Mantener `idUsuario`, `rol`, `credenciales` — Ser la base de un actor autorizado para modificar turnos y consultar agendas |
+| **Colaboraciones** | `Secretaria`, `Agenda`, `HistorialCambio` |
+| **Propiedad** | Clase base para la gestión de usuarios con permisos de operación en el sistema |
+
+---
+
+### 13. `Slot`
+
+| Campo | Contenido |
+|-------|-----------|
+| **Nombre** | `Slot` |
+| **Superclase** | — |
+| **Subclases** | — |
+| **Pensamiento del objeto** | *"Soy un bloque horario de la agenda. Conozco mi fecha, mi hora y si estoy disponible o reservado para un turno médico."* |
+| **Responsabilidades** | — Representar un intervalo de tiempo reservable — Informar si está libre o si está asociado a un turno |
+| **Colaboraciones** | `Agenda`, `Turno` |
+| **Propiedad** | Elemento de disponibilidad en la agenda que permite concretar la reserva de un turno |
 
 ## Resumen de correcciones de diseño
 
