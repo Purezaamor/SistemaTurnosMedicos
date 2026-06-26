@@ -99,6 +99,9 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
+| Usuario | Representar a un usuario del sistema con permisos para gestionar turnos | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md) |
+| Persona | Compartir datos personales comunes entre paciente, médico y secretaria | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md) |
+| Slot | Representar el horario disponible reservado por un turno | [herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md](../../herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md) |
 | Secretaria | Reprogramar turnos modificando la agenda existente | [herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md) |
 | Paciente | Solicitar reprogramación y confirmación de cambio | [herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md) |
 | Medico | Autorizar sobreturnos y proporcionar disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
@@ -125,51 +128,46 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 ## 6. Pseudocódigo
 
 ```text
-INICIO: Reprogramar Turno Existente
+INICIO Reprogramar Turno Existente
 
-# Contexto de dominio: la `Secretaria` gestiona, vía `PantallaTurnos`, la solicitud de cambio de fecha/hora
-# Objetivo: presentar alternativas válidas y, si se confirma, actualizar el `Turno` y la `Agenda` de forma consistente.
+// La secretaria busca el turno que desea reprogramar desde la pantalla
+PantallaTurnos.buscarTurno(numeroTurno)
 
-# --- Flujo principal (visión de alto nivel; los nombres de métodos reflejan el diagrama de clases) ---
-PantallaTurnos: solicitarIdentificadores()              # pide `turnoID` y `rangoDeseado` al usuario
+// Se recupera el turno solicitado
+turno ← ServicioTurnos.obtenerTurnoExistente(turnoID)
 
-# 1) Recuperar el turno y sus datos de dominio
-turnoActual ← ServicioTurnos.obtenerTurnoExistente(turnoID)
-SI turnoActual es NULO
-    PantallaTurnos.mostrarError("Turno no encontrado")    # dominio: no existe la cita solicitada
+SI turno es NULO
     FIN
 FIN SI
 
-medico ← turnoActual.medico
-slotActual ← turnoActual.slot
+// Se muestran los datos del turno actual para que puedan ser verificados
+PantallaTurnos.mostrarTurnoActual(detalles)
 
-# 2) Consultar alternativas válidas según reglas de `Agenda` (no se inventan reglas aquí: la `Agenda` decide)
-slotsDisponibles ← ServicioTurnos.obtenerSlotsDisponibles(medico.id, rangoDeseado)
-SI slotsDisponibles está VACÍO
-    PantallaTurnos.mostrarInfo("No hay horarios disponibles en el rango solicitado")
+// La secretaria solicita consultar horarios alternativos
+PantallaTurnos.solicitarAlternativas()
+
+// Se obtienen los horarios disponibles para el profesional
+slots ← ServicioTurnos.obtenerSlotsDisponibles(medicoID, rango)
+
+SI slots está vacío
     FIN
 FIN SI
 
-# 3) Presentar alternativas al usuario y capturar su selección
-PantallaTurnos.mostrarOpcionesDisponibles(slotsDisponibles)
-nuevoSlotID ← PantallaTurnos.capturarSeleccionUsuario()
-SI nuevoSlotID NO está EN slotsDisponibles
-    PantallaTurnos.mostrarError("Selección inválida: slot no disponible")
-    FIN
-FIN SI
+// Se muestran las alternativas disponibles para seleccionar un nuevo horario
+PantallaTurnos.mostrarAlternativas(slots)
 
-# 4) Solicitar la reprogramación al servicio de dominio (operación atómica desde el punto de vista del caso de uso)
-respuesta ← ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID)
-SI respuesta.indicaError
-    PantallaTurnos.mostrarError("No se pudo reprogramar el turno: " + respuesta.mensaje)
-    FIN
-FIN SI
+// Se confirma la reprogramación utilizando el horario seleccionado
+PantallaTurnos.confirmarReprogramacion(turnoID, nuevoSlotID)
 
-# 5) Confirmación y efectos visibles al actor
-PantallaTurnos.mostrarConfirmacion("Turno reprogramado", datos=turnoActual.resumen())
-PantallaTurnos.notificarPacienteYMedico(turnoActual)
+// El servicio actualiza el turno con el nuevo horario
+nuevoTurno ← ServicioTurnos.reprogramarTurno(turnoID, nuevoSlotID)
+
+// Se informa que la reprogramación fue realizada correctamente
+PantallaTurnos.reprogramacionExitosa(nuevoTurno)
 
 FIN
+```
+
 
 
 # --- Implementación de dominio (qué hace `ServicioTurnos.reprogramarTurno`) ---

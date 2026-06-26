@@ -1,16 +1,15 @@
 # Tarjeta CRC — Notificacion
 
-| Campo | Contenido |
-|-------|-----------|
-| **Nombre** | Notificacion |
-| **Superclase** | — |
-| **Subclases** | — |
-| **Pensamiento del objeto** | *"Encargado de generar y enviar mensajes de dominio (confirmaciones, cancelaciones, reprogramaciones) hacia los actores afectados (Paciente, Médico, Secretaria) usando los canales disponibles (email, SMS, en-app)."* |
-| **Responsabilidades** | - `generarMensajeEvento(turno, tipoEvento)`  
-- `enviarNotificacion(receptor, mensaje, canal)`  
-- `registrarEnvio(turno, receptor, canal, resultado)` |
-| **Colaboraciones** | `ServicioTurnos`, `Turno`, `Paciente`, `Medico`, sistema de mensajería / mailer |
-| **Propiedad** | Servicio de infraestructura para la capa de aplicación; debe ser idempotente y registrar intentos de reenvío en caso de fallo |
+|  |  |  |  |
+|---|---|---|---|
+| **Nombre de la Clase:** | Notificacion | | |
+| **Superclase:** | — | | |
+| **Subclase:** | — | | |
+| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
+| Generar mensajes de evento para turnos | ServicioTurnos, Turno, Paciente, Medico | Conozco cómo generar y enviar mensajes de dominio (confirmaciones, cancelaciones, reprogramaciones) hacia los actores afectados usando los canales disponibles (email, SMS, en-app). | Servicio de infraestructura para la capa de aplicación; idempotente y con registro de reenvío en caso de fallo |
+| Enviar notificación a un receptor | ServicioTurnos, Turno, Paciente, Medico, sistema de mensajería / mailer | | |
+| Registrar intentos de envío | ServicioTurnos, Turno, Paciente, Medico, sistema de mensajería / mailer | | |
+| Separar formato de mensaje de entrega física | sistema de mensajería / mailer | | |
 
 **Notas:** Debe separarse la lógica de formato del mensaje (plantillas) de la entrega física (canales). Las notificaciones deben ser auditables y respetar la política de reintentos.
 
