@@ -134,7 +134,7 @@ FIN SI
 pantalla.mostrarDisponibilidad(slots)
 
 // El servicio registra el nuevo turno
-turno ← servicio.registrarTurno(pacienteID, medicoID, slotID)
+turno ← servicio.registrarTurno(paciente, medico, slot)
 
 // El servicio registra el cambio realizado
 servicio.guardarCambios(turno)
