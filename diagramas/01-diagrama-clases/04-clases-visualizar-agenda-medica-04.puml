@@ -8,11 +8,7 @@ class Persona {
 class Medico {
   - especialidad: String
   - matricula: String
-<<<<<<< HEAD
   + obtenerTurnos(fecha: Date): List<Turno>
-=======
-  + getAgenda(fecha: Date): List<Turno>
->>>>>>> develop
   + verDisponibilidad(): void
 }
 
@@ -48,7 +44,7 @@ class Turno {
 Medico --|> Persona
 Paciente --|> Persona
 Medico "1" --> "1" Agenda
-Agenda "1" *-- "0..*" Turno
+Agenda "1" *-- "*" Turno : contiene > R5
 PantallaAgenda --> ControladorAgenda
 ControladorAgenda --> Agenda
 @enduml
