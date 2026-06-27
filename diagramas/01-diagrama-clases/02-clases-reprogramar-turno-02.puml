@@ -7,12 +7,6 @@ class Persona {
     + obtenerIdentificacion(): String
 }
 
-class Usuario {
-    - email: String
-    - rol: String
-    + obtenerRol(): String
-}
-
 class Paciente {
     - dni: String
     - obraSocial: String
