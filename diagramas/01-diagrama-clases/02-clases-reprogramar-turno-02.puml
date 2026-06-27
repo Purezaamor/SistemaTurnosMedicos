@@ -71,6 +71,9 @@ class Slot {
 }
 
 class ServicioTurnos {
+    - agenda: Agenda
+    - historialCambio: HistorialCambio
+    - notificacion: Notificacion
     + obtenerTurnoExistente(turno: String): Turno
     + obtenerSlotsDisponibles(medico: String, rango: String): List<Slot>
     + reprogramarTurno(turno: String, nuevoSlot: String): Turno
@@ -78,6 +81,10 @@ class ServicioTurnos {
 }
 
 class PantallaTurnos {
+    - turnoSeleccionado: Turno
+    - medicoSeleccionado: Medico
+    - nuevoSlotSeleccionado: Slot
+    - slotsDisponibles: List<Slot>
     + buscarTurno(numeroTurno: String): void
     + mostrarTurnoActual(detalles: String): void
     + solicitarAlternativas(): void
@@ -87,6 +94,9 @@ class PantallaTurnos {
 }
 
 class Notificacion {
+    - destinatarioEmail: String
+    - mensaje: String
+    - tipo: String
     + enviarReprogramacion(turno: Turno): void
 }
 

@@ -68,6 +68,9 @@ class Notificacion {
 }
 
 class ServicioTurnos {
+  - agenda: Agenda
+  - historialCambio: HistorialCambio
+  - notificacion: Notificacion
   + obtenerTurnoExistente(turno: String): Turno
   + validarEstadoParaCancelar(turno: String): Boolean
   + cancelarTurno(turno: String, motivoCancelacion: String): Turno
@@ -75,6 +78,10 @@ class ServicioTurnos {
 }
 
 class PantallaTurnos {
+  - turnoSeleccionado: Turno
+  - medicoSeleccionado: Medico
+  - nuevoSlotSeleccionado: Slot
+  - slotsDisponibles: List<Slot>
   + buscarTurno(numeroTurno: String): void
   + procesarCancelacion(turno: String): void
   + cancelacionExitosa(confirmacion: String): void
