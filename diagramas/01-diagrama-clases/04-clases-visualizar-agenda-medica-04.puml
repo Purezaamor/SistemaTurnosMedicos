@@ -1,18 +1,17 @@
-@startuml
-class Persona {
-  - nombre: String
-  - dni: String
-  - telefono: String
+@startuml 04-clases-visualizar-agenda-medica-04
+title Diagrama de Clases: Visualizar Agenda Médica - Sistema de Turnos Médicos
+abstract class Persona {
+    - nombre: String
+    - dni: String
+    - telefono: String
+    + obtenerDatosPersonales(): String
+    + actualizarDatosContacto(telefono: String): void
 }
 
 class Medico {
   - especialidad: String
   - matricula: String
-<<<<<<< HEAD
   + obtenerTurnos(fecha: Date): List<Turno>
-=======
-  + getAgenda(fecha: Date): List<Turno>
->>>>>>> develop
   + verDisponibilidad(): void
 }
 
@@ -22,13 +21,17 @@ class Paciente {
 }
 
 class PantallaAgenda {
-  + mostrarAgenda(turnos: List<Turno>): void
-  + seleccionarFecha(fecha: Date): void
+    - fechaSeleccionada: Date
+    - turnosMostrados: List<Turno>
+    + mostrarAgenda(turnos: List<Turno>): void
+    + seleccionarFecha(fecha: Date): void
 }
 
 class ControladorAgenda {
-  + obtenerTurnos(fecha: Date): List<Turno>
-  + filtrarPorEspecialidad(especialidad: String): List<Turno>
+    - agendaMedica: Agenda
+    - especialidadFiltro: String
+    + obtenerTurnos(fecha: Date): List<Turno>
+    + filtrarPorEspecialidad(especialidad: String): List<Turno>
 }
 
 class Agenda {
@@ -48,7 +51,7 @@ class Turno {
 Medico --|> Persona
 Paciente --|> Persona
 Medico "1" --> "1" Agenda
-Agenda "1" *-- "0..*" Turno
+Agenda "1" *-- "*" Turno : contiene > R5
 PantallaAgenda --> ControladorAgenda
 ControladorAgenda --> Agenda
 @enduml

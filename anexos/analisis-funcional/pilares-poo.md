@@ -18,8 +18,7 @@ class Persona {
 Los atributos `nombre`, `dni` y `telefono` son privados. No se puede acceder a ellos directamente desde fuera de la clase. Esto protege los datos y permite controlar cómo se modifican.
 
 **Captura del diagrama:**
-![Encapsulamiento - Ejemplo 1](../diagramas/01-diagrama-clases/capturas-pilares/poo-encapsulamiento-ejemplo-1.png)
-
+![Encapsulamiento - Ejemplo 1](../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-1.png)
 ### Ejemplo 2: Clase Turno
 
 class Turno {
@@ -38,7 +37,7 @@ class Turno {
 El atributo `estado` es privado y solo se modifica a través de los métodos públicos `cancelar()` y `reprogramar()`. Esto asegura que el estado del turno solo cambie de forma controlada.
 
 **Captura del diagrama:**
-![Encapsulamiento - Ejemplo 2](../diagramas/01-diagrama-clases/capturas-pilares/poo-encapsulamiento-ejemplo-2.png)
+![Encapsulamiento - Ejemplo 2](../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-2.png)
 
 ---
 
@@ -55,7 +54,7 @@ Persona --|> Secretaria
 `Paciente`, `Medico` y `Secretaria` heredan de `Persona`. Todas comparten atributos como `nombre`, `dni` y `telefono`. Esto evita duplicar código y mantiene la consistencia.
 
 **Captura del diagrama:**
-![Herencia - Ejemplo 1](../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-1.png)
+![Herencia - Ejemplo 1](../../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-1.png)
 
 ### Ejemplo 2: Agregar especialidad en Medico
 
@@ -69,7 +68,7 @@ class Medico {
 `Medico` hereda de `Persona` y agrega atributos específicos como `especialidad` y `matricula`. Esto es una extensión natural de la superclase.
 
 **Captura del diagrama:**
-![Herencia - Ejemplo 2](../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-2.png)
+![Herencia - Ejemplo 2](../../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-2.png)
 
 ---
 
@@ -91,7 +90,7 @@ interface INotificador {
 Cualquier clase que implemente `INotificador` (como `Notificador`) debe proveer estas operaciones. El sistema puede usar diferentes implementaciones sin cambiar el código que las invoca.
 
 **Captura del diagrama:**
-![Polimorfismo - Ejemplo 1](../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-1.png)
+![Polimorfismo - Ejemplo 1](../../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-1.png)
 
 ### Ejemplo 2: Método cancelar() en Turno
 
@@ -103,7 +102,7 @@ class Turno {
 `Turno` tiene su propia implementación de `cancelar()`. Si en el futuro existiera `Sobreturno`, podría tener su propia versión de `cancelar()` con comportamiento diferente.
 
 **Captura del diagrama:**
-![Polimorfismo - Ejemplo 2](../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-2.png)
+![Polimorfismo - Ejemplo 2](../../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-2.png)
 
 ---
 
@@ -119,7 +118,7 @@ interface IRepositorioTurnos
 Las interfaces `INotificador` y `IRepositorioTurnos` definen qué hace cada componente, no cómo lo hace. Esto permite cambiar la implementación sin afectar al resto del sistema.
 
 **Captura del diagrama:**
-![Abstracción - Ejemplo 1](../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-1.png)
+![Abstracción - Ejemplo 1](../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-1.png)
 
 ### Ejemplo 2: Clase Agenda
 
@@ -137,4 +136,4 @@ class Agenda {
 `Agenda` abstrae la lógica de gestión de turnos y disponibilidad. El sistema no necesita saber cómo se almacenan los datos internamente, solo qué operaciones puede realizar.
 
 **Captura del diagrama:**
-![Abstracción - Ejemplo 2](../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-2.png)
+![Abstracción - Ejemplo 2](../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-2.png)

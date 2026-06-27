@@ -8,7 +8,7 @@ class Persona {
 }
 
 class Usuario {
-  - id: String
+  - nombre: String
   - rol: String
   + obtenerRol(): String
 }
@@ -22,9 +22,9 @@ class Paciente {
 
 class Secretaria {
   - turnoAsignado: String
-  + registrarTurno(pacienteID: String, medicoID: String, slotID: String): Turno
-  + verificarDisponibilidad(medicoID: String, fecha: Date, hora: String): Boolean
-  + confirmarReserva(turnoID: String): void
+  + registrarTurno(paciente: String, medico: String, slot: String): Turno
+  + verificarDisponibilidad(medico: String, fecha: Date, hora: String): Boolean
+  + confirmarReserva(turno: String): void
 }
 
 class Medico {
@@ -39,15 +39,15 @@ class Agenda {
   - vistaActual: String
   - listaTurnos: List<Turno>
   - medico: Medico
-  + recuperarTurno(turnoID: String): Turno
-  + consultarDisponibilidad(medicoID: String, rango: String): List<Slot>
+  + recuperarTurno(turno: String): Turno
+  + consultarDisponibilidad(medico: String, rango: String): List<Slot>
   + validarDisponibilidad(turno: Turno): Boolean
   + agregarTurno(turno: Turno): Boolean
-  + liberarSlot(medicoID: String, slotID: String): Boolean
+  + liberarSlot(medico: String, slot: String): Boolean
 }
 
 class Turno {
-  - turnoID: String
+  - turno: String
   - fecha: Date
   - hora: String
   - estado: String
@@ -60,7 +60,7 @@ class Turno {
 }
 
 class Slot {
-  - slotID: String
+  - slot: String
   - fecha: Date
   - hora: String
   - disponible: Boolean
@@ -69,7 +69,7 @@ class Slot {
 }
 
 class HistorialCambio {
-  - registroID: String
+  - registro: String
   - fechaHora: Date
   - usuario: String
   - accion: String
@@ -78,14 +78,21 @@ class HistorialCambio {
 }
 
 class ServicioTurnos {
-  + obtenerTurnoExistente(turnoID: String): Turno
-  + obtenerSlotsDisponibles(medicoID: String, rango: String): List<Slot>
-  + registrarTurno(pacienteID: String, medicoID: String, slotID: String): Turno
-  + validarEstadoParaRegistrar(turnoID: String): Boolean
+  - agenda: Agenda
+  - historialCambio: HistorialCambio
+  - notificacion: Notificacion
+  + obtenerTurnoExistente(turno: String): Turno
+  + obtenerSlotsDisponibles(medico: String, rango: String): List<Slot>
+  + registrarTurno(paciente: String, medico: String, slot: String): Turno
+  + validarEstadoParaRegistrar(turno: String): Boolean
   + guardarCambios(turno: Turno): void
 }
 
 class PantallaTurnos {
+  - pacienteSeleccionado: Paciente
+  - medicoSeleccionado: Medico
+  - slotSeleccionado: Slot
+  - slotsDisponibles: List<Slot>
   + ingresarDatosPaciente(): void
   + seleccionarProfesional(): void
   + seleccionarFechaHora(): void

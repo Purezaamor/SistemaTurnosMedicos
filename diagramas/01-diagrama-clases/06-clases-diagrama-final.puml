@@ -1,146 +1,274 @@
-@startuml
-' ============================================
-' 1. CLASES BASE (HERENCIA)
-' ============================================
-class Persona {
+@startuml 06-clases-diagrama-final
+title Diagrama de Clases Final - Sistema de Turnos Médicos
+skinparam classAttributeIconSize 0
+
+' =====================================================
+' CAPA DE DOMINIO - ENTIDADES BASE
+' =====================================================
+
+abstract class Persona {
   - nombre: String
-  - dni: String
+  - apellido: String
   - telefono: String
+  - email: String
+  + obtenerIdentificacion(): String
+}
+
+abstract class Usuario {
+  - idUsuario: String
+  - rol: String
+  + obtenerRol(): String
 }
 
 class Paciente {
+  - dni: String
   - obraSocial: String
-  + getHistorial(): void
+  + solicitarTurno(): Turno
+  + cancelarTurno(turno: Turno): void
+  + solicitarReprogramacion(turno: Turno, nuevoSlot: Slot): void
+  + confirmarReserva(turno: Turno): void
 }
 
 class Medico {
   - especialidad: String
   - matricula: String
-  + obtenerTurnos(fecha: Date): List<Turno>
-  + getDisponibilidad(fecha: Date): List<Time>
-  + setDisponibilidad(fecha: Date, horas: List<Time>): void
-  + verDisponibilidad(): void
+  + consultarAgenda(fecha: Date): List<Turno>
+  + definirDisponibilidad(fechaInicio: Date, fechaFin: Date, horas: List<Time>): void
+  + autorizarSobreturno(turno: Turno): Boolean
+  + registrarAtencion(turno: Turno, diagnostico: String): HistorialClinico
 }
 
 class Secretaria {
   - legajo: String
-  + registrarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
-  + modificarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
-  + eliminarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
-  + registrarTurno(paciente: Paciente, fecha: Date, tipo: String): Turno
+  + registrarTurno(paciente: Paciente, medico: Medico, slot: Slot): Turno
+  + buscarTurno(numeroTurno: String): Turno
+  + procesarCancelacion(turno: Turno, motivo: String): void
+  + confirmarReprogramacion(turno: Turno, nuevoSlot: Slot): void
+  + registrarDisponibilidad(medico: Medico, disponibilidad: Disponibilidad): void
+  + eliminarDisponibilidad(medico: Medico, disponibilidad: Disponibilidad): void
 }
 
-' ============================================
-' 2. INTERFACES (ABSTRACCIÓN)
-' ============================================
-interface INotificador {
-  + enviarConfirmacion(paciente: Paciente, mensaje: String): void
-  + enviarCancelacion(paciente: Paciente, mensaje: String): void
-  + enviarReprogramacion(paciente: Paciente, mensaje: String): void
-}
+' =====================================================
+' CAPA DE DOMINIO - ENTIDADES PRINCIPALES
+' =====================================================
 
-interface IRepositorioTurnos {
-  + guardar(turno: Turno): void
-  + buscar(id: String): Turno
-  + cancelar(id: String): void
-}
-
-' ============================================
-' 3. CLASES DE DOMINIO
-' ============================================
 class Agenda {
-  - turnos: List<Turno>
-  - disponibilidad: List<Disponibilidad>
+  - fechaActual: Date
+  - vistaActual: String
+  - listaTurnos: List<Turno>
+  - medico: Medico
+  + recuperarTurno(idTurno: String): Turno
   + consultarTurnos(fecha: Date): List<Turno>
-  + verificarDisponibilidad(fecha: Date, hora: Time): Boolean
-  + agregarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
-  + eliminarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
-  + consultarDisponibilidad(medico: Medico, fecha: Date): List<Time>
-  + obtenerTurnos(fecha: Date): List<Turno>
+  + consultarDisponibilidad(medico: Medico, rango: String): List<Slot>
+  + validarDisponibilidad(turno: Turno): Boolean
+  + agregarTurno(turno: Turno): Boolean
+  + liberarSlot(medico: String, slot: String): Boolean
+  + removerTurnoDeAgenda(turno: Turno): Boolean
+  + agregarDisponibilidad(disponibilidad: Disponibilidad): void
+  + cargarTurnosConfirmados(): List<Turno>
 }
 
 class Turno {
-  - paciente: Paciente
   - fecha: Date
   - hora: Time
-  - estado: String
-  + getDetalle(): String
-  + cancelar(): void
-  + reprogramar(nuevaFecha: Date): void
+  - estado: EstadoTurno
+  - tipoConsulta: String
+  - esSobreturno: Boolean
+  - horaLlegada: Time
+  - motivoCancelacion: String
+  + reservar(): void
+  + cambiarEstado(estado: EstadoTurno): void
+  + actualizarDatos(nuevoSlot: Slot): void
+  + cancelar(motivo: String): void
+  + reprogramar(nuevoSlot: Slot): void
+  + confirmarCheckIn(hora: Time): void
+}
+
+class Slot {
+  - fecha: Date
+  - hora: Time
+  - estado: Boolean
+  + asignar(): void
+  + estaDisponible(): Boolean
 }
 
 class Disponibilidad {
-  - fecha: Date
-  - hora: Time
-  - disponible: Boolean
+  - fechaInicio: Date
+  - fechaFin: Date
+  - diasAtencion: List<String>
+  - horaInicio: Time
+  - horaFin: Time
+  + definirRangoAtencion(fechaInicio: Date, fechaFin: Date, dias: List<String>, horaInicio: Time, horaFin: Time): void
+  + generarSlots(): List<Slot>
+  + validarFechaHora(fecha: Date, hora: Time): Boolean
 }
 
-class Notificador {
-  + enviarConfirmacion(paciente: Paciente, mensaje: String): void
-  + enviarCancelacion(paciente: Paciente, mensaje: String): void
-  + enviarReprogramacion(paciente: Paciente, mensaje: String): void
+enum EstadoTurno {
+  CREADO
+  CONFIRMADO
+  REPROGRAMADO
+  CANCELADO
+  ATENDIDO
+  AUSENTE
 }
 
-class RepositorioTurnos {
-  + guardar(turno: Turno): void
-  + buscar(id: String): Turno
-  + cancelar(id: String): void
+' =====================================================
+' CAPA DE DOMINIO - HISTORIAL Y REGISTRO
+' =====================================================
+
+class HistorialClinico {
+  - registro: String
+  - fechaHora: Date
+  - diagnostico: String
+  - detalles: String
+  + registrarAtencion(turno: Turno, diagnostico: String): void
+  + obtenerDetalles(): String
 }
 
-' ============================================
-' 4. CONTROLADORES Y PANTALLAS
-' ============================================
-class PantallaTurnos {
-  + mostrarConfirmacion(): void
-  + mostrarError(): void
-  + mostrarHorarios(horarios: List<Time>): void
+class HistorialCambio {
+  - registro: String
+  - fechaHora: Date
+  - accion: String
+  - detalles: String
+  + registrarCambio(turno: Turno, accion: String): void
+  + obtenerRegistro(): String
 }
 
-class PantallaAgenda {
-  + mostrarAgenda(turnos: List<Turno>): void
-  + seleccionarFecha(fecha: Date): void
+' =====================================================
+' CAPA DE APLICACIÓN - SERVICIOS
+' =====================================================
+
+class ServicioTurnos {
+  - agenda: Agenda
+  - repositorio: RepositorioTurnos
+  - historialCambio: HistorialCambio
+  + obtenerTurnoExistente(idTurno: String): Turno
+  + obtenerSlotsDisponibles(medico: Medico, rango: String): List<Slot>
+  + registrarTurno(paciente: Paciente, medico: Medico, slot: Slot): Turno
+  + reprogramarTurno(turno: Turno, nuevoSlot: Slot): Turno
+  + cancelarTurno(turno: Turno, motivo: String): void
+  + validarEstadoParaRegistrar(turno: Turno): Boolean
+  + validarEstadoParaReprogramar(turno: Turno): Boolean
+  + validarEstadoParaCancelar(turno: Turno): Boolean
 }
 
 class ControladorTurnos {
-  + crearTurno(paciente: Paciente, fecha: Date, tipo: String): Turno
-  + cancelarTurno(id: String): void
-  + reprogramarTurno(id: String, nuevaFecha: Date): void
+  - servicioTurnos: ServicioTurnos
+  - repositorio: RepositorioTurnos
+  + registrarPaciente(paciente: Paciente): void
+  + solicitarTurno(paciente: Paciente, medico: Medico, slot: Slot): Turno
+  + reprogramarTurno(turno: Turno, nuevoSlot: Slot): void
+  + cancelarTurno(turno: Turno, motivo: String): void
+  + obtenerAgendaMedico(medico: Medico, rango: String): List<Turno>
 }
 
 class ControladorAgenda {
+  - agendaMedica: Agenda
+  - especialidadFiltro: String
   + obtenerTurnos(fecha: Date): List<Turno>
   + filtrarPorEspecialidad(especialidad: String): List<Turno>
-  + administrarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+  + obtenerTurnosDelMedico(medico: Medico, fecha: Date): List<Turno>
 }
 
-' ============================================
-' 5. RELACIONES DE HERENCIA
-' ============================================
-Paciente --|> Persona
-Medico --|> Persona
-Secretaria --|> Persona
+class RepositorioTurnos {
+  - turnos: List<Turno>
+  + guardar(turno: Turno): void
+  + buscar(idTurno: String): Turno
+  + cancelar(idTurno: String): void
+  + guardarHistorial(historial: HistorialClinico): void
+  + obtenerTodos(): List<Turno>
+}
 
-' ============================================
-' 6. RELACIONES DE ASOCIACIÓN, COMPOSICIÓN Y AGREGACIÓN
-' ============================================
-Medico "1" --> "1" Agenda
-Agenda "1" *-- "0..*" Turno
-Agenda "1" o-- "0..*" Disponibilidad
-Secretaria --> Medico
-Secretaria --> Paciente
-Secretaria --> Turno
-Turno --> Paciente
+class Notificacion {
+  - destinatarioEmail: String
+  - mensaje: String
+  - tipo: String
+  + enviarConfirmacion(paciente: Paciente, mensaje: String): Boolean
+  + enviarReprogramacion(paciente: Paciente, mensaje: String): Boolean
+  + enviarCancelacion(paciente: Paciente, mensaje: String): Boolean
+  + enviarNotificacionMedico(medico: Medico, mensaje: String): Boolean
+}
 
-' ============================================
-' 7. RELACIONES DE DEPENDENCIA E INTERFACES
-' ============================================
-Notificador ..|> INotificador
-RepositorioTurnos ..|> IRepositorioTurnos
-ControladorTurnos --> Notificador
-ControladorTurnos --> RepositorioTurnos
-PantallaTurnos --> ControladorTurnos
-PantallaAgenda --> ControladorAgenda
-ControladorTurnos --> Turno
-ControladorTurnos --> Agenda
-ControladorAgenda --> Agenda
+' =====================================================
+' CAPA DE PRESENTACIÓN
+' =====================================================
+
+class PantallaTurnos {
+  - pacienteSeleccionado: Paciente
+  - medicoSeleccionado: Medico
+  - slotSeleccionado: Slot
+  - slotsDisponibles: List<Slot>
+  + ingresarDatosPaciente(): void
+  + seleccionarProfesional(): void
+  + seleccionarFechaHora(): void
+  + mostrarDisponibilidad(slots: List<Slot>): void
+  + confirmarRegistro(): void
+  + mostrarConfirmacion(turno: Turno): void
+  + buscarTurno(numeroTurno: String): void
+  + procesarCancelacion(turno: Turno): void
+  + mostrarAlternativas(slots: List<Slot>): void
+  + confirmarReprogramacion(turno: Turno, nuevoSlot: Slot): void
+}
+
+class PantallaAgenda {
+  - fechaSeleccionada: Date
+  + mostrarAgendaDiaria(turnos: List<Turno>): void
+  + mostrarAgendaSemanal(turnos: List<Turno>): void
+  + seleccionarFecha(fecha: Date): void
+}
+
+' =====================================================
+' RELACIONES - HERENCIA
+' =====================================================
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Usuario <|-- Secretaria
+
+' =====================================================
+' RELACIONES - COMPOSICIÓN Y AGREGACIÓN
+' =====================================================
+
+Medico "1" --> "1" Agenda : gestiona
+Agenda "1" *-- "*" Turno : contiene
+Agenda "1" o-- "*" Disponibilidad : mantiene
+Turno "*" --> "1" Paciente : pertenece_a
+Turno "*" --> "1" Medico : asignado_a
+Turno "*" --> "1" Slot : ocupa
+Turno "1" --> "1" HistorialClinico : genera
+Slot "0..1" --> "*" Disponibilidad : generado_por
+
+' =====================================================
+' RELACIONES - DEPENDENCIAS (APLICACIÓN)
+' =====================================================
+
+ServicioTurnos ..> Agenda : utiliza
+ServicioTurnos ..> RepositorioTurnos : utiliza
+ServicioTurnos ..> HistorialCambio : registra
+ServicioTurnos ..> Notificacion : notifica
+
+ControladorTurnos ..> ServicioTurnos : delega
+ControladorTurnos ..> RepositorioTurnos : utiliza
+ControladorAgenda ..> Agenda : consulta
+
+PantallaTurnos ..> ServicioTurnos : invoca
+PantallaTurnos ..> Turno : visualiza
+PantallaAgenda ..> ControladorAgenda : consulta
+PantallaAgenda ..> Turno : visualiza
+
+' =====================================================
+' RELACIONES - ACTORES
+' =====================================================
+
+Secretaria --> PantallaTurnos : utiliza
+Secretaria --> Agenda : gestiona
+Secretaria --> Turno : administra
+Secretaria --> Notificacion : coordina
+
+Notificacion --> Paciente : notifica_a
+Notificacion --> Medico : notifica_a
+
+HistorialCambio --> Usuario : registra_cambio_de
+HistorialClinico --> Usuario : registra_usuario
+
 @enduml

@@ -100,14 +100,17 @@ Anula una reserva de turno liberando el espacio en la agenda médica.
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
+| Usuario | Representar a un usuario del sistema con permisos para gestionar turnos | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md) |
+| Persona | Compartir datos personales comunes entre paciente, médico y secretaria | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md) |
+| Slot | Representar el horario disponible reservado por un turno | [herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md](../../herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md) |
 | Paciente | Cancelar turno y recibir confirmación | [herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md) |
 | Secretaria | Cancelar turnos y gestionar confirmaciones | [herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md) |
 | Medico | Recibir notificación de cancelación | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Turno | Cambiar estado a CANCELADO y permitir cancelación | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Validar cancelabilidad y liberar slot ocupado | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| Notificacion | Generar y enviar notificaciones de cancelación | Sin tarjeta CRC — Clase de entidad derivada del diagrama de secuencia |
-| ServicioTurnos | Orquestar la lógica de negocio de cancelación (controlador) | Sin tarjeta CRC — Clase de control derivada del diagrama de secuencia |
-| PantallaTurnos | Capturar eventos de usuario y presentar confirmaciones (interfaz UI) | Sin tarjeta CRC — Clase de interfaz derivada del diagrama de secuencia |
+| Notificacion | Generar y enviar notificaciones de cancelación | [herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md](../../herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md) |
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md)
+| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
 
 **Relaciones UML:**
 
@@ -130,66 +133,53 @@ Anula una reserva de turno liberando el espacio en la agenda médica.
 
 ## 6. Pseudocódigo
 
-```text
+```
 INICIO Cancelar Turno
 
-// Contexto: El Paciente o Secretaria solicita cancelar un turno existente.
-// Se valida que el turno sea cancelable, se libera el horario y se notifica a ambas partes.
+// La secretaria inicia el proceso de cancelación de un turno.
+secretaria ← nueva Secretaria
 
-LEER numeroTurno desde UI
+// Se crean los objetos que participan en el caso de uso.
+pantalla ← nueva PantallaTurnos
+servicio ← nuevo ServicioTurnos
+agenda ← nueva Agenda
+notificacion ← nueva Notificacion
 
-// Paso 1: Búsqueda y validación del turno existente
-turno ← ServicioTurnos.obtenerTurnoExistente(numeroTurno)
-SI turno es NULO
-    MOSTRAR "Turno no encontrado"
-    RETORNAR FALSO
+// La secretaria busca el turno que se desea cancelar.
+pantalla.buscarTurno(numeroTurno)
+turno ← servicio.obtenerTurnoExistente(numeroTurno)
+
+SI turno ES NULO ENTONCES
+    // El sistema no encuentra el turno solicitado.
+    pantalla.mostrarError("Turno no encontrado")
+    FIN
 FIN SI
 
-// Paso 2: Validar que el turno pueda ser cancelado
-esCancelable ← ServicioTurnos.validarEstadoParaCancelar(numeroTurno)
-SI NO esCancelable
-    MOSTRAR "Este turno no puede ser cancelado en su estado actual"
-    RETORNAR FALSO
+// Se valida que el turno esté en un estado que permita su anulación.
+esValido ← servicio.validarEstadoParaCancelar(turno)
+
+SI esValido ES FALSO ENTONCES
+    // El turno no cumple las condiciones para cancelar su reserva.
+    pantalla.mostrarError("El turno no puede cancelarse")
+    FIN
 FIN SI
 
-// Paso 3: Solicitar confirmación de cancelación
-MOSTRAR "¿Confirma la cancelación del turno?" + detalles(turno)
-confirmacion ← LEER respuesta del usuario
+// La secretaria confirma la cancelación de la reserva.
+secretaria.confirmarCancelacion(turno)
 
-SI confirmacion = "SI"
-    // Paso 4: Cambiar estado del turno a CANCELADO
-    turno.cambiarEstado("CANCELADO")
-    turno.actualizarDatos(estado="CANCELADO", timestamp=HORA_ACTUAL, motivo="Cancelado por usuario")
-    
-    // Paso 5: Liberar el horario ocupado en la agenda del médico
-    medicID ← turno.medico.id
-    slotID ← turno.horaID
-    Agenda.removerTurnoDeAgenda(medicID, numeroTurno)
-    Agenda.liberarSlot(medicID, slotID)
-    
-    // Paso 6: Notificar a paciente y médico sobre la cancelación
-    INTENTAR
-        notificacion ← ServicioTurnos.crearNotificacion(turno, tipo="CANCELACION")
-        notificacion.enviarNotificacionPaciente(turno.paciente.email, turno.motivoCancelacion)
-        notificacion.enviarNotificacionMedico(turno.medico.email, detalles(turno))
-        
-        // Registrar cancelación exitosa
-        ServicioTurnos.guardarCambios(turno)
-        MOSTRAR "Turno cancelado exitosamente"
-        MOSTRAR Comprobante de cancelación
-        
-        RETORNAR VERDADERO
-        
-    EXCEPTO EN CASO DE ERROR EN NOTIFICACION
-        MOSTRAR "Turno cancelado pero hubo error al notificar"
-        PROGRAMAR reintento de notificacion
-        RETORNAR VERDADERO
-    FIN INTENTAR
-    
-SINO
-    MOSTRAR "Cancelación abortada por el usuario"
-    RETORNAR FALSO
-FIN SI
+// La pantalla inicia la operación de cancelación en el servicio.
+pantalla.procesarCancelacion(turno)
+
+// El servicio marca el turno como cancelado.
+turnoCancelado ← servicio.cancelarTurno(turno, motivoCancelacion)
+
+// Se genera la notificación de cancelación para los actores afectados.
+notificacion ← servicio.crearNotificacion(turnoCancelado, "CANCELACION")
+notificacion.enviarNotificacionPaciente(emailPaciente, motivoCancelacion)
+notificacion.enviarNotificacionMedico(emailMedico, detalles)
+
+// La interfaz confirma que la cancelación se completó.
+pantalla.cancelacionExitosa("Turno cancelado correctamente")
 
 FIN
 ```

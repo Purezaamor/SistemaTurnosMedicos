@@ -99,13 +99,18 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
+| Usuario | Representar a un usuario del sistema con permisos para gestionar turnos | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-usuario.md) |
+| Persona | Compartir datos personales comunes entre paciente, médico y secretaria | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-persona.md) |
+| Slot | Representar el horario disponible reservado por un turno | [herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md](../../herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md) |
 | Secretaria | Reprogramar turnos modificando la agenda existente | [herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md) |
 | Paciente | Solicitar reprogramación y confirmación de cambio | [herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-paciente.md) |
 | Medico | Autorizar sobreturnos y proporcionar disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Turno | Cambiar estado del turno y permitir reprogramación | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Validar disponibilidad y gestionar sobreturnos autorizados | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | Sin tarjeta CRC — Clase de control derivada del diagrama de secuencia |
-| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) | Sin tarjeta CRC — Clase de interfaz derivada del diagrama de secuencia |
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md) |
+| PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
+| Notificacion | Generar y enviar notificaciones sobre cambios de turno; formatear mensajes y registrar intentos de envío | [herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md](../../herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md) |
+
 
 **Relaciones UML:**
 
@@ -128,65 +133,66 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 ```text
 INICIO Reprogramar Turno Existente
 
-// Contexto: La Secretaria recibe una solicitud del Paciente para cambiar la fecha/hora de un turno.
-// Se valida disponibilidad y se libera el horario anterior, ocupando el nuevo.
+// La secretaria inicia el proceso de reprogramación de un turno.
+secretaria ← nueva Secretaria
 
-LEER numeroTurno desde UI
-LEER nuevoSlotID desde UI
+// Se crean los objetos que participan en el caso de uso.
+pantalla ← nueva PantallaTurnos
+servicio ← nuevo ServicioTurnos
+agenda ← nueva Agenda
+notificacion ← nueva Notificacion
 
-// Paso 1: Búsqueda y recuperación del turno existente
-turnoActual ← ServicioTurnos.obtenerTurnoExistente(numeroTurno)
-SI turnoActual es NULO
-    MOSTRAR "Turno no encontrado"
-    RETORNAR FALSO
+// La secretaria busca el turno que debe reprogramarse.
+pantalla.buscarTurno(numeroTurno)
+turno ← servicio.obtenerTurnoExistente(numeroTurno)
+
+SI turno ES NULO ENTONCES
+    // No se encuentra el turno solicitado en el sistema.
+    pantalla.mostrarError("Turno no encontrado")
+    FIN
 FIN SI
 
-// Paso 2: Obtener datos del turno actual para validación
-medicID ← turnoActual.medico.id
-slotActualID ← turnoActual.horaID
-estado ← turnoActual.estado
+// El sistema muestra la información actual del turno para validar el cambio.
+pantalla.mostrarTurnoActual(detalles)
 
-// Paso 3: Consultar disponibilidad de nuevos horarios para el médico
-slotsDisponibles ← ServicioTurnos.obtenerSlotsDisponibles(medicID, rango="semana")
-SI slotsDisponibles está VACÍO
-    MOSTRAR "No hay disponibilidad en el rango solicitado"
-    RETORNAR FALSO
+// La secretaria pide opciones de fechas y horarios alternativos.
+pantalla.solicitarAlternativas()
+slots ← servicio.obtenerSlotsDisponibles(medico, rango)
+
+SI slots ESTÁ VACÍO ENTONCES
+    // No hay horarios libres para el mismo médico en el rango solicitado.
+    pantalla.mostrarError("No hay horarios disponibles")
+    FIN
 FIN SI
 
-// Paso 4: Validar que el nuevo slot sea válido
-SI nuevoSlotID NO está EN slotsDisponibles
-    MOSTRAR "Slot no disponible o conflicto de agenda"
-    RETORNAR FALSO
+// El sistema presenta las alternativas de horario válidas.
+pantalla.mostrarAlternativas(slots)
+
+// La secretaria selecciona el nuevo turno y confirma la reprogramación.
+secretaria.confirmarReprogramacion(turno, nuevoSlot)
+
+// El servicio valida que el turno puede ser cambiado.
+esValido ← servicio.validarEstadoParaReprogramar(turno)
+
+SI esValido ES FALSO ENTONCES
+    pantalla.mostrarError("El turno no puede reprogramarse")
+    FIN
 FIN SI
 
-// Paso 5: Ejecutar la reprogramación
-INTENTAR
-    // Cambiar estado del turno a REPROGRAMADO
-    turnoActual.cambiarEstado("REPROGRAMADO")
-    turnoActual.actualizarDatos(nuevoSlotID, HORA_ACTUAL, "Reprogramado por Secretaria")
-    
-    // Liberar el slot anterior en la agenda del médico
-    Agenda.liberarSlotAnterior(medicID, slotActualID)
-    
-    // Ocupar el nuevo slot en la agenda del médico
-    Agenda.ocuparNuevoSlot(medicID, nuevoSlotID)
-    
-    // Guardar cambios en la base de datos
-    ServicioTurnos.guardarCambios(turnoActual)
-    
-    MOSTRAR "Turno reprogramado exitosamente"
-    MOSTRAR CONFIRMACION con nueva fecha, hora, médico
-    
-    RETORNAR VERDADERO
-    
-EXCEPTO EN CASO DE ERROR
-    MOSTRAR "Error en la reprogramación. Intente nuevamente"
-    DESHACER cambios de estado
-    RETORNAR FALSO
-FIN INTENTAR
+// El servicio aplica el nuevo horario al turno existente.
+turnoReprogramado ← servicio.reprogramarTurno(turno, nuevoSlot)
+
+// El sistema notifica que la reprogramación se completó.
+notificacion.enviarReprogramacion(turnoReprogramado)
+
+// La interfaz confirma el resultado al usuario.
+pantalla.reprogramacionExitosa(turnoReprogramado)
 
 FIN
 ```
+
+
+
 
 **Trazabilidad del pseudocódigo:**
 - Flujo principal (§1): Se ejecutan los 5 pasos exactamente en el mismo orden

@@ -7,7 +7,26 @@
 ### Added
 
 - [feature/analista-cu-2-3-add-anexo-cu2-cu3] Desarrollo y documentación de los CU 2 y 3: corrección de diagramas de actividades, generación de diagramas de clases UML, elaboración de anexos de análisis funcional y actualización de índices y documentación de soporte. PR:[#159](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/159) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+- [feature/arquitecto-dominio-add-diagrama-final-2] Generación de Diagrama Final con sus archivos puml y png. Creación de la carpeta `capturas-pilares` con sus png, etc. PR: [#174](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/174) - @keviineze (Arquitecto de Dominio).
 
+### Fixed 
+- [fix/analista-funcional-caso-1] Se corrigen las entradas de IDs. PR: [#177](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/177) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/analista-fun-casos-2-3] Incorporación de nuevas tarjetas CRC, actualización de casos de uso y diagrama de clases, y corrección de referencias entre artefactos. PR:[#172](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/172)- @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/arquitecto-dominio-correcciones-a4] Correcciones de RC32 a RC35 modificando los archivos `analisis_casos_uso.md`, `happy-path-global.md` y `anexos.md`. PR:[#173](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/173) - @keviineze (Arquitecto de Dominio).
+
+- [fix/analista-funcional-2-fix] Se agregan tarjetas CRC faltantes para consistencia de codigo y se corrige pseudocodigo. PR:[#179](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/179)- @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/analista-fun-casos-1-2-3-fix] Se corrige plantilla en tarjeta CRC persona y se corrije pseudocódigo. PR: [#180](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/180) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/arquitecto-dominio-correcciones-a4-2] Correcciones de RCN4 modificando el link del diagrama en `anexos/analisis-funcional/05-caso-de-uso-administrar-disponibilidad.md`. PR:[#181](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/181) - @keviineze (Arquitecto de Dominio).
+
+- [fix/analista-funcional-fix-2] Se agregan atributos a diagramas de clases y se actualiza pseudocodigo. PR: [#186](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/186) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/analista-fix] Se elimina clase Usuario ya que no tenia relación en el diagrama, se agrega clase notoficacion en anexos vinculando su tarjeta crc. PR: [#192](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/192) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
+- [fix/changelog] Se agrega entrada del changelog faltante. PR: [#193](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/193) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
 
 
 ## [Release Actividad Obligatoria N°3] - 2026-05-07

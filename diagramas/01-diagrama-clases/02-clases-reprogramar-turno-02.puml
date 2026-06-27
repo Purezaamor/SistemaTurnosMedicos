@@ -7,12 +7,6 @@ class Persona {
     + obtenerIdentificacion(): String
 }
 
-class Usuario {
-    - id: String
-    - rol: String
-    + obtenerRol(): String
-}
-
 class Paciente {
     - dni: String
     - obraSocial: String
@@ -21,7 +15,10 @@ class Paciente {
 }
 
 class Secretaria {
-    + buscarTurno(turnoID: String): Turno
+    - turnoAsignado: Turno, 
+    - nombre: String, 
+    - rol: String
+    + buscarTurno(turno: String): Turno
     + confirmarReprogramacion(turno: String, nuevoSlot: String): void
     + procesarReprogramacion(): void
 }
@@ -68,6 +65,9 @@ class Slot {
 }
 
 class ServicioTurnos {
+    - agenda: Agenda
+    - historialCambio: HistorialCambio
+    - notificacion: Notificacion
     + obtenerTurnoExistente(turno: String): Turno
     + obtenerSlotsDisponibles(medico: String, rango: String): List<Slot>
     + reprogramarTurno(turno: String, nuevoSlot: String): Turno
@@ -75,6 +75,10 @@ class ServicioTurnos {
 }
 
 class PantallaTurnos {
+    - turnoSeleccionado: Turno
+    - medicoSeleccionado: Medico
+    - nuevoSlotSeleccionado: Slot
+    - slotsDisponibles: List<Slot>
     + buscarTurno(numeroTurno: String): void
     + mostrarTurnoActual(detalles: String): void
     + solicitarAlternativas(): void
@@ -84,6 +88,9 @@ class PantallaTurnos {
 }
 
 class Notificacion {
+    - destinatarioEmail: String
+    - mensaje: String
+    - tipo: String
     + enviarReprogramacion(turno: Turno): void
 }
 
