@@ -107,8 +107,11 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 | Medico | Autorizar sobreturnos y proporcionar disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Turno | Cambiar estado del turno y permitir reprogramación | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
 | Agenda | Validar disponibilidad y gestionar sobreturnos autorizados | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
-| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md)
+| ServicioTurnos | Orquestar la lógica de negocio de reprogramación (controlador) | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-servicio-turnos.md) |
 | PantallaTurnos | Capturar eventos de usuario y presentar alternativas (interfaz UI) |  [herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
+| Notificacion | Generar y enviar notificaciones sobre cambios de turno; formatear mensajes y registrar intentos de envío | [herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md](../../herramientas-agile/tarjetas-crc/11-tarjeta-crc-notificacion.md) |
+
+
 **Relaciones UML:**
 
 | Relación | Clases | Justificación |
