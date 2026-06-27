@@ -82,7 +82,7 @@
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|--------------------------------------|-------------|
-| Secretaria | Registrar, modificar y eliminar disponibilidad | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md) |
+| Secretaria | Registrar, modificar y eliminar disponibilidad | [herramientas-agile/tarjetas-crc/01-tarjeta-crc-secretaria.md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-secretaria.md) |
 | Medico | Proporcionar su disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Agenda | Gestionar disponibilidad y turnos | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
 | Disponibilidad | Representar un horario disponible | [herramientas-agile/tarjetas-crc/12-tarjeta-crc-disponibilidad.md](../../herramientas-agile/tarjetas-crc/12-tarjeta-crc-disponibilidad.md) |
