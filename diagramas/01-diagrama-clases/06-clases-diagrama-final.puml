@@ -15,7 +15,7 @@ abstract class Persona {
 }
 
 abstract class Usuario {
-  - id: String
+  - idUsuario: String
   - rol: String
   + obtenerRol(): String
 }
@@ -69,7 +69,6 @@ class Agenda {
 }
 
 class Turno {
-  - id: String
   - fecha: Date
   - hora: Time
   - estado: EstadoTurno
@@ -86,7 +85,6 @@ class Turno {
 }
 
 class Slot {
-  - slotID: String
   - fecha: Date
   - hora: Time
   - estado: Boolean
@@ -165,6 +163,8 @@ class ControladorTurnos {
 }
 
 class ControladorAgenda {
+  - agendaMedica: Agenda
+  - especialidadFiltro: String
   + obtenerTurnos(fecha: Date): List<Turno>
   + filtrarPorEspecialidad(especialidad: String): List<Turno>
   + obtenerTurnosDelMedico(medico: Medico, fecha: Date): List<Turno>
