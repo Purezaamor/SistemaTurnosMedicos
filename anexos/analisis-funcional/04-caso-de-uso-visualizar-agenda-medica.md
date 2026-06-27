@@ -80,8 +80,8 @@
 | Medico | Consultar su agenda y ver disponibilidad | [herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-medico.md) |
 | Agenda | Gestionar turnos y disponibilidad | [herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-agenda.md) |
 | Turno | Contener datos de la reserva | [herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-turno.md) |
-| ControladorAgenda | Orquestar la consulta de agenda | [herramientas-agile/tarjetas-crc/08-tarjeta-crc-controlador-agenda.md](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-controlador-agenda.md) |
-| PantallaAgenda | Mostrar la agenda al usuario | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-pantalla-agenda.md](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-pantalla-agenda.md) |
+| ControladorAgenda | Orquestar la consulta de agenda | [herramientas-agile/tarjetas-crc/08-tarjeta-crc-controlador-agenda.md](../../herramientas-agile/tarjetas-crc/13-tarjeta-crc-slot.md) |
+| PantallaAgenda | Mostrar la agenda al usuario | [herramientas-agile/tarjetas-crc/09-tarjeta-crc-pantalla-agenda.md](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-pantalla-turnos.md) |
 
 ### Relaciones UML
 
