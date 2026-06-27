@@ -1,8 +1,10 @@
 @startuml
-class Persona {
-  - nombre: String
-  - dni: String
-  - telefono: String
+abstract class Persona {
+    - nombre: String
+    - dni: String
+    - telefono: String
+    + obtenerDatosPersonales(): String
+    + actualizarDatosContacto(telefono: String): void
 }
 
 class Medico {
