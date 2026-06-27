@@ -113,33 +113,46 @@ Registra un turno médico entre un paciente y un profesional, asegurando que no 
 ```text
 INICIO Registrar Turno Médico
 
-// Se crean o recuperan los objetos que participan en el caso de uso
-pantalla ← PantallaTurnos
-servicio ← ServicioTurnos
+// La secretaria inicia el proceso de registro de un turno.
+secretaria ← nueva Secretaria
 
-// La secretaria utiliza la pantalla para ingresar los datos del turno
+// Se crean los objetos que colaboran durante el caso de uso.
+pantalla ← nueva PantallaTurnos
+servicio ← nuevo ServicioTurnos
+agenda ← nueva Agenda
+historial ← nuevo HistorialCambio
+
+// El paciente solicita el turno y la secretaria ingresa los datos.
 pantalla.ingresarDatosPaciente()
 pantalla.seleccionarProfesional()
 pantalla.seleccionarFechaHora()
 
-// El servicio obtiene los horarios disponibles del profesional
+// El servicio pregunta a la agenda si el médico está disponible.
 slots ← servicio.obtenerSlotsDisponibles(medico, rango)
 
-SI slots está vacío
+SI slots está vacío ENTONCES
+    // No hay horarios libres para el médico en la consulta solicitada.
     pantalla.mostrarError("Horario no disponible")
     FIN
 FIN SI
 
-// La pantalla muestra los horarios disponibles
+// El sistema muestra las opciones de horario válidas para completar la reserva.
 pantalla.mostrarDisponibilidad(slots)
 
-// El servicio registra el nuevo turno
+// La secretaria elige un horario e indica al servicio crear el turno.
 turno ← servicio.registrarTurno(paciente, medico, slot)
 
-// El servicio registra el cambio realizado
+// El turno se marca como reservado y se incorpora en la agenda.
+turno.reservar()
+agenda.agregarTurno(turno)
+
+// La acción queda registrada para auditoría.
+historial.registrarCambio()
+
+// El servicio persiste la operación y devuelve el turno.
 servicio.guardarCambios(turno)
 
-// La pantalla informa que el turno fue registrado correctamente
+// El sistema muestra la confirmación de la reserva.
 pantalla.mostrarConfirmacion(turno)
 
 FIN

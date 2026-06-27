@@ -133,39 +133,53 @@ Anula una reserva de turno liberando el espacio en la agenda médica.
 
 ## 6. Pseudocódigo
 
-```text
+```
 INICIO Cancelar Turno
 
-// La secretaria o el paciente seleccionan el turno que desean cancelar
-PantallaTurnos.buscarTurno(numeroTurno)
+// La secretaria inicia el proceso de cancelación de un turno.
+secretaria ← nueva Secretaria
 
-// Se recupera el turno solicitado
-turno ← ServicioTurnos.obtenerTurnoExistente(turno)
+// Se crean los objetos que participan en el caso de uso.
+pantalla ← nueva PantallaTurnos
+servicio ← nuevo ServicioTurnos
+agenda ← nueva Agenda
+notificacion ← nueva Notificacion
 
-SI turno es NULO
+// La secretaria busca el turno que se desea cancelar.
+pantalla.buscarTurno(numeroTurno)
+turno ← servicio.obtenerTurnoExistente(numeroTurno)
+
+SI turno ES NULO ENTONCES
+    // El sistema no encuentra el turno solicitado.
+    pantalla.mostrarError("Turno no encontrado")
     FIN
 FIN SI
 
-// Se verifica que el turno pueda cancelarse según las reglas del sistema
-SI NO ServicioTurnos.validarEstadoParaCancelar(turno)
+// Se valida que el turno esté en un estado que permita su anulación.
+esValido ← servicio.validarEstadoParaCancelar(turno)
+
+SI esValido ES FALSO ENTONCES
+    // El turno no cumple las condiciones para cancelar su reserva.
+    pantalla.mostrarError("El turno no puede cancelarse")
     FIN
 FIN SI
 
-// Se solicita la cancelación del turno seleccionado
-PantallaTurnos.procesarCancelacion(turno)
+// La secretaria confirma la cancelación de la reserva.
+secretaria.confirmarCancelacion(turno)
 
-// El servicio registra la cancelación del turno
-turnoCancelado ← ServicioTurnos.cancelarTurno(turno, motivoCancelacion)
+// La pantalla inicia la operación de cancelación en el servicio.
+pantalla.procesarCancelacion(turno)
 
-// Se crea la notificación correspondiente a la cancelación
-notificacion ← ServicioTurnos.crearNotificacion(turnoCancelado, "CANCELACION")
+// El servicio marca el turno como cancelado.
+turnoCancelado ← servicio.cancelarTurno(turno, motivoCancelacion)
 
-// Se informa la cancelación al paciente y al profesional
+// Se genera la notificación de cancelación para los actores afectados.
+notificacion ← servicio.crearNotificacion(turnoCancelado, "CANCELACION")
 notificacion.enviarNotificacionPaciente(emailPaciente, motivoCancelacion)
 notificacion.enviarNotificacionMedico(emailMedico, detalles)
 
-// Se informa que la cancelación finalizó correctamente
-PantallaTurnos.cancelacionExitosa("Turno cancelado correctamente")
+// La interfaz confirma que la cancelación se completó.
+pantalla.cancelacionExitosa("Turno cancelado correctamente")
 
 FIN
 ```
