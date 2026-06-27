@@ -26,7 +26,8 @@
 
 - [fix/analista-fix] Se elimina clase Usuario ya que no tenia relación en el diagrama, se agrega clase notoficacion en anexos vinculando su tarjeta crc. PR: [#192](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/192) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
 
-- [fix/changelog] Se agrega entrada del changelog faltante 
+- [fix/changelog] Se agrega entrada del changelog faltante. PR: [#193](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/193) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
 
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 
