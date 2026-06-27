@@ -1,0 +1,100 @@
+@startuml 03-clases-cancelar-turno-03
+title Diagrama de Clases: Cancelar Turno
+
+class Persona {
+  - nombre: String
+  - telefono: String
+  + obtenerIdentificacion(): String
+}
+
+class Paciente {
+  - dni: String
+  - obraSocial: String
+  + solicitarCancelacion(): void
+  + confirmarCancelacion(): void
+}
+
+class Secretaria {
+  - turnoAsignado: Turno
+  - nombre: String
+  - rol: String
+  + buscarTurno(turno: String): Turno
+  + confirmarCancelacion(turno: String): void
+  + procesarCancelacion(turno: String): void
+}
+
+class Medico {
+  - especialidad: String
+  + consultarAgenda(): Agenda
+  + definirDisponibilidad(): void
+  + autorizarSobreturno(): Boolean
+}
+
+class Agenda {
+  - fechaActual: Date
+  - vistaActual: String
+  - listaTurnos: List<Turno>
+  + recuperarTurno(turno: String): Turno
+  + removerTurnoDeAgenda(medico: String, turno: String): Boolean
+  + liberarSlot(medico: String, slotAnterior: String): Boolean
+}
+
+class Turno {
+  - turno: String
+  - fecha: Date
+  - hora: String
+  - estado: String
+  - tipoConsulta: String
+  - esSobreturno: Boolean
+  - horaLlegada: String
+  - motivoCancelacion: String
+  + actualizarDatos(estado: String, timestamp: Date, motivo: String): void
+  + cambiarEstado(estado: String): void
+  + cancelar(motivo: String): void
+}
+
+class Notificacion {
+  - destinatarioEmail: String
+  - mensaje: String
+  - tipo: String
+  + enviarNotificacionPaciente(email: String, motivo: String): Boolean
+  + enviarNotificacionMedico(email: String, detalles: String): Boolean
+}
+
+class ServicioTurnos {
+  - agenda: Agenda
+  - historialCambio: HistorialCambio
+  - notificacion: Notificacion
+  + obtenerTurnoExistente(turno: String): Turno
+  + validarEstadoParaCancelar(turno: String): Boolean
+  + cancelarTurno(turno: String, motivoCancelacion: String): Turno
+  + crearNotificacion(turno: Turno, tipo: String): Notificacion
+}
+
+class PantallaTurnos {
+  - turnoSeleccionado: Turno
+  - medicoSeleccionado: Medico
+  - nuevoSlotSeleccionado: Slot
+  - slotsDisponibles: List<Slot>
+  + buscarTurno(numeroTurno: String): void
+  + procesarCancelacion(turno: String): void
+  + cancelacionExitosa(confirmacion: String): void
+}
+
+Persona <|-- Paciente
+Persona <|-- Medico
+Persona <|-- Secretaria
+
+Agenda "1" o-- "*" Turno
+Agenda "1" -- "1" Medico
+Turno "1" --> "1" Paciente
+Turno "1" --> "1" Medico
+ServicioTurnos ..> Agenda
+ServicioTurnos ..> Turno
+ServicioTurnos ..> Notificacion
+PantallaTurnos ..> ServicioTurnos
+Secretaria ..> PantallaTurnos
+Notificacion --> Paciente
+Notificacion --> Medico
+
+@enduml

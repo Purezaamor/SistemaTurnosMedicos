@@ -1,0 +1,55 @@
+@startuml 05-clases-administrar-disponibilidad-05
+title Diagrama de Clases: Administrar Disponibilidad - Sistema de Turnos Médicos
+class Persona {
+  - nombre: String
+  - dni: String
+  - telefono: String
+}
+
+class Secretaria {
+  - legajo: String
+  + registrarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+  + modificarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+  + eliminarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+}
+
+class Medico {
+  - especialidad: String
+  - matricula: String
+  + getDisponibilidad(fecha: Date): List<Time>
+  + setDisponibilidad(fecha: Date, horas: List<Time>): void
+}
+
+class Agenda {
+  - turnos: List<Turno>
+  - disponibilidad: List<Disponibilidad>
+  + agregarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+  + eliminarDisponibilidad(medico: Medico, fecha: Date, hora: Time): void
+  + consultarDisponibilidad(medico: Medico, fecha: Date): List<Time>
+}
+
+class Disponibilidad {
+    - fechaInicio: Date
+    - fechaFin: Date
+    - diasAtencion: List<String>
+    - horaInicio: Time
+    - horaFin: Time
+    + definirRangoAtencion(fechaInicio: Date, fechaFin: Date, dias: List<String>, horaInicio: Time, horaFin: Time): void
+    + generarSlots(): void
+    + validarFechaHora(fecha: Date, hora: Time): Boolean
+}
+
+class Turno {
+  - fecha: Date
+  - hora: Time
+  - estado: String
+  + getDetalle(): String
+}
+
+Secretaria --|> Persona
+Medico --|> Persona
+Secretaria --> Medico
+Agenda "1" o-- "0..*" Disponibilidad
+Agenda "1" *-- "0..*" Turno
+Medico "1" --> "1" Agenda
+@enduml
