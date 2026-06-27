@@ -28,9 +28,14 @@ class Agenda {
 }
 
 class Disponibilidad {
-  - fecha: Date
-  - hora: Time
-  - disponible: Boolean
+    - fechaInicio: Date
+    - fechaFin: Date
+    - diasAtencion: List<String>
+    - horaInicio: Time
+    - horaFin: Time
+    + definirRangoAtencion(fechaInicio: Date, fechaFin: Date, dias: List<String>, horaInicio: Time, horaFin: Time): void
+    + generarSlots(): void
+    + validarFechaHora(fecha: Date, hora: Time): Boolean
 }
 
 class Turno {
