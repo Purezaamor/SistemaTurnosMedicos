@@ -78,6 +78,9 @@ class HistorialCambio {
 }
 
 class ServicioTurnos {
+  - agenda: Agenda
+  - historialCambio: HistorialCambio
+  - notificacion: Notificacion
   + obtenerTurnoExistente(turno: String): Turno
   + obtenerSlotsDisponibles(medico: String, rango: String): List<Slot>
   + registrarTurno(paciente: String, medico: String, slot: String): Turno
@@ -86,6 +89,10 @@ class ServicioTurnos {
 }
 
 class PantallaTurnos {
+  - pacienteSeleccionado: Paciente
+  - medicoSeleccionado: Medico
+  - slotSeleccionado: Slot
+  - slotsDisponibles: List<Slot>
   + ingresarDatosPaciente(): void
   + seleccionarProfesional(): void
   + seleccionarFechaHora(): void

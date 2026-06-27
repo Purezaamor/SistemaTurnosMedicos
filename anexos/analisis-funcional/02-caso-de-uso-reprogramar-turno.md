@@ -130,78 +130,66 @@ Cambia la fecha o el horario de una cita ya pactada a solicitud del médico o pa
 ```text
 INICIO Reprogramar Turno Existente
 
-// Se crean o recuperan los objetos que participan en el caso de uso
-pantalla ← PantallaTurnos
-servicio ← ServicioTurnos
+// La secretaria inicia el proceso de reprogramación de un turno.
+secretaria ← nueva Secretaria
 
-// La secretaria busca el turno que desea reprogramar desde la pantalla
+// Se crean los objetos que participan en el caso de uso.
+pantalla ← nueva PantallaTurnos
+servicio ← nuevo ServicioTurnos
+agenda ← nueva Agenda
+notificacion ← nueva Notificacion
+
+// La secretaria busca el turno que debe reprogramarse.
 pantalla.buscarTurno(numeroTurno)
+turno ← servicio.obtenerTurnoExistente(numeroTurno)
 
-// Se recupera el turno solicitado
-turno ← servicio.obtenerTurnoExistente(turno)
-
-SI turno ES NULO
+SI turno ES NULO ENTONCES
+    // No se encuentra el turno solicitado en el sistema.
     pantalla.mostrarError("Turno no encontrado")
     FIN
 FIN SI
 
-// Se muestran los datos del turno actual para verificarlos
+// El sistema muestra la información actual del turno para validar el cambio.
 pantalla.mostrarTurnoActual(detalles)
 
-// La secretaria solicita consultar horarios alternativos
+// La secretaria pide opciones de fechas y horarios alternativos.
 pantalla.solicitarAlternativas()
-
-// Se obtienen los horarios disponibles para el profesional
 slots ← servicio.obtenerSlotsDisponibles(medico, rango)
 
-SI slots ESTÁ VACÍO
+SI slots ESTÁ VACÍO ENTONCES
+    // No hay horarios libres para el mismo médico en el rango solicitado.
     pantalla.mostrarError("No hay horarios disponibles")
     FIN
 FIN SI
 
-// La pantalla muestra las alternativas disponibles para seleccionar un nuevo horario
+// El sistema presenta las alternativas de horario válidas.
 pantalla.mostrarAlternativas(slots)
 
-// Se confirma la reprogramación utilizando el horario seleccionado
-pantalla.confirmarReprogramacion(turno, nuevoSlot)
+// La secretaria selecciona el nuevo turno y confirma la reprogramación.
+secretaria.confirmarReprogramacion(turno, nuevoSlot)
 
-// El servicio actualiza el turno con el nuevo horario
+// El servicio valida que el turno puede ser cambiado.
+esValido ← servicio.validarEstadoParaReprogramar(turno)
+
+SI esValido ES FALSO ENTONCES
+    pantalla.mostrarError("El turno no puede reprogramarse")
+    FIN
+FIN SI
+
+// El servicio aplica el nuevo horario al turno existente.
 turnoReprogramado ← servicio.reprogramarTurno(turno, nuevoSlot)
 
-// Se informa que la reprogramación fue realizada correctamente
+// El sistema notifica que la reprogramación se completó.
+notificacion.enviarReprogramacion(turnoReprogramado)
+
+// La interfaz confirma el resultado al usuario.
 pantalla.reprogramacionExitosa(turnoReprogramado)
 
 FIN
 ```
 
-```text
-IMPLEMENTACIÓN DE DOMINIO: ServicioTurnos.reprogramarTurno(turno, nuevoSlot)
 
-turno ← servicio.obtenerTurnoExistente(turno)
 
-SI turno ES NULO
-    RETORNAR ERROR("Turno inexistente")
-FIN SI
-
-SI turno.estado NO ESTÁ EN ["Programado"]
-    RETORNAR ERROR("Estado del turno no permite reprogramación")
-FIN SI
-
-éxitoOcupar ← Agenda.ocuparNuevoSlot(turno.medico, nuevoSlot)
-
-SI NO éxitoOcupar
-    RETORNAR ERROR("Conflicto de agenda: slot ya reservado o regla de sobreturno violada")
-FIN SI
-
-Agenda.liberarSlotAnterior(turno.medico, turno.slot)
-turno.actualizarSlot(nuevoSlot)
-turno.cambiarEstado("REPROGRAMADO")
-servicio.registrarHistorialCambio(turno, evento="Reprogramación", realizadoPor="Secretaria")
-servicio.persistir(turno)
-servicio.emitirEventoReprogramacion(turno)
-
-RETORNAR OK
-```
 
 **Trazabilidad del pseudocódigo:**
 - Flujo principal (§1): Se ejecutan los 5 pasos exactamente en el mismo orden
