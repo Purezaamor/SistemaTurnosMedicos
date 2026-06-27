@@ -22,6 +22,8 @@
 
 - [fix/arquitecto-dominio-correcciones-a4-2] Correcciones de RCN4 modificando el link del diagrama en `anexos/analisis-funcional/05-caso-de-uso-administrar-disponibilidad.md`. PR:[#181](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/181) - @keviineze (Arquitecto de Dominio).
 
+- [fix/analista-funcional-fix-2] Se agregan atributos a diagramas de clases y se actualiza pseudocodigo. PR: [#186](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/186) - @sofinestt (Analista Funcional de Casos de Uso 2 y 3)
+
 ## [Release Actividad Obligatoria N°3] - 2026-05-07
 
 ### Added
