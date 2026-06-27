@@ -1,4 +1,5 @@
-@startuml
+@startuml 05-clases-administrar-disponibilidad-05
+title Diagrama de Clases: Administrar Disponibilidad - Sistema de Turnos Médicos
 class Persona {
   - nombre: String
   - dni: String
