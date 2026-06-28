@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [Release Segundo Parcial] - 2026-06-27
+
+- [feature/coord-devops-update-docs-2] Se crean archivos indices. PR: [#203](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/203) - @sofinestt (Coordinador Devops)
+
+
 ## [Release Actividad Obligatoria N°4] - 2026-06-18
 
 ### Added
