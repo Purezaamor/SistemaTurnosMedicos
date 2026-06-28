@@ -1,0 +1,87 @@
+@startuml 01-patron-creacional-factory
+title Patrón Creacional Factory Method - Sistema de Turnos Médicos
+
+skinparam classAttributeIconSize 0
+
+abstract class Turno {
+  -id : String
+  -fecha : Date
+  -hora : Time
+  -estado : EstadoTurno
+  -paciente : Paciente
+  -medico : Medico
+  +reservar(): void
+  +cancelar(motivo: String): void
+  +reprogramar(nuevoHorario: String): void
+}
+
+class TurnoPresencial {
+  +calcularDuracion(): void
+}
+
+class TurnoVirtual {
+  -linkAcceso : String
+  +calcularDuracion(): void
+}
+
+class Sobreturno {
+  -autorizadoPor : String
+  +calcularDuracion(): void
+  +autorizarSobreturno(): boolean
+}
+
+abstract class CreadorTurnos {
+  +crearTurno(): Turno
+}
+
+class CreadorTurnoPresencial {
+  +crearTurno(): TurnoPresencial
+}
+
+class CreadorTurnoVirtual {
+  +crearTurno(): TurnoVirtual
+}
+
+class CreadorSobreturno {
+  +crearTurno(): Sobreturno
+}
+
+class ControladorTurnos {
+  -creadorTurnos : CreadorTurnos
+  +ControladorTurnos(creadorTurnos: CreadorTurnos)
+  +registrarTurno(): Turno
+}
+
+enum EstadoTurno {
+  CREADO
+  CONFIRMADO
+  REPROGRAMADO
+  CANCELADO
+  ATENDIDO
+  AUSENTE
+  SOBRETURNO
+}
+
+Turno <|-- TurnoPresencial
+Turno <|-- TurnoVirtual
+Turno <|-- Sobreturno
+
+CreadorTurnos <|-- CreadorTurnoPresencial
+CreadorTurnos <|-- CreadorTurnoVirtual
+CreadorTurnos <|-- CreadorSobreturno
+
+ControladorTurnos --> CreadorTurnos
+ControladorTurnos ..> Turno
+
+Turno --> Paciente
+Turno --> Medico
+Turno --> EstadoTurno
+
+note top of CreadorTurnos
+  **Factory Method:**
+  Delega la responsabilidad de instanciación
+  a las subclases de fábrica, permitiendo añadir
+  nuevos tipos de turnos sin modificar el controlador.
+endnote
+
+@enduml
