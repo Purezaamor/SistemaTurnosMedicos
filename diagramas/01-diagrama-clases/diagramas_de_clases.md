@@ -18,8 +18,8 @@
 
 - [Diagrama de Clases - Final Unificado](06-clases-diagrama-final.png)
 
-## Diagramas de Patrones de Diseño
+- Diagramas de Patrones de Diseño
 
-- [Patron de Diseño Creacional](01-patron-creacional-factory.puml)
-- [Patron de Diseño Estructural](01-patron-estructural-adapter.puml)
-- [Patron de Diseño de Comportamiento](01-patron-comportamiento.puml)
+    - [Patron de Diseño Creacional](01-patron-creacional-factory.puml)
+    - [Patron de Diseño Estructural](01-patron-estructural-adapter.puml)
+    - [Patron de Diseño de Comportamiento](01-patron-comportamiento.puml)

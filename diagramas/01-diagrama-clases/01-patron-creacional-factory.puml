@@ -4,7 +4,7 @@ title Patrón Creacional Factory Method - Sistema de Turnos Médicos
 skinparam classAttributeIconSize 0
 
 abstract class Turno {
-  -id : String
+  -numeroTurno: String
   -fecha : Date
   -hora : Time
   -estado : EstadoTurno
