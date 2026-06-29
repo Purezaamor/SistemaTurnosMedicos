@@ -12,6 +12,9 @@
 
 - [feature/coord-devops-update-docs-2] Se crean archivos indices. PR: [#203](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/203) - @sofinestt (Coordinador Devops)
 
+### Fixed
+- [fix/correcciones-segundo-parcial-fix] Refactor documentación y diagramas: correcciones SOLID, patrones GoF y bitácora IA. PR: [#205](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/205) - @sofinestt (Coordinador Devops)
+
 
 ## [Release Actividad Obligatoria N°4] - 2026-06-18
 
