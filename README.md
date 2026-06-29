@@ -48,4 +48,3 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 - [Anexos](./anexos/anexos.md)
 - [Diagramas UML](./diagramas/diagramasUML.md)
 - [Herramientas Agile](./herramientas-agile/herramientas_agile.md)
-- [Patrones de Diseño](./anexos/patrones-diseno/patrones_diseno.md)

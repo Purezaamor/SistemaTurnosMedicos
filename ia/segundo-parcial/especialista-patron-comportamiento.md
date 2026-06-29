@@ -1,6 +1,8 @@
 # Especialista en Patrón de Diseño de Comportamiento
 
 ## Prompt utilizado con Copilot Agent Mode
+
+```
 Diseñar un diagrama de clases que implemente el patrón Observer para manejar notificaciones en el Sistema de Turnos Médicos.
 
 Contexto:
@@ -37,6 +39,8 @@ Requisitos:
 
 - Nombres claros y coherentes con el dominio
 
+```
+
 ## Archivos de contexto referenciados
 
 - `diagramas/01-diagrama-clases/06-clases-diagrama-final.puml`
@@ -46,20 +50,20 @@ Requisitos:
 - `diagramas/01-diagrama-clases/01-solid-04-isp.puml`
 - `diagramas/01-diagrama-clases/01-solid-05-dip.puml`
 
-## Output obtenido
+### Output obtenido
+El primer resultado generado incluía un diseño donde Turno mantenía una relación directa con cada notificador concreto. Esto fue identificado como un acoplamiento indebido respecto del patrón Observer.
 
-[Código PlantUML generado por Copilot]
+Además, en esta primera versión no se había contemplado aún la estructura del documento en formato .md ni la integración del contenido del anexo textual, ya que el foco inicial estuvo exclusivamente en la generación del diagrama PlantUML.
 
-El output inicial incluía una relación directa entre Turno y cada notificador. Se ajustó para que la relación sea a través de la interfaz IObservador.
+### Ajustes realizados
+Se reemplazó la dependencia directa de Turno hacia los notificadores concretos por una dependencia a la interfaz IObservador, reduciendo el acoplamiento.
+Se incorporó la clase base Observable para centralizar la gestión de suscriptores y favorecer la reutilización.
+Se corrigió la cardinalidad de la relación entre Turno y los observadores, estableciendo correctamente una relación uno-a-muchos.
+Se revisó y ajustó el contenido del anexo textual en el documento .md para que reflejara fielmente el diseño final del diagrama.
+Se generó y estructuró el documento principal en formato Markdown, integrando tanto el diagrama PlantUML como su explicación asociada, asegurando coherencia entre artefactos.
 
-## Ajustes realizados
-
-- Se cambió la relación de Turno a cada observador concreto por una asociación a la interfaz.
-- Se agregó la clase base Observable para reutilizar la lógica de gestión de observadores.
-- Se corrigió la multiplicidad (uno a muchos) entre Turno y observadores.
-
-## Iteraciones
-
-- Primer intento: Copilot generó un diagrama con acoplamiento directo entre Turno y los notificadores. Se corrigió para que dependa de la interfaz.
-- Segundo intento: Se agregó la clase Observable para cumplir con DIP y OCP.
-- Versión final: Diagrama validado y consistente con los principios SOLID.
+### Iteraciones
+Primera iteración: Copilot generó un diagrama con acoplamiento directo entre Turno y los notificadores concretos. Se identificó la necesidad de refactorizar hacia una abstracción mediante la interfaz IObservador.
+Segunda iteración: Se incorporó la clase Observable para encapsular la lógica de suscripción y notificación, alineando el diseño con DIP y OCP.
+Tercera iteración: Se generó el documento .md completo, integrando el diagrama final con su descripción y corrigiendo inconsistencias entre el modelo y el anexo textual.
+Versión final: Se validó la coherencia entre el diagrama PlantUML, el contenido del Markdown y el anexo, asegurando consistencia del artefacto de entrega.

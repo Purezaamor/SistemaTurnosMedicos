@@ -10,8 +10,6 @@
 
 - [feature/esp-patron-estructural-add-patron-adapter-3] Generación de Diagrama con sus archivos puml y png. Creación de la carpeta `patrones-diseno` con su archivo .md y documentación registrada de IA. PR: [#202](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/202) - @keviineze (Especialista en Patrón de Diseño Estructural).
 
-## [Release Segundo Parcial] - 2026-06-27
-
 - [feature/coord-devops-update-docs-2] Se crean archivos indices. PR: [#203](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/203) - @sofinestt (Coordinador Devops)
 
 
