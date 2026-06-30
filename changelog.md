@@ -1,6 +1,20 @@
 # Changelog
 
-## [Unreleased]
+## [Release Segundo Parcial] - 2026-06-27
+
+### Added
+
+- [feature/esp-patron-creacional-add-patron-factory-3] Generación de Diagrama con sus archivos puml y png. Creación de la carpeta `patrones-diseno` con su archivo .md y documentación registrada de IA. PR: [#201](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/201) - @keviineze (Especialista en Patrón de Diseño Creacional).
+
+- [feature/esp-patron-comportamiento-add-observer] Aplicación del patrón Observer para notificaciones de turnos. Se desacopla la lógica de notificación de la clase Turno mediante la interfaz IObservador y observadores concretos (Email, SMS, WhatsApp). PR: [#200](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/200) — @Purezaamor (Especialista en Patrón de Diseño de Comportamiento)
+
+- [feature/esp-patron-estructural-add-patron-adapter-3] Generación de Diagrama con sus archivos puml y png. Creación de la carpeta `patrones-diseno` con su archivo .md y documentación registrada de IA. PR: [#202](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/202) - @keviineze (Especialista en Patrón de Diseño Estructural).
+
+- [feature/coord-devops-update-docs-2] Se crean archivos indices. PR: [#203](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/203) - @sofinestt (Coordinador Devops)
+
+### Fixed
+- [fix/correcciones-segundo-parcial-fix] Refactor documentación y diagramas: correcciones SOLID, patrones GoF y bitácora IA. PR: [#205](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/205) - @sofinestt (Coordinador Devops)
+
 
 ## [Release Actividad Obligatoria N°4] - 2026-06-18
 

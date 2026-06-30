@@ -1,0 +1,114 @@
+@startuml 01-patron-estructural-adapter
+title Diagrama de Clases: Patrón Estructural Adapter - Sistema de Turnos Médicos
+' Patrón Adapter - Validación de elegibilidad de turnos
+' Diseño orientado a Objetos para el Sistema de Turnos Médicos
+
+skinparam classAttributeIconSize 0
+skinparam roundCorner 12
+skinparam shadowing false
+skinparam class {
+  BackgroundColor #F8FAFC
+  BorderColor #1F2937
+  ArrowColor #2563EB
+}
+skinparam interface {
+  BackgroundColor #EFF6FF
+  BorderColor #2563EB
+}
+skinparam note {
+  BackgroundColor #FEF3C7
+  BorderColor #D97706
+}
+
+' =============================
+' 1. DOMINIO DE NEGOCIO
+' =============================
+class Turno {
+  - fecha: Date
+  - hora: Time
+  - estado: String
+}
+
+class Paciente {
+  - nombre: String
+  - dni: String
+  - obraSocial: String
+}
+
+class Agenda {
+  - turnos: List<Turno>
+  - validadorElegibilidad: IElegibilidadTurno
+  + validarTurno(paciente: Paciente, turno: Turno): boolean
+  + registrarTurno(paciente: Paciente, turno: Turno): void
+}
+
+' =============================
+' 2. INTERFAZ COMÚN DEL SISTEMA
+' =============================
+interface IElegibilidadTurno {
+  + validar(paciente: Paciente, turno: Turno): boolean
+  + obtenerMotivo(): String
+}
+
+' =============================
+' 3. ADAPTADORES CONCRETOS (Extendidos manualmente)
+' =============================
+class AdapterOSDE implements IElegibilidadTurno {
+  - servicioOSDE: ServicioValidacionOSDE
+  + validar(paciente: Paciente, turno: Turno): boolean
+  + obtenerMotivo(): String
+}
+
+class AdapterSwissMedical implements IElegibilidadTurno {
+  - servicioSwiss: ServicioValidacionSwissMedical
+  + validar(paciente: Paciente, turno: Turno): boolean
+  + obtenerMotivo(): String
+}
+
+' =============================
+' 4. ADAPTEES SIMULADOS (SISTEMAS EXTERNOS)
+' =============================
+class ServicioValidacionOSDE {
+  + verificarCoberturaOSDE(dni: String, codigoPlan: String, especialidad: String): ResultadoValidacion
+}
+
+class ResultadoValidacion {
+  - aprobado: boolean
+  - mensaje: String
+}
+
+class ServicioValidacionSwissMedical {
+  + validarCredencialNativa(nroAfiliado: int, tokenSeguridad: String): boolean
+}
+
+' =============================
+' 5. RELACIONES Y FLUJOS
+' =============================
+Agenda --> IElegibilidadTurno
+Agenda --> Turno
+Agenda --> Paciente
+
+' Relaciones del Adaptador OSDE
+AdapterOSDE --> ServicioValidacionOSDE
+AdapterOSDE --> ResultadoValidacion
+AdapterOSDE --> Turno
+AdapterOSDE --> Paciente
+ServicioValidacionOSDE ..> ResultadoValidacion
+
+' Relaciones del Adaptador Swiss Medical
+AdapterSwissMedical --> ServicioValidacionSwissMedical
+AdapterSwissMedical --> Turno
+AdapterSwissMedical --> Paciente
+
+note right of IElegibilidadTurno
+  Cualquier nueva Obra Social se 
+  agrega creando un nuevo Adapter 
+  sin modificar la clase Agenda.
+end note
+
+legend bottom
+  <b>Patrón Estructural: Adapter</b>
+  Permite integrar sistemas externos de obras sociales con contratos heterogéneos sin modificar el negocio.
+  Demuestra visualmente la aplicación práctica de los principios SOLID: OCP, DIP e ISP.
+endlegend
+@enduml

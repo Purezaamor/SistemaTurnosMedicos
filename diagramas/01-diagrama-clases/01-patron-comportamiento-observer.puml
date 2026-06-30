@@ -1,0 +1,58 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' ============================================
+' INTERFAZ OBSERVADOR
+' ============================================
+interface IObservador {
+  + actualizar(evento: String): void
+}
+
+' ============================================
+' CLASE OBSERVABLE (SUJETO)
+' ============================================
+abstract class Observable  {
+  - observadores: List<IObservador>
+  + agregarObservador(obs: IObservador): void
+  + removerObservador(obs: IObservador): void
+  + notificarObservadores(evento: String): void
+}
+
+' ============================================
+' CLASE TURNO (SUJETO CONCRETO)
+' ============================================
+class Turno {
+  - estado: String
+  - fecha: Date
+  - hora: Time
+  - paciente: Paciente
+  + cambiarEstado(nuevoEstado: String): void
+  + getEstado(): String
+}
+
+' ============================================
+' OBSERVADORES CONCRETOS
+' ============================================
+class NotificadorEmail {
+  + actualizar(evento: String): void
+}
+
+class NotificadorSMS {
+  + actualizar(evento: String): void
+}
+
+class NotificadorWhatsApp {
+  + actualizar(evento: String): void
+}
+
+' ============================================
+' RELACIONES
+' ============================================
+
+Observable "1" o-- "*" IObservador
+Turno --|> Observable
+NotificadorEmail ..|> IObservador
+NotificadorSMS ..|> IObservador
+NotificadorWhatsApp ..|> IObservador
+
+@enduml
