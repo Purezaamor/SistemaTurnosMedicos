@@ -1,5 +1,4 @@
 @startuml
-!include <C4/C4_Container>
 skinparam classAttributeIconSize 0
 
 ' ============================================
@@ -12,7 +11,7 @@ interface IObservador {
 ' ============================================
 ' CLASE OBSERVABLE (SUJETO)
 ' ============================================
-class Observable {
+abstract class Observable  {
   - observadores: List<IObservador>
   + agregarObservador(obs: IObservador): void
   + removerObservador(obs: IObservador): void
@@ -49,13 +48,11 @@ class NotificadorWhatsApp {
 ' ============================================
 ' RELACIONES
 ' ============================================
-Observable --> IObservador
+
+Observable "1" o-- "*" IObservador
 Turno --|> Observable
 NotificadorEmail ..|> IObservador
 NotificadorSMS ..|> IObservador
 NotificadorWhatsApp ..|> IObservador
-Turno --> NotificadorEmail
-Turno --> NotificadorSMS
-Turno --> NotificadorWhatsApp
 
 @enduml

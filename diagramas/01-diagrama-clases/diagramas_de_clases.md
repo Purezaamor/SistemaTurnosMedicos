@@ -14,11 +14,12 @@
     - [Diagrama de Clases - Cancelar Turno 03](03-clases-cancelar-turno-03.png)
     - [Diagrama de Clases - Visualizar Agenda Médica 04](04-clases-visualizar-agenda-medica-04.png)
     - [Diagrama de Clases - Administrar Disponibilidad 05](05-clases-administrar-disponibilidad-05.png)
+    - [Diagrama de Clases - Patrón Observer (Comportamiento)](01-patron-comportamiento-observer.puml)
 
 - [Diagrama de Clases - Final Unificado](06-clases-diagrama-final.png)
 
-## Diagramas de Patrones de Diseño
+- Diagramas de Patrones de Diseño
 
-- [Patron de Diseño Creacional](01-patron-creacional-factory.puml)
-- [Patron de Diseño Estructural](01-patron-estructural-adapter.puml)
-- [Patron de Diseño de Comportamiento](01-patron-comportamiento.puml)
+    - [Patron de Diseño Creacional](01-patron-creacional-factory.puml)
+    - [Patron de Diseño Estructural](01-patron-estructural-adapter.puml)
+    - [Patron de Diseño de Comportamiento](01-patron-comportamiento.puml)
