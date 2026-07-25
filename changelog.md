@@ -1,5 +1,11 @@
 # Changelog
 
+## [Release - Examen Final] - 2026-07-25
+
+### Added
+
+- [feature/anexo-fundamentos-doo] Agregada documentación de los pilares del Diseño Orientado a Objetos: abstracción, encapsulamiento, herencia y polimorfismo, incluyendo ejemplos de aplicación, código y diagramas UML del proyecto. PR: [#207](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/207) - @sofinestt<>
+
 ## [Release Segundo Parcial] - 2026-06-27
 
 ### Added

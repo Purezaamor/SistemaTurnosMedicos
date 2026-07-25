@@ -1,14 +1,11 @@
-# Sistema de Turnos Médicos - Diseño Orientado a Objetos
+# Sistema de Turnos Médicos - Diseño del Sistema 
 
 ---
-
-## 📌 Datos Institucionales
-
+- **Apellido y nombre:** Sofia Sol Nestmann
 - **Universidad:** UCES (Universidad de Ciencias Empresariales y Sociales)  
 - **Carrera:** Tecnicatura en Programación de Sistemas  
 - **Materia:** Diseño Orientado a Objetos  
 - **Profesor:** Lic. Matías Velásquez  
-- **Grupo:** Grupo N°3  
 
 ---
 
@@ -28,18 +25,6 @@ Incluye funcionalidades de:
 - seguimiento de la agenda médica.  
 
 Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera.
-
----
-
-## 👥 Integrantes
-
-
-| Nombre y Apellido      | Matrícula |  Usuario de GitHub |   
-|------------------------|----------|---------------------|
-| Sofia Sol Nestmann     | 160130   | @sofinestt          |
-| Kevin Ezequiel Sosa    | 154080   | @keviineze          |
-| Alejo Guerricabeitia   | 156954   | @Purezaamor         |
-| Alejo Neicuan          | 159810   | @ANeicuan           |
 
 ---
 

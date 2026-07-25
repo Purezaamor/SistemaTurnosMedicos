@@ -6,7 +6,7 @@ El polimorfismo es uno de los pilares del Diseño Orientado a Objetos y se refie
 Un ejemplo claro de polimorfismo en el proyecto es el patrón Observer implementado para las notificaciones de los turnos. En este diseño, la interfaz IObservador define un contrato común mediante el método actualizar(evento: String), mientras que las clases NotificadorEmail, NotificadorSMS y NotificadorWhatsApp implementan ese contrato de manera distinta. Aunque todas ellas responden al mismo mensaje, cada una ejecuta una lógica específica según el canal de comunicación que representa. Desde el punto de vista técnico, este diseño cumple con el pilar del polimorfismo porque el sistema puede tratar a todos los observadores de manera uniforme a través de la abstracción IObservador, sin importar cuál de las clases concretas esté ejecutando la operación. 
 La Figura 4 muestra la interfaz IObservador, la clase abstracta Observable, y las clases NotificadorEmail, NotificadorSMS y NotificadorWhatsApp, evidenciando cómo distintas implementaciones responden al mismo contrato
 
-![Figura 4. Polimorfismo en el patrón Observer](image-4.png)
+![Figura 4. Polimorfismo en el patrón Observer](images/image-4.png)
 
 **Figura 4.** Aplicación del principio de polimorfismo mediante la interfaz `IObservador` y sus implementaciones `NotificadorEmail`, `NotificadorSMS` y `NotificadorWhatsApp`, donde distintas clases responden al mismo contrato con comportamientos específicos.
 
