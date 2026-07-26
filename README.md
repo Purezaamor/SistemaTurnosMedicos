@@ -28,6 +28,15 @@ Esto contribuye a mejorar la eficiencia del servicio y reducir tiempos de espera
 
 ---
 
+## 👥 Integrantes
+
+| Nombre y Apellido | Matrícula | Usuario de GitHub |
+|-------------------|----------:|-------------------|
+| Sofia Sol Nestmann | 160130 | @sofinestt |
+| Kevin Ezequiel Sosa | 154080 | @keviineze |
+| Alejo Guerricabeitia | 156954 | @Purezaamor |
+| Alejo Neicuan | 159810 | @ANeicuan |
+
 ## Diagramas y Diseños
 
 - [Anexos](./anexos/anexos.md)
