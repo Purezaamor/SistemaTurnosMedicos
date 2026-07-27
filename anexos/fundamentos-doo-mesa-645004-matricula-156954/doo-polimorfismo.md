@@ -20,7 +20,7 @@ El **polimorfismo** permite que diferentes clases respondan al mismo mensaje de 
 
 **Diagrama UML:**
 
-![Diagrama de polimorfismo - Observer](../../../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-3.png)
+![Diagrama de polimorfismo - Observer](../../diagramas/01-diagrama-clases/capturas-pilares/poo-polimorfismo-ejemplo-3.png)
 
 *En este diagrama se observa cómo diferentes clases (NotificadorEmail, NotificadorSMS, NotificadorWhatsApp) implementan la misma interfaz IObservador. Cada una tiene su propia versión del método `actualizar()`, lo que permite que el sistema trate a todas como IObservador y llame al método sin conocer el tipo concreto.*
 

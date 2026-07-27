@@ -16,7 +16,7 @@ El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y 
 
 **Diagrama UML:**
 
-![Diagrama de encapsulamiento - Turno](../../../diagramas/01-diagrama-clases/capturas-pilares/poo-encapsulamiento-ejemplo-3.png)
+![Diagrama de encapsulamiento - Turno](../../diagramas/01-diagrama-clases/capturas-pilares/poo-encapsulamiento-ejemplo-3.png)
 
 *En este diagrama se observa la clase Turno con sus atributos privados (-) y métodos públicos (+). El encapsulamiento protege el estado interno del objeto (fecha, hora, estado) y solo permite modificarlo a través de métodos controlados como `cancelar()` o `reprogramar()`.*
 

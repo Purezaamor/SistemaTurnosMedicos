@@ -23,7 +23,7 @@ En el diseño orientado a objetos, la abstracción se logra mediante:
 
 **Diagrama UML:**
 
-![Diagrama de abstracción - Observer](../../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-3.png)
+![Diagrama de abstracción - Observer](../../diagramas/01-diagrama-clases/capturas-pilares/poo-abstraccion-ejemplo-3.png)
 
 *En este diagrama se observa la interfaz IObservador, que define el contrato `actualizar(evento)`, y sus implementaciones concretas (NotificadorEmail, NotificadorSMS, NotificadorWhatsApp). La abstracción permite que el sistema dependa de la interfaz y no de los detalles de implementación, facilitando agregar nuevos tipos de notificación sin modificar el código existente.*
 

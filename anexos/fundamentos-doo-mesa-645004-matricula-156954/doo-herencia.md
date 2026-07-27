@@ -18,7 +18,7 @@ La **herencia** permite que una clase (subclase) herede atributos y métodos de 
 
 **Diagrama UML:**
 
-![Diagrama de herencia - Persona](../../../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-3.png)
+![Diagrama de herencia - Persona](../../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-3.png)
 
 *En este diagrama se observa la jerarquía de herencia: Persona como superclase con atributos comunes (nombre, apellido, teléfono, email), y Paciente, Medico y Secretaria como subclases que heredan estos atributos y agregan los suyos propios.*
 
