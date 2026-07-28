@@ -1,6 +1,6 @@
 # Abstracción
 
-### Explicación del concepto
+## Explicación del concepto
 
 La **abstracción** consiste en representar los conceptos esenciales de un dominio, ocultando los detalles de implementación. Se enfoca en **qué** hace un objeto, no en **cómo** lo hace.
 
@@ -15,7 +15,7 @@ En el diseño orientado a objetos, la abstracción se logra mediante:
 - **Patrón Strategy**: utiliza abstracciones para intercambiar algoritmos.
 - **Patrón Observer**: utiliza interfaces para desacoplar sujetos y observadores.
 
-### Ejemplo en el proyecto
+## Ejemplo en el proyecto
 
 **Clases seleccionadas:**
 - `IObservador` (interfaz)
@@ -27,9 +27,9 @@ En el diseño orientado a objetos, la abstracción se logra mediante:
 
 *En este diagrama se observa la interfaz IObservador, que define el contrato `actualizar(evento)`, y sus implementaciones concretas (NotificadorEmail, NotificadorSMS, NotificadorWhatsApp). La abstracción permite que el sistema dependa de la interfaz y no de los detalles de implementación, facilitando agregar nuevos tipos de notificación sin modificar el código existente.*
 
-### Ejemplo de código
+## Ejemplo de código
 
-```
+```java
 // Definición de la abstracción (interfaz)
 interface IObservador {
     actualizar(evento: String): void
@@ -56,6 +56,6 @@ turno.agregarObservador(new NotificadorSMS())
 turno.cambiarEstado("CANCELADO") // Ambos observadores son notificados
 ```
 
-### Justificación técnica
+## Justificación técnica
 
 El código utiliza `IObservador` como tipo, no las clases concretas. Esto permite que `Turno` pueda notificar a cualquier objeto que implemente la interfaz, sin importar su tipo concreto. Esto es abstracción en acción: el sistema depende de la interfaz, no de los detalles.

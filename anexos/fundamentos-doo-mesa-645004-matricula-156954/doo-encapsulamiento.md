@@ -1,6 +1,6 @@
 # Encapsulamiento
 
-### Explicación del concepto
+## Explicación del concepto
 
 El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y exponer solo lo necesario a través de una interfaz pública. Los atributos se declaran como privados (`-`) y se accede a ellos mediante métodos públicos (`+`).
 
@@ -10,7 +10,7 @@ El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y 
 - **Patrón Singleton**: encapsula la creación de una única instancia.
 - **Patrón Facade**: encapsula la complejidad de un subsistema.
 
-### Ejemplo en el proyecto
+## Ejemplo en el proyecto
 
 **Clase seleccionada:** `Turno`
 
@@ -20,10 +20,11 @@ El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y 
 
 *En este diagrama se observa la clase Turno con sus atributos privados (-) y métodos públicos (+). El encapsulamiento protege el estado interno del objeto (fecha, hora, estado) y solo permite modificarlo a través de métodos controlados como `cancelar()` o `reprogramar()`.*
 
-### Ejemplo de código
+## Ejemplo de código
 
-```
+```java
 class Turno {
+    // Atributos privados (no accesibles desde fuera)
     - fecha: Date
     - hora: Time
     - estado: String
@@ -54,6 +55,6 @@ turno.cancelar() // ✅ Válido, cambia el estado
 // turno.estado = "CANCELADO" // ❌ Inválido, el atributo es privado
 ```
 
-### Justificación técnica
+## Justificación técnica
 
-El atributo `estado` es privado y solo se modifica mediante `cancelar()` y `reprogramar()`. Estos métodos validan que el turno esté en un estado válido antes de cambiarlo. Esto protege la integridad del objeto y evita estados inconsistentes.
+En el código, los atributos con el símbolo `-` (como `- fecha`, `- hora`, `- estado`) son **privados**. Esto significa que no se puede acceder a ellos desde fuera de la clase. Solo se pueden modificar a través de métodos públicos como `cancelar()` o `reprogramar()`. Esto protege la integridad del objeto y evita estados inconsistentes.

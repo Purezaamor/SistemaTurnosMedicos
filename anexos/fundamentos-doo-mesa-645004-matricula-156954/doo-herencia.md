@@ -1,6 +1,6 @@
 # Herencia
 
-### Explicación del concepto
+## Explicación del concepto
 
 La **herencia** permite que una clase (subclase) herede atributos y métodos de otra clase (superclase). Promueve la reutilización de código y la creación de jerarquías de clases.
 
@@ -10,7 +10,7 @@ La **herencia** permite que una clase (subclase) herede atributos y métodos de 
 - **Patrón Template Method**: utiliza herencia para definir el esqueleto de un algoritmo.
 - **Patrón Factory Method**: las subclases deciden qué clase instanciar.
 
-### Ejemplo en el proyecto
+## Ejemplo en el proyecto
 
 **Clases seleccionadas:**
 - `Persona` (superclase)
@@ -22,9 +22,9 @@ La **herencia** permite que una clase (subclase) herede atributos y métodos de 
 
 *En este diagrama se observa la jerarquía de herencia: Persona como superclase con atributos comunes (nombre, apellido, teléfono, email), y Paciente, Medico y Secretaria como subclases que heredan estos atributos y agregan los suyos propios.*
 
-### Ejemplo de código
+## Ejemplo de código
 
-```
+```java
 // Superclase
 class Persona {
     - nombre: String
@@ -36,8 +36,8 @@ class Persona {
     }
 }
 
-// Subclase 1
-class Paciente hereda Persona {
+// Subclase 1 (hereda de Persona)
+class Paciente extends Persona {
     - obraSocial: String
 
     + getObraSocial(): String {
@@ -45,8 +45,8 @@ class Paciente hereda Persona {
     }
 }
 
-// Subclase 2
-class Medico hereda Persona {
+// Subclase 2 (hereda de Persona)
+class Medico extends Persona {
     - especialidad: String
     - matricula: String
 
@@ -67,6 +67,6 @@ imprimirNombre(paciente) // ✅ "Juan"
 imprimirNombre(medico)   // ✅ "Dra. Pérez"
 ```
 
-### Justificación técnica
+## Justificación técnica
 
-`Paciente` y `Medico` heredan de `Persona`. Ambos comparten `nombre`, `dni` y `telefono`, pero cada uno agrega atributos específicos. La función `imprimirNombre()` recibe `Persona` y funciona con cualquier subclase, demostrando la reutilización y consistencia que ofrece la herencia.
+En el código, la palabra clave `extends` (o `hereda` en el pseudocódigo) indica que `Paciente` y `Medico` **heredan** de `Persona`. Esto significa que `Paciente` y `Medico` tienen automáticamente los atributos y métodos de `Persona` (`nombre`, `dni`, `telefono`, `getNombre()`). Esto demuestra la reutilización y consistencia que ofrece la herencia.
