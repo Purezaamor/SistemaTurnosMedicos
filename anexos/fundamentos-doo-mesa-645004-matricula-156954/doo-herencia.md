@@ -20,53 +20,81 @@ La **herencia** permite que una clase (subclase) herede atributos y métodos de 
 
 ![Diagrama de herencia - Persona](../../diagramas/01-diagrama-clases/capturas-pilares/poo-herencia-ejemplo-3.png)
 
-*En este diagrama se observa la jerarquía de herencia: Persona como superclase con atributos comunes (nombre, apellido, teléfono, email), y Paciente, Medico y Secretaria como subclases que heredan estos atributos y agregan los suyos propios.*
+*En este diagrama se observa la jerarquía de herencia: Persona como superclase con atributos comunes, y Paciente, Medico y Secretaria como subclases que heredan estos atributos y agregan los suyos propios.*
 
 ## Ejemplo de código
 
 ```java
 // Superclase
 class Persona {
-    - nombre: String
-    - dni: String
-    - telefono: String
+    private String nombre;
+    private String dni;
+    private String telefono;
 
-    + getNombre(): String {
-        return this.nombre
+    public String getNombre() {
+        return this.nombre;
     }
 }
 
 // Subclase 1 (hereda de Persona)
 class Paciente extends Persona {
-    - obraSocial: String
+    private String obraSocial;
 
-    + getObraSocial(): String {
-        return this.obraSocial
+    public String getObraSocial() {
+        return this.obraSocial;
     }
 }
 
 // Subclase 2 (hereda de Persona)
 class Medico extends Persona {
-    - especialidad: String
-    - matricula: String
+    private String especialidad;
+    private String matricula;
 
-    + getEspecialidad(): String {
-        return this.especialidad
+    public String getEspecialidad() {
+        return this.especialidad;
+    }
+}
+
+// Subclase 3 (hereda de Persona)
+class Secretaria extends Persona {
+    private String legajo;
+
+    public String getLegajo() {
+        return this.legajo;
     }
 }
 
 // Uso (polimorfismo por herencia)
-function imprimirNombre(persona: Persona): void {
-    mostrar(persona.getNombre()) // Funciona con cualquier subtipo
+void imprimirNombre(Persona persona) {
+    System.out.println(persona.getNombre());
 }
 
-Paciente paciente = new Paciente("Juan", "12345678", "011-1234567", "OSDE")
-Medico medico = new Medico("Dra. Pérez", "87654321", "011-998877", "Cardiología", "M-001")
+Paciente paciente = new Paciente();
+paciente.setNombre("Juan");
+paciente.setDni("12345678");
+paciente.setTelefono("011-1234567");
+paciente.setObraSocial("OSDE");
 
-imprimirNombre(paciente) // ✅ "Juan"
-imprimirNombre(medico)   // ✅ "Dra. Pérez"
+Medico medico = new Medico();
+medico.setNombre("Dra. Pérez");
+medico.setDni("87654321");
+medico.setTelefono("011-998877");
+medico.setEspecialidad("Cardiología");
+medico.setMatricula("M-001");
+
+Secretaria secretaria = new Secretaria();
+secretaria.setNombre("Ana");
+secretaria.setDni("11111111");
+secretaria.setTelefono("011-1111111");
+secretaria.setLegajo("S-001");
+
+imprimirNombre(paciente);    // "Juan"
+imprimirNombre(medico);      // "Dra. Pérez"
+imprimirNombre(secretaria);  // "Ana"
 ```
 
 ## Justificación técnica
 
-En el código, la palabra clave `extends` (o `hereda` en el pseudocódigo) indica que `Paciente` y `Medico` **heredan** de `Persona`. Esto significa que `Paciente` y `Medico` tienen automáticamente los atributos y métodos de `Persona` (`nombre`, `dni`, `telefono`, `getNombre()`). Esto demuestra la reutilización y consistencia que ofrece la herencia.
+En el código, la palabra clave `extends` indica que `Paciente`, `Medico` y `Secretaria` **heredan** de `Persona`. Esto significa que las subclases tienen automáticamente los atributos y métodos de `Persona` (`nombre`, `dni`, `telefono`, `getNombre()`). Cada subclase agrega sus propios atributos específicos (`obraSocial`, `especialidad`, `legajo`).
+
+La función `imprimirNombre()` recibe un parámetro de tipo `Persona` y funciona con cualquier subclase, demostrando la reutilización y consistencia que ofrece la herencia.
