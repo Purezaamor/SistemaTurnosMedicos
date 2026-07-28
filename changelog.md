@@ -4,7 +4,7 @@
 
 - [feature/anexo-fundamentos-doo] Agregada documentación de los pilares del Diseño Orientado a Objetos: abstracción, encapsulamiento, herencia y polimorfismo, incluyendo ejemplos de aplicación, código y diagramas UML del proyecto. PR: [#207](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/207) - @sofinestt<>
 
-- [feature/anexo-fundamentos-doo-mat-156954] Anexo sobre los cuatro fundamentos del diseño orientado a objetos (Abstracción, Encapsulamiento, Herencia, Polimorfismo) con ejemplos del Sistema de Turnos Médicos. Incluye diagramas UML y pseudocódigo. PR: [#208] — @Purezaamor (Mesa N° 645004 - Matrícula 156954)
+- [feature/anexo-fundamentos-doo-mat-156954] Anexo sobre los cuatro fundamentos del diseño orientado a objetos (Abstracción, Encapsulamiento, Herencia, Polimorfismo) con ejemplos del Sistema de Turnos Médicos. Incluye diagramas UML y pseudocódigo. PR: [#208](https://github.com/Purezaamor/SistemaTurnosMedicos/pull/208) — @Purezaamor (Mesa N° 645004 - Matrícula 156954)
 
 ## [Release Segundo Parcial] - 2026-06-27
 
