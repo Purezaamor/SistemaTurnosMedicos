@@ -95,6 +95,4 @@ imprimirNombre(secretaria);  // "Ana"
 
 ## Justificación técnica
 
-En el código, la palabra clave `extends` indica que `Paciente`, `Medico` y `Secretaria` **heredan** de `Persona`. Esto significa que las subclases tienen automáticamente los atributos y métodos de `Persona` (`nombre`, `dni`, `telefono`, `getNombre()`). Cada subclase agrega sus propios atributos específicos (`obraSocial`, `especialidad`, `legajo`).
-
-La función `imprimirNombre()` recibe un parámetro de tipo `Persona` y funciona con cualquier subclase, demostrando la reutilización y consistencia que ofrece la herencia.
+En el código, la palabra clave `extends` indica que `Paciente`, `Medico` y `Secretaria` **heredan** de `Persona`. Esto significa que las subclases tienen automáticamente los atributos y métodos de `Persona` (`nombre`, `dni`, `telefono`, `getNombre()`). Cada subclase agrega sus propios atributos específicos (`obraSocial`, `especialidad`, `legajo`). La función `imprimirNombre()` recibe `Persona` y funciona con cualquier subclase, demostrando la reutilización y consistencia que ofrece la herencia.
